@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EterUser{% endblock %}
+
+{% block body %}
+    <h1>EterUser</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ eter_user.id }}</td>
+            </tr>
+            <tr>
+                <th>User_login</th>
+                <td>{{ eter_user.userLogin }}</td>
+            </tr>
+            <tr>
+                <th>User_date</th>
+                <td>{{ eter_user.userDate ? eter_user.userDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>User_mail</th>
+                <td>{{ eter_user.userMail }}</td>
+            </tr>
+            <tr>
+                <th>User_password</th>
+                <td>{{ eter_user.userPassword }}</td>
+            </tr>
+            <tr>
+                <th>User_address</th>
+                <td>{{ eter_user.userAddress }}</td>
+            </tr>
+            <tr>
+                <th>User_zip</th>
+                <td>{{ eter_user.userZip }}</td>
+            </tr>
+            <tr>
+                <th>User_city</th>
+                <td>{{ eter_user.userCity }}</td>
+            </tr>
+            <tr>
+                <th>User_discord</th>
+                <td>{{ eter_user.userDiscord }}</td>
+            </tr>
+            <tr>
+                <th>User_sexe</th>
+                <td>{{ eter_user.userSexe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('eter_user_index') }}">back to list</a>
+
+    <a href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">edit</a>
+
+    {{ include('eter_user/_delete_form.html.twig') }}
+{% endblock %}

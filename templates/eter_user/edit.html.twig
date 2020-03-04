@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit EterUser{% endblock %}
+
+{% block body %}
+    <h1>Edit EterUser</h1>
+
+    {{ include('eter_user/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('eter_user_index') }}">back to list</a>
+
+    {{ include('eter_user/_delete_form.html.twig') }}
+{% endblock %}

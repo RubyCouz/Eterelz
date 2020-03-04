@@ -1,0 +1,17 @@
+
+.inProgress {
+    background-image: url("../img/workInProgress/COMING_SOONv2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    height: 1500px;
+    position: relative;
+    top: -7em;
+    z-index: -1;
+}
+
+.logo {
+    width: 12em;
+    height: auto;
+}

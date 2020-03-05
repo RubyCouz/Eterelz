@@ -13,6 +13,9 @@ class SecurityController extends AbstractController {
      * @return Response
      */
     public function login() {
-        return $this->render('security/login.html.twig');
+        $inProgress = false;
+        return $this->render('security/login.html.twig', [
+            'inProgress' => $inProgress
+        ]);
     }
 }

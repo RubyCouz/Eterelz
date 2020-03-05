@@ -1,16 +1,41 @@
- {% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
  {% block title %}Connexion{% endblock %}
  {% block body %}
-  <div class="uk-card uk-card-body">
-   <h3 class="uk-card-title"></h3>
-  </div>
-
-
-  <form action="{{ path('login') }}" method="POST">
-   <label for="username">Nom d'utilisateur</label>
-   <input type="text" id="username" name="_username">
-   <label for="password">Mot de passe</label>
-   <input type="password" id="password" name="_password">
-   <input type="submit" value="Se connecter">
-  </form>
+     <div class="uk-text-center" uk-grid>
+         <div class="uk-width-1-4@m"></div>
+         {# connection card #}
+         <div class="uk-margin-auto uk-margin-auto-vertical uk-card uk-card-default uk-width-1-2@m">
+             <div class="uk-card-header">
+                 <div class="uk-grid-small uk-flex-middle" uk-grid>
+                     <div class="uk-width-auto uk-align-center">
+                         <img src="{{ asset('img/logo/logoEterelz.png') }}" class="logoSignin uk-align-center"
+                              alt="Logo Eterelz"
+                              title="Logo Eterelz">
+                     </div>
+                 </div>
+             </div>
+             <div class="uk-card-body">
+                 <form action="{{ path('login') }}" method="POST">
+                     <fieldset class="uk-fieldset">
+                         <legend class="uk-legend">Veuillez saisir vos identifiants de connexion</legend>
+                         <div class="uk-margin-top uk-child-width-expand@s uk-text-center" uk-grid>
+                             <label for="username" class="uk-width-medium@s">Nom d'utilisateur</label>
+                             <input type="text" id="username" name="_username" class="uk-input uk-width-large@s">
+                         </div>
+                         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+                             <label for="password" class="uk-width-medium@s">Mot de passe</label>
+                             <input type="password" id="password" name="_password" class="uk-input uk-width-large@s">
+                         </div>
+                     </fieldset>
+                     <div class="" uk-grid>
+                         <input type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center" value="Se connecter">
+                     </div>
+                 </form>
+             </div>
+             <div class="uk-card-footer">
+                 <p>Pas encore inscrit(e) ? cliquez <a href="{{ path('eter_user_new') }}" title="Inscription">ici</a> !!!</p>
+             </div>
+         </div>
+         <div class="uk-width-1-4@m"></div>
+     </div>
  {% endblock %}

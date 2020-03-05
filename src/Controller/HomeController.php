@@ -14,6 +14,10 @@ class HomeController extends AbstractController {
      * @return Response
      */
     public function index() {
-        return $this->render('home/index.html.twig');
+        // déclaration d'un variable flag
+        $inProgress = true;
+        return $this->render('home/index.html.twig',[
+        'inProgress' => $inProgress
+        ]);
     }
 }

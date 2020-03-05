@@ -1,3 +1,6 @@
+/**
+background in progress
+ */
 
 .inProgress {
     background-image: url("../img/workInProgress/COMING_SOONv2.jpg");
@@ -6,12 +9,43 @@
     background-size: cover;
     background-color: transparent;
     height: 1500px;
-    position: relative;
-    top: -9em;
-    z-index: -1;
 }
-
+/**
+homme background
+ */
+.base {
+    background-image: url("../img/connection/signinBg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    min-height:150%;
+}
+.backgroundSignin {
+    background-image: url("../img/connection/signinBg.jpg")
+}
+/**
+navbar
+ */
 .logo {
     width: 20em;
     height: auto;
+}
+/**
+sign in card
+ */
+/*.logoSignin {*/
+/*    width: 200px;*/
+/*    height: auto;*/
+/*    margin-top: 25px;*/
+/*}*/
+.signinCard {
+    width: 400px;
+}
+.uk-card-default {
+    box-shadow: 0 5px 15px #9F1E5D;
+    padding-left: 0;
+}
+.footer {
+    height: 200px;
 }

@@ -7,11 +7,11 @@
     background-color: transparent;
     height: 1500px;
     position: relative;
-    top: -7em;
+    top: -9em;
     z-index: -1;
 }
 
 .logo {
-    width: 12em;
+    width: 20em;
     height: auto;
 }

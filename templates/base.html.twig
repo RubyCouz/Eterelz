@@ -9,24 +9,16 @@
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
+{#navbar#}
 <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
     <nav class="uk-navbar-container uk-margin" uk-navbar>
         <div class="uk-navbar-left">
-
             <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="#">Active</a></li>
                 <li>
-                    <a href="#">Parent</a>
-                    <div class="uk-navbar-dropdown">
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="#">Active</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-
-                        </ul>
-                    </div>
+                    <a class="uk-navbar-toggle" href="#" uk-toggle="target: #offcanvas-nav-primary">
+                        <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
+                    </a>
                 </li>
-                <li><a href="#">Item</a></li>
                 <li>
                     <div>
                         <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
@@ -41,18 +33,77 @@
         </div>
         <div class="uk-navbar-center">...</div>
         <div class="uk-navbar-right">
-            <div>
-                <a class="uk-navbar-item uk-logo" href="#">
-                    <img src="{{ asset('img/logo/logoEterelz.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
-                         class="logo">
-                </a>
-            </div>
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a href="{{ path('login') }}" title="Se connecter">SE CONNECTER <span uk-icon="icon: sign-in; ratio: 2"></span></a>
+                </li>
+                <li>
+                    <a class="uk-navbar-item uk-logo" href="#">
+                        <img src="{{ asset('img/logo/logoEterelz.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
+                             class="logo">
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
 </div>
+{#sidebar menu utilisateur#}
+<div id="offcanvas-nav-primary" uk-offcanvas="mode: reveal; overlay: true">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+            <li class="uk-parent">
+                <a href="#"><i class="fas fa-gamepad"></i> JEUX </a>
+            <ul class="uk-nav-sub">
+                <li class="uk-active"><a href="#">Jeux 1</a></li>
+                <li class=""><a href="#">Jeux 2</a></li>
+                <li class=""><a href="#">Jeux 2</a></li>
+            </ul>
+            </li>
+              <li class="uk-nav-divider"></li>
+            <li class="uk-parent">
+                <a href="#"><i class="far fa-calendar-alt"></i> EVENEMENTS</a>
+                <ul class="uk-nav-sub">
+                    <li><a href="#">SpeedRaid Destiny 2</a></li>
+                    <li><a href="#">Nettoyage DZ</a></li>
+                </ul>
+            </li>
+              <li class="uk-nav-divider"></li>
+            <li class="uk-parent">
+                <a href="#"><i class="fas fa-camera-retro"></i> PHOTOS</a>
+                <ul class="uk-nav-sub">
+                    <li class="uk-active"><a href="#">Artwork</a></li>
+                    <li class=""><a href="#">Capture d'écran</a></li>
+                    <li class=""><a href="#">Fonds d'écran 4k</a></li>
+                </ul>
+            </li>
+              <li class="uk-nav-divider"></li>
+            <li class="uk-parent">
+                <a href="#"><i class="fas fa-film"></i> VIDEOS</a>
+                <ul class="uk-nav-sub">
+                    <li class="uk-active"><a href="#">Tutos</a></li>
+                    <li class=""><a href="#">Bétisiers</a></li>
+                </ul>
+            </li>
+              <li class="uk-nav-divider"></li>
+            <li class="uk-parent">
+                <a href="#"><i class="fab fa-discord"></i> DISCORD</a>
+                <ul class="uk-nav-sub">
+                    <li class="uk-active"><a href="#">Destiny 2</a></li>
+                    <li class=""><a href="#">Black Desert Online</a></li>
+                </ul>
+            </li>
+              <li class="uk-nav-divider"></li>
+            <li class="uk-parent"><a href="" title="Lien vers le formulaire de contact"><i class="far fa-envelope"></i> NOUS CONTACTER</a></li>
+              <li class="uk-nav-divider"></li>
+            <li class="uk-parent"><a href="" title="A propos d'Eterelz"><i class="far fa-address-card"></i> A PROPOS</a></li>
+        </ul>
+    </div>
+</div>
+
 {% block body %}{% endblock %}
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/js/uikit-icons.min.js"></script>
+<script src="https://kit.fontawesome.com/feb810672a.js" crossorigin="anonymous"></script>
 {% block javascripts %}{% endblock %}
 </body>
 </html>

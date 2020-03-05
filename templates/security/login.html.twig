@@ -1,0 +1,16 @@
+ {% extends 'base.html.twig' %}
+ {% block title %}Connexion{% endblock %}
+ {% block body %}
+  <div class="uk-card uk-card-body">
+   <h3 class="uk-card-title"></h3>
+  </div>
+
+
+  <form action="{{ path('login') }}" method="POST">
+   <label for="username">Nom d'utilisateur</label>
+   <input type="text" id="username" name="_username">
+   <label for="password">Mot de passe</label>
+   <input type="password" id="password" name="_password">
+   <input type="submit" value="Se connecter">
+  </form>
+ {% endblock %}

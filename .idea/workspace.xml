@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="" />
+    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,6 +137,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1YgBdg497okWDPfCSbjn6eCNpLo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -162,12 +172,25 @@
       <option name="presentableId" value="Default" />
       <updated>1583354445199</updated>
       <workItem from="1583354447242" duration="86000" />
-      <workItem from="1583354569177" duration="4365000" />
+      <workItem from="1583354569177" duration="5154000" />
+      <workItem from="1583406801310" duration="6034000" />
     </task>
+    <task id="LOCAL-00001" summary="début de chantier">
+      <created>1583359113034</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583359113034</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="début de chantier" />
+    <option name="LAST_COMMIT_MESSAGE" value="début de chantier" />
   </component>
   <component name="WindowStateProjectService">
     <state x="573" y="63" key="CommitChangelistDialog2" timestamp="1583359112111">

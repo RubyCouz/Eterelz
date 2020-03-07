@@ -34,9 +34,15 @@
         <div class="uk-navbar-center">...</div>
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav">
+                {%  if app.user %}
                 <li>
-                    <a href="{{ path('login') }}" title="Se connecter">SE CONNECTER <span uk-icon="icon: sign-in; ratio: 2"></span></a>
+                    <a href="{{ path('logout') }}">SE DECONNECTER <span uk-icon="icon: sign-out; ratio: 2"></span></a>
                 </li>
+                {% else %}
+                    <li>
+                        <a href="{{ path('login') }}" title="Se connecter">SE CONNECTER <span uk-icon="icon: sign-in; ratio: 2"></span></a>
+                    </li>
+                {% endif %}
                 <li>
                     <a class="uk-navbar-item uk-logo" href="#">
                         <img src="{{ asset('img/logo/logoEterelz.png') }}" alt="Logo Eterelz" title="Logo Eterelz"

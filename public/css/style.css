@@ -10,6 +10,7 @@ background in progress
     background-color: transparent;
     height: 1500px;
 }
+
 /**
 homme background
  */
@@ -19,11 +20,13 @@ homme background
     background-position: center;
     background-size: cover;
     background-color: transparent;
-    min-height:150%;
+    min-height: 150%;
 }
+
 .backgroundSignin {
     background-image: url("../img/connection/signinBg.jpg")
 }
+
 /**
 navbar
  */
@@ -31,6 +34,7 @@ navbar
     width: 20em;
     height: auto;
 }
+
 /**
 sign in card
  */
@@ -42,10 +46,31 @@ sign in card
 .signinCard {
     width: 400px;
 }
+
 .uk-card-default {
     box-shadow: 0 5px 15px #9F1E5D;
-    padding-left: 0;
+    /*padding-left: 0;*/
+    opacity: 0.7;
 }
+
 .footer {
     height: 200px;
+}
+
+/**
+table
+ */
+table {
+    background-color: #DDDDDD;
+}
+
+/**
+icon
+ */
+.updateUser {
+    color: #53C8E0;
+}
+
+.delUser {
+    color: #9F1E5D;
 }

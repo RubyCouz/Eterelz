@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -25,7 +23,7 @@ class EterUser implements UserInterface
     private $user_login;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $user_date;
 
@@ -35,7 +33,7 @@ class EterUser implements UserInterface
     private $user_mail;
 
     /**
-     * @ORM\Column(type="string", length=150)
+     * @ORM\Column(type="string", length=100)
      */
     private $user_password;
 
@@ -65,15 +63,19 @@ class EterUser implements UserInterface
     private $user_sexe;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\EterStreamer", mappedBy="user_id")
+     * @ORM\ManyToOne(targetEntity="App\Entity\EterStatut")
      */
-    private $eterStreamers;
+    private $statut_id;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\EterRole", inversedBy="eterUsers")
+     */
+    private $role_id;
 
-
-    public function __construct()
-    {
-        $this->eterStreamers = new ArrayCollection();
+    public function __construct() {
+        $this->user_date = new \DateTime();
+//        $this->statut_id = '2';
+//        $this->role_id = '2';
     }
 
     public function getId(): ?int
@@ -189,14 +191,36 @@ class EterUser implements UserInterface
         return $this;
     }
 
+    public function getStatutId(): ?EterStatut
+    {
+        return $this->statut_id;
+    }
+
+    public function setStatutId(?EterStatut $statut_id): self
+    {
+        $this->statut_id = $statut_id;
+
+        return $this;
+    }
+
+    public function getRoleId(): ?EterRole
+    {
+        return $this->role_id;
+    }
+
+    public function setRoleId(?EterRole $role_id): self
+    {
+        $this->role_id = $role_id;
+
+        return $this;
+    }
+
     /**
      * @inheritDoc
      */
     public function getRoles()
     {
         return ['ROLE_ADMIN'];
-        // TODO: Implement getRoles() method.
-        // doit renvoyer une liste de rôle des user => requêtes sur la table Eter_user
     }
 
     /**
@@ -204,7 +228,7 @@ class EterUser implements UserInterface
      */
     public function getPassword()
     {
-        // TODO: Implement getPassword() method.
+        return $this->getUserPassword();
     }
 
     /**
@@ -213,7 +237,6 @@ class EterUser implements UserInterface
     public function getSalt()
     {
         return null;
-
     }
 
     /**

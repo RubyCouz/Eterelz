@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="" />
+    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/translations/forms.fr.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterAffiliation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterAnswer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterCategorie.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterClan.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterComment.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterContent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterContribution.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterEvent.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterGame.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterOwn.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterParticipation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterPlay.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterRole.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterStreamer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EterUserType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200303125726.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterAffiliationRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterAnswerRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterCategorieRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterClanRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterCommentRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterContentRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterContributionRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterEventRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterGameRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterOwnRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterParticipationRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterPlayRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterStreamerRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterTypeRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/eter_user/_delete_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/eter_user/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/eter_user/edit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/eter_user/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/eter_user/new.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/eter_user/show.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +65,52 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="eterelz@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="eterelz@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="eterelz@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="eterelz: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="eterelz@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="eterelz: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="eter_user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\laragon\www\eter\.idea" />
+      </set>
+    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -135,17 +231,34 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="php bin/console doctrine:make:migration" />
+      <command value="php bin/console doctrine:migrations" />
+      <command value="php bin/console doctrine:database:create" />
+      <command value="php bin/console make:entity" />
+      <command value="php bin/console make:migration" />
+      <command value="php bin/console doctrine:migration:migrate" />
+      <command value="php bin/console make:crud" />
+    </option>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:eterelz@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -165,7 +278,12 @@
       <workItem from="1583354447242" duration="86000" />
       <workItem from="1583354569177" duration="5154000" />
       <workItem from="1583406801310" duration="6351000" />
-      <workItem from="1583431389456" duration="8472000" />
+      <workItem from="1583431389456" duration="8530000" />
+      <workItem from="1583481132891" duration="411000" />
+      <workItem from="1583492437977" duration="1890000" />
+      <workItem from="1583503887550" duration="7316000" />
+      <workItem from="1583522817872" duration="3830000" />
+      <workItem from="1583578747156" duration="4112000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -181,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583440864213</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="mise en page affichage connection">
+      <created>1583440965855</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583440965855</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,13 +318,41 @@
     <option name="LAST_COMMIT_MESSAGE" value="mise en page affichage connection" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="573" y="63" key="CommitChangelistDialog2" timestamp="1583440863242">
+    <state x="552" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583526942849">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="573" y="63" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583440863242" />
-    <state x="552" y="284" key="Vcs.Push.Dialog.v2" timestamp="1583440866454">
+    <state x="552" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583526942849" />
+    <state x="690" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583579978729">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583440866454" />
+    <state x="690" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583579978729" />
+    <state x="573" y="63" key="CommitChangelistDialog2" timestamp="1583440965199">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="573" y="63" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583440965199" />
+    <state width="1602" height="255" key="GridCell.Tab.0.bottom" timestamp="1583579803414">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1602" height="255" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1583579803414" />
+    <state width="1602" height="255" key="GridCell.Tab.0.center" timestamp="1583579803414">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1602" height="255" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1583579803414" />
+    <state width="1602" height="255" key="GridCell.Tab.0.left" timestamp="1583579803414">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1602" height="255" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1583579803414" />
+    <state width="1602" height="255" key="GridCell.Tab.0.right" timestamp="1583579803414">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state width="1602" height="255" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1583579803414" />
+    <state x="552" y="284" key="Vcs.Push.Dialog.v2" timestamp="1583440969147">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583440969147" />
+    <state x="616" y="258" width="672" height="677" key="run.anything.popup" timestamp="1583579655973">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="616" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1583579655973" />
   </component>
 </project>

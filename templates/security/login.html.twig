@@ -18,9 +18,15 @@
                  <form action="{{ path('login') }}" method="POST">
                      <fieldset class="uk-fieldset">
                          <legend class="uk-legend">Veuillez saisir vos identifiants de connexion</legend>
+                         {% if error %}
+                             <div class="uk-alert-danger" uk-alert>
+                                 <a class="uk-alert-close" uk-close></a>
+                                 <p>{{ error.messageKey | trans(error.messageData, 'security') }}</p>
+                             </div>
+                         {% endif %}
                          <div class="uk-margin-top uk-child-width-expand@s uk-text-center" uk-grid>
-                             <label for="username" class="uk-width-medium@s">Nom d'utilisateur</label>
-                             <input type="text" id="username" name="_username" class="uk-input uk-width-large@s">
+                             <label for="username" class="uk-width-medium@s">Email</label>
+                             <input type="text" id="username" name="_username" class="uk-input uk-width-large@s" value="{{ last_username }}">
                          </div>
                          <div class="uk-child-width-expand@s uk-text-center" uk-grid>
                              <label for="password" class="uk-width-medium@s">Mot de passe</label>

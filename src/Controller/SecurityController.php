@@ -24,4 +24,11 @@ class SecurityController extends AbstractController {
             'inProgress' => $inProgress
         ]);
     }
+
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logout() {
+
+    }
 }

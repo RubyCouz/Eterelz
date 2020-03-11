@@ -1,18 +1,25 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    # provider : permet d'indiquer comment on récupère les utilisateurs et les authentifications
     providers:
-        form_database:
+        from_database:
             entity:
-                class: App\Entity\EterUSer
-                property: user_mail
+                class: APP\Entity\EterUser
+                property: user_email
+    # firewalls : définit les composant qui vont permettre l'authentification
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: lazy
+            anonymous: lazy # => chaque personne qui rentre sur le site est considéree comme annonyme
+            provider: from_database
             form_login:
                 check_path: login
+            logout:
+                path: /logout
+                target: /
+
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 
@@ -21,10 +28,13 @@ security:
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
+    # access_control : définit les niveaux d'accès
     access_control:
-           - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+    # encoders : définition ds methodes d'encodage des mdp
     encoders:
         App\Entity\EterUser:
             algorithm: bcrypt
             cost: 12
+

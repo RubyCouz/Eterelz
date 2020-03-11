@@ -220,7 +220,14 @@ class EterUser implements UserInterface
      */
     public function getRoles()
     {
-        return ['ROLE_ADMIN'];
+
+        // requète sur table role ?
+        if ($this->role_id == 1) {
+            return ['ROLE_ADMIN'];
+        } else {
+            return ['ROLE_USER'];
+        }
+
     }
 
     /**

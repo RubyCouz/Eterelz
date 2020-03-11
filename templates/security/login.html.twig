@@ -32,6 +32,12 @@
                              <label for="password" class="uk-width-medium@s">Mot de passe</label>
                              <input type="password" id="password" name="_password" class="uk-input uk-width-large@s">
                          </div>
+                         <div class="uk-child-width-expand@s" uk-grid>
+                             <label for="remember">
+                             <input type="checkbox" id="remember" class="uk-checkbox" value="Se souvenir de moi"> Se souvenir de moi
+                             </label>
+                         </div>
+                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                      </fieldset>
                      <div class="" uk-grid>
                          <input type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center" value="Se connecter">

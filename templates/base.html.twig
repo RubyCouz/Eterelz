@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/css/uikit.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/css/uikit.min.css">
+    <link rel="icon" type="image/jpg" href="{{ asset('img/favicon/favicon') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
@@ -34,7 +35,7 @@
         <div class="uk-navbar-center">...</div>
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav">
-                {%  if app.user %}
+                {% if app.user %}
                 <li>
                     <a href="{{ path('logout') }}">SE DECONNECTER <span uk-icon="icon: sign-out; ratio: 2"></span></a>
                 </li>

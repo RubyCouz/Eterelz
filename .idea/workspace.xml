@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/translations/table.fr.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/eter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/eter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterRole.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterRole.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterStatut.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterRoleRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterStatutRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterUserRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,19 +196,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="php bin/console doctrine:make:migration" />
       <command value="php bin/console doctrine:migrations" />
+      <command value="php bin/console make:crud" />
+      <command value="compsoer require security" />
+      <command value="composer require security" />
+      <command value="php bin/console make:database" />
       <command value="php bin/console doctrine:database:create" />
       <command value="php bin/console make:entity" />
       <command value="php bin/console make:migration" />
       <command value="php bin/console doctrine:migration:migrate" />
-      <command value="php bin/console make:crud" />
-      <command value="compsoer require security" />
-      <command value="composer require security" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -253,6 +251,9 @@
       <workItem from="1583840116216" duration="3706000" />
       <workItem from="1583855107920" duration="601000" />
       <workItem from="1583871080997" duration="1066000" />
+      <workItem from="1583917836774" duration="2124000" />
+      <workItem from="1583955039704" duration="2292000" />
+      <workItem from="1584011161533" duration="6882000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -282,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583582982154</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="début établissement back-office">
+      <created>1583917919427</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1583917919427</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,12 +300,18 @@
     <MESSAGE value="début de chantier" />
     <MESSAGE value="mise en page affichage connection" />
     <MESSAGE value="ajout utilisateur ok &#10;hashage mdp ok&#10;mise en page tableau utilisateur&#10;reprise bdd" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout utilisateur ok &#10;hashage mdp ok&#10;mise en page tableau utilisateur&#10;reprise bdd" />
+    <MESSAGE value="début établissement back-office" />
+    <option name="LAST_COMMIT_MESSAGE" value="début établissement back-office" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583526942849">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
+      <screen x="1920" y="30" width="1920" height="1050" />
     </state>
+    <state x="2472" y="213" key="#Big_Data_Tools_Connections/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584012583118" />
+    <state x="2472" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584015133001">
+      <screen x="1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="2472" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584015133001" />
     <state x="552" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583526942849" />
     <state x="2573" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583842288438">
       <screen x="1920" y="30" width="1920" height="1050" />
@@ -307,37 +321,42 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="690" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583579978729" />
-    <state x="573" y="63" key="CommitChangelistDialog2" timestamp="1583582981085">
+    <state x="573" y="34" key="CommitChangelistDialog2" timestamp="1583917916958">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="573" y="63" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583582981085" />
-    <state width="1098" height="253" key="GridCell.Tab.0.bottom" timestamp="1583667857558">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583917916958" />
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1584017641447">
+      <screen x="1920" y="30" width="1920" height="1050" />
     </state>
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584017641447" />
     <state width="1098" height="253" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1583667857558" />
-    <state width="1098" height="253" key="GridCell.Tab.0.center" timestamp="1583667857558">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1584017641446">
+      <screen x="1920" y="30" width="1920" height="1050" />
     </state>
+    <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584017641446" />
     <state width="1098" height="253" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1583667857558" />
-    <state width="1098" height="253" key="GridCell.Tab.0.left" timestamp="1583667857558">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1584017641446">
+      <screen x="1920" y="30" width="1920" height="1050" />
     </state>
+    <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584017641446" />
     <state width="1098" height="253" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1583667857558" />
-    <state width="1098" height="253" key="GridCell.Tab.0.right" timestamp="1583667857558">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1584017641446">
+      <screen x="1920" y="30" width="1920" height="1050" />
     </state>
+    <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584017641446" />
     <state width="1098" height="253" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1583667857558" />
-    <state x="552" y="284" key="Vcs.Push.Dialog.v2" timestamp="1583582985300">
+    <state x="552" y="284" key="Vcs.Push.Dialog.v2" timestamp="1583918013367">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583582985300" />
+    <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />
     <state x="2576" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1583840208523">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2576" y="380" key="com.intellij.ide.util.TipDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1583840208523" />
-    <state x="616" y="258" width="672" height="677" key="run.anything.popup" timestamp="1583666787487">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="2536" y="258" width="672" height="677" key="run.anything.popup" timestamp="1584015565471">
+      <screen x="1920" y="30" width="1920" height="1050" />
     </state>
+    <state x="2536" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584015565471" />
     <state x="616" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1583666787487" />
   </component>
 </project>

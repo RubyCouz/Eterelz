@@ -71,4 +71,9 @@ class EterStreamer
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->stream_url;
+    }
 }

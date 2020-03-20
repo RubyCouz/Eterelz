@@ -50,6 +50,11 @@ class EterGender
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->gender_name;
+    }
+
     /**
      * @return Collection|EterGame[]
      */

@@ -56,6 +56,10 @@ class EterGame
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->game_name;
+    }
     /**
      * @return Collection|EterUser[]
      */

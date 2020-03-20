@@ -50,6 +50,10 @@ class EterGameplay
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->gameplay_type;
+    }
     /**
      * @return Collection|EterClan[]
      */

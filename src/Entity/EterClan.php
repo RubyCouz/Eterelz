@@ -63,12 +63,19 @@ class EterClan
      */
     private $clan_event;
 
+    /**
+     * @ORM\Column(type="string", length=150, nullable=true)
+     */
+    private $clan_slogan;
+
     public function __construct()
     {
         $this->clan_gameplay = new ArrayCollection();
         $this->eterUsers = new ArrayCollection();
         $this->clan_event = new ArrayCollection();
     }
+
+
 
     public function getId(): ?int
     {
@@ -85,6 +92,11 @@ class EterClan
         $this->clan_name = $clan_name;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->clan_name;
     }
 
     public function getClanMembers(): ?int
@@ -146,6 +158,7 @@ class EterClan
 
         return $this;
     }
+
 
     /**
      * @return Collection|EterGameplay[]
@@ -223,6 +236,18 @@ class EterClan
         if ($this->clan_event->contains($clanEvent)) {
             $this->clan_event->removeElement($clanEvent);
         }
+
+        return $this;
+    }
+
+    public function getClanSlogan(): ?string
+    {
+        return $this->clan_slogan;
+    }
+
+    public function setClanSlogan(?string $clan_slogan): self
+    {
+        $this->clan_slogan = $clan_slogan;
 
         return $this;
     }

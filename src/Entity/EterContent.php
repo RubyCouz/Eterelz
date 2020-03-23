@@ -50,6 +50,11 @@ class EterContent
      */
     private $eterComments;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $content_name;
+
     public function __construct()
     {
         $this->eterComments = new ArrayCollection();
@@ -150,4 +155,23 @@ class EterContent
 
         return $this;
     }
+
+
+    public function getContentName(): ?string
+    {
+        return $this->content_name;
+    }
+
+    public function setContentName(string $content_name): self
+    {
+        $this->content_name = $content_name;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->content_name;
+    }
+
 }

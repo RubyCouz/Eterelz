@@ -134,4 +134,10 @@ class EterCategorie
 
         return $this;
     }
+
+
+    public function __toString()
+    {
+        return $this->cat_name;
+    }
 }

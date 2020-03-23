@@ -148,4 +148,10 @@ class EterComment
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->com_content;
+    }
+
 }

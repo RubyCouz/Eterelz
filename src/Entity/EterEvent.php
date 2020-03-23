@@ -50,6 +50,11 @@ class EterEvent
      */
     private $eterClans;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $event_name;
+
     public function __construct()
     {
 
@@ -163,5 +168,23 @@ class EterEvent
         }
 
         return $this;
+    }
+
+    public function getEventName(): ?string
+    {
+        return $this->event_name;
+    }
+
+    public function setEventName(string $event_name): self
+    {
+        $this->event_name = $event_name;
+
+        return $this;
+    }
+
+
+    public function __toString()
+    {
+        return $this->event_name;
     }
 }

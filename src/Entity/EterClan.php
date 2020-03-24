@@ -5,9 +5,13 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints\DateTime;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterClanRepository")
+ * @Vich\Uploadable
  */
 class EterClan
 {
@@ -34,9 +38,15 @@ class EterClan
     private $clan_desc;
 
     /**
-     * @ORM\Column(type="string", length=6, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $clan_ban;
+
+    /**
+     * @Vich\UploadableField(mapping="clan_ban", fileNameProperty="clan_ban")
+     * @var File
+     */
+    private $ban_pic;
 
     /**
      * @ORM\Column(type="string", length=150, nullable=true)
@@ -67,6 +77,13 @@ class EterClan
      * @ORM\Column(type="string", length=150, nullable=true)
      */
     private $clan_slogan;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $clan_update;
+
+
 
     public function __construct()
     {
@@ -251,4 +268,35 @@ class EterClan
 
         return $this;
     }
+
+    public function setBanPic(File $clan_ban = null) {
+        $this->ban_pic = $clan_ban;
+        // ajout d'un champs modif datetime dans la bdd pour forcer la persistance
+//
+        if ($clan_ban) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->clan_update = new \DateTime('now');
+        }
+    }
+
+    public function getBanPic() {
+        return $this->ban_pic;
+    }
+
+    public function getClanUpdate(): ?\DateTimeInterface
+    {
+        return $this->clan_update;
+    }
+
+    public function setClanUpdate(\DateTimeInterface $clan_update): self
+    {
+        $this->clan_update = $clan_update;
+
+        return $this;
+    }
+
+
+
+
+
 }

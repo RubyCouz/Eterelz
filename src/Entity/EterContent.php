@@ -5,9 +5,12 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterContentRepository")
+ * @Vich\Uploadable
  */
 class EterContent
 {
@@ -34,6 +37,12 @@ class EterContent
     private $content_pic;
 
     /**
+     * @Vich\UploadableField(mapping="content_pic", fileNameProperty="content_pic")
+     * @var File
+     */
+    private $picture;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\EterState", inversedBy="eterContents")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -54,6 +63,17 @@ class EterContent
      * @ORM\Column(type="string", length=255)
      */
     private $content_name;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\EterUser", inversedBy="eterContents")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $content_user;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $content_update;
 
     public function __construct()
     {
@@ -87,6 +107,17 @@ class EterContent
         $this->content_date = $content_date;
 
         return $this;
+    }
+
+    public function setPicture(File $content_pic = null) {
+        $this->picture = $content_pic;
+        if ($content_pic) {
+            $this->content_update = new \DateTime('now');
+        }
+    }
+
+    public function getPicture() {
+        return $this->picture;
     }
 
     public function getContentPic(): ?string
@@ -173,5 +204,32 @@ class EterContent
     {
         return $this->content_name;
     }
+
+    public function getContentUser(): ?EterUser
+    {
+        return $this->content_user;
+    }
+
+    public function setContentUser(?EterUser $content_user): self
+    {
+        $this->content_user = $content_user;
+
+        return $this;
+    }
+
+
+
+    public function getContentUpdate(): ?\DateTimeInterface
+    {
+        return $this->content_update;
+    }
+
+    public function setContentUpdate(\DateTimeInterface $clan_update): self
+    {
+        $this->content_update = $clan_update;
+
+        return $this;
+    }
+
 
 }

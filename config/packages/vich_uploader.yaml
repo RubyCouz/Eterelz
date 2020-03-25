@@ -2,10 +2,16 @@ vich_uploader:
     db_driver: orm
 
     mappings:
+        # mapping pour la bannière de clan
         clan_ban:
             uri_prefix:         '/img/upload/ban'
             upload_destination: '%kernel.project_dir%/public/img/upload/ban'
+        # mapping pour contenu image
+        content_pic:
+            uri_prefix:         '/img/upload/artwork'
+            upload_destination: '%kernel.project_dir%/public/img/upload/artwork'
     #mappings:
     #    products:
     #        uri_prefix: /images/products
     #        upload_destination: '%kernel.project_dir%/public/images/products'
+

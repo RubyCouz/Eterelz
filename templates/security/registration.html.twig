@@ -1,0 +1,18 @@
+{% block body %}
+    <h1>Inscription</h1>
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.user_login, {'label': 'Login','attr': {'placeholder': 'Veuillez saisir un login'}}) }}
+    {{ form_row(form.user_mail, {'label': 'Adresse mail','attr': {'placeholder': 'Veuillez saisir votre adresse mail'}}) }}
+    {{ form_row(form.user_address, {'label': 'Adresse postale','attr': {'placeholder': 'Votre saisir votre adresse postale'}}) }}
+    {{ form_row(form.user_zip, {'label': 'Code postal','attr': {'placeholder': 'Veuillez saisir votre code postal'}}) }}
+    {{ form_row(form.user_city, {'label': 'Ville','attr': {'placeholder': 'Veuillez saisir votre ville'}}) }}
+    {{ form_row(form.user_discord, {'label': 'Discord','attr': {'placeholder': 'Veuillez saisir votre ID Discord'}}) }}
+    {{ form_row(form.user_sex, {'label': 'Sexe','attr': {'placeholder': 'Veuillez saisir votre genre'}}) }}
+    {{ form_row(form.user_description, {'label': 'Description','attr': {'placeholder': 'Veuillez saisir une description'}}) }}
+    {{ form_row(form.user_password, {'label': 'Mot de passe','attr': {'placeholder': 'Veuillez saisir votre mot de passe'}}) }}
+
+    <button type="submit" class="btn btn-success">S'inscrire</button>
+    {{ form_end(form) }}
+{% endblock %}

@@ -103,6 +103,11 @@ class EterUser
      */
     private $eterContents;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $user_description;
+
     public function __construct()
     {
         $this->user_date = new \DateTime();
@@ -446,9 +451,19 @@ class EterUser
                 $eterContent->setContentUser(null);
             }
         }
-
+        
         return $this;
     }
 
+    public function getUserDescription(): ?string
+    {
+        return $this->user_description;
+    }
 
+    public function setUserDescription(string $user_description): self
+    {
+        $this->user_description = $user_description;
+
+        return $this;
+    }
 }

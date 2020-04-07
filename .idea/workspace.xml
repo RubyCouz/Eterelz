@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4794f9b-2e72-40fc-804d-a24c3a79e93b" name="Default Changelist" comment="ajout fichier">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e4794f9b-2e72-40fc-804d-a24c3a79e93b" name="Default Changelist" comment="ajout fichier" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -434,11 +432,11 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="690" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583579978729" />
-    <state x="2493" y="34" key="CommitChangelistDialog2" timestamp="1586254483843">
+    <state x="2493" y="34" key="CommitChangelistDialog2" timestamp="1586255105377">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251448796" />
-    <state x="2493" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254483843" />
+    <state x="2493" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586255105377" />
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583917916958" />
     <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1586254027850">
       <screen x="1920" y="30" width="1920" height="1050" />
@@ -464,6 +462,10 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2381" y="197" key="SettingsEditor/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586181792395" />
+    <state x="2012" y="122" width="1736" height="866" key="ShowDiffWithBranchDialog" timestamp="1586255055305">
+      <screen x="1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="2012" y="122" width="1736" height="866" key="ShowDiffWithBranchDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586255055305" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1586254486866">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>

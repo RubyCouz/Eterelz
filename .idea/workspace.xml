@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="">
+    <list default="true" id="e4794f9b-2e72-40fc-804d-a24c3a79e93b" name="Default Changelist" comment="ajout fichier">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -393,7 +393,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -438,40 +440,44 @@
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251448796" />
     <state x="2493" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252220934" />
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583917916958" />
-    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1586252068136">
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1586254027850">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199354" />
-    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1586252068136">
+    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1586254027850">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
+    <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199352" />
-    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1586252068136">
+    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1586254027850">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
+    <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199346" />
-    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1586252068136">
+    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1586254027850">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
+    <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199353" />
     <state x="2381" y="197" key="SettingsEditor" timestamp="1586181792395">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2381" y="197" key="SettingsEditor/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586181792395" />
-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1586252225560">
+    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1586254431456">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252225560" />
+    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254431456" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />
     <state x="2731" y="432" width="324" height="261" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585127054866">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2731" y="432" width="324" height="261" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1585127054866" />
+    <state x="2012" y="122" width="1736" height="866" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1586254445954">
+      <screen x="1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="2012" y="122" width="1736" height="866" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254445954" />
     <state x="2576" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1583840208523">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>

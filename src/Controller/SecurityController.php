@@ -21,7 +21,7 @@ class SecurityController extends AbstractController {
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder) {
         
         $user = new EterUser(); //Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
-
+        $inProgress = true;
         $form = $this->createForm(RegistrationType::class, $user);//Création du formulaire selon la table user
 
         $form->handleRequest($request);//Analyse de la requête
@@ -41,6 +41,7 @@ class SecurityController extends AbstractController {
 
         //Affichage
         return $this->render('security/registration.html.twig', [
+            'inProgress' => $inProgress,
             'form' => $form->createView()
         ]);
     }

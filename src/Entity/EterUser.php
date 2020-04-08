@@ -90,10 +90,6 @@ class EterUser implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=150)
-     * @Assert\Regex(
-     *  pattern="/^(https?:\/\/)?(www\.)?(discord\.(gg|io|me|li)|discordapp\.com\/invite)\/.+[a-z]$/",
-     *  message="Identifiant Discord non valide"
-     * )
      * @Assert\NotBlank
      */
     private $user_discord;
@@ -153,7 +149,7 @@ class EterUser implements UserInterface
 
     public function __construct()
     {
-        $this->user_date = new \DateTime();
+        $this->user_date = new \DateTime('Europe/Paris');
         $this->role = new ArrayCollection();
         $this->user_clan = new ArrayCollection();
         $this->user_game = new ArrayCollection();

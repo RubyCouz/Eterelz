@@ -120,5 +120,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="uikit" level="application" />
+    <orderEntry type="library" name="uikit-icons" level="application" />
+    <orderEntry type="library" name="feb810672a" level="application" />
   </component>
 </module>

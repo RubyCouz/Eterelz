@@ -1,8 +1,10 @@
+{% extends 'base.html.twig' %}
+
 {% block body %}
 
 <h1>Inscription</h1>
  <!--Installation de la balise form de départ-->
-{{ form_start(form) }}
+{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
 
 <!--Affichage des champs du formulaire-->
 {{ form_row(form.user_login, {'label' : 'Login', 'attr' : {'placeholder' : 'Saisissez votre login'}})}}
@@ -14,6 +16,7 @@
 {{ form_row(form.user_sex, {'label' : 'Sexe', 'attr' : {'placeholder' : 'Genre'}})}}
 {{ form_row(form.user_description, {'label' : 'Description', 'attr' : {'placeholder' : 'Saisissez une description'}})}}
 {{ form_row(form.user_password, {'label' : 'Mot de passe', 'attr' : {'placeholder' : 'Saisissez un mot de passe'}})}}
+{{ form_row(form.confirm_user_password, {'label' : 'Confirmation du mot de passe', 'attr' : {'placeholder' : 'Confirmez votre mot de passe'}})}}
 
 <button type="submit" class="btn btn-success">S'inscrire !</button>
 

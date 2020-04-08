@@ -29,14 +29,14 @@ class SecurityController extends AbstractController {
         if($form->isSubmitted() && $form->isValid()) {
 
             //Encryptage du mot de passe selon la configuration dans security.yaml de config
-            $hash = $encoder->encodePassword($user, $user->getPassword());//Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
+            $hash = $encoder->encodePassword($user, $user->getUserPassword());//Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
 
-            $user->setPassword($hash);//Validation du remplacement du mot de passe par un encryptage
+            $user->setUserPassword($hash);//Validation du remplacement du mot de passe par un encryptage
 
             $manager->persist($user);//Garde en mémoire les données soumises
             $manager->flush();//Envoi des données à la BDD
 
-            return $this->redirectToRoute('security_login');
+            //return $this->redirectToRoute('/login');
         }
 
         //Affichage

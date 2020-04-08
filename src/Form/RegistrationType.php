@@ -6,6 +6,7 @@ use App\Entity\EterUser;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class RegistrationType extends AbstractType
 {
@@ -14,13 +15,15 @@ class RegistrationType extends AbstractType
         $builder
             ->add('user_login')
             ->add('user_mail')
-            ->add('user_password')
+            ->add('user_password', PasswordType::class)
+            ->add('confirm_user_password', PasswordType::class)
             ->add('user_address')
             ->add('user_zip')
             ->add('user_city')
             ->add('user_discord')
             ->add('user_sex')
             ->add('user_description')
+            
         ;
     }
 

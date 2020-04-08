@@ -1,7 +1,9 @@
+{% extends 'base.html.twig' %}
+
 {% block body %}
     <h1>Inscription</h1>
 
-    {{ form_start(form) }}
+    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
 
     {{ form_row(form.user_login, {'label': 'Login','attr': {'placeholder': 'Veuillez saisir un login'}}) }}
     {{ form_row(form.user_mail, {'label': 'Adresse mail','attr': {'placeholder': 'Veuillez saisir votre adresse mail'}}) }}
@@ -12,6 +14,7 @@
     {{ form_row(form.user_sex, {'label': 'Sexe','attr': {'placeholder': 'Veuillez saisir votre genre'}}) }}
     {{ form_row(form.user_description, {'label': 'Description','attr': {'placeholder': 'Veuillez saisir une description'}}) }}
     {{ form_row(form.user_password, {'label': 'Mot de passe','attr': {'placeholder': 'Veuillez saisir votre mot de passe'}}) }}
+    {{ form_row(form.confirm_user_password, {'label': 'Confirmation mot de passe','attr': {'placeholder': 'Veuillez confirmer votre mot de passe'}}) }}
 
     <button type="submit" class="btn btn-success">S'inscrire</button>
     {{ form_end(form) }}

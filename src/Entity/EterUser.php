@@ -8,8 +8,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-
-
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterUserRepository")
  */
@@ -24,6 +22,7 @@ class EterUser implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank
      */
     private $user_login;
 
@@ -34,11 +33,20 @@ class EterUser implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=150)
+     * @Assert\Email(
+     *     message = "Votre adresse mail n'est pas valide !"
+     * )
+     * @Assert\NotBlank
      */
     private $user_mail;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\Regex(
+     *     pattern="/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[-+!*$@%_])([-+!*$@%_\w]{8,15})$/",
+     *     message="Votre Mot de passe doit comporter de 8 à 15 caractères, au moins une lettre minuscule, au moins une lettre majuscule, au moins un chiffre, au moins un de ces caractères spéciaux: $ @ % * + - _ !, aucun autre caractère possible: pas de & ni de { par exemple"
+     * )
+     * @Assert\NotBlank
      */
     private $user_password;
 
@@ -49,26 +57,44 @@ class EterUser implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=150, nullable=true)
+     * @Assert\Regex(
+     *     pattern="/([a-zA-Z,\. ]*)?([a-zA-Z]*)/",
+     *     message="Le format de votre adresse postale n'est pas valide !"
+     * )
+     * @Assert\NotBlank
      */
     private $user_address;
 
     /**
      * @ORM\Column(type="string", length=5, nullable=true)
+     *  @Assert\Regex(
+     *     pattern="/^[0-9]{5}$/",
+     *     message="Le format de votre code postal n'est pas valide !"
+     * )
+     * @Assert\NotBlank
      */
     private $user_zip;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
+     * @Assert\Regex(
+     *     pattern="/^[A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï]+([-'\s][A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï])?([-'\s][A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï]+)?$/",
+     *     message="Le format de votre ville n'est pas valide !"
+     * )
+     * @Assert\NotBlank
      */
     private $user_city;
 
     /**
      * @ORM\Column(type="string", length=150)
+     * @Assert\NotBlank
      */
     private $user_discord;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
+     * @Assert\Choice({"M", "F"})
+     * @Assert\NotBlank
      */
     private $user_sex;
 

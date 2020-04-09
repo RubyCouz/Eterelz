@@ -24,7 +24,6 @@ class EterUser implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @Assert\NotBlank
      */
     private $user_login;
 
@@ -35,75 +34,46 @@ class EterUser implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=150)
-     * @Assert\Email(
-     * message="Adresse email non valide"
-     * )
-     * @Assert\NotBlank
      */
     private $user_mail;
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Assert\Regex(
-     *  pattern="/^(?=.[A-Z])(?=.[a-z])(?=.\d)(?=.[-+!$@%_])([-+!$@%_\w]{8,99})$/",
-     *  message="Mot de passe qui doit comporter de 8 à 15 caractères, au moins une lettre minuscule, au moins une lettre majuscule, au moins un chiffre, au moins un de ces caractères spéciaux: $ @ % * + - _ !"
-     * )
-     * @Assert\NotBlank
      */
     private $user_password;
 
     /**
-     *@Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
-     *@Assert\NotBlank
+    *@Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
     */
     public $confirm_user_password;
 
     /**
      * @ORM\Column(type="string", length=150, nullable=true)
-     * @Assert\Regex(
-     *  pattern="/^([0-9a-z'àâéèêôùûçÀÂÉÈÔÙÛÇ\s-]{1,50})$/",
-     *  message="Adresse non valide"
-     * )
-     * @Assert\NotBlank
      */
     private $user_address;
 
     /**
      * @ORM\Column(type="string", length=5, nullable=true)
-     * @Assert\Regex(
-     *  pattern="/^(([0-8][0-9])|(9[0-5])|(2[ab]))[0-9]{3}$/",
-     *  message="Code postal non valide"
-     * )
-     * @Assert\NotBlank
      */
     private $user_zip;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
-     * @Assert\Regex(
-     *  pattern="/^[A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï]+([-'\s][A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï])?([-'\s][A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï]+)?$/",
-     *  message="Ville non valide"
-     * )
-     * @Assert\NotBlank
      */
     private $user_city;
 
     /**
      * @ORM\Column(type="string", length=150)
-     * @Assert\NotBlank
      */
     private $user_discord;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
-     * @Assert\Choice({"M", "F"})
-     * @Assert\NotBlank
      */
     private $user_sex;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
-     * @Assert\NotBlank
      */
     private $statut;
 

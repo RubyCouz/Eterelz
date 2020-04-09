@@ -1,26 +1,32 @@
 {% extends 'base.html.twig' %}
 
+
 {% block body %}
 
-<h1>Inscription</h1>
- <!--Installation de la balise form de départ-->
-{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+<div class="uk-container uk-background-default">
+    <h1>Inscription</h1>
 
-<!--Affichage des champs du formulaire-->
-{{ form_row(form.user_login, {'label' : 'Login', 'attr' : {'placeholder' : 'Saisissez votre login'}})}}
-{{ form_row(form.user_mail, {'label' : 'Email', 'attr' : {'placeholder' : 'Saisissez votre adresse email'}})}}
-{{ form_row(form.user_address, {'label' : 'Adresse', 'attr' : {'placeholder' : 'Saisissez votre adresse'}})}}
-{{ form_row(form.user_zip, {'label' : 'Code Postal', 'attr' : {'placeholder' : 'Saisissez votre code postal'}})}}
-{{ form_row(form.user_city, {'label' : 'Ville', 'attr' : {'placeholder' : 'Saisissez votre ville'}})}}
-{{ form_row(form.user_discord, {'label' : 'Discord', 'attr' : {'placeholder' : 'Saisissez votre id Discord'}})}}
-{{ form_row(form.user_sex, {'label' : 'Sexe', 'attr' : {'placeholder' : 'Genre'}})}}
-{{ form_row(form.user_description, {'label' : 'Description', 'attr' : {'placeholder' : 'Saisissez une description'}})}}
-{{ form_row(form.user_password, {'label' : 'Mot de passe', 'attr' : {'placeholder' : 'Saisissez un mot de passe'}})}}
-{{ form_row(form.confirm_user_password, {'label' : 'Confirmation du mot de passe', 'attr' : {'placeholder' : 'Confirmez votre mot de passe'}})}}
+        {# Installation de la balise form de départ #}
+        {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
 
-<button type="submit" class="btn btn-success">S'inscrire !</button>
+            {# Affichage des champs du formulaire #}
+            <div class="uk-margin">
 
-<!--Installation de la balise form de fin-->
-{{ form_end(form) }} 
-
+            {# Photo de profil à rajouter #}
+                <p>{{ form_row(form.user_login) }}</p>
+                <p>{{ form_row(form.user_mail)}}</p>
+                <p>{{ form_row(form.user_address)}}
+                <p>{{ form_row(form.user_zip)}}
+                <p>{{ form_row(form.user_city)}}
+                <p>{{ form_row(form.user_discord)}}
+                <p>{{ form_row(form.user_sex)}}
+                <p>{{ form_row(form.user_description)}}
+                <p>{{ form_row(form.user_password)}}
+                <p>{{ form_row(form.confirm_user_password)}}
+                
+                <button type="submit" class="uk-button uk-button-success uk-width-1-1 uk-margin-small-bottom">S'inscrire !</button>
+            </div>
+        {# Installation de la balise form de fin #}
+        {{ form_end(form) }} 
+</div>
 {% endblock %}

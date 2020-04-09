@@ -20,21 +20,30 @@ class SecurityController extends AbstractController {
      */
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder) {
         
-        $user = new EterUser(); //Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
+        //Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
+        $user = new EterUser(); 
         $inProgress = true;
-        $form = $this->createForm(RegistrationType::class, $user);//Création du formulaire selon la table user
 
-        $form->handleRequest($request);//Analyse de la requête
+        //Création du formulaire selon la table user
+        $form = $this->createForm(RegistrationType::class, $user);
+
+        //Analyse de la requête
+        $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
 
             //Encryptage du mot de passe selon la configuration dans security.yaml de config
-            $hash = $encoder->encodePassword($user, $user->getUserPassword());//Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
+            //Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
+            $hash = $encoder->encodePassword($user, $user->getUserPassword());
 
-            $user->setUserPassword($hash);//Validation du remplacement du mot de passe par un encryptage
+            //Validation du remplacement du mot de passe par un encryptage
+            $user->setUserPassword($hash);
 
-            $manager->persist($user);//Garde en mémoire les données soumises
-            $manager->flush();//Envoi des données à la BDD
+            //Garde en mémoire les données soumises
+            $manager->persist($user);
+            
+            //Envoi des données à la BDD
+            $manager->flush();
 
             //return $this->redirectToRoute('/login');
         }

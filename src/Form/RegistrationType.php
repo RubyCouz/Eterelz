@@ -27,24 +27,23 @@ class RegistrationType extends AbstractType
         //----------------------LOGIN----------------------//
 
             ->add('user_login', TextType::class, [
-                'constraints' => [new NotBlank()],
-                'attr' => ['placeholder' => 'Saisissez votre login', 'class' => 'uk-input'],
-                'label' => 'Login *',
-                'label_attr' => ['class' => 'avatar']
+                  'constraints' => [new NotBlank(['message' => 'Ce champ ne doit pas être vide'])],
+                  'attr' => ['placeholder' => 'Saisissez votre login', 'class' => 'uk-input'],
+                  'label' => 'Login *'
             ])
 
         //----------------------EMAIL----------------------//
 
             ->add('user_mail', EmailType::class, [
-                'constraints' => [new NotBlank(), new Email(['message' => 'Adresse email non valide'])],
-                'attr' => ['placeholder' => 'Saisissez votre adresse email', 'class' => 'uk-input'],
-                'label' => 'Email *'
+                  'constraints' => [new NotBlank(['message' => 'Ce champ ne doit pas être vide']), new Email(['message' => 'Adresse mail non valide !'])],
+                  'attr' => ['placeholder' => 'Saisissez votre adresse mail', 'class' => 'uk-input'],
+                  'label' => 'Adresse mail *'
             ])
 
         //----------------------MOT DE PASSE---------------//
             ->add('user_password', PasswordType::class, [
-                'constraints' => [new NotBlank(), new Regex(['message' => 'Mot de passe non valide', 'pattern' => '#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#'])],
-                'attr' => ['placeholder' => 'Saisissez un mot de passe', 'class' => 'uk-input'],
+                'constraints' => [new NotBlank(['message' => 'Ce champ ne doit pas être vide']), new Regex(['message' => 'Mot de passe non valide !', 'pattern' => '#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#'])],
+                'attr' => ['placeholder' => 'Saisissez un mot de passe', 'class' => 'uk-input', 'type' => 'text'],
                 'label' => 'Mot de passe *'
             ])
 

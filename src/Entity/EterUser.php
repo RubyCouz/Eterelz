@@ -1,5 +1,5 @@
 <?php
-
+// commit
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -7,9 +7,6 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
-
-
-
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterUserRepository")
  */
@@ -478,8 +475,6 @@ class EterUser implements UserInterface
     public function getPassword() {}
 
     public function getUsername() {}
-
-    public function eraseCredentials() {}
 
     public function getSalt() {}
 

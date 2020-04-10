@@ -41,7 +41,6 @@ class SecurityController extends AbstractController {
 
             //Garde en mémoire les données soumises
             $manager->persist($user);
-            
             //Envoi des données à la BDD
             $manager->flush();
 

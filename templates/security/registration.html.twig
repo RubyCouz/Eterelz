@@ -1,14 +1,24 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
 
-<div class="uk-container uk-background-default">
-    <h1>Inscription</h1>
+<div class="" uk-grid>
+         <div class="uk-width-1-8@m"></div>
+         <div class="uk-margin-auto uk-margin-auto-vertical uk-card uk-card-default uk-width-1-2@m">
+             <div class="uk-card-header">
+                 <div class="uk-grid-small uk-flex-middle" uk-grid>
+                     <div class="uk-width-auto uk-align-center">
+                         <img src="{{ asset('img/logo/logoEterelz.png') }}" class="logoSignin uk-align-center"
+                              alt="Logo Eterelz"
+                              title="Logo Eterelz">
+                     </div>
+                 </div>
+             </div>
+             <div class="uk-card-body">
 
         {# Installation de la balise form de départ #}
         {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
-
+            
             {# Affichage des champs du formulaire #}
             <div class="uk-margin">
 
@@ -24,10 +34,13 @@
                 <p>{{ form_row(form.user_password)}}
                 <p>{{ form_row(form.confirm_user_password)}}
                 <br>
-                <button type="submit" class="uk-button uk-button-success uk-width-1-1 uk-margin-small-bottom" style="color:white;background-color:#424860;">S'inscrire !</button>
+                <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center" >S'inscrire !</button>
             </div>
-            
+
         {# Installation de la balise form de fin #}
         {{ form_end(form) }} 
 </div>
+</div>
+</div>
+
 {% endblock %}

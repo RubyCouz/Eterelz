@@ -72,7 +72,10 @@ class RegistrationType extends AbstractType
                 'multiple' => false,
                 'label' => 'Sexe'
             ])
-            ->add('user_description', TextareaType::class,[
+
+            //----------------------DESCRIPTION--------------//
+
+            ->add('user_description', TextareaType::class, [
                 'attr' => ['placeholder' => 'Saisissez une description', 'class' => 'uk-input'],
                 'label' => 'Description'
             ])

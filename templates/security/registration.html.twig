@@ -7,24 +7,26 @@
 
         {# Installation de la balise form de départ #}
         {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
-        
+
             {# Affichage des champs du formulaire #}
             <div class="uk-margin">
-            {{ form_row(form.user_login) }}</br>
-            {{ form_row(form.user_mail)}}</br>
-            {{ form_row(form.user_address)}}</br>
-            {{ form_row(form.user_zip)}}</br>
-            {{ form_row(form.user_city)}}</br>
-            {{ form_row(form.user_discord)}}</br>
-            {{ form_row(form.user_sex)}}</br>
-            {{ form_row(form.user_description)}}</br>
-            {{ form_row(form.user_password)}}</br>
-            {{ form_row(form.confirm_user_password)}}</br>
 
-            <button type="submit" class="uk-button uk-button-primary">S'inscrire !</button>
+            {# Photo de profil à rajouter #}
+                <p>{{ form_row(form.user_login) }}</p>
+                <p>{{ form_row(form.user_mail)}}</p>
+                <p>{{ form_row(form.user_address)}}
+                <p>{{ form_row(form.user_zip)}}
+                <p>{{ form_row(form.user_city)}}
+                <p>{{ form_row(form.user_discord)}}
+                <p>{{ form_row(form.user_sex)}}
+                <p>{{ form_row(form.user_description)}}
+                <p>{{ form_row(form.user_password)}}
+                <p>{{ form_row(form.confirm_user_password)}}
+                <br>
+                <button type="submit" class="uk-button uk-button-success uk-width-1-1 uk-margin-small-bottom" style="color:white;background-color:#424860;">S'inscrire !</button>
             </div>
+            
         {# Installation de la balise form de fin #}
         {{ form_end(form) }} 
 </div>
-
 {% endblock %}

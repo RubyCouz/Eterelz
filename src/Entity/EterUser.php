@@ -7,7 +7,6 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
-
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterUserRepository")
  */
@@ -41,8 +40,8 @@ class EterUser implements UserInterface
     private $user_password;
 
     /**
-     * @Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
-     */
+    *@Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
+    */
     public $confirm_user_password;
 
     /**
@@ -111,7 +110,7 @@ class EterUser implements UserInterface
     private $eterContents;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text")
      */
     private $user_description;
 
@@ -458,7 +457,7 @@ class EterUser implements UserInterface
                 $eterContent->setContentUser(null);
             }
         }
-
+        
         return $this;
     }
 
@@ -467,23 +466,19 @@ class EterUser implements UserInterface
         return $this->user_description;
     }
 
-    public function setUserDescription(?string $user_description): self
+    public function setUserDescription(string $user_description): self
     {
         $this->user_description = $user_description;
 
         return $this;
     }
-
     public function getPassword() {}
 
     public function getUsername() {}
-
-    public function eraseCredentials() {}
 
     public function getSalt() {}
 
     public function getRoles() {
         return ['ROLE_USER'];
     }
-
 }

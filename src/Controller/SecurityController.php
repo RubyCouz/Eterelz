@@ -23,7 +23,7 @@ class SecurityController extends AbstractController {
         //Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
         $user = new EterUser(); 
 
-        $inProgress = true;
+        $inProgress = false;
 
         //Création du formulaire selon la table user
         $form = $this->createForm(RegistrationType::class, $user);

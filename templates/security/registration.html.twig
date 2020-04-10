@@ -2,29 +2,45 @@
 
 {% block body %}
 
-<div class="uk-container uk-background-default">
-    <h1>Inscription</h1>
-
-        {# Installation de la balise form de départ #}
-        {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
-        
-            {# Affichage des champs du formulaire #}
-            <div class="uk-margin">
-            {{ form_row(form.user_login) }}</br>
-            {{ form_row(form.user_mail)}}</br>
-            {{ form_row(form.user_address)}}</br>
-            {{ form_row(form.user_zip)}}</br>
-            {{ form_row(form.user_city)}}</br>
-            {{ form_row(form.user_discord)}}</br>
-            {{ form_row(form.user_sex)}}</br>
-            {{ form_row(form.user_description)}}</br>
-            {{ form_row(form.user_password)}}</br>
-            {{ form_row(form.confirm_user_password)}}</br>
-
-            <button type="submit" class="uk-button uk-button-primary">S'inscrire !</button>
+<div uk-grid>
+    <div class="uk-width-1-8@m"></div>
+    {# inscription card #}
+    <div class="uk-margin-auto uk-margin-auto-vertical uk-card uk-card-default uk-width-1-2@m">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto uk-align-center">
+                    <img src="{{ asset('img/logo/logoEterelz.png') }}" class="logoSignin uk-align-center"
+                        alt="Logo Eterelz" title="Logo Eterelz">
+                </div>
             </div>
-        {# Installation de la balise form de fin #}
-        {{ form_end(form) }} 
+        </div>
+
+        <div class="uk-card-body">
+        
+            {# Installation de la balise form de départ #}
+            {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+            <p><b>Les champs munis d'une étoile sont obligatoires</b></p>
+
+            {# Affichage des champs du formulaire #}
+                {{ form_row(form.user_login) }}</br>
+                {{ form_row(form.user_mail)}}</br>
+                {{ form_row(form.user_address)}}</br>
+                {{ form_row(form.user_zip)}}</br>
+                {{ form_row(form.user_city)}}</br>
+                {{ form_row(form.user_discord)}}</br>
+                {{ form_row(form.user_sex)}}</br>
+                {{ form_row(form.user_description)}}</br>
+                {{ form_row(form.user_password)}}</br>
+                {{ form_row(form.confirm_user_password)}}</br>
+            </div>
+            <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire !</button>
+
+            {# Installation de la balise form de fin #}
+            {{ form_end(form) }}
+        
+        </div>
+    </div>
 </div>
 
 {% endblock %}

@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MCD/bdd.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MCD/dico_données.odt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MCD/eterelz.lo1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MCD/eterelz.loo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/ban/1348161301_28192.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/ban/wallhaven-0pqyy9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/ban/wallhaven-47xgo9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/upload/ban/1378296902_82067.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterContent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterContent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200324155001.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,20 +50,19 @@
         <item name="eterelz@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="eterelz: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="eter_clan: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="eterelz@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="eterelz: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="eter_content: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="eter_user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="caroline" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -180,9 +166,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bridge" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
-      <path value="$PROJECT_DIR$/vendor/zendframework/zend-code" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/zendframework/zend-eventmanager" />
       <path value="$PROJECT_DIR$/vendor/symfony/cache" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
@@ -198,6 +182,10 @@
       <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
       <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/webimpress/safe-writer" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
     </include_path>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -235,13 +223,13 @@
       <command value="composer require security" />
       <command value="php bin/console make:database" />
       <command value="php bin/console doctrine:database:create" />
-      <command value="php bin/console make:entity" />
       <command value="php bin/console make:entity eter_event" />
       <command value="php bin/console make:entity eter_content" />
       <command value="composer require vich/uploader-bundle" />
       <command value="php bin/console make:entity eter_clan" />
       <command value="php bin/console make:migration" />
       <command value="php bin/console doctrine:migration:migrate" />
+      <command value="php bin/console make:entity" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -296,7 +284,12 @@
       <workItem from="1584731617176" duration="2193000" />
       <workItem from="1584986262866" duration="4229000" />
       <workItem from="1585061898671" duration="16255000" />
-      <workItem from="1585125879293" duration="13395000" />
+      <workItem from="1585125879293" duration="14046000" />
+      <workItem from="1585236103358" duration="673000" />
+      <workItem from="1585305759629" duration="1587000" />
+      <workItem from="1585324806500" duration="2279000" />
+      <workItem from="1586176532660" duration="2840000" />
+      <workItem from="1586245990778" duration="2312000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -368,11 +361,43 @@
       <option name="project" value="LOCAL" />
       <updated>1585087361553</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fin back office">
+      <created>1585141576020</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585141576020</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fin back office">
+      <created>1586246262056</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1586246262056</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ajout fichier easy_admin.yaml">
+      <created>1586251449659</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1586251449659</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -385,7 +410,9 @@
     <MESSAGE value="back-office suite" />
     <MESSAGE value="fin mise en place back office et installation uploader vich" />
     <MESSAGE value="suite mise en forme back office" />
-    <option name="LAST_COMMIT_MESSAGE" value="suite mise en forme back office" />
+    <MESSAGE value="fin back office" />
+    <MESSAGE value="ajout fichier easy_admin.yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout fichier easy_admin.yaml" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -405,39 +432,41 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="690" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583579978729" />
-    <state x="2493" y="34" key="CommitChangelistDialog2" timestamp="1585087360672">
+    <state x="2493" y="34" key="CommitChangelistDialog2" timestamp="1586252220934">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state x="2493" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1585087360672" />
+    <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251448796" />
+    <state x="2493" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252220934" />
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583917916958" />
-    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1585087381126">
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1586252068136">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1585087381126" />
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
     <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199354" />
-    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1585087381125">
+    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1586252068136">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1585087381125" />
+    <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
     <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199352" />
-    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1585087381123">
+    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1586252068136">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1585087381123" />
+    <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
     <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199346" />
-    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1585087381125">
+    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1586252068136">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1585087381125" />
+    <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
     <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199353" />
-    <state x="2381" y="197" key="SettingsEditor" timestamp="1584731678250">
+    <state x="2381" y="197" key="SettingsEditor" timestamp="1586181792395">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state x="2381" y="197" key="SettingsEditor/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584731678250" />
-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1585087363137">
+    <state x="2381" y="197" key="SettingsEditor/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586181792395" />
+    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1586252225560">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1585087363137" />
+    <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
+    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252225560" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />
     <state x="2731" y="432" width="324" height="261" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585127054866">
       <screen x="1920" y="30" width="1920" height="1050" />
@@ -447,10 +476,14 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2576" y="380" key="com.intellij.ide.util.TipDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1583840208523" />
-    <state x="2536" y="258" width="672" height="677" key="run.anything.popup" timestamp="1585065091609">
+    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586252088632">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state x="2536" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1585065091609" />
+    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252088632" />
+    <state x="2536" y="258" width="672" height="677" key="run.anything.popup" timestamp="1586251565489">
+      <screen x="1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="2536" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586251565489" />
     <state x="616" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1583666787487" />
     <state x="2536" y="208" width="670" height="676" key="search.everywhere.popup" timestamp="1585086973147">
       <screen x="1920" y="30" width="1920" height="1050" />

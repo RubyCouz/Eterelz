@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="" uk-grid>
+    <div class="uk-width-1-8@m"></div>
+    <div class="uk-margin-auto uk-margin-auto-vertical uk-card uk-card-default uk-width-1-2@m">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto uk-align-center">
+                    <img src="{{ asset('img/logo/logoEterelz.png') }}" class="logoSignin uk-align-center" alt="Logo Eterelz" title="Logo Eterelz">
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+
+            {# Installation de la balise form de départ #}
+            {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+            <font size="2"><b>Les informations précédées d'un * sont obligatoires</b></font>
+            {# Affichage des champs du formulaire #}
+
+            {# Photo de profil à rajouter #}
+            <p>{{ form_row(form.user_login) }}</p>
+            <p>{{ form_row(form.user_mail)}}</p>
+            <p>{{ form_row(form.user_address)}}
+            <p>{{ form_row(form.user_zip)}}
+            <p>{{ form_row(form.user_city)}}
+            <p>{{ form_row(form.user_discord)}}
+            <p>{{ form_row(form.user_sex)}}
+            <p>{{ form_row(form.user_description)}}
+            <p>{{ form_row(form.user_password)}}
+            <p>{{ form_row(form.confirm_user_password)}}
+            <br>
+            <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire!</button>
+
+            {# Installation de la balise form de fin #}
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

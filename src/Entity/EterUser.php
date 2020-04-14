@@ -7,12 +7,15 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterUserRepository")
- * @UniqueEntity("user_mail")
+ * @UniqueEntity(
+ * fields= {"user_mail"}, 
+ * message= "L'email existe déjà")
  */
 class EterUser implements UserInterface
 {

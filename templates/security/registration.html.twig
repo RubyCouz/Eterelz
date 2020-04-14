@@ -18,9 +18,13 @@
         <div class="uk-card-body">
         
             {# Installation de la balise form de départ #}
-            {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+            {{ form_start(form,{attr: {novalidate: 'novalidate'}}) }}
 
             <p><b>Les champs munis d'une étoile sont obligatoires</b></p>
+        
+            {% if form_errors(form.user_login) is not empty %}
+            <div class="uk-alert uk-alert-danger" >{{ form_errors(form.user_login) }}</div>
+            {% endif %}
 
             {# Affichage des champs du formulaire #}
                 {{ form_row(form.user_login) }}</br>
@@ -33,9 +37,9 @@
                 {{ form_row(form.user_description)}}</br>
                 {{ form_row(form.user_password)}}</br>
                 {{ form_row(form.confirm_user_password)}}</br>
-            </div>
+            
             <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire !</button>
-
+        
             {# Installation de la balise form de fin #}
             {{ form_end(form) }}
         

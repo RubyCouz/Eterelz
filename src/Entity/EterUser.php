@@ -13,7 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Entity(repositoryClass="App\Repository\EterUserRepository")
  * @UniqueEntity(
  * fields = {"user_mail"}, 
- * message = "L'email existe déjà !!")
+ * message = "L'email existe déjà")
  */
 class EterUser implements UserInterface
 {

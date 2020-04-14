@@ -1,3 +1,27 @@
+/**
+background in progress
+ */
+
+.inProgress {
+    background-image: url("../img/workInProgress/COMING_SOONv2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    height: 1500px;
+}
+
+/**
+homme background
+ */
+.base {
+    background-image: url("../img/connection/signinBg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    min-height: 150%;
+}
 
 .backgroundSignin {
     background-image: url("../img/connection/signinBg.jpg")

@@ -46,7 +46,7 @@ class EterUser implements UserInterface
 
     /**
      * @Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
-    */
+     */
     public $confirm_user_password;
 
     /**
@@ -462,7 +462,7 @@ class EterUser implements UserInterface
                 $eterContent->setContentUser(null);
             }
         }
-        
+
         return $this;
     }
 

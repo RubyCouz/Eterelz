@@ -42,10 +42,11 @@ class SecurityController extends AbstractController {
 
             //Garde en mémoire les données soumises
             $manager->persist($user);
+
             //Envoi des données à la BDD
             $manager->flush();
 
-            //return $this->redirectToRoute('/login');
+            //return $this->redirectToRoute('login');
         }
 
         //Affichage

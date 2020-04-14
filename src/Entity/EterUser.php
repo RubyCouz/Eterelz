@@ -10,6 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterUserRepository")
+ * @UniqueEntity("user_mail")
  */
 class EterUser implements UserInterface
 {

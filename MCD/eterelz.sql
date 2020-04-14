@@ -368,7 +368,7 @@ CREATE TABLE `eter_user` (
   `user_discord` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_sex` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `statut` tinyint(1) DEFAULT NULL,
-  `user_description` longtext COLLATE utf8mb4_unicode_ci NOT NULL
+  `user_description` longtext COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --

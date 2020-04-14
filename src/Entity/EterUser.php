@@ -462,7 +462,7 @@ class EterUser implements UserInterface
                 $eterContent->setContentUser(null);
             }
         }
-        
+
         return $this;
     }
 

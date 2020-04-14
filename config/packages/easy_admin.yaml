@@ -6,19 +6,15 @@ easy_admin:
             form:
                 fields:
                     - {property: 'user_login', label: 'Pseudo'}
-                    - {property: 'user_mail', label: 'Adresse mail', type: 'email'}
+                    - {property: 'user_mail', label: 'Adresse mail'}
                     - {property: 'user_address', label: 'Adresse'}
                     - {property: 'user_zip', label: 'Code postal'}
                     - {property: 'user_city', label: 'Ville'}
                     - {property: 'user_discord', label: 'Discord'}
+                    - {property: 'statut', label: 'Etat'}
                     - {property: 'role', label: 'Rôle'}
                     - {property: 'user_clan', label: 'Clan'}
                     - {property: 'user_game', label: 'Jeux joués'}
-                    - {property: 'user_description', label: 'Description'}
-                    - {property: 'user_password', label: 'Mot de passe', type: 'password'}
-                    - {property: 'confirm_user_password', label: 'Confirmation du mot de passe', type: 'password'}
-                    - {property: 'user_sex', label: 'Sexe'}
-                    - {property: 'statut', label: 'Etat'}
             list:
                 fields:
                     - {property: 'user_login', label: 'Pseudo'}
@@ -62,9 +58,6 @@ easy_admin:
                     - {property: 'clan_discord', label: 'Discord'}
                     - {property: 'clan_recrut', label: 'Statut recrutement'}
                     - {property: 'clan_slogan', label: 'Devise'}
-                actions:
-                    - {name: 'edit', icon: 'pencil', label: false}
-                    - {name: 'delete', icon: 'trash', label: false}
             show:
                 fields:
                     - {property: 'clan_ban', type: 'image', label: 'Bannière de Clan', base_path: '/eter/public/img/upload/ban'}
@@ -179,9 +172,9 @@ easy_admin:
                     - {property: 'content_com', label: 'Contenu commenté'}
                     - {property: 'eterComment', label: 'Commentaire parent'}
                     - {property: 'com_comment', label: 'Nombre de commentaire(s)'}
-                actions:
-                    - {name: 'edit', icon: 'pencil', label: false}
-                    - {name: 'delete', icon: 'trash', label: false}
+            actions:
+                - {name: 'edit', icon: 'pencil', label: false}
+                - {name: 'delete', icon: 'trash', label: false}
 #                show:
 #                    - {property: 'com_content', label: 'Contenu'}
 #                    - {property: 'com_date', label: 'Date de création'}
@@ -223,9 +216,9 @@ easy_admin:
                 fields:
                     - {property: 'state_name', label: 'Intitulé'}
                     - {property: 'eterContents', label: 'Nombre de publication(s)'}
-                actions:
-                    - {name: 'edit', icon: 'pencil', label: false}
-                    - {name: 'delete', icon: 'trash', label: false}
+            actions:
+                - {name: 'edit', icon: 'pencil', label: false}
+                - {name: 'delete', icon: 'trash', label: false}
     design:
         menu:
             - label: 'Social'
@@ -254,8 +247,6 @@ easy_admin:
                   - {entity: 'Statut', icon: 'question', label: 'Statut'}
         brand_color: '#9F1E5D'
         assets:
-            css:
-                - 'css/backOffice.css'
             favicon:
                 path: 'img/favicon/favicon.jpg'
                 mime_type: 'image/jpg'

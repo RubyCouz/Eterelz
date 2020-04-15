@@ -27,17 +27,18 @@
             {% endif %}
 
             {# Affichage des champs du formulaire #}
-                {{ form_row(form.user_login) }}</br>
-                {{ form_row(form.user_mail)}}</br>
-                {{ form_row(form.user_address)}}</br>
-                {{ form_row(form.user_zip)}}</br>
-                {{ form_row(form.user_city)}}</br>
-                {{ form_row(form.user_discord)}}</br>
-                {{ form_row(form.user_sex)}}</br>
-                {{ form_row(form.user_description)}}</br>
-                {{ form_row(form.user_password)}}</br>
-                {{ form_row(form.confirm_user_password)}}</br>
-            
+                <p>{{ form_row(form.user_avatar) }}</p>
+                <p>{{ form_row(form.user_login) }}</p>
+                <p>{{ form_row(form.user_mail)}}</p>
+                <p>{{ form_row(form.user_address)}}</p>
+                <p>{{ form_row(form.user_zip)}}</p>
+                <p>{{ form_row(form.user_city)}}</p>
+                <p>{{ form_row(form.user_discord)}}</p>
+                <p>{{ form_row(form.user_sex)}}</p>
+                <p>{{ form_row(form.user_description)}}</p>
+                <p>{{ form_row(form.user_password)}}</p>
+                <p>{{ form_row(form.confirm_user_password)}}</p>
+                <br>
             <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire !</button>
         
             {# Installation de la balise form de fin #}

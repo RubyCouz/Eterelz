@@ -39,7 +39,6 @@ class SecurityController extends AbstractController {
             //Récupération du champ User_Avatar de EterUser
             $file = $user->getUserAvatar();
 
-            if ($file != null){
             //Cryptage du nom de fichier téléchargé
             $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
 
@@ -93,7 +92,7 @@ class SecurityController extends AbstractController {
             'form' => $form->createView()
         ]);
     }
-    }
+    
     /**
      * @Route("/login", name="login");
      * @param AuthenticationUtils $authenticationUtils

@@ -5,10 +5,12 @@ namespace App\Form;
 use App\Entity\EterUser;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -24,7 +26,27 @@ class RegistrationType extends AbstractType
             'Féminin' => 'F'
         ];
         $builder
-        //----------------------LOGIN----------------------//
+        //---------------------------------------------------AVATAR----------------------------------------------------------------//
+
+        //Demander les types de fichier pour l'avatar qui seraient autorisés
+        //Demander la taille max de fichier autorisé
+
+            ->add('user_avatar', FileType::class, [
+                'label' => 'Avatar',
+                'constraints' => [ new File([
+                    'maxSize' => '1024k',
+                    'mimeTypes' => [
+                        'application/pdf',
+                        'application/x-pdf',
+                        'application/jpg',
+                        'application/jpeg',
+                    ],
+                    'mimeTypesMessage' => 'Type de fichier non autorisé',
+                ])
+            ],
+        ])
+
+        //---------------------------------------------------LOGIN----------------------------------------------------------------//
 
             ->add('user_login', TextType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ'])],
@@ -32,7 +54,7 @@ class RegistrationType extends AbstractType
                 'label' => 'Login *'
             ])
 
-        //----------------------EMAIL----------------------//
+        //---------------------------------------------------EMAIL----------------------------------------------------------------//
 
             ->add('user_mail', EmailType::class, [
                 'constraints' => [new NotBlank(), new Email(['message' => 'Adresse email non valide'])],
@@ -40,14 +62,14 @@ class RegistrationType extends AbstractType
                 'label' => 'Email *'
             ])
 
-        //----------------------MOT DE PASSE---------------//
+        //---------------------------------------------------MOT DE PASSE---------------------------------------------------------//
             ->add('user_password', PasswordType::class, [
                 'constraints' => [new NotBlank(), new Regex(['message' => 'Mot de passe non valide', 'pattern' => '#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#'])],
                 'attr' => ['placeholder' => 'Saisissez un mot de passe', 'class' => 'uk-input'],
                 'label' => 'Mot de passe *'
             ])
 
-        //----------------CONFIRMATION MOT DE PASSE--------//
+        //---------------------------------------------CONFIRMATION MOT DE PASSE--------------------------------------------------//
 
             ->add('confirm_user_password', PasswordType::class, [
                 'constraints' => [new NotBlank()],
@@ -55,7 +77,7 @@ class RegistrationType extends AbstractType
                 'label' => 'Confirmation du mot de passe *'
             ])
 
-        //----------------------ADRESSE--------------------//
+        //---------------------------------------------------ADRESSE--------------------------------------------------------------//
 
             ->add('user_address', TextType::class, [
                 'constraints' => [new Regex(['message' => 'Adresse non valide', 'pattern' => '#[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)*#'])],
@@ -63,7 +85,7 @@ class RegistrationType extends AbstractType
                 'label' => 'Adresse'
             ])
 
-        //----------------------CODE POSTAL-----------------//
+        //---------------------------------------------------CODE POSTAL----------------------------------------------------------//
 
             ->add('user_zip', TextType::class, [
                 'constraints' => [new Regex(['message' => 'Code postal non valide', 'pattern' => '#^[0-9]{5}$#'])],
@@ -71,7 +93,7 @@ class RegistrationType extends AbstractType
                 'label' => 'Code postal'
             ])
 
-        //----------------------VILLE----------------------//
+        //---------------------------------------------------VILLE----------------------------------------------------------------//
 
             ->add('user_city', TextType::class, [
                 'constraints' => [new Regex(['message' => 'Code postal non valide', 'pattern' => '#^[A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï]+([\'\s-][A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï])?#'])], 
@@ -79,7 +101,7 @@ class RegistrationType extends AbstractType
                 'label' => 'Ville'
             ])
 
-            //----------------------DISCORD----------------//
+        //----------------------------------------------DISCORD------------------------------------------------------------------//
 
             ->add('user_discord', TextType::class, [
                 'constraints' => [new NotBlank(), new Regex(['message' => 'ID Discord non valide', 'pattern' => '#^\D+\#\d{4}$#'])],
@@ -87,7 +109,7 @@ class RegistrationType extends AbstractType
                 'label' => 'Id Discord *'
             ])
 
-            //----------------------GENRE-------------------//
+        //-------------------------------------------GENRE------------------------------------------------------------------//
 
             ->add('user_sex', ChoiceType::class, [
                 'choices' => $choices,
@@ -96,14 +118,12 @@ class RegistrationType extends AbstractType
                 'label' => 'Sexe'
             ])
 
-            //----------------------DESCRIPTION--------------//
+        //-----------------------------------------DESCRIPTION---------------------------------------------------------------//
 
             ->add('user_description', TextareaType::class, [
                 'attr' => ['placeholder' => 'Saisissez une description', 'class' => 'uk-input'],
                 'label' => 'Description'
-            ])
-            
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

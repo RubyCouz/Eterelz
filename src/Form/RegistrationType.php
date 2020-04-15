@@ -29,6 +29,7 @@ class RegistrationType extends AbstractType
         $builder
         //---------------AVATAR---------------//
         //Demander quels types de fichiers sont autorisés
+        //Demander la taille maximum de fichier autorisés
             ->add('user_avatar', FileType::class, [
                 'label' => 'Avatar',
                 'constraints' => [ new File([

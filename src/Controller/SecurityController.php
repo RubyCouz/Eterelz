@@ -32,6 +32,20 @@ class SecurityController extends AbstractController {
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
+            
+            //Téléchargement de l'avatar
+
+            //Récupération du champ User_Avatar de EterUser
+            $file = $user->getUserAvatar();
+
+            //Cryptage du nom de fichier téléchargé
+            $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
+
+            //Chemin de téléchargement du dossier
+            $file->move($this->getParameter('upload_directory'), $fileName);
+
+            //Importation du fichier dans la BDD
+            $user->setUserAvatar($fileName);
 
             //Téléchargement de la photo de profil
             //Récupération du champ User_Avatar de EterUser

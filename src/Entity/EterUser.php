@@ -119,6 +119,11 @@ class EterUser implements UserInterface
      */
     private $user_description;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $user_avatar;
+
     public function __construct()
     {
         $this->user_date = new \DateTime('Europe/Paris');
@@ -477,6 +482,8 @@ class EterUser implements UserInterface
 
         return $this;
     }
+
+    //Les 5 fonctions obligatoires d'après Symfony pour le cryptage du mot de passe
     public function getPassword() {}
 
     public function getUsername() {}
@@ -488,4 +495,17 @@ class EterUser implements UserInterface
     public function getRoles() {
         return ['ROLE_USER'];
     }
+
+    public function getUserAvatar() 
+    {
+        return $this->user_avatar;
+    }
+
+    public function setUserAvatar($user_avatar)
+    {
+        $this->user_avatar = $user_avatar;
+
+        return $this;
+    }
+
 }

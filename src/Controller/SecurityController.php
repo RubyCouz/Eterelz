@@ -32,6 +32,16 @@ class SecurityController extends AbstractController {
 
         if($form->isSubmitted() && $form->isValid()) {
 
+            //Téléchargement de la photo de profil
+            //Récupération du champ User_Avatar de EterUser
+            $file = $user->getUserAvatar();
+            //Cryptage du nom du fichier téléchargé
+            $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
+            //Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
+            $file->move($this->getParameter('upload_directory'), $fileName);
+            //Importation du fichier dans la BDD
+            $user->setUserAvatar($fileName);
+
             //Encryptage du mot de passe selon la configuration dans security.yaml de config
             //Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
             $hash = $encoder->encodePassword($user, $user->getUserPassword());

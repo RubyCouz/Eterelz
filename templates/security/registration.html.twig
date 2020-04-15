@@ -20,21 +20,20 @@
 
             <font size="2"><b>Les informations précédées d'un * sont obligatoires</b></font>
             {# Affichage des champs du formulaire #}
-
-            {# Photo de profil à rajouter #}
-            <p>{{ form_row(form.user_login) }}</p>
-            <p>{{ form_row(form.user_mail)}}</p>
-            <p>{{ form_row(form.user_address)}}
-            <p>{{ form_row(form.user_zip)}}
-            <p>{{ form_row(form.user_city)}}
-            <p>{{ form_row(form.user_discord)}}
-            <p>{{ form_row(form.user_sex)}}
-            <p>{{ form_row(form.user_description)}}
-            <p>{{ form_row(form.user_password)}}
-            <p>{{ form_row(form.confirm_user_password)}}
-            <br>
-            <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire!</button>
-
+                <p>{{ form_row(form.user_avatar) }}</p>
+                <p>{{ form_row(form.user_login) }}</p>
+                <p>{{ form_row(form.user_mail)}}</p>
+                <p>{{ form_row(form.user_address)}}</p>
+                <p>{{ form_row(form.user_zip)}}</p>
+                <p>{{ form_row(form.user_city)}}</p>
+                <p>{{ form_row(form.user_discord)}}</p>
+                <p>{{ form_row(form.user_sex)}}</p>
+                <p>{{ form_row(form.user_description)}}</p>
+                <p>{{ form_row(form.user_password)}}</p>
+                <p>{{ form_row(form.confirm_user_password)}}</p>
+                <br>
+            <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire !</button>
+        
             {# Installation de la balise form de fin #}
             {{ form_end(form) }}
         </div>

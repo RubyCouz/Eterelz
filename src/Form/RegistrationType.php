@@ -29,7 +29,8 @@ class RegistrationType extends AbstractType
             ->add('user_login', TextType::class, [
                 'constraints' => [new NotBlank()],
                 'attr' => ['placeholder' => 'Saisissez votre login', 'class' => 'uk-input'],
-                'label' => 'Login *'
+                'label' => 'Login *',
+                'label_attr' => ['class' => 'avatar']
             ])
 
         //----------------------EMAIL----------------------//

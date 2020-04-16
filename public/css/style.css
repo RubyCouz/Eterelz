@@ -12,7 +12,7 @@ background in progress
 }
 
 /**
-homme background
+home background
  */
 .base {
     background-image: url("../img/connection/signinBg.jpg");
@@ -31,10 +31,39 @@ homme background
 navbar
  */
 .logo {
-    width: 20em;
+    width: 15em;
     height: auto;
 }
 
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background: #272725;
+}
+
+/**
+Social
+ */
+.social {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background: #272725;
+    position: absolute;
+    top: -100px;
+    right: -100px;
+
+    transition: 0.5s;
+}
+.social:hover {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    background: #ebeef9;
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    transition: 0.5s;
+}
+.social
 /**
 sign in card
  */
@@ -73,4 +102,8 @@ icon
 
 .delUser {
     color: #9F1E5D;
+}
+
+.avatar {
+    color: red;
 }

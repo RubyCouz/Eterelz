@@ -9,50 +9,56 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
-<body class="{{ (inProgress == true) ? 'inProgress' : 'base'}}">
+<body class="{{ (inProgress == true) ? 'inProgress' : 'base' }}">
 {#navbar#}
-<div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
+<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+
     <nav class="uk-navbar-container uk-margin" uk-navbar>
-        <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav">
-                <li>
-                    <a class="uk-navbar-toggle" href="#" uk-toggle="target: #offcanvas-nav-primary">
-                        <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
-                    </a>
-                </li>
-                <li>
-                    <div>
-                        <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
-                        <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
-                            <form class="uk-search uk-search-navbar uk-width-1-1">
-                                <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
-                            </form>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="uk-navbar-center">...</div>
-        <div class="uk-navbar-right">
-            <ul class="uk-navbar-nav">
-                {% if app.user %}
-                <li>
-                    <a href="{{ path('logout') }}">SE DECONNECTER <span uk-icon="icon: sign-out; ratio: 2"></span></a>
-                </li>
-                {% else %}
-                    <li>
-                        <a href="{{ path('login') }}" title="Se connecter">SE CONNECTER <span uk-icon="icon: sign-in; ratio: 2"></span></a>
-                    </li>
-                {% endif %}
-                <li>
-                    <a class="uk-navbar-item uk-logo" href="#">
-                        <img src="{{ asset('img/logo/logoEterelz.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
-                             class="logo">
-                    </a>
-                </li>
-            </ul>
+        <div class="uk-navbar-center">
+            <div class="uk-navbar-center-left"><div>
+                    <ul class="uk-navbar-nav">
+                        <li>
+                            <a class="uk-navbar-toggle" href="#" uk-toggle="target: #offcanvas-nav-primary">
+                                <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div>
+                                <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                                <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+                                    <form class="uk-search uk-search-navbar uk-width-1-1">
+                                        <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a class="uk-navbar-item uk-logo" href="#">
+                <img src="{{ asset('img/logo/logoEterelz.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
+                     class="logo">
+            </a>
+            <div class="uk-navbar-center-right"><div>
+                    <ul class="uk-navbar-nav">
+                        {% if app.user %}
+                            <li>
+                                <a href="{{ path('logout') }}">SE DECONNECTER <span
+                                            uk-icon="icon: sign-out; ratio: 2"></span></a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="{{ path('login') }}" title="Se connecter">SE CONNECTER <span
+                                            uk-icon="icon: sign-in; ratio: 2"></span></a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
+
+    <div class="social"></div>
 </div>
 {#sidebar menu utilisateur#}
 <div id="offcanvas-nav-primary" uk-offcanvas="mode: reveal; overlay: true">
@@ -60,13 +66,13 @@
         <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
             <li class="uk-parent">
                 <a href="#"><i class="fas fa-gamepad"></i> JEUX </a>
-            <ul class="uk-nav-sub">
-                <li class="uk-active"><a href="#">Jeux 1</a></li>
-                <li class=""><a href="#">Jeux 2</a></li>
-                <li class=""><a href="#">Jeux 2</a></li>
-            </ul>
+                <ul class="uk-nav-sub">
+                    <li class="uk-active"><a href="#">Jeux 1</a></li>
+                    <li class=""><a href="#">Jeux 2</a></li>
+                    <li class=""><a href="#">Jeux 2</a></li>
+                </ul>
             </li>
-              <li class="uk-nav-divider"></li>
+            <li class="uk-nav-divider"></li>
             <li class="uk-parent">
                 <a href="#"><i class="far fa-calendar-alt"></i> EVENEMENTS</a>
                 <ul class="uk-nav-sub">
@@ -74,7 +80,7 @@
                     <li><a href="#">Nettoyage DZ</a></li>
                 </ul>
             </li>
-              <li class="uk-nav-divider"></li>
+            <li class="uk-nav-divider"></li>
             <li class="uk-parent">
                 <a href="#"><i class="fas fa-camera-retro"></i> PHOTOS</a>
                 <ul class="uk-nav-sub">
@@ -83,7 +89,7 @@
                     <li class=""><a href="#">Fonds d'écran 4k</a></li>
                 </ul>
             </li>
-              <li class="uk-nav-divider"></li>
+            <li class="uk-nav-divider"></li>
             <li class="uk-parent">
                 <a href="#"><i class="fas fa-film"></i> VIDEOS</a>
                 <ul class="uk-nav-sub">
@@ -91,7 +97,7 @@
                     <li class=""><a href="#">Bétisiers</a></li>
                 </ul>
             </li>
-              <li class="uk-nav-divider"></li>
+            <li class="uk-nav-divider"></li>
             <li class="uk-parent">
                 <a href="#"><i class="fab fa-discord"></i> DISCORD</a>
                 <ul class="uk-nav-sub">
@@ -99,10 +105,12 @@
                     <li class=""><a href="#">Black Desert Online</a></li>
                 </ul>
             </li>
-              <li class="uk-nav-divider"></li>
-            <li class="uk-parent"><a href="" title="Lien vers le formulaire de contact"><i class="far fa-envelope"></i> NOUS CONTACTER</a></li>
-              <li class="uk-nav-divider"></li>
-            <li class="uk-parent"><a href="" title="A propos d'Eterelz"><i class="far fa-address-card"></i> A PROPOS</a></li>
+            <li class="uk-nav-divider"></li>
+            <li class="uk-parent"><a href="" title="Lien vers le formulaire de contact"><i class="far fa-envelope"></i>
+                    NOUS CONTACTER</a></li>
+            <li class="uk-nav-divider"></li>
+            <li class="uk-parent"><a href="" title="A propos d'Eterelz"><i class="far fa-address-card"></i> A PROPOS</a>
+            </li>
         </ul>
     </div>
 </div>

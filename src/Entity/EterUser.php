@@ -7,8 +7,13 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterUserRepository")
+ * @UniqueEntity(
+ * fields = {"user_mail"}, 
+ * message = "L'email existe déjà")
  */
 class EterUser implements UserInterface
 {
@@ -40,8 +45,8 @@ class EterUser implements UserInterface
     private $user_password;
 
     /**
-    *@Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
-    */
+     * @Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
+     */
     public $confirm_user_password;
 
     /**
@@ -110,9 +115,14 @@ class EterUser implements UserInterface
     private $eterContents;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $user_description;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $user_avatar;
 
     public function __construct()
     {
@@ -457,7 +467,7 @@ class EterUser implements UserInterface
                 $eterContent->setContentUser(null);
             }
         }
-        
+
         return $this;
     }
 
@@ -466,19 +476,36 @@ class EterUser implements UserInterface
         return $this->user_description;
     }
 
-    public function setUserDescription(string $user_description): self
+    public function setUserDescription(?string $user_description): self
     {
         $this->user_description = $user_description;
 
         return $this;
     }
+
+    //Les 5 fonctions obligatoires d'après Symfony pour le cryptage du mot de passe
     public function getPassword() {}
 
     public function getUsername() {}
+
+    public function eraseCredentials() {}
 
     public function getSalt() {}
 
     public function getRoles() {
         return ['ROLE_USER'];
     }
+
+    public function getUserAvatar() 
+    {
+        return $this->user_avatar;
+    }
+
+    public function setUserAvatar($user_avatar)
+    {
+        $this->user_avatar = $user_avatar;
+
+        return $this;
+    }
+
 }

@@ -34,7 +34,7 @@ class RegistrationType extends AbstractType
 
             ->add('user_avatar', FileType::class, [
                 'label' => 'Avatar',
-                'constraints' => [ new File([
+                /*'constraints' => [ new File([
                     'maxSize' => '1024k',
                     'mimeTypes' => [
                         'application/pdf',
@@ -43,10 +43,12 @@ class RegistrationType extends AbstractType
                         'application/jpeg',
                     ],
                     'mimeTypesMessage' => 'Type de fichier non autorisé',
-                ]) ],
-                'attr' => ['class' => 'uk-input']
-            ])
-        //---------------LOGIN---------------//
+                ])
+            ],*/
+        ])
+
+        //---------------------------------------------------LOGIN----------------------------------------------------------------//
+
             ->add('user_login', TextType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ'])],
                 'attr' => ['placeholder' => 'Saisissez votre login', 'class' => 'uk-input'],

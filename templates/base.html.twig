@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
-<body>
+<body class="{{ (inProgress == true) ? 'inProgress' : 'base'}}">
 {#navbar#}
 <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
     <nav class="uk-navbar-container uk-margin" uk-navbar>
@@ -17,7 +17,7 @@
             <ul class="uk-navbar-nav">
                 <li>
                     <a class="uk-navbar-toggle" href="#" uk-toggle="target: #offcanvas-nav-primary">
-                        <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
+                        <span "uk-navbar-toggle-icon"></span> <span class="uk-margin-small-left">Menu</span>
                     </a>
                 </li>
                 <li>

@@ -18,20 +18,21 @@
             {# Installation de la balise form de départ #}
             {{ form_start(form,{attr: {novalidate: 'novalidate'}}) }}
 
-            <font size="2"><b>Les informations précédées d'un * sont obligatoires</b></font>
+            <p><b>Les champs munis d'une étoile sont obligatoires</b></p>
+
             {# Affichage des champs du formulaire #}
-                <p>{{ form_row(form.user_avatar) }}</p>
-                <p>{{ form_row(form.user_login) }}</p>
-                <p>{{ form_row(form.user_mail)}}</p>
-                <p>{{ form_row(form.user_address)}}</p>
-                <p>{{ form_row(form.user_zip)}}</p>
-                <p>{{ form_row(form.user_city)}}</p>
-                <p>{{ form_row(form.user_discord)}}</p>
-                <p>{{ form_row(form.user_sex)}}</p>
-                <p>{{ form_row(form.user_description)}}</p>
-                <p>{{ form_row(form.user_password)}}</p>
-                <p>{{ form_row(form.confirm_user_password)}}</p>
-                <br>
+                <div class="avatar">{{ form_row(form.user_avatar) }}</div>
+                <div>{{ form_row(form.user_login) }}</div>
+                <div class="avatar">{{ form_row(form.user_mail) }}</div>
+                <div>{{ form_row(form.user_address) }}</div>
+                <div>{{ form_row(form.user_zip) }}</div>
+                <div>{{ form_row(form.user_city) }}</div>
+                <div>{{ form_row(form.user_discord) }}</div>
+                <div>{{ form_row(form.user_sex) }}</div>
+                <div>{{ form_row(form.user_description) }}</div>
+                <div>{{ form_row(form.user_password) }}</div>
+                <div>{{ form_row(form.confirm_user_password) }}</div>
+            
             <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire !</button>
         
             {# Installation de la balise form de fin #}

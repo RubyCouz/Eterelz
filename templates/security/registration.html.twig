@@ -15,15 +15,17 @@
         </div>
         <div class="uk-card-body">
 
+        {% form_theme form 'bootstrap_4_layout.html.twig' %}
+        
             {# Installation de la balise form de départ #}
             {{ form_start(form,{attr: {novalidate: 'novalidate'}}) }}
 
             <p><b>Les champs munis d'une étoile sont obligatoires</b></p>
 
             {# Affichage des champs du formulaire #}
-                <div class="avatar">{{ form_row(form.user_avatar) }}</div>
+                <div>{{ form_row(form.user_avatar) }}</div>
                 <div>{{ form_row(form.user_login) }}</div>
-                <div class="avatar">{{ form_row(form.user_mail) }}</div>
+                <div>{{ form_row(form.user_mail) }}</div>
                 <div>{{ form_row(form.user_address) }}</div>
                 <div>{{ form_row(form.user_zip) }}</div>
                 <div>{{ form_row(form.user_city) }}</div>

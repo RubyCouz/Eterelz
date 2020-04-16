@@ -48,7 +48,8 @@ class RegistrationType extends AbstractType
             ->add('user_login', TextType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ'])],
                 'attr' => ['placeholder' => 'Saisissez votre login', 'class' => 'uk-input'],
-                'label' => 'Login *'
+                'label' => 'Login *',
+                //'label_attr' => ['class' => 'avatar']
             ])
         //---------------MAIL---------------//
             ->add('user_mail', EmailType::class, [
@@ -60,7 +61,7 @@ class RegistrationType extends AbstractType
         //Rechercher barre de force pour le mot de passe
             ->add('user_password', PasswordType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'Mot de passe non valide !', 'pattern' => '#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#'])],
-                'attr' => ['placeholder' => 'Saisissez un mot de passe', 'class' => 'uk-input', 'type' => 'text'],
+                'attr' => ['placeholder' => 'Saisissez un mot de passe', 'class' => 'uk-input'],
                 'label' => 'Mot de passe *'
             ])
         //---------CONFIRM PASSWORD---------//

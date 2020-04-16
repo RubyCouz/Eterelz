@@ -43,7 +43,7 @@ class RegistrationType extends AbstractType
                     ],
                     'mimeTypesMessage' => 'Type de fichier non autorisé',
                 ])
-            ],*/
+            ],*/                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
         ])
 
         //---------------------------------------------------LOGIN----------------------------------------------------------------//

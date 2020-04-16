@@ -22,7 +22,6 @@ class SecurityController extends AbstractController {
         
         //Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
         $user = new EterUser(); 
-
         $inProgress = false;
 
         //Création du formulaire selon la table user
@@ -33,16 +32,6 @@ class SecurityController extends AbstractController {
 
         if($form->isSubmitted() && $form->isValid()) {
 
-            //Téléchargement de la photo de profil
-            //Récupération du champ User_Avatar de EterUser
-            $file = $user->getUserAvatar();
-            //Cryptage du nom du fichier téléchargé
-            $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
-            //Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
-            $file->move($this->getParameter('upload_directory'), $fileName);
-            //Importation du fichier dans la BDD
-            $user->setUserAvatar($fileName);
-
             //Encryptage du mot de passe selon la configuration dans security.yaml de config
             //Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
             $hash = $encoder->encodePassword($user, $user->getUserPassword());
@@ -52,11 +41,11 @@ class SecurityController extends AbstractController {
 
             //Garde en mémoire les données soumises
             $manager->persist($user);
-
+            
             //Envoi des données à la BDD
             $manager->flush();
 
-            //return $this->redirectToRoute('login');
+            //return $this->redirectToRoute('/login');
         }
 
         //Affichage

@@ -2,44 +2,40 @@
 
 {% block body %}
 
-<div uk-grid>
+<div class="" uk-grid>
     <div class="uk-width-1-8@m"></div>
-    {# inscription card #}
     <div class="uk-margin-auto uk-margin-auto-vertical uk-card uk-card-default uk-width-1-2@m">
         <div class="uk-card-header">
             <div class="uk-grid-small uk-flex-middle" uk-grid>
                 <div class="uk-width-auto uk-align-center">
-                    <img src="{{ asset('img/logo/logoEterelz.png') }}" class="logoSignin uk-align-center"
-                        alt="Logo Eterelz" title="Logo Eterelz">
+                    <img src="{{ asset('img/logo/logoEterelz.png') }}" class="logoSignin uk-align-center" alt="Logo Eterelz" title="Logo Eterelz">
                 </div>
             </div>
         </div>
-
         <div class="uk-card-body">
-        
+
             {# Installation de la balise form de départ #}
-            {{ form_start(form,{attr: {novalidate: 'novalidate'}}) }}
+            {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
 
-            <p><b>Les champs munis d'une étoile sont obligatoires</b></p>
-
+            <font size="2"><b>Les informations précédées d'un * sont obligatoires</b></font>
             {# Affichage des champs du formulaire #}
-                <div class="avatar">{{ form_row(form.user_avatar) }}</div>
-                <div>{{ form_row(form.user_login) }}</div>
-                <div class="avatar">{{ form_row(form.user_mail) }}</div>
-                <div>{{ form_row(form.user_address) }}</div>
-                <div>{{ form_row(form.user_zip) }}</div>
-                <div>{{ form_row(form.user_city) }}</div>
-                <div>{{ form_row(form.user_discord) }}</div>
-                <div>{{ form_row(form.user_sex) }}</div>
-                <div>{{ form_row(form.user_description) }}</div>
-                <div>{{ form_row(form.user_password) }}</div>
-                <div>{{ form_row(form.confirm_user_password) }}</div>
-            
-            <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire !</button>
-        
+
+            {# Photo de profil à rajouter #}
+            <p>{{ form_row(form.user_login) }}</p>
+            <p>{{ form_row(form.user_mail)}}</p>
+            <p>{{ form_row(form.user_address)}}
+            <p>{{ form_row(form.user_zip)}}
+            <p>{{ form_row(form.user_city)}}
+            <p>{{ form_row(form.user_discord)}}
+            <p>{{ form_row(form.user_sex)}}
+            <p>{{ form_row(form.user_description)}}
+            <p>{{ form_row(form.user_password)}}
+            <p>{{ form_row(form.confirm_user_password)}}
+            <br>
+            <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire!</button>
+
             {# Installation de la balise form de fin #}
             {{ form_end(form) }}
-        
         </div>
     </div>
 </div>

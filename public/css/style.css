@@ -12,7 +12,7 @@ background in progress
 }
 
 /**
-homme background
+home background
  */
 .base {
     background-image: url("../img/connection/signinBg.jpg");
@@ -74,3 +74,8 @@ icon
 .delUser {
     color: #9F1E5D;
 }
+
+.row{
+    color:red;
+}
+

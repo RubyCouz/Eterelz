@@ -12,53 +12,54 @@
 <body class="{{ (inProgress == true) ? 'inProgress' : 'base' }}">
 {#navbar#}
 <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a class="uk-navbar-toggle" href="#" uk-toggle="target: #offcanvas-nav-primary">
+                        <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
+                    </a>
+                </li>
+                {% if app.user %}
+                    <li>
+                        <a href="{{ path('logout') }}">SE DECONNECTER <span
+                                    uk-icon="icon: sign-out; ratio: 2"></span></a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{ path('login') }}" title="Se connecter">SE CONNECTER <span
+                                    uk-icon="icon: sign-in; ratio: 2"></span></a>
+                    </li>
+                {% endif %}
+                <li>
+                    <div>
+                        <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
+                        <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+                            <form class="uk-search uk-search-navbar uk-width-1-1">
+                                <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-    <nav class="uk-navbar-container uk-margin" uk-navbar>
-        <div class="uk-navbar-center">
-            <div class="uk-navbar-center-left"><div>
-                    <ul class="uk-navbar-nav">
-                        <li>
-                            <a class="uk-navbar-toggle" href="#" uk-toggle="target: #offcanvas-nav-primary">
-                                <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
-                            </a>
-                        </li>
-                        <li>
-                            <div>
-                                <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
-                                <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
-                                    <form class="uk-search uk-search-navbar uk-width-1-1">
-                                        <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
-                                    </form>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <a class="uk-navbar-item uk-logo" href="#">
-                <img src="{{ asset('img/logo/logoEterelz.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
-                     class="logo">
-            </a>
-            <div class="uk-navbar-center-right"><div>
-                    <ul class="uk-navbar-nav">
-                        {% if app.user %}
-                            <li>
-                                <a href="{{ path('logout') }}">SE DECONNECTER <span
-                                            uk-icon="icon: sign-out; ratio: 2"></span></a>
-                            </li>
-                        {% else %}
-                            <li>
-                                <a href="{{ path('login') }}" title="Se connecter">SE CONNECTER <span
-                                            uk-icon="icon: sign-in; ratio: 2"></span></a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </div>
+        <div class="uk-navbar-right">
+
+            <ul class="uk-navbar-nav">
+                <li>
+                    <a class="uk-navbar-item uk-logo" href="#">
+
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
-
-    <div class="social"></div>
+    <div class="social" id="social">
+        <img src="{{ asset('img/logo/logoEterelz.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
+                              class="logo">
+        <i class="fab fa-twitch socialIcon" id="socialIcon"></i>
+    </div>
 </div>
 {#sidebar menu utilisateur#}
 <div id="offcanvas-nav-primary" uk-offcanvas="mode: reveal; overlay: true">
@@ -122,6 +123,7 @@
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/js/uikit-icons.min.js"></script>
 <script src="https://kit.fontawesome.com/feb810672a.js" crossorigin="anonymous"></script>
+<script src="{{ asset('js/script.js') }}"></script>
 {% block javascripts %}{% endblock %}
 </body>
 </html>

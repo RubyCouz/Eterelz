@@ -2,14 +2,20 @@
 // commit
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterUserRepository")
+ * @UniqueEntity(
+ * fields = {"user_mail"}, 
+ * message = "L'email existe déjà")
  */
-class EterUser
+class EterUser implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -37,6 +43,11 @@ class EterUser
      * @ORM\Column(type="string", length=100)
      */
     private $user_password;
+
+    /**
+     * @Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
+     */
+    public $confirm_user_password;
 
     /**
      * @ORM\Column(type="string", length=150, nullable=true)
@@ -103,9 +114,19 @@ class EterUser
      */
     private $eterContents;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $user_description;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $user_avatar;
+
     public function __construct()
     {
-        $this->user_date = new \DateTime();
+        $this->user_date = new \DateTime('Europe/Paris');
         $this->role = new ArrayCollection();
         $this->user_clan = new ArrayCollection();
         $this->user_game = new ArrayCollection();
@@ -450,5 +471,41 @@ class EterUser
         return $this;
     }
 
+    public function getUserDescription(): ?string
+    {
+        return $this->user_description;
+    }
+
+    public function setUserDescription(?string $user_description): self
+    {
+        $this->user_description = $user_description;
+
+        return $this;
+    }
+
+    //Les 5 fonctions obligatoires d'après Symfony pour le cryptage du mot de passe
+    public function getPassword() {}
+
+    public function getUsername() {}
+
+    public function eraseCredentials() {}
+
+    public function getSalt() {}
+
+    public function getRoles() {
+        return ['ROLE_USER'];
+    }
+
+    public function getUserAvatar() 
+    {
+        return $this->user_avatar;
+    }
+
+    public function setUserAvatar($user_avatar)
+    {
+        $this->user_avatar = $user_avatar;
+
+        return $this;
+    }
 
 }

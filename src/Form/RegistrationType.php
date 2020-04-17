@@ -65,7 +65,7 @@ class RegistrationType extends AbstractType
         //---------------------------------------------------MOT DE PASSE---------------------------------------------------------//
             ->add('user_password', PasswordType::class, [
                 'constraints' => [new NotBlank(), new Regex(['message' => 'Mot de passe non valide', 'pattern' => '#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#'])],
-                'attr' => ['placeholder' => 'Saisissez un mot de passe', 'class' => 'uk-input'],
+                'attr' => ['placeholder' => 'Saisissez un mot de passe', 'class' => 'uk-input', 'id' => 'password'],
                 'label' => 'Mot de passe *'
             ])
 

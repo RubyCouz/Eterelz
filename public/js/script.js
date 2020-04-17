@@ -130,3 +130,53 @@ document.addEventListener('keyup', function (e) {
         closeShowingModal();
     }
 })
+function socialOff() {
+    // pendant que la transition tourne
+    social.ontransitionrun = () => {
+        twitch.style.transition = '0.8s cubic-bezier(.68,-0.55,.27,1.55)';
+        twitch.style.top = '-30px';
+        twitch.style.right = '-40px';
+        twitch.style.display = 'block';
+        // modification du css de l'icône discord
+        discord.style.transition = '0.8s cubic-bezier(.68,-0.55,.27,1.55)';
+        discord.style.top = '-30px';
+        discord.style.right = '-40px';
+        discord.style.display = 'block';
+        // modification du css de l'icône youtube
+        youtube.style.transition = '0.8s cubic-bezier(.68,-0.55,.27,1.55)';
+        youtube.style.top = '-30px';
+        youtube.style.right = '-40px';
+        youtube.style.display = 'block';
+        // modification du css de l'icône twitter
+        twitter.style.transition = '0.8s cubic-bezier(.68,-0.55,.27,1.55)';
+        twitter.style.top = '-30px';
+        twitter.style.right = '-40px';
+        twitter.style.display = 'block';
+        // modification du css de l'icône facebook
+        facebook.style.transition = '0.8s cubic-bezier(.68,-0.55,.27,1.55)';
+        facebook.style.top = '-30px';
+        facebook.style.right = '-40px';
+        facebook.style.display = 'block';
+    };
+}
+    const socialIcon = document.getElementById('socialIcon');
+    console.log(socialIcon);
+    socialIcon.style.top = '200px';
+    socialIcon.style.right = '200px';
+    socialIcon.style.color = 'white';
+
+UIkit.util.ready(function () {
+
+    var bar = document.getElementById('mdp-progressbar');
+
+    var animate = setInterval(function () {
+
+        bar.value += 10;
+
+        if (bar.value >= bar.max) {
+            clearInterval(animate);
+        }
+
+    }, 1000);
+
+});

@@ -247,8 +247,6 @@ easy_admin:
                   - {entity: 'Statut', icon: 'question', label: 'Statut'}
         brand_color: '#9F1E5D'
         assets:
-            css:
-            - 'css/backOffice.css'
             favicon:
                 path: 'img/favicon/favicon.jpg'
                 mime_type: 'image/jpg'

@@ -106,7 +106,6 @@ class RegistrationType extends AbstractType
                 'attr' => ['placeholder' => 'Saisissez une description', 'class' => 'uk-input'],
                 'label' => 'Description'
             ])
-            
         ;
     }
 

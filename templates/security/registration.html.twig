@@ -22,14 +22,18 @@
 
             <div>{{ form_row(form.user_avatar) }}</div>
             <div>{{ form_row(form.user_login) }}</div>
-            <div>{{ form_row(form.user_mail)}}</div>
-            <div>{{ form_row(form.user_address)}}</div>
-            <div>{{ form_row(form.user_zip)}}</div>
-            <div>{{ form_row(form.user_city)}}</div>
-            <div>{{ form_row(form.user_discord)}}</div>
-            <div>{{ form_row(form.user_sex)}}</div>
-            <div>{{ form_row(form.user_description)}}</div>
-            <div>{{ form_row(form.user_password)}}</div>
+            <div>{{ form_row(form.user_mail) }}</div>
+            <div>{{ form_row(form.user_address) }}</div>
+            <div>{{ form_row(form.user_zip) }}</div>
+            <div>{{ form_row(form.user_city) }}</div>
+            <div>{{ form_row(form.user_discord) }}</div>
+            <div>{{ form_row(form.user_sex) }}</div>
+            <div>{{ form_row(form.user_description) }}</div>
+            <div>{{ form_row(form.user_password) }}</div>
+
+            {# Barre de progrès évaluant la force du mot de passe #}
+            <progress id="mdp-progressbar" class="uk-progress" value="0" max="15"></progress>
+            
             <div>{{ form_row(form.confirm_user_password)}}</div>
             
             <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire</button>
@@ -39,5 +43,6 @@
         </div>
     </div>
 </div>
-
 {% endblock %}
+
+{% block javascripts %}<script src="public\js\script.js"></script>{% endblock %}

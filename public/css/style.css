@@ -114,6 +114,9 @@ icon
     color: #9F1E5D;
 }
 
+/**
+Mise en forme du badge d'erreur
+*/
 .badge {
     display: inline-block;
     padding: 0.25em 0.4em;
@@ -138,3 +141,13 @@ icon
   .form-error-message{
       color: red;
   }
+
+#oblig {
+    font-size:13px;
+    font-weight:bold;
+}
+
+fieldset{
+    border:0;
+    margin-left:-15px;
+}

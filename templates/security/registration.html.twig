@@ -15,15 +15,14 @@
             </div>
         </div>
 
-        <div class="uk-card-body">
+<div class="uk-card-body">
 
-        {# Thème bootstrap pour formulaire #}
         {% form_theme form 'bootstrap_4_layout.html.twig' %}
-        
-            {# Installation de la balise form de départ #}
-            {{ form_start(form,{attr: {novalidate: 'novalidate'}}) }}
 
-            <div id="champs">Les champs munis d'une étoile sont obligatoires</div>
+            {# Installation de la balise form de départ #}
+            {{ form_start(form, {attr: {novalidate: 'novalidate', class: 'uk-form-stacked'}}) }}
+
+            <div id="oblig">Les informations précédées d'un * sont obligatoires</div>
 
             {# Affichage des champs du formulaire #}
             <div class="uk-margin">

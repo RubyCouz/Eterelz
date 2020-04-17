@@ -1,7 +1,6 @@
 /**
 background in progress
  */
-
 .inProgress {
     background-image: url("../img/workInProgress/COMING_SOONv2.jpg");
     background-repeat: no-repeat;
@@ -35,13 +34,12 @@ navbar
     height: auto;
     position: absolute;
     top: 15px;
-    right: 20px;
+    right: 90px;
 }
 
 .uk-navbar-container:not(.uk-navbar-transparent) {
     background: #272725;
 }
-
 
 /**
 Social
@@ -65,15 +63,36 @@ Social
     top: -150px;
     right: -150px;
     transition: 0.8s cubic-bezier(.68,-0.55,.27,1.55);
-    box-shadow: -9px 10px 26px -3px rgba(159,30,93,1);
-
+    /*box-shadow: -9px 10px 26px -3px rgba(159,30,93,1);*/
 }
-
-.socialIcon {
+.twitch, .twitter, .youtube, .discord, .facebook {
+    z-index: 1000;
+    display: none;
     position: absolute;
-    top: -50px;
-    right: -30px;
+    top: -30px;
+    right: -40px;
+    font-size: 40px;
+    color: #772CE8;
 }
+.twitter {
+    color: #1CA0F2;
+}
+.facebook {
+    color: #4267B2;
+}
+.discord {
+    color: #7289DA;
+}
+.youtube {
+    color: #FF0000;
+}
+.network {
+    font-size: 40px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
 /**
 sign in card
  */
@@ -113,7 +132,6 @@ icon
 .delUser {
     color: #9F1E5D;
 }
-
 .avatar {
     color: red;
 }

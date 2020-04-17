@@ -133,6 +133,9 @@ icon
     color: #9F1E5D;
 }
 
+/**
+registration.html.twig
+ */
 .badge {
     display: inline-block;
     padding: 0.25em 0.4em;
@@ -157,4 +160,15 @@ icon
 
   .form-error-message{
       color: red;
+  }
+
+  #champs {
+      font-size: 15px;
+      font-weight: bold;
+      color: red;
+  }
+
+fieldset {
+      border: 0;
+      margin-left: -15px;
   }

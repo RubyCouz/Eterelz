@@ -23,20 +23,54 @@
             {# Installation de la balise form de départ #}
             {{ form_start(form,{attr: {novalidate: 'novalidate'}}) }}
 
-            <p><b>Les champs munis d'une étoile sont obligatoires</b></p>
+            <div id="champs">Les champs munis d'une étoile sont obligatoires</div>
 
             {# Affichage des champs du formulaire #}
-                <div>{{ form_row(form.user_avatar) }}</div>
-                <div>{{ form_row(form.user_login) }}</div>
-                <div>{{ form_row(form.user_mail) }}</div>
-                <div>{{ form_row(form.user_address) }}</div>
-                <div>{{ form_row(form.user_zip) }}</div>
-                <div>{{ form_row(form.user_city) }}</div>
-                <div>{{ form_row(form.user_discord) }}</div>
-                <div>{{ form_row(form.user_sex) }}</div>
-                <div>{{ form_row(form.user_description) }}</div>
-                <div>{{ form_row(form.user_password) }}</div>
-                <div>{{ form_row(form.confirm_user_password) }}</div>
+            <div class="uk-margin">
+                {{ form_row(form.user_avatar) }}
+            </div>
+
+            <div class="uk-margin">
+                {{ form_row(form.user_login) }}
+            </div>
+
+            <div class="uk-margin">
+                {{ form_row(form.user_mail) }}
+            </div>
+
+            <div class="uk-margin">
+                {{ form_row(form.user_address) }}
+            </div>
+
+            <div class="uk-margin">
+                {{ form_row(form.user_zip) }}
+            </div>
+
+            <div class="uk-margin">
+                {{ form_row(form.user_city) }}
+            </div>
+
+            <div class="uk-margin">
+                {{ form_row(form.user_discord) }}
+            </div>
+
+            <div class="uk-margin">
+                {{ form_row(form.user_sex) }}
+            </div>
+
+            <div class="uk-margin">
+                {{ form_row(form.user_description) }}
+            </div>
+
+            <div class="uk-margin">
+                {{ form_row(form.user_password) }}
+                <!--<span id="msg"></span>-->
+                <progress class="uk-progress" value="0" max="100" id="strength"></progress>
+            </div>
+
+            <div class="uk-margin">
+                {{ form_row(form.confirm_user_password) }}
+            </div>
             
             <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire !</button>
         

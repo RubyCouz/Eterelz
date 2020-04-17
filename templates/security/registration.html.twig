@@ -2,19 +2,16 @@
 
 {% block body %}
 
-<div uk-grid>
+<div class="" uk-grid>
     <div class="uk-width-1-8@m"></div>
-    {# inscription card #}
     <div class="uk-margin-auto uk-margin-auto-vertical uk-card uk-card-default uk-width-1-2@m">
         <div class="uk-card-header">
             <div class="uk-grid-small uk-flex-middle" uk-grid>
                 <div class="uk-width-auto uk-align-center">
-                    <img src="{{ asset('img/logo/logoEterelz.png') }}" class="logoSignin uk-align-center"
-                        alt="Logo Eterelz" title="Logo Eterelz">
+                    <img src="{{ asset('img/logo/logoEterelz.png') }}" class="logoSignin uk-align-center" alt="Logo Eterelz" title="Logo Eterelz">
                 </div>
             </div>
         </div>
-
         <div class="uk-card-body">
 
         {# Thème bootstrap pour formulaire #}
@@ -23,8 +20,10 @@
             {# Installation de la balise form de départ #}
             {{ form_start(form,{attr: {novalidate: 'novalidate'}}) }}
 
-            <p><b>Les champs munis d'une étoile sont obligatoires</b></p>
+            {# Installation de la balise form de départ #}
+            {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
 
+            <font size="2"><b>Les informations précédées d'un * sont obligatoires</b></font>
             {# Affichage des champs du formulaire #}
                 <div>{{ form_row(form.user_avatar) }}</div>
                 <div>{{ form_row(form.user_login) }}</div>
@@ -42,7 +41,6 @@
         
             {# Installation de la balise form de fin #}
             {{ form_end(form) }}
-        
         </div>
     </div>
 </div>

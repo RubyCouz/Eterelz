@@ -115,7 +115,7 @@ class EterUser implements UserInterface
     private $eterContents;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $user_description;
 
@@ -476,7 +476,7 @@ class EterUser implements UserInterface
         return $this->user_description;
     }
 
-    public function setUserDescription(string $user_description): self
+    public function setUserDescription(?string $user_description): self
     {
         $this->user_description = $user_description;
 

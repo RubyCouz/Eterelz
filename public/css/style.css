@@ -1,7 +1,7 @@
 /**
 background in progress
  */
-.inProgress {
+ .inProgress {
     background-image: url("../img/workInProgress/COMING_SOONv2.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -134,8 +134,8 @@ icon
 }
 
 /**
-registration.html.twig
- */
+Mise en forme du badge d'erreur
+*/
 .badge {
     display: inline-block;
     padding: 0.25em 0.4em;
@@ -148,7 +148,6 @@ registration.html.twig
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
-
   .badge-danger {
     color: #fff;
     background-color: #dc3545;
@@ -162,13 +161,12 @@ registration.html.twig
       color: red;
   }
 
-  #champs {
-      font-size: 15px;
-      font-weight: bold;
-      color: red;
-  }
+#oblig {
+    font-size:13px;
+    font-weight:bold;
+}
 
-fieldset {
-      border: 0;
-      margin-left: -15px;
-  }
+fieldset{
+    border:0;
+    margin-left:-15px;
+}

@@ -168,7 +168,7 @@ function socialOff() {
 
 // Barre de force du mot de passe
 
-var pass = document.getElementById("password")
+var pass = document.getElementById("registration_user_password")
     pass.addEventListener('keyup', function() {
         checkPassword(pass.value)
     })

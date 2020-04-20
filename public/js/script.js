@@ -10,6 +10,9 @@ function changeCss() {
     socialIcon.style.right = '200px';
     socialIcon.style.color = 'white';
 }
+
+// Barre de force du mot de passe
+
 var pass = document.getElementById("password")
     pass.addEventListener('keyup', function() {
         checkPassword(pass.value)

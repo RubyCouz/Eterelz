@@ -26,6 +26,7 @@ class RegistrationType extends AbstractType
             'Masculin' => 'M',
             'Féminin' => 'F'
         ];
+
         $builder
         //---------------------------------------------------AVATAR----------------------------------------------------------------//
 

@@ -28,6 +28,12 @@ class RegistrationType extends AbstractType
         ];
 
         $builder
+        //---------------------------------------------------AVATAR----------------------------------------------------------------//
+
+        //Demander les types de fichier pour l'avatar qui seraient autorisés
+        //Demander la taille max de fichier autorisé
+
+        $builder
         //---------------AVATAR---------------//
         //Demander si le nom d'avatar doit être unique
         //Demander quels types de fichiers sont autorisés

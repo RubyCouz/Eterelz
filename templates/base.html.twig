@@ -4,131 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/css/uikit.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="icon" type="image/jpg" href="{{ asset('img/favicon/favicon') }}">
+    <link rel="stylesheet" href="{{ asset('css/hover-min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
 <body class="{{ (inProgress == true) ? 'inProgress' : 'base' }}">
 {#navbar#}
-<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-    <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav">
-                <li>
-                    <a class="uk-navbar-toggle" href="#" uk-toggle="target: #offcanvas-nav-primary">
-                        <span "uk-navbar-toggle-icon"></span> <span class="uk-margin-small-left">Menu</span>
-                    </a>
-                </li>
-                {% if app.user %}
-                    <li>
-                        <a href="{{ path('logout') }}">SE DECONNECTER <span
-                                    uk-icon="icon: sign-out; ratio: 2"></span></a>
-                    </li>
-                {% else %}
-                    <li>
-                        <a href="{{ path('login') }}" title="Se connecter">SE CONNECTER <span
-                                    uk-icon="icon: sign-in; ratio: 2"></span></a>
-                    </li>
-                {% endif %}
-                <li>
-                    <div>
-                        <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
-                        <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
-                            <form class="uk-search uk-search-navbar uk-width-1-1">
-                                <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
-                            </form>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
 
-        <div class="uk-navbar-right">
-
-            <ul class="uk-navbar-nav">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#">
+            <img src="{{ asset('img/logo/logoEterelz.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
+                 class="logo">
+        </a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            {% if app.user %}
                 <li>
-                    <a class="uk-navbar-item uk-logo" href="#">
-
-                    </a>
+                    <a href="{{ path('logout') }}" class="nav-link">SE DECONNECTER </a>
                 </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="social" id="social">
-        <img src="{{ asset('img/logo/logoEterelz.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
-                              class="logo">
-        <i class="fas fa-project-diagram network"></i>
-        <i class="fab fa-twitch twitch" id="twitch"></i>
-        <i class="fab fa-discord discord" id="discord"></i>
-        <i class="fab fa-youtube youtube" id="youtube"></i>
-        <i class="fab fa-twitter twitter" id="twitter"></i>
-        <i class="fab fa-facebook-square facebook" id="facebook"></i>
-    </div>
-</div>
-{#sidebar menu utilisateur#}
-<div id="offcanvas-nav-primary" uk-offcanvas="mode: reveal; overlay: true">
-    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
-        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
-            <li class="uk-parent">
-                <a href="#"><i class="fas fa-gamepad"></i> JEUX </a>
-                <ul class="uk-nav-sub">
-                    <li class="uk-active"><a href="#">Jeux 1</a></li>
-                    <li class=""><a href="#">Jeux 2</a></li>
-                    <li class=""><a href="#">Jeux 2</a></li>
-                </ul>
+            {% else %}
+                <li>
+                    <a href="{{ path('login') }}" title="Se connecter" class="nav-link">SE CONNECTER</a>
+                </li>
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
             </li>
-            <li class="uk-nav-divider"></li>
-            <li class="uk-parent">
-                <a href="#"><i class="far fa-calendar-alt"></i> EVENEMENTS</a>
-                <ul class="uk-nav-sub">
-                    <li><a href="#">SpeedRaid Destiny 2</a></li>
-                    <li><a href="#">Nettoyage DZ</a></li>
-                </ul>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
-            <li class="uk-nav-divider"></li>
-            <li class="uk-parent">
-                <a href="#"><i class="fas fa-camera-retro"></i> PHOTOS</a>
-                <ul class="uk-nav-sub">
-                    <li class="uk-active"><a href="#">Artwork</a></li>
-                    <li class=""><a href="#">Capture d'écran</a></li>
-                    <li class=""><a href="#">Fonds d'écran 4k</a></li>
-                </ul>
-            </li>
-            <li class="uk-nav-divider"></li>
-            <li class="uk-parent">
-                <a href="#"><i class="fas fa-film"></i> VIDEOS</a>
-                <ul class="uk-nav-sub">
-                    <li class="uk-active"><a href="#">Tutos</a></li>
-                    <li class=""><a href="#">Bétisiers</a></li>
-                </ul>
-            </li>
-            <li class="uk-nav-divider"></li>
-            <li class="uk-parent">
-                <a href="#"><i class="fab fa-discord"></i> DISCORD</a>
-                <ul class="uk-nav-sub">
-                    <li class="uk-active"><a href="#">Destiny 2</a></li>
-                    <li class=""><a href="#">Black Desert Online</a></li>
-                </ul>
-            </li>
-            <li class="uk-nav-divider"></li>
-            <li class="uk-parent"><a href="" title="Lien vers le formulaire de contact"><i class="far fa-envelope"></i>
-                    NOUS CONTACTER</a></li>
-            <li class="uk-nav-divider"></li>
-            <li class="uk-parent"><a href="" title="A propos d'Eterelz"><i class="far fa-address-card"></i> A PROPOS</a>
+            <li>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </li>
         </ul>
+        <div>
+            <span class="navbar-toggler-icon" data-cta-target=".js-sidebar"></span>
+
+        </div>
     </div>
+</nav>
+<div class="js-sidebar modal1 sidebar bg-dark">
+    <i class="far fa-times-circle modal-close-btn"></i>
+    <i class="fas fa-project-diagram network"></i>
+    <i class="fab fa-twitch twitch hvr-bob" id="twitch"></i>
+    <i class="fab fa-discord discord hvr-bob" id="discord"></i>
+    <i class="fab fa-youtube youtube hvr-bob" id="youtube"></i>
+    <i class="fab fa-twitter twitter hvr-bob" id="twitter"></i>
+    <i class="fab fa-facebook-square facebook hvr-bob" id="facebook"></i>
 </div>
+
+{#        <i class="fas fa-project-diagram network"></i>#}
+{#        <i class="fab fa-twitch twitch" id="twitch"></i>#}
+{#        <i class="fab fa-discord discord" id="discord"></i>#}
+{#        <i class="fab fa-youtube youtube" id="youtube"></i>#}
+{#        <i class="fab fa-twitter twitter" id="twitter"></i>#}
+{#        <i class="fab fa-facebook-square facebook" id="facebook"></i>#}
+
+
+{#sidebar menu utilisateur#}
+{#<div id="offcanvas-nav-primary" uk-offcanvas="mode: reveal; overlay: true">#}
+{#    <div class="uk-offcanvas-bar uk-flex uk-flex-column">#}
+{#        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">#}
+{#            <li class="uk-parent">#}
+{#                <a href="#"><i class="fas fa-gamepad"></i> JEUX </a>#}
+{#                <ul class="uk-nav-sub">#}
+{#                    <li class="uk-active"><a href="#">Jeux 1</a></li>#}
+{#                    <li class=""><a href="#">Jeux 2</a></li>#}
+{#                    <li class=""><a href="#">Jeux 2</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li class="uk-nav-divider"></li>#}
+{#            <li class="uk-parent">#}
+{#                <a href="#"><i class="far fa-calendar-alt"></i> EVENEMENTS</a>#}
+{#                <ul class="uk-nav-sub">#}
+{#                    <li><a href="#">SpeedRaid Destiny 2</a></li>#}
+{#                    <li><a href="#">Nettoyage DZ</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li class="uk-nav-divider"></li>#}
+{#            <li class="uk-parent">#}
+{#                <a href="#"><i class="fas fa-camera-retro"></i> PHOTOS</a>#}
+{#                <ul class="uk-nav-sub">#}
+{#                    <li class="uk-active"><a href="#">Artwork</a></li>#}
+{#                    <li class=""><a href="#">Capture d'écran</a></li>#}
+{#                    <li class=""><a href="#">Fonds d'écran 4k</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li class="uk-nav-divider"></li>#}
+{#            <li class="uk-parent">#}
+{#                <a href="#"><i class="fas fa-film"></i> VIDEOS</a>#}
+{#                <ul class="uk-nav-sub">#}
+{#                    <li class="uk-active"><a href="#">Tutos</a></li>#}
+{#                    <li class=""><a href="#">Bétisiers</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li class="uk-nav-divider"></li>#}
+{#            <li class="uk-parent">#}
+{#                <a href="#"><i class="fab fa-discord"></i> DISCORD</a>#}
+{#                <ul class="uk-nav-sub">#}
+{#                    <li class="uk-active"><a href="#">Destiny 2</a></li>#}
+{#                    <li class=""><a href="#">Black Desert Online</a></li>#}
+{#                </ul>#}
+{#            </li>#}
+{#            <li class="uk-nav-divider"></li>#}
+{#            <li class="uk-parent"><a href="" title="Lien vers le formulaire de contact"><i class="far fa-envelope"></i>#}
+{#                    NOUS CONTACTER</a></li>#}
+{#            <li class="uk-nav-divider"></li>#}
+{#            <li class="uk-parent"><a href="" title="A propos d'Eterelz"><i class="far fa-address-card"></i> A PROPOS</a>#}
+{#            </li>#}
+{#        </ul>#}
+{#    </div>#}
+{#</div>#}
 
 {% block body %}{% endblock %}
 
 <footer class="footer">
 
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/js/uikit.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.3/dist/js/uikit-icons.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/feb810672a.js" crossorigin="anonymous"></script>
+<script src="{{ asset('js/cta.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 {% block javascripts %}{% endblock %}
 </body>

@@ -102,23 +102,22 @@ var pass = document.getElementById("registration_user_password")
             }
     
     switch (strength) {
+        case 0 :
+            strengthBar.value = 0;
+            break
         case 1:
-            strengthBar.value = 20;
+            strengthBar.value = 25;
             color = "red";
             break
         case 2:
-            strengthBar.value = 40;
+            strengthBar.value = 50;
             color = "orange";
             break
         case 3:
-            strengthBar.value = 60;
+            strengthBar.value = 75;
             color = "green";
             break
         case 4:
-            strengthBar.value = 80;
-            color = "green";
-            break
-        case 5:
             strengthBar.value = 100;
             color = "green";
             break

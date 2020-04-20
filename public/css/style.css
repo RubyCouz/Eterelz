@@ -161,14 +161,15 @@ Mise en forme du badge d'erreur
       color: red;
   }
 
-#oblig {
-    font-size:13px;
-    font-weight:bold;
+  #champs {
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
 }
 
-fieldset{
-    border:0;
-    margin-left:-15px;
+fieldset {
+    border: 0;
+    margin-left: -15px;
 }
 
 

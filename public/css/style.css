@@ -1,7 +1,7 @@
 /**
 background in progress
  */
-.inProgress {
+ .inProgress {
     background-image: url("../img/workInProgress/COMING_SOONv2.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -132,7 +132,41 @@ icon
 .delUser {
     color: #9F1E5D;
 }
-.avatar {
-    color: red;
+
+/**
+Mise en forme du badge d'erreur
+*/
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  .badge-danger {
+    color: #fff;
+    background-color: #dc3545;
+  }
+
+  .text-uppercase {
+    text-transform: uppercase !important;
+  }
+
+  .form-error-message{
+      color: red;
+  }
+
+#oblig {
+    font-size:13px;
+    font-weight:bold;
 }
-/*comment*/
+
+fieldset{
+    border:0;
+    margin-left:-15px;
+}

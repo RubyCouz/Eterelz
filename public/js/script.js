@@ -199,3 +199,49 @@ function socialOff() {
         facebook.style.display = 'block';
     };
 }
+
+// Barre de force du mot de passe
+
+var pass = document.getElementById("registration_user_password")
+    pass.addEventListener('keyup', function() {
+        checkPassword(pass.value)
+    })
+    function checkPassword(password) {
+        var strengthBar = document.getElementById("strength")
+        var strength = 0;
+            if (password.match(/[a-zA-Z0-9][a-zA-Z0-9]+/)) {
+                strength += 1
+            }
+            if (password.match(/[~<>?]+/)) {
+                strength += 1
+            }
+            if (password.match(/[!@£$%^&*()]+/)) {
+                strength += 1
+            }
+            if (password.length >= 8) {
+                strength += 1
+            }
+
+    switch (strength) {
+        case 0:
+            strengthBar.value = 0;
+            color = "red";
+            break
+        case 1:
+            strengthBar.value = 25;
+            color = "red";
+            break
+        case 2:
+            strengthBar.value = 50;
+            color = "jaune";
+            break
+        case 3:
+            strengthBar.value = 75;
+            color = "orange";
+            break
+        case 4:
+            strengthBar.value = 100;
+            color = "green";
+            break
+    }
+}

@@ -243,7 +243,17 @@ css widget social
 /**
 Mise en forme du formulaire
 */
-.row {
+
+#champs {
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+}
+
+/**
+Mise en forme du formulaire
+*/
+.row{
     padding-top: 15px;
     padding-bottom: 15px;
 }

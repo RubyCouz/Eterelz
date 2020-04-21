@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+    
         {% block body %}
             <div class="container">
                 {# Installation de la balise form de départ #}
@@ -45,10 +45,10 @@
                     </div>
 
                     <div class="form-group">
-                        {{ form_row(form.user_password) }}
-                            <div class="progress">
-                                <div class="progress-bar" value="0" max="100" id="strength"></div>
-                            </div>
+                    {{ form_row(form.user_password) }}
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="strength"></div>
+                        </div>
                     </div>
             
                     <div class="form-group">

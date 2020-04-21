@@ -59,16 +59,19 @@ var pass = document.getElementById("registration_user_password")
             break
         case 1:
             strengthBar.style.width = "25%";
-            
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-danger")
             break
         case 2:
             strengthBar.style.width = "50%";
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-warning")
             break
         case 3:
             strengthBar.style.width = "75%";
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-success")
             break
         case 4:
             strengthBar.style.width = "100%";
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-success")
             break
     }
 }

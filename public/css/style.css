@@ -147,19 +147,20 @@ Mise en forme du badge d'erreur
     vertical-align: baseline;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-  .badge-danger {
+}
+
+.badge-danger {
     color: #fff;
     background-color: #dc3545;
-  }
+}
 
-  .text-uppercase {
+.text-uppercase {
     text-transform: uppercase !important;
-  }
+}
 
-  .form-error-message{
+.form-error-message{
       color: red;
-  }
+}
 
 #oblig {
     font-size:13px;
@@ -275,4 +276,44 @@ footer {
 .footer-text {
     opacity: 0.7;
     margin-top: 20px;
+}
+/**
+Mise en forme du formulaire
+*/
+.row{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.container{
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+#input::placeholder{
+    color: white;
+}
+
+#button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}
+
+#inscription{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+#champs {
+    font-size: 13px;
+    font-weight :bold;
+    color: red;
 }

@@ -34,37 +34,20 @@ class SecurityController extends AbstractController {
 
         if($form->isSubmitted() && $form->isValid()) {
             
-            //Téléchargement de l'avatar
-
-            //Récupération du champ User_Avatar de EterUser
-            $file = $user->getUserAvatar();
-
-            if ($file != null){
-            //Cryptage du nom de fichier téléchargé
-            $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
-
-            //Chemin de téléchargement du dossier
-            $file->move($this->getParameter('upload_directory'), $fileName);
-
-            //Importation du fichier dans la BDD
-            $user->setUserAvatar($fileName);
-
             //Téléchargement de la photo de profil
             //Récupération du champ User_Avatar de EterUser
+
             $file = $user->getUserAvatar();
+
             //Cryptage du nom du fichier téléchargé
             $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
+
             //Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
             $file->move($this->getParameter('upload_directory'), $fileName);
-            //Importation du fichier dans la BDD
-            $user->setUserAvatar($fileName);
-
-            //Chemin de téléchargement du dossier
-            $file->move($this->getParameter('upload_directory'), $fileName);
 
             //Importation du fichier dans la BDD
             $user->setUserAvatar($fileName);
-            }
+            
             //Encryptage du mot de passe selon la configuration dans security.yaml de config
             //Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
             $hash = $encoder->encodePassword($user, $user->getUserPassword());
@@ -77,8 +60,8 @@ class SecurityController extends AbstractController {
 
             //Envoi des données à la BDD
             $manager->flush();
-
-            $email = (new Email())
+        }
+            /*$email = (new Email())
                 ->from('hello@example.com')
                 ->to('you@example.com')
                 //->cc('cc@example.com')
@@ -89,17 +72,18 @@ class SecurityController extends AbstractController {
                 ->text('Sending emails is fun again!')
                 ->html('<p>See Twig integration for better HTML integration!</p>');
 
-        $mailer->send($email);
+            $mailer->send($email);*/
     
             //return $this->redirectToRoute('/login');
-        }
-        //Affichage
-        return $this->render('security/registration.html.twig', [
-            'inProgress' => $inProgress,
-            'form' => $form->createView()
-        ]);
+    
+            //Affichage
+            return $this->render('security/registration.html.twig', [
+                'inProgress' => $inProgress,
+                'form' => $form->createView()
+            ]);
     }
 
+    
     /**
      * @Route("/login", name="login");
      * @param AuthenticationUtils $authenticationUtils

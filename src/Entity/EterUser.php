@@ -121,6 +121,7 @@ class EterUser implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\File(mimeTypes={ "image/png", "image/jpeg", "image/jpg" })
      */
     private $user_avatar;
 
@@ -135,7 +136,6 @@ class EterUser implements UserInterface
         $this->eterComments = new ArrayCollection();
         $this->eterContents = new ArrayCollection();
     }
-
 
     public function getId(): ?int
     {
@@ -154,12 +154,10 @@ class EterUser implements UserInterface
         return $this;
     }
 
-
     public function __toString()
     {
         return $this->user_login;
     }
-
 
     public function getUserDate(): ?\DateTimeInterface
     {
@@ -245,7 +243,6 @@ class EterUser implements UserInterface
         return $this;
     }
 
-
     public function getUserSex(): ?string
     {
         return $this->user_sex;
@@ -312,8 +309,6 @@ class EterUser implements UserInterface
 
         return $this;
     }
-
-
 
     public function removeUserClan(EterClan $userClan): self
     {

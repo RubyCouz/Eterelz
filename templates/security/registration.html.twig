@@ -118,10 +118,11 @@
                 {{ form_widget(form.user_password) }}
                 {{ form_errors(form.user_password) }}
                 {{ form_help(form.user_password) }}
-                <br>
-                <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="strength"></div>
-                </div>
+                {# Barre de force du mdp #}
+                    <br>
+                    <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="strength"></div>
+                    </div>
                 </div>
             </div>
 

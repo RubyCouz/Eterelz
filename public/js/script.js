@@ -112,27 +112,26 @@ var pass = document.getElementById("registration_user_password")
             if (password.length >= 8) {
                 strength += 1
             }
-
+    
     switch (strength) {
-        case 0:
-            strengthBar.value = 0;
-            color = "red";
+        case 0 :
+            strengthBar.style.width = "0%";
             break
         case 1:
-            strengthBar.value = 25;
-            color = "red";
+            strengthBar.style.width = "25%";
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-danger")
             break
         case 2:
-            strengthBar.value = 50;
-            color = "jaune";
+            strengthBar.style.width = "50%";
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-warning")
             break
         case 3:
-            strengthBar.value = 75;
-            color = "orange";
+            strengthBar.style.width = "75%";
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-success")
             break
         case 4:
-            strengthBar.value = 100;
-            color = "green";
+            strengthBar.style.width = "100%";
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-success")
             break
     }
 }

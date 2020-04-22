@@ -42,7 +42,7 @@ class SecurityController extends AbstractController {
             $file = $user->getUserAvatar();
 
             //Cryptage du nom du fichier téléchargé
-            $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
+            $fileName = uniqid().'.'.$file->getClientOriginalExtension();
 
             //Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
             $file->move($this->getParameter('upload_directory'), $fileName);

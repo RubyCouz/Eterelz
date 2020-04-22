@@ -1,0 +1,318 @@
+Index: .env
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># In all environments, the following files are loaded if they exist,\n# the latter taking precedence over the former:\n#\n#  * .env                contains default values for the environment variables needed by the app\n#  * .env.local          uncommitted file with local overrides\n#  * .env.$APP_ENV       committed environment-specific defaults\n#  * .env.$APP_ENV.local uncommitted environment-specific overrides\n#\n# Real environment variables win over .env files.\n#\n# DO NOT DEFINE PRODUCTION SECRETS IN THIS FILE NOR IN ANY OTHER COMMITTED FILES.\n#\n# Run \"composer dump-env prod\" to compile .env files for production use (requires symfony/flex >=1.2).\n# https://symfony.com/doc/current/best_practices.html#use-environment-variables-for-infrastructure-configuration\n\n###> symfony/framework-bundle ###\nAPP_ENV=dev\nAPP_SECRET=e4aff2e866581fb58c2c4cc51c10b04c\n#TRUSTED_PROXIES=127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16\n#TRUSTED_HOSTS='^(localhost|example\\.com)$'\n###< symfony/framework-bundle ###\n\n###> symfony/mailer ###\n# MAILER_DSN=smtp://localhost:1025\n###< symfony/mailer ###\n\n###> doctrine/doctrine-bundle ###\n# Format described at https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url\n# For an SQLite database, use: \"sqlite:///%kernel.project_dir%/var/data.db\"\n# For a PostgreSQL database, use: \"postgresql://db_user:db_password@127.0.0.1:5432/db_name?serverVersion=11&charset=utf8\"\n# IMPORTANT: You MUST configure your server version, either here or in config/packages/doctrine.yaml\nDATABASE_URL=mysql://root@127.0.0.1:3306/eterelz?serverVersion=5.7\n###< doctrine/doctrine-bundle ###\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .env	(revision 2ae1be3a4d83e12d62877af5092126744ddd51c2)
++++ .env	(date 1587563596251)
+@@ -21,7 +21,7 @@
+ ###< symfony/framework-bundle ###
+ 
+ ###> symfony/mailer ###
+-# MAILER_DSN=smtp://localhost:1025
++MAILER_DSN=smtp://localhost:1025
+ ###< symfony/mailer ###
+ 
+ ###> doctrine/doctrine-bundle ###
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"01efc62a-05f0-4c24-8630-d192886acd99\" name=\"Default Changelist\" comment=\"\" />\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"CodeStyleSettingsInfer\">\n    <option name=\"done\" value=\"true\" />\n  </component>\n  <component name=\"ComposerSettings\" doNotAsk=\"true\" synchronizationState=\"SYNCHRONIZE\">\n    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>\n    <execution>\n      <executable />\n    </execution>\n  </component>\n  <component name=\"DatabaseView\">\n    <option name=\"SHOW_INTERMEDIATE\" value=\"true\" />\n    <option name=\"GROUP_DATA_SOURCES\" value=\"true\" />\n    <option name=\"GROUP_SCHEMA\" value=\"true\" />\n    <option name=\"GROUP_CONTENTS\" value=\"false\" />\n    <option name=\"SORT_POSITIONED\" value=\"false\" />\n    <option name=\"SHOW_EMPTY_GROUPS\" value=\"false\" />\n    <option name=\"AUTO_SCROLL_FROM_SOURCE\" value=\"false\" />\n    <option name=\"HIDDEN_KINDS\">\n      <set />\n    </option>\n    <expand>\n      <path>\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\n        <item name=\"eterelz@localhost\" type=\"feb32156:DbDataSourceImpl\" />\n      </path>\n      <path>\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\n        <item name=\"eterelz@localhost\" type=\"feb32156:DbDataSourceImpl\" />\n        <item name=\"schemas\" type=\"d4e8921:DatabaseStructure$FamilyGroup\" />\n      </path>\n      <path>\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\n        <item name=\"eterelz@localhost\" type=\"feb32156:DbDataSourceImpl\" />\n        <item name=\"schemas\" type=\"d4e8921:DatabaseStructure$FamilyGroup\" />\n        <item name=\"eterelz: schema\" type=\"76f4a085:MysqlImplModel$Schema\" />\n      </path>\n      <path>\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\n        <item name=\"eterelz@localhost\" type=\"feb32156:DbDataSourceImpl\" />\n        <item name=\"schemas\" type=\"d4e8921:DatabaseStructure$FamilyGroup\" />\n        <item name=\"eterelz: schema\" type=\"76f4a085:MysqlImplModel$Schema\" />\n        <item name=\"eter_user: table\" type=\"285a2a93:MysqlImplModel$Table\" />\n      </path>\n    </expand>\n    <select />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\n  </component>\n  <component name=\"IgnoredFileRootStore\">\n    <option name=\"generatedRoots\">\n      <set>\n        <option value=\"C:\\laragon\\www\\eter\\.idea\" />\n      </set>\n    </option>\n  </component>\n  <component name=\"PhpWorkspaceProjectConfiguration\">\n    <include_path>\n      <path value=\"$PROJECT_DIR$/vendor/symfony/validator\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mailer\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/browser-kit\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/orm-pack\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-http\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-pack\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-foundation\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-profiler-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client-contracts\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/expression-language\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/framework-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/options-resolver\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/cache\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/serializer-pack\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/inflector\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/yaml\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-guard\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/event-manager\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-exporter\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/form\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/lexer\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/reflection\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/collections\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/annotations\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/instantiator\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/common\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/migrations\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/orm\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/dbal\" />\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/persistence\" />\n      <path value=\"$PROJECT_DIR$/vendor/sensio/framework-extra-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/nikic/php-parser\" />\n      <path value=\"$PROJECT_DIR$/vendor/jdorn/sql-formatter\" />\n      <path value=\"$PROJECT_DIR$/vendor/webmozart/assert\" />\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/type-resolver\" />\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock\" />\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-common\" />\n      <path value=\"$PROJECT_DIR$/vendor/easycorp/easy-log-handler\" />\n      <path value=\"$PROJECT_DIR$/vendor/monolog/monolog\" />\n      <path value=\"$PROJECT_DIR$/vendor/ocramius/package-versions\" />\n      <path value=\"$PROJECT_DIR$/vendor/twig/extra-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/ocramius/proxy-manager\" />\n      <path value=\"$PROJECT_DIR$/vendor/twig/twig\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/cache\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/log\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/event-dispatcher\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/container\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/debug-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/psr/link\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dom-crawler\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/serializer\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/intl\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-dumper\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-core\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-info\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/filesystem\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-link\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-kernel\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/finder\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/flex\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/monolog-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/string\" />\n      <path value=\"$PROJECT_DIR$/vendor/egulias/email-validator\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache-contracts\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/css-selector\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/stopwatch\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/config\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/routing\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/asset\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/test-pack\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/error-handler\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/inflector\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-csrf\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/service-contracts\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/monolog-bridge\" />\n      <path value=\"$PROJECT_DIR$/vendor/composer\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php73\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mime\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/profiler-pack\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/maker-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/debug-pack\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/notifier\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bridge\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/phpunit-bridge\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-mbstring\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation-contracts\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/console\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/doctrine-bridge\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/process\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dependency-injection\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dotenv\" />\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-access\" />\n      <path value=\"$PROJECT_DIR$/vendor/pagerfanta/pagerfanta\" />\n      <path value=\"$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/vich/uploader-bundle\" />\n      <path value=\"$PROJECT_DIR$/vendor/jms/metadata\" />\n      <path value=\"$PROJECT_DIR$/vendor/webimpress/safe-writer\" />\n      <path value=\"$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge\" />\n      <path value=\"$PROJECT_DIR$/vendor/laminas/laminas-code\" />\n      <path value=\"$PROJECT_DIR$/vendor/laminas/laminas-eventmanager\" />\n    </include_path>\n  </component>\n  <component name=\"ProjectCodeStyleSettingsMigration\">\n    <option name=\"version\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"1YgBdg497okWDPfCSbjn6eCNpLo\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showExcludedFiles\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\n    <property name=\"DatabaseDriversLRU\" value=\"mysql\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"reference.settingsdialog.IDE.editor.colors.Language Defaults\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"C:\\laragon\\www\\eter\\public\\pic\\img\\upload\\ban\" />\n    </key>\n  </component>\n  <component name=\"RunAnythingCache\">\n    <option name=\"myCommands\">\n      <command value=\"php bin/console doctrine:make:migration\" />\n      <command value=\"php bin/console doctrine:migrations\" />\n      <command value=\"php bin/console make:crud\" />\n      <command value=\"compsoer require security\" />\n      <command value=\"composer require security\" />\n      <command value=\"php bin/console make:database\" />\n      <command value=\"php bin/console doctrine:database:create\" />\n      <command value=\"php bin/console make:entity eter_event\" />\n      <command value=\"php bin/console make:entity eter_content\" />\n      <command value=\"composer require vich/uploader-bundle\" />\n      <command value=\"php bin/console make:entity eter_clan\" />\n      <command value=\"php bin/console make:migration\" />\n      <command value=\"php bin/console doctrine:migration:migrate\" />\n      <command value=\"php bin/console make:entity\" />\n    </option>\n  </component>\n  <component name=\"ServiceViewManager\">\n    <option name=\"viewStates\">\n      <list>\n        <serviceView>\n          <treeState>\n            <expand />\n            <select />\n          </treeState>\n        </serviceView>\n      </list>\n    </option>\n  </component>\n  <component name=\"SvnConfiguration\">\n    <configuration />\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"01efc62a-05f0-4c24-8630-d192886acd99\" name=\"Default Changelist\" comment=\"\" />\n      <created>1583354445199</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1583354445199</updated>\n      <workItem from=\"1583354447242\" duration=\"86000\" />\n      <workItem from=\"1583354569177\" duration=\"5154000\" />\n      <workItem from=\"1583406801310\" duration=\"6351000\" />\n      <workItem from=\"1583431389456\" duration=\"8530000\" />\n      <workItem from=\"1583481132891\" duration=\"411000\" />\n      <workItem from=\"1583492437977\" duration=\"1890000\" />\n      <workItem from=\"1583503887550\" duration=\"7316000\" />\n      <workItem from=\"1583522817872\" duration=\"3830000\" />\n      <workItem from=\"1583578747156\" duration=\"4470000\" />\n      <workItem from=\"1583665171332\" duration=\"1621000\" />\n      <workItem from=\"1583666954802\" duration=\"4579000\" />\n      <workItem from=\"1583755410745\" duration=\"5420000\" />\n      <workItem from=\"1583827063879\" duration=\"1030000\" />\n      <workItem from=\"1583840116216\" duration=\"3706000\" />\n      <workItem from=\"1583855107920\" duration=\"601000\" />\n      <workItem from=\"1583871080997\" duration=\"1066000\" />\n      <workItem from=\"1583917836774\" duration=\"2124000\" />\n      <workItem from=\"1583955039704\" duration=\"2292000\" />\n      <workItem from=\"1584011161533\" duration=\"7125000\" />\n      <workItem from=\"1584021637233\" duration=\"2577000\" />\n      <workItem from=\"1584024567442\" duration=\"246000\" />\n      <workItem from=\"1584024839902\" duration=\"1982000\" />\n      <workItem from=\"1584436425665\" duration=\"192000\" />\n      <workItem from=\"1584622951659\" duration=\"252000\" />\n      <workItem from=\"1584623251034\" duration=\"177000\" />\n      <workItem from=\"1584623450670\" duration=\"599000\" />\n      <workItem from=\"1584640164397\" duration=\"6710000\" />\n      <workItem from=\"1584731617176\" duration=\"2193000\" />\n      <workItem from=\"1584986262866\" duration=\"4229000\" />\n      <workItem from=\"1585061898671\" duration=\"16255000\" />\n      <workItem from=\"1585125879293\" duration=\"14046000\" />\n      <workItem from=\"1585236103358\" duration=\"673000\" />\n      <workItem from=\"1585305759629\" duration=\"1587000\" />\n      <workItem from=\"1585324806500\" duration=\"2279000\" />\n      <workItem from=\"1586176532660\" duration=\"2840000\" />\n      <workItem from=\"1586245990778\" duration=\"2312000\" />\n      <workItem from=\"1587053860339\" duration=\"14627000\" />\n      <workItem from=\"1587137136729\" duration=\"8408000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"début de chantier\">\n      <created>1583359113034</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1583359113034</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"mise en page affichage connection\">\n      <created>1583440864213</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1583440864213</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"mise en page affichage connection\">\n      <created>1583440965855</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1583440965855</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"ajout utilisateur ok &#10;hashage mdp ok&#10;mise en page tableau utilisateur&#10;reprise bdd\">\n      <created>1583582982154</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1583582982154</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"début établissement back-office\">\n      <created>1583917919427</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1583917919427</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"reprise bdd, test formatage back office\">\n      <created>1584019421059</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1584019421060</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"fin établissement bdd\">\n      <created>1584028419344</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1584028419344</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"back-office suite\">\n      <created>1584734015819</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1584734015819</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"fin mise en place back office et installation uploader vich\">\n      <created>1584994595495</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1584994595495</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"suite mise en forme back office\">\n      <created>1585087361552</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1585087361553</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"fin back office\">\n      <created>1585141576020</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1585141576020</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"fin back office\">\n      <created>1586246262056</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1586246262056</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"ajout fichier easy_admin.yaml\">\n      <created>1586251449659</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1586251449659</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"test\">\n      <created>1587044527195</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1587044527195</updated>\n    </task>\n    <task id=\"LOCAL-00015\" summary=\"test\">\n      <created>1587044586637</created>\n      <option name=\"number\" value=\"00015\" />\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1587044586637</updated>\n    </task>\n    <task id=\"LOCAL-00016\" summary=\"test navbar\">\n      <created>1587057381095</created>\n      <option name=\"number\" value=\"00016\" />\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1587057381096</updated>\n    </task>\n    <task id=\"LOCAL-00017\" summary=\"onglet social css\">\n      <created>1587071238748</created>\n      <option name=\"number\" value=\"00017\" />\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1587071238748</updated>\n    </task>\n    <task id=\"LOCAL-00018\" summary=\"fin mise en place oglet social\">\n      <created>1587145563468</created>\n      <option name=\"number\" value=\"00018\" />\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1587145563468</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"19\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"1\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"COLUMN_ORDER\" />\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"début de chantier\" />\n    <MESSAGE value=\"mise en page affichage connection\" />\n    <MESSAGE value=\"ajout utilisateur ok &#10;hashage mdp ok&#10;mise en page tableau utilisateur&#10;reprise bdd\" />\n    <MESSAGE value=\"début établissement back-office\" />\n    <MESSAGE value=\"reprise bdd, test formatage back office\" />\n    <MESSAGE value=\"fin établissement bdd\" />\n    <MESSAGE value=\"back-office suite\" />\n    <MESSAGE value=\"fin mise en place back office et installation uploader vich\" />\n    <MESSAGE value=\"suite mise en forme back office\" />\n    <MESSAGE value=\"fin back office\" />\n    <MESSAGE value=\"ajout fichier easy_admin.yaml\" />\n    <MESSAGE value=\"test\" />\n    <MESSAGE value=\"test navbar\" />\n    <MESSAGE value=\"onglet social css\" />\n    <MESSAGE value=\"fin mise en place oglet social\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fin mise en place oglet social\" />\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"2472\" y=\"213\" key=\"#Big_Data_Tools_Connections\" timestamp=\"1584012583118\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2472\" y=\"213\" key=\"#Big_Data_Tools_Connections/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1584012583118\" />\n    <state x=\"2472\" y=\"214\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog\" timestamp=\"1584015133001\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2472\" y=\"214\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1584015133001\" />\n    <state x=\"552\" y=\"214\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050\" timestamp=\"1583526942849\" />\n    <state x=\"2573\" y=\"30\" key=\"#com.intellij.refactoring.rename.AutomaticRenamingDialog\" timestamp=\"1583842288438\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2573\" y=\"30\" key=\"#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1583842288438\" />\n    <state x=\"690\" y=\"310\" key=\"#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog\" timestamp=\"1583579978729\">\n      <screen x=\"0\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"690\" y=\"310\" key=\"#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.30.1920.1050@0.30.1920.1050\" timestamp=\"1583579978729\" />\n    <state x=\"2493\" y=\"34\" key=\"CommitChangelistDialog2\" timestamp=\"1587145562668\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"573\" y=\"34\" key=\"CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050\" timestamp=\"1586251448796\" />\n    <state x=\"2493\" y=\"34\" key=\"CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1586255105377\" />\n    <state x=\"573\" y=\"34\" key=\"CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050\" timestamp=\"1583917916958\" />\n    <state x=\"2493\" y=\"34\" key=\"CommitChangelistDialog2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050\" timestamp=\"1587145562668\" />\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1586254027850\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.bottom/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1586254027850\" />\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050\" timestamp=\"1585067199354\" />\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.center\" timestamp=\"1586254027850\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.center/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1586254027850\" />\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050\" timestamp=\"1585067199352\" />\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.left\" timestamp=\"1586254027850\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.left/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1586254027850\" />\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050\" timestamp=\"1585067199346\" />\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.right\" timestamp=\"1586254027850\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.right/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1586254027850\" />\n    <state width=\"1877\" height=\"264\" key=\"GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050\" timestamp=\"1585067199353\" />\n    <state x=\"2584\" y=\"246\" width=\"1081\" height=\"587\" key=\"MultipleFileMergeDialog\" timestamp=\"1587046282239\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2584\" y=\"246\" width=\"1081\" height=\"587\" key=\"MultipleFileMergeDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050\" timestamp=\"1587046282239\" />\n    <state x=\"2381\" y=\"197\" width=\"1199\" height=\"716\" key=\"SettingsEditor\" timestamp=\"1587143481099\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2381\" y=\"197\" key=\"SettingsEditor/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1586181792395\" />\n    <state x=\"2381\" y=\"197\" width=\"1199\" height=\"716\" key=\"SettingsEditor/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050\" timestamp=\"1587143481099\" />\n    <state x=\"2012\" y=\"122\" width=\"1736\" height=\"866\" key=\"ShowDiffWithBranchDialog\" timestamp=\"1586255055305\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2012\" y=\"122\" width=\"1736\" height=\"866\" key=\"ShowDiffWithBranchDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1586255055305\" />\n    <state x=\"2667\" y=\"173\" key=\"VCS.ChangeListViewerDialog\" timestamp=\"1587044514520\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2667\" y=\"173\" key=\"VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050\" timestamp=\"1587044514520\" />\n    <state x=\"2472\" y=\"284\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1587145566863\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"552\" y=\"284\" key=\"Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050\" timestamp=\"1586251452538\" />\n    <state x=\"2472\" y=\"284\" key=\"Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1586254486866\" />\n    <state x=\"552\" y=\"284\" key=\"Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050\" timestamp=\"1583918013367\" />\n    <state x=\"2472\" y=\"284\" key=\"Vcs.Push.Dialog.v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050\" timestamp=\"1587145566863\" />\n    <state x=\"2731\" y=\"432\" width=\"324\" height=\"261\" key=\"com.intellij.database.actions.DdlActions$DeleteProvider2$1\" timestamp=\"1585127054866\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2731\" y=\"432\" width=\"324\" height=\"261\" key=\"com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1585127054866\" />\n    <state x=\"2012\" y=\"122\" width=\"1736\" height=\"866\" key=\"com.intellij.dvcs.ui.CompareBranchesDialog\" timestamp=\"1586254445954\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2012\" y=\"122\" width=\"1736\" height=\"866\" key=\"com.intellij.dvcs.ui.CompareBranchesDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1586254445954\" />\n    <state x=\"2576\" y=\"380\" key=\"com.intellij.ide.util.TipDialog\" timestamp=\"1583840208523\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2576\" y=\"380\" key=\"com.intellij.ide.util.TipDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1583840208523\" />\n    <state x=\"2687\" y=\"466\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1587137168543\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2687\" y=\"466\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1586252088632\" />\n    <state x=\"2687\" y=\"466\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050\" timestamp=\"1587137168543\" />\n    <state x=\"2645\" y=\"170\" key=\"git4idea.branch.GitSmartOperationDialog\" timestamp=\"1587046252425\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2645\" y=\"170\" key=\"git4idea.branch.GitSmartOperationDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050\" timestamp=\"1587046252425\" />\n    <state x=\"2536\" y=\"258\" width=\"672\" height=\"677\" key=\"run.anything.popup\" timestamp=\"1586251565489\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2536\" y=\"258\" width=\"672\" height=\"677\" key=\"run.anything.popup/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1586251565489\" />\n    <state x=\"616\" y=\"258\" width=\"672\" height=\"677\" key=\"run.anything.popup/0.30.1920.1050@0.30.1920.1050\" timestamp=\"1583666787487\" />\n    <state x=\"2536\" y=\"208\" width=\"670\" height=\"676\" key=\"search.everywhere.popup\" timestamp=\"1585086973147\">\n      <screen x=\"1920\" y=\"30\" width=\"1920\" height=\"1050\" />\n    </state>\n    <state x=\"2536\" y=\"208\" width=\"670\" height=\"676\" key=\"search.everywhere.popup/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050\" timestamp=\"1585086973147\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 2ae1be3a4d83e12d62877af5092126744ddd51c2)
++++ .idea/workspace.xml	(date 1587563596279)
+@@ -1,7 +1,33 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="BranchesTreeState">
++    <expand>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </expand>
++    <select />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="" />
++    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="fix">
++      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_04_2020_14_42__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_22_04_2020_14_42__Default_Changelist_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_22_04_2020_14_42__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_22_04_2020_14_42__Default_Changelist_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_04_2020_14_42__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_04_2020_14_42__Default_Changelist_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -12,9 +38,7 @@
+   </component>
+   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+-    <execution>
+-      <executable />
+-    </execution>
++    <execution />
+   </component>
+   <component name="DatabaseView">
+     <option name="SHOW_INTERMEDIATE" value="true" />
+@@ -60,14 +84,6 @@
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-    <option name="UPDATE_TYPE" value="REBASE" />
+-  </component>
+-  <component name="IgnoredFileRootStore">
+-    <option name="generatedRoots">
+-      <set>
+-        <option value="C:\laragon\www\eter\.idea" />
+-      </set>
+-    </option>
+   </component>
+   <component name="PhpWorkspaceProjectConfiguration">
+     <include_path>
+@@ -195,7 +211,6 @@
+   </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showExcludedFiles" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
+@@ -228,18 +243,6 @@
+       <command value="php bin/console make:migration" />
+       <command value="php bin/console doctrine:migration:migrate" />
+       <command value="php bin/console make:entity" />
+-    </option>
+-  </component>
+-  <component name="ServiceViewManager">
+-    <option name="viewStates">
+-      <list>
+-        <serviceView>
+-          <treeState>
+-            <expand />
+-            <select />
+-          </treeState>
+-        </serviceView>
+-      </list>
+     </option>
+   </component>
+   <component name="SvnConfiguration">
+@@ -417,7 +420,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1587145563468</updated>
+     </task>
+-    <option name="localTasksCounter" value="19" />
++    <task id="LOCAL-00019" summary="fix">
++      <created>1587559525247</created>
++      <option name="number" value="00019" />
++      <option name="presentableId" value="LOCAL-00019" />
++      <option name="project" value="LOCAL" />
++      <updated>1587559525247</updated>
++    </task>
++    <task id="LOCAL-00020" summary="fix">
++      <created>1587559839361</created>
++      <option name="number" value="00020" />
++      <option name="presentableId" value="LOCAL-00020" />
++      <option name="project" value="LOCAL" />
++      <updated>1587559839361</updated>
++    </task>
++    <option name="localTasksCounter" value="21" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -428,13 +445,12 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State>
+-              <option name="COLUMN_ORDER" />
+-            </State>
++            <State />
+           </value>
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+@@ -453,7 +469,8 @@
+     <MESSAGE value="test navbar" />
+     <MESSAGE value="onglet social css" />
+     <MESSAGE value="fin mise en place oglet social" />
+-    <option name="LAST_COMMIT_MESSAGE" value="fin mise en place oglet social" />
++    <MESSAGE value="fix" />
++    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+   </component>
+   <component name="WindowStateProjectService">
+     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
+@@ -517,13 +534,13 @@
+       <screen x="1920" y="30" width="1920" height="1050" />
+     </state>
+     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
+-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1587145566863">
++    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1587559843271">
+       <screen x="1920" y="30" width="1920" height="1050" />
+     </state>
+     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
+     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
+     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />
+-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587145566863" />
++    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587559843271" />
+     <state x="2731" y="432" width="324" height="261" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585127054866">
+       <screen x="1920" y="30" width="1920" height="1050" />
+     </state>
+@@ -536,11 +553,11 @@
+       <screen x="1920" y="30" width="1920" height="1050" />
+     </state>
+     <state x="2576" y="380" key="com.intellij.ide.util.TipDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1583840208523" />
+-    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587137168543">
++    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587563397529">
+       <screen x="1920" y="30" width="1920" height="1050" />
+     </state>
+     <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252088632" />
+-    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587137168543" />
++    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587563397529" />
+     <state x="2645" y="170" key="git4idea.branch.GitSmartOperationDialog" timestamp="1587046252425">
+       <screen x="1920" y="30" width="1920" height="1050" />
+     </state>
+Index: src/Controller/SecurityController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\n\nnamespace App\\Controller;\n\n\nuse App\\Entity\\EterUser;\nuse App\\Form\\RegistrationType;\nuse Symfony\\Component\\Mime\\Email;\nuse Doctrine\\ORM\\EntityManagerInterface;\nuse Symfony\\Component\\HttpFoundation\\Request;\nuse Symfony\\Component\\HttpFoundation\\Response;\nuse Symfony\\Component\\Routing\\Annotation\\Route;\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\nuse Symfony\\Component\\Security\\Http\\Authentication\\AuthenticationUtils;\nuse Symfony\\Component\\Security\\Core\\Encoder\\UserPasswordEncoderInterface;\n\nclass SecurityController extends AbstractController {\n\n    /**\n     * @Route(\"/inscription\", name=\"security_registration\")\n     */\n    //Mailerinterface\n    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder) {\n        \n        //Définition de la variable en signalant que l'on veut créer un nouvel utilisateur\n        $user = new EterUser(); \n\n        $inProgress = false;\n\n        //Création du formulaire selon la table user\n        $form = $this->createForm(RegistrationType::class, $user);\n\n        //Analyse de la requête\n        $form->handleRequest($request);\n\n        // Actions à réaliser si le formulaire est soumis et valide\n        if($form->isSubmitted() && $form->isValid()) {\n            \n            //Téléchargement de la photo de profil\n\n            //Récupération du champ User_Avatar de EterUser\n            $file = $user->getUserAvatar();\n\n            //Cryptage du nom du fichier téléchargé\n            $fileName = uniqid().'.'.$file->getClientOriginalExtension();\n\n            //Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier\n            $file->move($this->getParameter('upload_directory'), $fileName);\n\n            //Importation du fichier dans la BDD\n            $user->setUserAvatar($fileName);\n            \n            //Encryptage du mot de passe selon la configuration dans security.yaml de config\n            //Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter\n            $hash = $encoder->encodePassword($user, $user->getUserPassword());\n\n            //Validation du remplacement du mot de passe par un encryptage\n            $user->setUserPassword($hash);\n\n            //Garde en mémoire les données soumises\n            $manager->persist($user);\n\n            //Envoi des données à la BDD\n            $manager->flush();\n        \n            //Envoi d'un email de confirmation\n\n            /*$email = (new Email())\n                ->from('hello@example.com')\n                ->to('you@example.com')\n                //->cc('cc@example.com')\n                //->bcc('bcc@example.com')\n                //->replyTo('fabien@example.com')\n                //->priority(Email::PRIORITY_HIGH)\n                ->subject('Time for Symfony Mailer!')\n                ->text('Sending emails is fun again!')\n                ->html('<p>See Twig integration for better HTML integration!</p>');\n\n            $mailer->send($email);*/\n\n            //Affichage JS pour confirmer qu'un mail a été envoyé\n    \n            //return $this->redirectToRoute('/login');\n        }\n            //Affichage\n            return $this->render('security/registration.html.twig', [\n                'inProgress' => $inProgress,\n                'form' => $form->createView()\n            ]);\n    }\n\n    \n    /**\n     * @Route(\"/login\", name=\"login\");\n     * @param AuthenticationUtils $authenticationUtils\n     * @return Response\n     */\n\n    public function login(AuthenticationUtils $authenticationUtils) {\n        $error =$authenticationUtils->getLastAuthenticationError();\n        $lastUsername = $authenticationUtils->getLastUsername();\n        $inProgress = false;\n        return $this->render('security/login.html.twig', [\n            'last_username' => $lastUsername,\n            'error' => $error,\n            'inProgress' => $inProgress\n        ]);\n    }\n\n    /**\n     * @Route(\"/logout\", name=\"logout\")\n     */\n    public function logout() {\n\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Controller/SecurityController.php	(revision 2ae1be3a4d83e12d62877af5092126744ddd51c2)
++++ src/Controller/SecurityController.php	(date 1587563604381)
+@@ -5,10 +5,12 @@
+ 
+ use App\Entity\EterUser;
+ use App\Form\RegistrationType;
+-use Symfony\Component\Mime\Email;
+ use Doctrine\ORM\EntityManagerInterface;
+ use Symfony\Component\HttpFoundation\Request;
+ use Symfony\Component\HttpFoundation\Response;
++use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
++use Symfony\Component\Mailer\MailerInterface;
++use Symfony\Component\Mime\Email;
+ use Symfony\Component\Routing\Annotation\Route;
+ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+@@ -18,9 +20,14 @@
+ 
+     /**
+      * @Route("/inscription", name="security_registration")
++     * @param Request $request
++     * @param EntityManagerInterface $manager
++     * @param UserPasswordEncoderInterface $encoder
++     * @param MailerInterface $mailer
++     * @return Response
++     * @throws TransportExceptionInterface
+      */
+-    //Mailerinterface
+-    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder) {
++    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, MailerInterface $mailer) {
+         
+         //Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
+         $user = new EterUser(); 
+@@ -33,23 +40,18 @@
+         //Analyse de la requête
+         $form->handleRequest($request);
+ 
+-        // Actions à réaliser si le formulaire est soumis et valide
+         if($form->isSubmitted() && $form->isValid()) {
+-            
++
+             //Téléchargement de la photo de profil
+-
+             //Récupération du champ User_Avatar de EterUser
+             $file = $user->getUserAvatar();
+-
+             //Cryptage du nom du fichier téléchargé
+-            $fileName = uniqid().'.'.$file->getClientOriginalExtension();
+-
++            $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
+             //Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
+             $file->move($this->getParameter('upload_directory'), $fileName);
+-
+             //Importation du fichier dans la BDD
+             $user->setUserAvatar($fileName);
+-            
++
+             //Encryptage du mot de passe selon la configuration dans security.yaml de config
+             //Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
+             $hash = $encoder->encodePassword($user, $user->getUserPassword());
+@@ -62,40 +64,37 @@
+ 
+             //Envoi des données à la BDD
+             $manager->flush();
+-        
+-            //Envoi d'un email de confirmation
++
++            //return $this->redirectToRoute('login');
++$mail = $user->getUserMail();
+ 
+-            /*$email = (new Email())
+-                ->from('hello@example.com')
+-                ->to('you@example.com')
++            $email = (new Email())
++                ->from('contact@eterelz.org')
++                ->to($mail)
+                 //->cc('cc@example.com')
+                 //->bcc('bcc@example.com')
+                 //->replyTo('fabien@example.com')
+                 //->priority(Email::PRIORITY_HIGH)
+-                ->subject('Time for Symfony Mailer!')
+-                ->text('Sending emails is fun again!')
++                ->subject('Confirmation d\'inscription')
++                ->text('Welcome')
+                 ->html('<p>See Twig integration for better HTML integration!</p>');
+ 
+-            $mailer->send($email);*/
++            $mailer->send($email);
+ 
+-            //Affichage JS pour confirmer qu'un mail a été envoyé
+-    
+-            //return $this->redirectToRoute('/login');
+         }
+-            //Affichage
+-            return $this->render('security/registration.html.twig', [
+-                'inProgress' => $inProgress,
+-                'form' => $form->createView()
+-            ]);
++
++        //Affichage
++        return $this->render('security/registration.html.twig', [
++            'inProgress' => $inProgress,
++            'form' => $form->createView()
++        ]);
+     }
+-
+     
+     /**
+-     * @Route("/login", name="login");
++     * @Route("/login", name="login")
+      * @param AuthenticationUtils $authenticationUtils
+      * @return Response
+      */
+-
+     public function login(AuthenticationUtils $authenticationUtils) {
+         $error =$authenticationUtils->getLastAuthenticationError();
+         $lastUsername = $authenticationUtils->getLastUsername();

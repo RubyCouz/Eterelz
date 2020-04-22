@@ -241,33 +241,8 @@ footer {
 }
 
 /**
-Mise en forme du badge d'erreur
+Mise en forme du formulaire
 */
-.badge {
-    display: inline-block;
-    padding: 0.25em 0.4em;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.badge-danger {
-    color: #fff;
-    background-color: #dc3545;
-}
-
-.text-uppercase {
-    text-transform: uppercase !important;
-}
-
-.form-error-message{
-      color: red;
-}
 
 #champs {
     font-size: 13px;
@@ -275,9 +250,6 @@ Mise en forme du badge d'erreur
     color: red;
 }
 
-/**
-Mise en forme du formulaire
-*/
 .row{
     padding-top: 15px;
     padding-bottom: 15px;
@@ -306,6 +278,22 @@ Mise en forme du formulaire
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 40px;
+}
+
+/**
+Cadre de prévisualisation avatar
+*/
+
+#wrapper{
+    text-align: center;
+    margin: 70px auto;
+}
+
+#output_image{
+    width: 300px;
+    height: 300px;
+    border: 4px solid #000;
+    border-radius: 50%;
 }

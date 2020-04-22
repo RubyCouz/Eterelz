@@ -75,3 +75,16 @@ var pass = document.getElementById("registration_user_password")
             break
     }
 }
+
+//Prévisualisation de la photo de profil
+
+function preview_image(event)
+{
+    var reader = new FileReader();
+    reader.onload = function()
+    {
+        var output = document.getElementById('output_image');
+        output.src = reader.result;
+    }
+reader.readAsDataURL(event.target.files[0]);
+}

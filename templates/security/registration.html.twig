@@ -4,12 +4,22 @@
 
         <div class="container">
 
+        {# Affichage du logo Eterelz #}
+
+        <img src="{{ asset('img/logo/logoEterelz.png') }}" class="align-center col-12" alt="Logo Eterelz" title="Logo Eterelz">
+
             {# Installation de la balise form de départ #}
             {{ form_start(form,{attr: {novalidate: 'novalidate'}}) }}
 
             <div id="inscription">Formulaire d'inscription</div>
 
             {# Affichage des champs du formulaire #}
+
+            {# Preview image de profil #}
+
+            <div id="wrapper">
+                <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" alt="default_profil" id="output_image"/>
+            </div>
 
             <div class="row">
                 <div class="col-4">

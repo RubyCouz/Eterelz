@@ -29,10 +29,11 @@ class RegistrationType extends AbstractType
 
         $builder
         //---------------AVATAR---------------//
+        //Demander si le nom d'avatar doit être unique
         //Demander quels types de fichiers sont autorisés
         //Demander la taille maximum de fichier autorisés
             ->add('user_avatar', FileType::class, [
-                'attr' => ['placeholder' => 'Téléchargez votre Avatar'],
+                'attr' => ['placeholder' => 'Choisissez un avatar', 'onchange' => 'preview_image(event)'],
                 'constraints' => [ new File([
                     'maxSize' => '1024k'
                     ])

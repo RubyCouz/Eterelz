@@ -33,6 +33,7 @@ class RegistrationType extends AbstractType
         //Demander la taille max de fichier autorisé
 
             ->add('user_avatar', FileType::class, [
+                'attr' => ['placeholder' => 'Choisissez un avatar', 'onchange' => 'preview_image(event)'],
                 'constraints' => [ new File([
                     'maxSize' => '1024k'
                 ])

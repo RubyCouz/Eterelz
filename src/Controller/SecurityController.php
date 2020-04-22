@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\EterUser;
 use App\Form\RegistrationType;
+use Symfony\Component\Mime\Email;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,11 +33,12 @@ class SecurityController extends AbstractController {
         //Analyse de la requête
         $form->handleRequest($request);
 
+        // Actions à réaliser si le formulaire est soumis et valide
         if($form->isSubmitted() && $form->isValid()) {
             
             //Téléchargement de la photo de profil
-            //Récupération du champ User_Avatar de EterUser
 
+            //Récupération du champ User_Avatar de EterUser
             $file = $user->getUserAvatar();
 
             //Cryptage du nom du fichier téléchargé
@@ -60,7 +62,9 @@ class SecurityController extends AbstractController {
 
             //Envoi des données à la BDD
             $manager->flush();
-        }
+        
+            //Envoi d'un email de confirmation
+
             /*$email = (new Email())
                 ->from('hello@example.com')
                 ->to('you@example.com')
@@ -73,9 +77,11 @@ class SecurityController extends AbstractController {
                 ->html('<p>See Twig integration for better HTML integration!</p>');
 
             $mailer->send($email);*/
+
+            //Affichage JS pour confirmer qu'un mail a été envoyé
     
             //return $this->redirectToRoute('/login');
-    
+        }
             //Affichage
             return $this->render('security/registration.html.twig', [
                 'inProgress' => $inProgress,

@@ -1,53 +1,44 @@
 {% extends 'base.html.twig' %}
- {% block title %}Connexion{% endblock %}
- {% block body %}
-     <div class="uk-text-center" uk-grid>
-         <div class="uk-width-1-4@m"></div>
-         {# connection card #}
-         <div class="uk-margin-auto uk-margin-auto-vertical uk-card uk-card-default uk-width-1-2@m">
-             <div class="uk-card-header">
-                 <div class="uk-grid-small uk-flex-middle" uk-grid>
-                     <div class="uk-width-auto uk-align-center">
-                         <img src="{{ asset('img/logo/logoEterelz.png') }}" class="logoSignin uk-align-center"
-                              alt="Logo Eterelz"
-                              title="Logo Eterelz">
-                     </div>
-                 </div>
-             </div>
-             <div class="uk-card-body">
-                 <form action="{{ path('login') }}" method="POST">
-                     <fieldset class="uk-fieldset">
-                         <legend class="uk-legend">Veuillez saisir vos identifiants de connexion</legend>
-                         {% if error %}
-                             <div class="uk-alert-danger" uk-alert>
-                                 <a class="uk-alert-close" uk-close></a>
-                                 <p>{{ error.messageKey | trans(error.messageData, 'security') }}</p>
-                             </div>
-                         {% endif %}
-                         <div class="uk-margin-top uk-child-width-expand@s uk-text-center" uk-grid>
-                             <label for="username" class="uk-width-medium@s">Email</label>
-                             <input type="text" id="username" name="_username" class="uk-input uk-width-large@s" value="{{ last_username }}">
-                         </div>
-                         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-                             <label for="password" class="uk-width-medium@s">Mot de passe</label>
-                             <input type="password" id="password" name="_password" class="uk-input uk-width-large@s">
-                         </div>
-                         <div class="uk-child-width-expand@s" uk-grid>
-                             <label for="remember">
-                             <input type="checkbox" id="remember" class="uk-checkbox" value="Se souvenir de moi"> Se souvenir de moi
-                             </label>
-                         </div>
-                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                     </fieldset>
-                     <div class="" uk-grid>
-                         <input type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center" value="Se connecter">
-                     </div>
-                 </form>
-             </div>
-             <div class="uk-card-footer">
-                 <p>Pas encore inscrit(e) ? cliquez <a href="{{ path('security_registration') }}" title="Inscription">ici</a> !!!</p>
-             </div>
-         </div>
-         <div class="uk-width-1-4@m"></div>
-     </div>
- {% endblock %}
+
+    {% block title %}Connexion{% endblock %}
+
+        {% block body %}
+
+            <div class="container">
+                <form>
+                    {# Logo Eterelz #}
+                    <img src="{{ asset('img/logo/logoEterelz.png') }}" class="align-center col-12" alt="Logo Eterelz" title="Logo Eterelz">
+                        <legend class="align-center">Veuillez saisir vos identifiants de connexion</legend>
+                        {% if error %}
+
+                            <div class="alert-danger">
+                                <a class="uk-alert-close"></a>
+                                <p>{{ error.messageKey | trans(error.messageData, 'security') }}</p>
+                            </div>
+
+                        {% endif %}
+
+                            <label for="username" class="">Email</label>
+                            <input type="text" id="username" name="_username" class="" value="{{ last_username }}">
+
+                        <div class="" >
+                            <label for="password" class="">Mot de passe</label>
+                                <input type="password" id="password" name="_password" class="">
+                        </div>
+
+                        <div class="" >
+                            <label for="remember"></label>
+                                <input type="checkbox" id="remember" class="" value="Se souvenir de moi"> Se souvenir de moi</input>
+                        </div>
+
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                    <div class="" >
+                        <input type="submit" class="" value="Se connecter">
+                    </div>
+                </form>
+                <div class="">
+                    <p>Pas encore inscrit(e) ? Cliquez <a href="{{ path('security_registration') }}" title="Inscription">ici</a> !!!</p>
+                </div>
+            </div>
+{% endblock %}

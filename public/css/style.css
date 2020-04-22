@@ -38,30 +38,6 @@ navbar
     background: #272725;
 }
 
-/*!***/
-/*Social*/
-/* *!*/
-/*.social {*/
-/*    height: 60px;*/
-/*    width: 260px;*/
-/*    border-radius: 0 0 50% 50%;*/
-/*    background: #272725;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    right: 0;*/
-/*    transition: 0.8s cubic-bezier(.68,-0.55,.27,1.55);*/
-/*}*/
-/*.social:hover {*/
-/*    height: 400px;*/
-/*    width: 400px;*/
-/*    border-radius: 50%;*/
-/*    background: #272725;*/
-/*    position: absolute;*/
-/*    top: -150px;*/
-/*    right: -150px;*/
-/*    transition: 0.8s cubic-bezier(.68,-0.55,.27,1.55);*/
-/*    !*box-shadow: -9px 10px 26px -3px rgba(159,30,93,1);*!*/
-/*}*/
 .twitch, .twitter, .youtube, .discord, .facebook {
     z-index: 1000;
     position: absolute;

@@ -1,8 +1,7 @@
 /**
 background in progress
  */
-
-.inProgress {
+ .inProgress {
     background-image: url("../img/workInProgress/COMING_SOONv2.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -12,7 +11,7 @@ background in progress
 }
 
 /**
-homme background
+home background
  */
 .base {
     background-image: url("../img/connection/signinBg.jpg");
@@ -31,8 +30,67 @@ homme background
 navbar
  */
 .logo {
-    width: 20em;
+    width: 15em;
     height: auto;
+}
+
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background: #272725;
+}
+
+/*!***/
+/*Social*/
+/* *!*/
+/*.social {*/
+/*    height: 60px;*/
+/*    width: 260px;*/
+/*    border-radius: 0 0 50% 50%;*/
+/*    background: #272725;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    transition: 0.8s cubic-bezier(.68,-0.55,.27,1.55);*/
+/*}*/
+/*.social:hover {*/
+/*    height: 400px;*/
+/*    width: 400px;*/
+/*    border-radius: 50%;*/
+/*    background: #272725;*/
+/*    position: absolute;*/
+/*    top: -150px;*/
+/*    right: -150px;*/
+/*    transition: 0.8s cubic-bezier(.68,-0.55,.27,1.55);*/
+/*    !*box-shadow: -9px 10px 26px -3px rgba(159,30,93,1);*!*/
+/*}*/
+.twitch, .twitter, .youtube, .discord, .facebook {
+    z-index: 1000;
+    position: absolute;
+    font-size: 40px;
+}
+.twitch {
+    color: #772CE8;
+    top: 170px;
+    right: 340px;
+}
+.twitter {
+    color: #1CA0F2;
+    top: 330px;
+    right: 245px;
+}
+.facebook {
+    color: #4267B2;
+    top: 345px;
+    right: 180px;
+}
+.discord {
+    color: #7289DA;
+    top: 235px;
+    right: 335px;
+}
+.youtube {
+    color: #FF0000;
+    top: 290px;
+    right: 295px;
 }
 
 /**
@@ -75,6 +133,149 @@ icon
     color: #9F1E5D;
 }
 
-/*.avatar {*/
-/*    color: red;*/
-/*}*/
+/**
+Mise en forme du badge d'erreur
+*/
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  .badge-danger {
+    color: #fff;
+    background-color: #dc3545;
+  }
+
+  .text-uppercase {
+    text-transform: uppercase !important;
+  }
+
+  .form-error-message{
+      color: red;
+  }
+
+#oblig {
+    font-size:13px;
+    font-weight:bold;
+}
+
+fieldset{
+    border:0;
+    margin-left:-15px;
+}
+
+
+
+/**
+css widget social
+ */
+
+.modal1 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    color: white;
+    z-index: 1021;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+    overflow: auto;
+}
+
+.modal-close-btn {
+    display: block;
+    position: absolute;
+    top: 130px;
+    right: 160px;
+    width: 32px;
+    height: 32px;
+    padding: 32px;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 1021;
+}
+.modal-close-btn:hover {
+    opacity: 1;
+}
+.modal--2 { background: #4A90E2; }
+.modal--3 { background: #FFD200; }
+.modal--4 { background: #4CBB47; }
+.modal--5 { background: #362A6C; }
+.modal1.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.dialog {
+    background: #4A90E2;
+    min-width: 300px;
+    left: 50%;
+    right: auto;
+    top: 30%;
+    bottom: auto;
+    box-shadow: 0 0 0 3000px rgba(0,0,0,0.4);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.sidebar {
+    left: auto;
+    top: -150px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+    border-radius: 0 0 50% 50%;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 1;
+    visibility: visible;
+}
+.sidebar.show {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+.sidebar__block {
+    border-radius: 5px;
+    background: white;
+    opacity: 0.3;
+    margin-top: 32px;
+}
+.quote-box__bubble {
+    position: relative;
+    background: white;
+    padding: 16px;
+    color: #555;
+    border-radius: 5px;
+    max-width: 480px;
+    margin: 0 auto 20px;
+}
+.quote-box__bubble:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: white;
+}
+
+footer {
+    padding: 50px 0 20px;
+}
+.footer-text {
+    opacity: 0.7;
+    margin-top: 20px;
+}

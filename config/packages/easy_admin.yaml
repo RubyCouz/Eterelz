@@ -248,7 +248,7 @@ easy_admin:
         brand_color: '#9F1E5D'
         assets:
             css:
-                - '/eter/public/css/backOffice.css'
+                - 'css/backOffice.css'
             favicon:
                 path: 'img/favicon/favicon.jpg'
                 mime_type: 'image/jpg'

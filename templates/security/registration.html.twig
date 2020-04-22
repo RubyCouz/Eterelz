@@ -2,84 +2,146 @@
 
 {% block body %}
 
-<div uk-grid>
-    <div class="uk-width-1-8@m"></div>
-    {# inscription card #}
-    <div class="uk-margin-auto uk-margin-auto-vertical uk-card uk-card-default uk-width-1-2@m">
-        <div class="uk-card-header">
-            <div class="uk-grid-small uk-flex-middle" uk-grid>
-                <div class="uk-width-auto uk-align-center">
-                    <img src="{{ asset('img/logo/logoEterelz.png') }}" class="logoSignin uk-align-center"
-                        alt="Logo Eterelz" title="Logo Eterelz">
-                </div>
-            </div>
-        </div>
+        <div class="container">
 
-        <div class="uk-card-body">
+        {# Logo Eterelz #}
+        <img src="{{ asset('img/logo/logoEterelz.png') }}" class="align-center col-12" alt="Logo Eterelz" title="Logo Eterelz">
 
-        {# Thème bootstrap pour formulaire #}
-        {% form_theme form 'bootstrap_4_layout.html.twig' %}
-        
             {# Installation de la balise form de départ #}
             {{ form_start(form,{attr: {novalidate: 'novalidate'}}) }}
 
-            <div id="champs">Les champs munis d'une étoile sont obligatoires</div>
+            <div id="inscription">Formulaire d'inscription</div>
 
             {# Affichage des champs du formulaire #}
-            <div class="uk-margin">
-                {{ form_row(form.user_avatar) }}
+
+            {# Preview image de profil #}
+
+            <div id="wrapper">
+                <img id="output_image" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" alt="profil_default" />
             </div>
 
-            <div class="uk-margin">
-                {{ form_row(form.user_login) }}
+            <div class="row">
+                <div class="col-4">
+                <label id="input" class="form-control btn btn-primary">AVATAR</label>
+                </div>
+                <div class="col-8">
+                {{ form_widget(form.user_avatar) }}
+                {{ form_errors(form.user_avatar) }}
+                </div>
             </div>
 
-            <div class="uk-margin">
-                {{ form_row(form.user_mail) }}
+            <div class="row">
+                <div class="col-4">
+                <label id="input" class="form-control btn btn-primary">LOGIN *</label>
+                </div>
+                <div class="col-8">
+                {{ form_widget(form.user_login) }}
+                {{ form_errors(form.user_login) }}
+                </div>
             </div>
 
-            <div class="uk-margin">
-                {{ form_row(form.user_address) }}
-            </div>
-
-            <div class="uk-margin">
-                {{ form_row(form.user_zip) }}
-            </div>
-
-            <div class="uk-margin">
-                {{ form_row(form.user_city) }}
-            </div>
-
-            <div class="uk-margin">
-                {{ form_row(form.user_discord) }}
-            </div>
-
-            <div class="uk-margin">
-                {{ form_row(form.user_sex) }}
-            </div>
-
-            <div class="uk-margin">
-                {{ form_row(form.user_description) }}
-            </div>
-
-            <div class="uk-margin">
-                {{ form_row(form.user_password) }}
-                <!--<span id="msg"></span>-->
-                {# Barre de force du mdp #}
-                <progress class="uk-progress" value="0" max="100" id="strength"></progress>
-            </div>
-
-            <div class="uk-margin">
-                {{ form_row(form.confirm_user_password) }}
+            <div class="row">
+                <div class="col-4">
+                <label id="input" class="form-control btn btn-primary">ADRESSE</label>
+                </div>
+                <div class="col-8">
+                {{ form_widget(form.user_address) }}
+                {{ form_errors(form.user_address) }}
+                </div>
             </div>
             
-            <button type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center">S'inscrire !</button>
+            <div class="row">
+                <div class="col-4">
+                <label id="input" class="form-control btn btn-primary">CODE POSTAL</label>
+                </div>
+                <div class="col-8">
+                {{ form_widget(form.user_zip) }}
+                {{ form_errors(form.user_zip) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                <label id="input" class="form-control btn btn-primary">VILLE</label>
+                </div>
+                <div class="col-8">
+                {{ form_widget(form.user_city) }}
+                {{ form_errors(form.user_city) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                <label id="input" class="form-control btn btn-primary">ID DISCORD *</label>
+                </div>
+                <div class="col-8">
+                {{ form_widget(form.user_discord) }}
+                {{ form_errors(form.user_discord) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                <label id="input" class="form-control btn btn-primary">SEXE</label>
+                </div>
+                <div class="col-8">
+                {{ form_widget(form.user_sex) }}
+                {{ form_errors(form.user_sex) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                <label id="input" class="form-control btn btn-primary">DESCRIPTION</label>
+                </div>
+                <div class="col-8">
+                {{ form_widget(form.user_description) }}
+                {{ form_errors(form.user_description) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                <label id="input" class="form-control btn btn-primary">MAIL *</label>
+                </div>
+                <div class="col-8">
+                {{ form_widget(form.user_mail) }}
+                {{ form_errors(form.user_mail) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                <label id="input" class="form-control btn btn-primary">MOT DE PASSE *</label>
+                </div>
+                <div class="col-8">
+                {{ form_widget(form.user_password) }}
+                {{ form_errors(form.user_password) }}
+                {{ form_help(form.user_password) }}
+                <br>
+                <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="strength"></div>
+                </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                <label id="input" class="form-control btn btn-primary">CONFIRMATION DU MOT DE PASSE *</label>
+                </div>
+                <div class="col-8">
+                {{ form_widget(form.confirm_user_password) }}
+                {{ form_errors(form.confirm_user_password) }}
+                </div>
+            </div>
+
+            <div id="champs">Les champs munis d'une * sont obligatoires</div>
+            
+            <button type="submit" id="button" class="btn btn-primary btn-sm btn-block">INSCRIPTION</button>
         
             {# Installation de la balise form de fin #}
             {{ form_end(form) }}
         
         </div>
-    </div>
-</div>
 
 {% endblock %}

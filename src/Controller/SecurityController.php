@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\EterUser;
 use App\Form\RegistrationType;
+use Symfony\Component\Mime\Email;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,6 +19,7 @@ class SecurityController extends AbstractController {
     /**
      * @Route("/inscription", name="security_registration")
      */
+    //Mailerinterface
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder) {
         
         //Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
@@ -31,18 +33,23 @@ class SecurityController extends AbstractController {
         //Analyse de la requête
         $form->handleRequest($request);
 
+        // Actions à réaliser si le formulaire est soumis et valide
         if($form->isSubmitted() && $form->isValid()) {
-
+            
             //Téléchargement de la photo de profil
+
             //Récupération du champ User_Avatar de EterUser
             $file = $user->getUserAvatar();
+
             //Cryptage du nom du fichier téléchargé
-            $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
+            $fileName = uniqid().'.'.$file->getClientOriginalExtension();
+
             //Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
             $file->move($this->getParameter('upload_directory'), $fileName);
+
             //Importation du fichier dans la BDD
             $user->setUserAvatar($fileName);
-
+            
             //Encryptage du mot de passe selon la configuration dans security.yaml de config
             //Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
             $hash = $encoder->encodePassword($user, $user->getUserPassword());
@@ -55,22 +62,40 @@ class SecurityController extends AbstractController {
 
             //Envoi des données à la BDD
             $manager->flush();
+        
+            //Envoi d'un email de confirmation
 
-            //return $this->redirectToRoute('login');
+            /*$email = (new Email())
+                ->from('hello@example.com')
+                ->to('you@example.com')
+                //->cc('cc@example.com')
+                //->bcc('bcc@example.com')
+                //->replyTo('fabien@example.com')
+                //->priority(Email::PRIORITY_HIGH)
+                ->subject('Time for Symfony Mailer!')
+                ->text('Sending emails is fun again!')
+                ->html('<p>See Twig integration for better HTML integration!</p>');
+
+            $mailer->send($email);*/
+
+            //Affichage JS pour confirmer qu'un mail a été envoyé
+    
+            //return $this->redirectToRoute('/login');
         }
-
-        //Affichage
-        return $this->render('security/registration.html.twig', [
-            'inProgress' => $inProgress,
-            'form' => $form->createView()
-        ]);
+            //Affichage
+            return $this->render('security/registration.html.twig', [
+                'inProgress' => $inProgress,
+                'form' => $form->createView()
+            ]);
     }
+
     
     /**
-     * @Route("/login", name="login")
+     * @Route("/login", name="login");
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
+
     public function login(AuthenticationUtils $authenticationUtils) {
         $error =$authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();

@@ -129,15 +129,13 @@ let pass = document.getElementById("registration_user_password")
 
 //Prévisualisation de la photo de profil
 
-function preview_image(event){
-
-    let reader = new FileReader();
-
-    reader.onload = function(){
-
-        let output = document.getElementById('output_image');
+function preview_image(event)
+{
+    var reader = new FileReader();
+    reader.onload = function()
+    {
+        var output = document.getElementById('output_image');
         output.src = reader.result;
     }
-    
 reader.readAsDataURL(event.target.files[0]);
 }

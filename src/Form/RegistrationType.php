@@ -36,10 +36,12 @@ class RegistrationType extends AbstractType
                 'attr' => ['placeholder' => 'Choisissez un avatar', 'onchange' => 'preview_image(event)'],
                 'constraints' => [ new File([
                     'maxSize' => '1024k'
-                    ])
-                ]
-            ])
-        //---------------LOGIN---------------//
+                ])
+            ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+        ])
+
+        //---------------------------------------------------LOGIN----------------------------------------------------------------//
+
             ->add('user_login', TextType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'Caractère(s) non autorisé(s)', 'pattern' => '#[0-9a-zA-Zàâäéèêëïîôöùûüç!:_\-.?,/\#]$#'])],
                 'attr' => ['placeholder' => 'Saisissez votre login']

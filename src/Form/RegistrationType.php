@@ -37,7 +37,7 @@ class RegistrationType extends AbstractType
                 'constraints' => [ new File([
                     'maxSize' => '1024k'
                 ])
-            ],                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+            ]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
         ])
 
         //---------------------------------------------------LOGIN----------------------------------------------------------------//

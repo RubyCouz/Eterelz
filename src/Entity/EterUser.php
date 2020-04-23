@@ -45,8 +45,8 @@ class EterUser implements UserInterface
     private $user_password;
 
     /**
-     * @Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
-     */
+    * @Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
+    */
     public $confirm_user_password;
 
     /**
@@ -122,6 +122,7 @@ class EterUser implements UserInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\File(mimeTypes={ "image/png", "image/jpeg", "image/jpg" })
+     * 
      */
     private $user_avatar;
 
@@ -136,6 +137,7 @@ class EterUser implements UserInterface
         $this->eterComments = new ArrayCollection();
         $this->eterContents = new ArrayCollection();
     }
+
 
     public function getId(): ?int
     {
@@ -154,10 +156,12 @@ class EterUser implements UserInterface
         return $this;
     }
 
+
     public function __toString()
     {
         return $this->user_login;
     }
+
 
     public function getUserDate(): ?\DateTimeInterface
     {
@@ -243,6 +247,7 @@ class EterUser implements UserInterface
         return $this;
     }
 
+
     public function getUserSex(): ?string
     {
         return $this->user_sex;
@@ -309,6 +314,8 @@ class EterUser implements UserInterface
 
         return $this;
     }
+
+
 
     public function removeUserClan(EterClan $userClan): self
     {
@@ -478,7 +485,7 @@ class EterUser implements UserInterface
         return $this;
     }
 
-    //Les 5 fonctions obligatoires d'après Symfony pour le cryptage du mot de passe
+    // Les 5 fonctions obligatoires d'après Symfony pour le cryptage du MDP
     public function getPassword() {}
 
     public function getUsername() {}
@@ -491,7 +498,7 @@ class EterUser implements UserInterface
         return ['ROLE_USER'];
     }
 
-    public function getUserAvatar() 
+    public function getUserAvatar()
     {
         return $this->user_avatar;
     }

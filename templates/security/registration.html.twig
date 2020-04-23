@@ -4,8 +4,7 @@
 
         <div class="container">
 
-        {# Affichage du logo Eterelz #}
-
+        {# Logo Eterelz #}
         <img src="{{ asset('img/logo/logoEterelz.png') }}" class="align-center col-12" alt="Logo Eterelz" title="Logo Eterelz">
 
             {# Installation de la balise form de départ #}
@@ -18,7 +17,7 @@
             {# Preview image de profil #}
 
             <div id="wrapper">
-                <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" alt="default_profil" id="output_image"/>
+                <img id="output_image" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" alt="profil_default" />
             </div>
 
             <div class="row">
@@ -119,11 +118,10 @@
                 {{ form_widget(form.user_password) }}
                 {{ form_errors(form.user_password) }}
                 {{ form_help(form.user_password) }}
-                {# Barre de force du mdp #}
-                    <br>
-                    <div class="progress">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="strength"></div>
-                    </div>
+                <br>
+                <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="strength"></div>
+                </div>
                 </div>
             </div>
 

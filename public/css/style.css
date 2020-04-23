@@ -1,7 +1,7 @@
 /**
 background in progress
  */
-.inProgress {
+ .inProgress {
     background-image: url("../img/workInProgress/COMING_SOONv2.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -22,60 +22,6 @@ home background
     min-height: 150%;
 }
 
-
-
-nav {
-    height: 80px;
-}
-/**
-searchBar
- */
-.search-box {
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 60px !important;
-    border-radius: 40px;
-    padding: 10px;
-}
-
-.search-box:hover > .search-text {
-    /*transform: translateX(30px);*/
-    width: 400px;
-    padding: 0 6px;
-}
-
-.search-box:hover > .search-btn {
-    background: white;
-}
-
-.search-btn {
-    color: #53C8E0 !important;
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    /*background: #2f3640;*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
-}
-
-.search-text {
-    border: none;
-    background: none;
-    outline: none;
-    float: left;
-    padding: 0;
-    color: white;
-    font-size: 16px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 0;
-}
-
 .backgroundSignin {
     background-image: url("../img/connection/signinBg.jpg")
 }
@@ -84,56 +30,44 @@ searchBar
 navbar
  */
 .logo {
-    width: 10em;
+    width: 15em;
     height: auto;
 }
-.menu-social {
-    font-size: 25px;
-    color: #53C8E0 !important;
+
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background: #272725;
 }
-.nav-link {
-    color: #53C8E0 !important;
-}
+
 .twitch, .twitter, .youtube, .discord, .facebook {
     z-index: 1000;
     position: absolute;
     font-size: 40px;
 }
-
 .twitch {
     color: #772CE8;
     top: 170px;
     right: 340px;
 }
-
 .twitter {
     color: #1CA0F2;
     top: 330px;
     right: 245px;
 }
-
 .facebook {
     color: #4267B2;
     top: 345px;
     right: 180px;
 }
-
 .discord {
     color: #7289DA;
     top: 235px;
     right: 335px;
 }
-
 .youtube {
     color: #FF0000;
     top: 290px;
     right: 295px;
 }
-
-
-
-
-
 
 /**
 sign in card
@@ -145,6 +79,12 @@ sign in card
 /*}*/
 .signinCard {
     width: 400px;
+}
+
+.uk-card-default {
+    box-shadow: 0 5px 15px #9F1E5D;
+    /*padding-left: 0;*/
+    opacity: 0.7;
 }
 
 .footer {
@@ -185,7 +125,7 @@ css widget social
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: 0.5s cubic-bezier(.68, -0.55, .27, 1.55);
+    transition: 0.5s cubic-bezier(.68,-0.55,.27,1.55);
     overflow: auto;
 }
 
@@ -202,17 +142,29 @@ css widget social
     transition: 0.3s ease;
     z-index: 1021;
 }
-
 .modal-close-btn:hover {
     opacity: 1;
 }
-
+.modal--2 { background: #4A90E2; }
+.modal--3 { background: #FFD200; }
+.modal--4 { background: #4CBB47; }
+.modal--5 { background: #362A6C; }
 .modal1.show {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
-
+.dialog {
+    background: #4A90E2;
+    min-width: 300px;
+    left: 50%;
+    right: auto;
+    top: 30%;
+    bottom: auto;
+    box-shadow: 0 0 0 3000px rgba(0,0,0,0.4);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
 .sidebar {
     left: auto;
     top: -150px;
@@ -225,17 +177,35 @@ css widget social
     opacity: 1;
     visibility: visible;
 }
-
 .sidebar.show {
     -webkit-transform: translateX(0);
     transform: translateX(0);
 }
-
 .sidebar__block {
     border-radius: 5px;
     background: white;
     opacity: 0.3;
     margin-top: 32px;
+}
+.quote-box__bubble {
+    position: relative;
+    background: white;
+    padding: 16px;
+    color: #555;
+    border-radius: 5px;
+    max-width: 480px;
+    margin: 0 auto 20px;
+}
+.quote-box__bubble:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: white;
 }
 
 footer {
@@ -245,40 +215,22 @@ footer {
     opacity: 0.7;
     margin-top: 20px;
 }
-
 /**
 Mise en forme du formulaire
 */
-
-#champs {
-    font-size: 13px;
-    font-weight: bold;
-    color: red;
-}
-
-.row {
+.row{
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
-.container {
+.container{
     background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 20px;
 }
 
-#input {
-    font-family:  "PT Sans", sans-serif;
-    font-size: 15px;
-}
-
-input::placeholder{
-    font-family: "PT Sans", sans-serif;
-    font-size: 16px;
-}
-
-#input::placeholder {
+#input::placeholder{
     color: white;
 }
 
@@ -288,44 +240,32 @@ input::placeholder{
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 15px;
-    font-family: "PT Sans", sans-serif;
-    font-size: 15px;
 }
 
-#inscription {
+#inscription{
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
 }
 
-.form-control{
-    font-size: 15px;
-}
-
-.text-muted{
-    font-size: 12px;
-}
-
-.form-check-label{
-    margin-left: 10px;
-}
-
-.form-check{
-    margin-bottom: 10px;
+#champs {
+    font-size: 13px;
+    font-weight :bold;
+    color: red;
 }
 
 /**
 Cadre de prévisualisation avatar
 */
 
-#wrapper {
+#wrapper{
     text-align: center;
     margin: 70px auto;
 }
 
-#output_image {
+#output_image{
     width: 300px;
     height: 300px;
     border: 4px solid #000;

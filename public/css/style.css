@@ -34,10 +34,6 @@ navbar
     height: auto;
 }
 
-.uk-navbar-container:not(.uk-navbar-transparent) {
-    background: #272725;
-}
-
 .twitch, .twitter, .youtube, .discord, .facebook {
     z-index: 1000;
     position: absolute;
@@ -225,14 +221,24 @@ Mise en forme du formulaire
     padding-bottom: 15px;
 }
 
-.container{
+.container {
     background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 20px;
 }
 
-#input::placeholder{
+#input {
+    font-family:  "PT Sans", sans-serif;
+    font-size: 15px;
+}
+
+input::placeholder{
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+}
+
+#input::placeholder {
     color: white;
 }
 
@@ -246,7 +252,7 @@ Mise en forme du formulaire
     font-size: 15px;
 }
 
-#inscription{
+#inscription {
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
@@ -254,10 +260,20 @@ Mise en forme du formulaire
     margin-bottom: 40px;
 }
 
-#champs {
-    font-size: 13px;
-    font-weight :bold;
-    color: red;
+.form-control{
+    font-size: 15px;
+}
+
+.text-muted{
+    font-size: 12px;
+}
+
+.form-check-label{
+    margin-left: 10px;
+}
+
+.form-check{
+    margin-bottom: 10px;
 }
 
 /**

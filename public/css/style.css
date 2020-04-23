@@ -72,6 +72,60 @@ searchBar
     width: 0;
 }
 
+
+
+nav {
+    height: 80px;
+}
+/**
+searchBar
+ */
+.search-box {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 60px !important;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search-box:hover > .search-text {
+    /*transform: translateX(30px);*/
+    width: 400px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: white;
+}
+
+.search-btn {
+    color: #53C8E0 !important;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /*background: #2f3640;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search-text {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0;
+}
+
 .backgroundSignin {
     background-image: url("../img/connection/signinBg.jpg")
 }

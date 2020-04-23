@@ -34,6 +34,10 @@ navbar
     height: auto;
 }
 
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background: #272725;
+}
+
 .twitch, .twitter, .youtube, .discord, .facebook {
     z-index: 1000;
     position: absolute;

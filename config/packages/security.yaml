@@ -12,11 +12,10 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: lazy # => chaque personne qui rentre sur le site est considérée comme anonyme
+            anonymous: lazy # => chaque personne qui rentre sur le site est considéree comme annonyme
             provider: from_database
             form_login:
-                login_path: home
-                check_path: home
+                check_path: login
             logout:
                 path: /logout
                 target: /

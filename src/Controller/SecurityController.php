@@ -71,8 +71,6 @@ class SecurityController extends AbstractController {
 
             /*$mail = $user->getUserMail();
 
-            //$mail = $user->getUserMail();
-
             //Envoi mail de confirmation
             //$email = (new Email())
                 //->from('contact@eterelz.org')

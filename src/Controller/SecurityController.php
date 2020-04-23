@@ -8,9 +8,6 @@ use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
-//use Symfony\Component\Mailer\MailerInterface;
-//use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -20,14 +17,8 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/inscription", name="security_registration")
-     * @param Request $request
-     * @param EntityManagerInterface $manager
-     * @param UserPasswordEncoderInterface $encoder
-     * @param MailerInterface $mailer
-     * @return Response
-     * @throws TransportExceptionInterface
      */
-    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder) { //MailerInterface $mailer
+    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder) {
         
         //Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
         $user = new EterUser(); 
@@ -66,23 +57,6 @@ class SecurityController extends AbstractController {
             $manager->flush();
 
             //return $this->redirectToRoute('login');
-
-            //$mail = $user->getUserMail();
-
-            //Envoi mail de confirmation
-            //$email = (new Email())
-                //->from('contact@eterelz.org')
-                //->to($mail)
-                //->cc('cc@example.com')
-                //->bcc('bcc@example.com')
-                //->replyTo('fabien@example.com')
-                //->priority(Email::PRIORITY_HIGH)
-                //->subject('Confirmation d\'inscription')
-                //->text('Welcome')
-                //->html('<p>See Twig integration for better HTML integration!</p>');
-
-            //$mailer->send($email);
-
         }
 
         //Affichage

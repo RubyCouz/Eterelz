@@ -9,11 +9,6 @@
     <link rel="icon" type="image/jpg" href="{{ asset('img/favicon/favicon') }}">
     <link rel="stylesheet" href="{{ asset('css/hover-min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<link rel="stylesheet" href="css/styleform.css"> <!-- Resource style -->
-	<link rel="stylesheet" href="css/demo.css"> <!-- Demo style -->
-  	
     {% block stylesheets %}{% endblock %}
 </head>
 <body class="{{ (inProgress == true) ? 'inProgress' : 'base' }}">
@@ -40,39 +35,14 @@
                         <span "uk-navbar-toggle-icon"></span> <span class="uk-margin-small-left">Menu</span>
                     </a>
                 </li>
-            {% else %}
-                <li>
-                    <a href="{{ path('login') }}" title="Se connecter" class="nav-link">SE CONNECTER</a>
-                </li>
-            {% endif %}
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-            <li>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </li>
-        </ul>
-        <div>
-            <span class="navbar-toggler-icon" data-cta-target=".js-sidebar"></span>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#followme">Follow me</a></li>
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+    </header>
 
-        </div>
-    </div>
-</nav>
-<div class="js-sidebar modal1 sidebar bg-dark">
-    <i class="far fa-times-circle modal-close-btn"></i>
-    <i class="fas fa-project-diagram network"></i>
-    <i class="fab fa-twitch twitch hvr-bob" id="twitch"></i>
-    <i class="fab fa-discord discord hvr-bob" id="discord"></i>
-    <i class="fab fa-youtube youtube hvr-bob" id="youtube"></i>
-    <i class="fab fa-twitter twitter hvr-bob" id="twitter"></i>
-    <i class="fab fa-facebook-square facebook hvr-bob" id="facebook"></i>
-</div>
 
 {#        <i class="fas fa-project-diagram network"></i>#}
 {#        <i class="fab fa-twitch twitch" id="twitch"></i>#}
@@ -152,11 +122,8 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/feb810672a.js" crossorigin="anonymous"></script>
-<script src="../node_modules/codyhouse-framework/main/assets/js/util.js"></script>
 <script src="{{ asset('js/cta.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
-<script src="js/placeholders.min.js"></script> <!-- polyfill for the HTML5 placeholder attribute -->
-<script src="js/main.js"></script> <!-- Resource JavaScript -->
 {% block javascripts %}{% endblock %}
 </body>
 </html>

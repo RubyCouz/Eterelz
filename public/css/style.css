@@ -147,7 +147,6 @@ sign in card
     width: 400px;
 }
 
-
 .footer {
     height: 200px;
 }
@@ -239,10 +238,24 @@ css widget social
     margin-top: 32px;
 }
 
+footer {
+    padding: 50px 0 20px;
+}
+.footer-text {
+    opacity: 0.7;
+    margin-top: 20px;
+}
 
 /**
 Mise en forme du formulaire
 */
+
+#champs {
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+}
+
 .row {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -255,6 +268,16 @@ Mise en forme du formulaire
     margin-top: 20px;
 }
 
+#input {
+    font-family:  "PT Sans", sans-serif;
+    font-size: 15px;
+}
+
+input::placeholder{
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+}
+
 #input::placeholder {
     color: white;
 }
@@ -265,20 +288,32 @@ Mise en forme du formulaire
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 15px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 15px;
 }
 
 #inscription {
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 
-#champs {
-    font-size: 13px;
-    font-weight: bold;
-    color: red;
+.form-control{
+    font-size: 15px;
+}
+
+.text-muted{
+    font-size: 12px;
+}
+
+.form-check-label{
+    margin-left: 10px;
+}
+
+.form-check{
+    margin-bottom: 10px;
 }
 
 /**

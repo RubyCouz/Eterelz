@@ -250,19 +250,29 @@ Mise en forme du formulaire
     color: red;
 }
 
-.row{
+.row {
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
-.container{
+.container {
     background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 20px;
 }
 
-#input::placeholder{
+#input {
+    font-family:  "PT Sans", sans-serif;
+    font-size: 15px;
+}
+
+input::placeholder{
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+}
+
+#input::placeholder {
     color: white;
 }
 
@@ -271,10 +281,12 @@ Mise en forme du formulaire
     margin-bottom: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 15px;
+    border-radius: 10px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 15px;
 }
 
-#inscription{
+#inscription {
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
@@ -282,16 +294,36 @@ Mise en forme du formulaire
     margin-bottom: 40px;
 }
 
+.form-control {
+    font-size: 15px;
+}
+
+.form-check-label {
+    margin-left: 10px;
+}
+
+.form-check {
+    margin-bottom: 10px;
+}
+
+.text-muted {
+    font-size: 12px;
+}
+
+#registration_user_description {
+    font-size: 20px;
+}
+
 /**
 Cadre de prévisualisation avatar
 */
 
-#wrapper{
+#wrapper {
     text-align: center;
     margin: 70px auto;
 }
 
-#output_image{
+#output_image {
     width: 300px;
     height: 300px;
     border: 4px solid #000;

@@ -9,6 +9,11 @@
     <link rel="icon" type="image/jpg" href="{{ asset('img/favicon/favicon') }}">
     <link rel="stylesheet" href="{{ asset('css/hover-min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/styleform.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/demo.css"> <!-- Demo style -->
+  	
     {% block stylesheets %}{% endblock %}
 </head>
 <body class="{{ (inProgress == true) ? 'inProgress' : 'base' }}">
@@ -150,6 +155,8 @@
 <script src="../node_modules/codyhouse-framework/main/assets/js/util.js"></script>
 <script src="{{ asset('js/cta.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
+<script src="js/placeholders.min.js"></script> <!-- polyfill for the HTML5 placeholder attribute -->
+<script src="js/main.js"></script> <!-- Resource JavaScript -->
 {% block javascripts %}{% endblock %}
 </body>
 </html>

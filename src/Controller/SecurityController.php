@@ -71,17 +71,16 @@ class SecurityController extends AbstractController {
 
             /*$mail = $user->getUserMail();
 
-            //Envoi mail de confirmation
-            //$email = (new Email())
-                //->from('contact@eterelz.org')
-                //->to($mail)
+            $email = (new Email())
+                ->from('contact@eterelz.org')
+                ->to($mail)
                 //->cc('cc@example.com')
                 //->bcc('bcc@example.com')
                 //->replyTo('fabien@example.com')
                 //->priority(Email::PRIORITY_HIGH)
-                //->subject('Confirmation d\'inscription')
-                //->text('Welcome')
-                //->html('<p>See Twig integration for better HTML integration!</p>');
+                ->subject('Confirmation d\'inscription')
+                ->text('Welcome')
+                ->html('<p>See Twig integration for better HTML integration!</p>');
 
             $mailer->send($email);*/
 

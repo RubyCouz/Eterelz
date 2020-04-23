@@ -1,3 +1,38 @@
+/**
+ sidebar
+ */
+$(document).ready(function () {
+    let trigger = $('.hamburger'),
+        overlay = $('.overlay'),
+        isClosed = false;
+
+    trigger.click(function () {
+        hamburger_cross();
+    });
+
+    function hamburger_cross() {
+
+        if (isClosed === true) {
+            overlay.hide();
+            trigger.removeClass('is-open');
+            trigger.addClass('is-closed');
+            isClosed = false;
+        } else {
+            overlay.show();
+            trigger.removeClass('is-closed');
+            trigger.addClass('is-open');
+            isClosed = true;
+        }
+    }
+
+    $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+    });
+});
+
+/**
+ * widget social
+ */
 let closeFn;
 function closeShowingModal() {
     let showingModal = document.querySelector('.modal1.show');
@@ -31,15 +66,31 @@ document.addEventListener('keyup', function (e) {
     }
 })
 
+const logo = document.querySelector('#logo');
+const social = document.querySelector('#social');
+const close = document.querySelector('#close');
+social.onclick = () => {
+    logo.style.transition = '0.8s';
+    logo.style.position = 'absolute';
+    logo.style.top = '25%'
+    logo.style.right = '15%';
+
+}
+close.onclick = () => {
+    logo.style.transition = '1.2s';
+    logo.style.top = '25%'
+    logo.style.right = '3%';
+}
+
 // Barre de force du mot de passe
 
-var pass = document.getElementById("registration_user_password")
+let pass = document.getElementById("registration_user_password")
     pass.addEventListener('keyup', function() {
         checkPassword(pass.value)
     })
     function checkPassword(password) {
-        var strengthBar = document.getElementById("strength")
-        var strength = 0;
+        let strengthBar = document.getElementById("strength")
+        let strength = 0;
             if (password.match(/[a-zA-Z0-9][a-zA-Z0-9]+/)) {
                 strength += 1
             }
@@ -80,11 +131,11 @@ var pass = document.getElementById("registration_user_password")
 
 function preview_image(event){
 
-    var reader = new FileReader();
+    let reader = new FileReader();
 
     reader.onload = function(){
-        
-        var output = document.getElementById('output_image');
+
+        let output = document.getElementById('output_image');
         output.src = reader.result;
     }
     

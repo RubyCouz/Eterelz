@@ -46,7 +46,7 @@ class SecurityController extends AbstractController {
             //Récupération du champ User_Avatar de EterUser
             $file = $user->getUserAvatar();
             //Cryptage du nom du fichier téléchargé
-            $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
+            $fileName = uniqid().'.'.$file->getClientOriginalExtension();
             //Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
             $file->move($this->getParameter('upload_directory'), $fileName);
             //Importation du fichier dans la BDD
@@ -83,15 +83,11 @@ class SecurityController extends AbstractController {
                 ->html('<p>See Twig integration for better HTML integration!</p>');
 
             $mailer->send($email);*/
-
         }
-
-        //Affichage
-        return $this->render('security/registration.html.twig', [
-            'inProgress' => $inProgress,
-            'form' => $form->createView()
-        ]);
+        //Redirection
+        return $this->redirectToRoute('home');
     }
+   
     
     /**
      * @Route("/login", name="login")

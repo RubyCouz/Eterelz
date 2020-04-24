@@ -15,9 +15,11 @@ easy_admin:
                     - {property: 'role', label: 'Rôle'}
                     - {property: 'user_clan', label: 'Clan'}
                     - {property: 'user_game', label: 'Jeux joués'}
+                    - {property: 'user_pic', type: 'file', label: 'photo de profil'}
             list:
                 fields:
                     - {property: 'user_login', label: 'Pseudo'}
+                    - {property: 'user_avatar',type: 'image', label: 'photo de profil', base_path: '/eter/public/img/upload/profil_pic'}
                     - {property: 'role', label: 'Rôle'}
                     - {property: 'user_clan', label: 'Clan'}
                     - {property: 'user_mail', label: 'Adresse mail'}
@@ -58,6 +60,9 @@ easy_admin:
                     - {property: 'clan_discord', label: 'Discord'}
                     - {property: 'clan_recrut', label: 'Statut recrutement'}
                     - {property: 'clan_slogan', label: 'Devise'}
+                actions:
+                    - {name: 'edit', icon: 'pencil', label: false}
+                    - {name: 'delete', icon: 'trash', label: false}
             show:
                 fields:
                     - {property: 'clan_ban', type: 'image', label: 'Bannière de Clan', base_path: '/eter/public/img/upload/ban'}
@@ -247,6 +252,8 @@ easy_admin:
                   - {entity: 'Statut', icon: 'question', label: 'Statut'}
         brand_color: '#9F1E5D'
         assets:
+            css:
+                - 'css/backOffice.css'
             favicon:
                 path: 'img/favicon/favicon.jpg'
                 mime_type: 'image/jpg'

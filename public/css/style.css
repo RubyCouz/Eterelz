@@ -260,13 +260,7 @@ footer {
 Mise en forme du formulaire
 */
 
-#champs {
-    font-size: 13px;
-    font-weight: bold;
-    color: red;
-}
-
-.row {
+.row{
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -278,17 +272,7 @@ Mise en forme du formulaire
     margin-top: 20px;
 }
 
-#input {
-    font-family:  "PT Sans", sans-serif;
-    font-size: 15px;
-}
-
-input::placeholder{
-    font-family: "PT Sans", sans-serif;
-    font-size: 16px;
-}
-
-#input::placeholder {
+#input::placeholder{
     color: white;
 }
 
@@ -297,43 +281,21 @@ input::placeholder{
     margin-bottom: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 10px;
-    font-family: "PT Sans", sans-serif;
-    font-size: 15px;
+    border-radius: 15px;
 }
 
 #inscription{
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
 }
 
 #champs {
     font-size: 13px;
-    font-weight: bold;
+    font-weight :bold;
     color: red;
-}
-    
-.form-control {
-    font-size: 15px;
-}
-
-.form-check-label {
-    margin-left: 10px;
-}
-
-.form-check {
-    margin-bottom: 10px;
-}
-
-.text-muted {
-    font-size: 12px;
-}
-
-#registration_user_description {
-    font-size: 20px;
 }
 
 /**

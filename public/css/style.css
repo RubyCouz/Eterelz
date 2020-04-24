@@ -303,7 +303,7 @@ Cadre de prévisualisation de la photo de profil
 */
 
 #wrapper{
-    text-align: center;
+    /*text-align: center;*/
     margin: 70px auto;
 }
 
@@ -312,4 +312,8 @@ Cadre de prévisualisation de la photo de profil
     height: 300px;
     border: 4px solid #000;
     border-radius: 50%;
+}
+
+.waves-effect{
+    overflow: visible;
 }

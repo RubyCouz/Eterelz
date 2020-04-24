@@ -5,7 +5,7 @@ security:
         from_database:
             entity:
                 class: APP\Entity\EterUser
-                property: user_email
+                property: user_mail
     # firewalls : définit les composant qui vont permettre l'authentification
     firewalls:
         dev:

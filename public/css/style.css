@@ -266,7 +266,7 @@ Mise en forme du formulaire
     color: red;
 }
 
-.row {
+.row{
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -278,17 +278,7 @@ Mise en forme du formulaire
     margin-top: 20px;
 }
 
-#input {
-    font-family:  "PT Sans", sans-serif;
-    font-size: 15px;
-}
-
-input::placeholder{
-    font-family: "PT Sans", sans-serif;
-    font-size: 16px;
-}
-
-#input::placeholder {
+#input::placeholder{
     color: white;
 }
 
@@ -297,9 +287,7 @@ input::placeholder{
     margin-bottom: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-radius: 10px;
-    font-family: "PT Sans", sans-serif;
-    font-size: 15px;
+    border-radius: 15px;
 }
 
 #inscription{
@@ -310,38 +298,12 @@ input::placeholder{
     margin-bottom: 40px;
 }
 
-#champs {
-    font-size: 13px;
-    font-weight: bold;
-    color: red;
-}
-    
-.form-control {
-    font-size: 15px;
-}
-
-.form-check-label {
-    margin-left: 10px;
-}
-
-.form-check {
-    margin-bottom: 10px;
-}
-
-.text-muted {
-    font-size: 12px;
-}
-
-#registration_user_description {
-    font-size: 20px;
-}
-
 /**
-Cadre de prévisualisation de la photo de profil
+Cadre de prévisualisation avatar
 */
 
 #wrapper{
-    text-align: center;
+    /*text-align: center;*/
     margin: 70px auto;
 }
 
@@ -350,4 +312,8 @@ Cadre de prévisualisation de la photo de profil
     height: 300px;
     border: 4px solid #000;
     border-radius: 50%;
+}
+
+.waves-effect{
+    overflow: visible;
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 08 avr. 2020 à 14:39
+-- Généré le : mer. 08 avr. 2020 à 14:42
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.4
 
@@ -163,7 +163,7 @@ CREATE TABLE `eter_content` (
 --
 
 INSERT INTO `eter_content` (`id`, `content_state_id`, `content_cat_id`, `content_user_id`, `content_update`, `content_text`, `content_date`, `content_pic`, `content_name`) VALUES
-(2, 1, 5, 1, '2020-04-07 12:44:01', 'blablabla', '2019-05-17 13:13:00', NULL, 'Test'),
+(2, 1, 5, 1, '2020-04-07 12:54:37', 'blablabla', '2019-05-17 13:13:00', NULL, 'Test'),
 (19, 1, 1, 1, '2020-03-25 12:05:09', 'EZTQRYTKUYTJRYETZRAEZRETRYT', '2019-05-17 17:17:00', 'wallhaven-0w9ggx.jpg', 'azretrytjykyjhsdgqsfer');
 
 -- --------------------------------------------------------
@@ -368,7 +368,7 @@ CREATE TABLE `eter_user` (
   `user_discord` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_sex` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `statut` tinyint(1) DEFAULT NULL,
-  `user_description` longtext COLLATE utf8mb4_unicode_ci NOT NULL
+  `user_description` longtext COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -376,10 +376,7 @@ CREATE TABLE `eter_user` (
 --
 
 INSERT INTO `eter_user` (`id`, `user_login`, `user_date`, `user_mail`, `user_password`, `user_address`, `user_zip`, `user_city`, `user_discord`, `user_sex`, `statut`, `user_description`) VALUES
-(1, 'RubyCouz', '2020-03-12 12:48:00', 'ced270784@gmail.com', 'RubyCouz02072014', NULL, NULL, NULL, 'RubyCouz#2253', NULL, 1, ''),
-(2, 'test', '2020-04-07 13:58:04', 'test@test.fr', 'testtest', 'testtest', '80000', 'amiens', 'oui', 'aussi', NULL, 'testtest'),
-(3, 'test2', '2020-04-08 08:54:38', 'test@test.fr', '$2y$12$8OmI3dzeMiZYEUPxYQ7HlOEO5nrMomsnWyaMdlejp55Q/nV.Gm/S6', 'testtest', '80000', 'amiens', 'gedrtyh', 'aussi', NULL, 'fsrg'),
-(4, 'test3', '2020-04-08 08:56:58', 'test@test.fr', '$2y$12$CBQiqxYdhYDlmWXnHeQ/7OhgltYjgTyns7bb794hF2JhE6nuVpCEu', 'testtest', '80000', 'amiens', 'fsretg', 'fzertfg', NULL, 'fzetr');
+(1, 'RubyCouz', '2020-03-12 12:48:00', 'ced270784@gmail.com', 'RubyCouz02072014', NULL, NULL, NULL, 'RubyCouz#2253', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -454,7 +451,7 @@ CREATE TABLE `migration_versions` (
 --
 
 INSERT INTO `migration_versions` (`version`, `executed_at`) VALUES
-('20200407122604', '2020-04-07 12:44:01');
+('20200407124729', '2020-04-07 12:54:37');
 
 --
 -- Index pour les tables déchargées
@@ -676,7 +673,7 @@ ALTER TABLE `eter_streamer`
 -- AUTO_INCREMENT pour la table `eter_user`
 --
 ALTER TABLE `eter_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Contraintes pour les tables déchargées

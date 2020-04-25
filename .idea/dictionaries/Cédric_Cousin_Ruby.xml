@@ -5,6 +5,7 @@
       <w>adresse</w>
       <w>ajout</w>
       <w>annonyme</w>
+      <w>apparaitre</w>
       <w>authentifications</w>
       <w>authentificator</w>
       <w>authentifier</w>
@@ -40,8 +41,12 @@
       <w>eterelz</w>
       <w>evenement</w>
       <w>evénement</w>
+      <w>faisant</w>
+      <w>fonction</w>
       <w>forcer</w>
       <w>formulaire</w>
+      <w>hamb</w>
+      <w>icônes</w>
       <w>identifiants</w>
       <w>inscrit</w>
       <w>intitulé</w>
@@ -50,6 +55,7 @@
       <w>jsdelivr</w>
       <w>libellé</w>
       <w>liste</w>
+      <w>lors</w>
       <w>membres</w>
       <w>methodes</w>
       <w>modif</w>
@@ -73,11 +79,15 @@
       <w>requète</w>
       <w>retour</w>
       <w>récupère</w>
+      <w>récupération</w>
       <w>saisir</w>
       <w>sexe</w>
       <w>signin</w>
+      <w>sociales</w>
       <w>statut</w>
       <w>texte</w>
+      <w>toggler</w>
+      <w>tourne</w>
       <w>tutos</w>
       <w>uikit</w>
       <w>utilisateur</w>
@@ -88,6 +98,8 @@
       <w>vich</w>
       <w>vont</w>
       <w>votre</w>
+      <w>éléments</w>
+      <w>évènements</w>
     </words>
   </dictionary>
 </component>

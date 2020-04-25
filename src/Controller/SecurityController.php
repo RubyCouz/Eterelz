@@ -8,6 +8,9 @@ use App\Form\RegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+/*use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;*/
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -17,12 +20,18 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/inscription", name="security_registration")
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @param UserPasswordEncoderInterface $encoder
+     * @param MailerInterface $mailer
+     * @return Response
+     * @throws TransportExceptionInterface
      */
-    //Mailerinterface
-    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder) {
+    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder/*, MailerInterface $mailer*/) {
         
         //Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
         $user = new EterUser(); 
+
         $inProgress = false;
 
         //Création du formulaire selon la table user
@@ -32,21 +41,20 @@ class SecurityController extends AbstractController {
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
-            
-            //Téléchargement de l'avatar
 
+            //Téléchargement de la photo de profil
             //Récupération du champ User_Avatar de EterUser
             $file = $user->getUserAvatar();
+            //Cryptage du nom du fichier téléchargé
 
-            if ($file != null){
-            //Cryptage du nom de fichier téléchargé
-            $fileName = md5(uniqid()).'.'.$file->getClientOriginalExtension();
-
-            //Chemin de téléchargement du dossier
+            if($file != null){
+            
+            $fileName = uniqid().'.'.$file->getClientOriginalExtension();
+            //Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
             $file->move($this->getParameter('upload_directory'), $fileName);
-
             //Importation du fichier dans la BDD
             $user->setUserAvatar($fileName);
+            
             }
             //Encryptage du mot de passe selon la configuration dans security.yaml de config
             //Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
@@ -57,25 +65,30 @@ class SecurityController extends AbstractController {
 
             //Garde en mémoire les données soumises
             $manager->persist($user);
-            
+
             //Envoi des données à la BDD
             $manager->flush();
 
+            //return $this->redirectToRoute('login');
+
+            //Envoi mail
+
+            /*$mail = $user->getUserMail();
+
             $email = (new Email())
-                ->from('hello@example.com')
-                ->to('you@example.com')
+                ->from('contact@eterelz.org')
+                ->to($mail)
                 //->cc('cc@example.com')
                 //->bcc('bcc@example.com')
                 //->replyTo('fabien@example.com')
                 //->priority(Email::PRIORITY_HIGH)
-                ->subject('Time for Symfony Mailer!')
-                ->text('Sending emails is fun again!')
+                ->subject('Confirmation d\'inscription')
+                ->text('Welcome')
                 ->html('<p>See Twig integration for better HTML integration!</p>');
 
-        $mailer->send($email);
-    
+            $mailer->send($email);*/
 
-            //return $this->redirectToRoute('/login');
+            return $this->redirectToRoute('home');
         }
 
         //Affichage
@@ -83,7 +96,8 @@ class SecurityController extends AbstractController {
             'inProgress' => $inProgress,
             'form' => $form->createView()
         ]);
-    }
+
+        }
     
     /**
      * @Route("/login", name="login")

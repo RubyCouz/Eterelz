@@ -1,19 +1,20 @@
 <?php
-
+// commit
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterUserRepository")
  * @UniqueEntity(
- * fields= {"user_mail"}, 
- * message= "L'email existe déjà")
+ * fields = {"user_mail"}, 
+ * message = "L'email existe déjà")
  */
 class EterUser implements UserInterface
 {
@@ -45,7 +46,7 @@ class EterUser implements UserInterface
     private $user_password;
 
     /**
-    *@Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
+    * @Assert\EqualTo(propertyPath="user_password", message="Vos mots de passe sont différents")
     */
     public $confirm_user_password;
 
@@ -115,14 +116,25 @@ class EterUser implements UserInterface
     private $eterContents;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $user_description;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $user_update;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $user_avatar;
+
+    /**
+     * @Vich\UploadableField(mapping="user_avatar", fileNameProperty="clan_ban")
+     * @var File
+     */
+    private $user_pic;
 
     public function __construct()
     {
@@ -467,7 +479,7 @@ class EterUser implements UserInterface
                 $eterContent->setContentUser(null);
             }
         }
-        
+
         return $this;
     }
 
@@ -476,7 +488,7 @@ class EterUser implements UserInterface
         return $this->user_description;
     }
 
-    public function setUserDescription(string $user_description): self
+    public function setUserDescription(?string $user_description): self
     {
         $this->user_description = $user_description;
 
@@ -507,4 +519,32 @@ class EterUser implements UserInterface
 
         return $this;
     }
+
+
+    public function setUserPic(File $user_avatar = null) {
+        $this->user_pic = $user_avatar;
+        // ajout d'un champs modif datetime dans la bdd pour forcer la persistance
+        if ($user_avatar) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->user_update = new \DateTime('now');
+        }
+    }
+
+    public function getUserPic() {
+        return $this->user_pic;
+    }
+
+    public function getUserUpdate(): ?\DateTimeInterface
+    {
+        return $this->user_update;
+    }
+
+    public function setUserUpdate(\DateTimeInterface $user_update): self
+    {
+        $this->user_update = $user_update;
+
+        return $this;
+    }
+
+
 }

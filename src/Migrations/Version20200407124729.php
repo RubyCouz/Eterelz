@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200415123333 extends AbstractMigration
+final class Version20200407124729 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,7 +22,8 @@ final class Version20200415123333 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE eter_user ADD user_avatar VARCHAR(255) DEFAULT NULL');
+        $this->addSql('ALTER TABLE eter_content CHANGE content_update content_update TIMESTAMP NOT NULL');
+        $this->addSql('ALTER TABLE eter_user ADD user_description LONGTEXT DEFAULT NULL');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +31,7 @@ final class Version20200415123333 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE eter_user DROP user_avatar');
+        $this->addSql('ALTER TABLE eter_content CHANGE content_update content_update DATETIME DEFAULT NULL');
+        $this->addSql('ALTER TABLE eter_user DROP user_description');
     }
 }

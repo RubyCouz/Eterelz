@@ -1,8 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="">
+    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="fix">
+      <change afterPath="$PROJECT_DIR$/public/css/backOffice.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/125056ff4d980d75822d0ed2d2236cb6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/16148f6761562e72de86ba32d823ea8a.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/1647431508190308a669745996a20e5d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/354deca4ff349e183816bdfa2fdd6037.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/39812ae577141997eac6a9713d859390.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/3ec3d6520b9879665e0212955ad5fabd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/4531d94ae73d263567295dd7085b2cad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/4615fab9ad851b7a5c4da37f3916a574.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/74f322a8901e9fd554a0d39a78d2fcca.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/87791e6303e566c460a17d6b1b62ce04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/a68849f339ec93019a3db55bdb6f8e52.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/a9d9c6540c56263dd7c29ffe778a41e6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/b4f8c5e33db6e377a2cf843445907ae9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/d810f81f26fe02b87a9972d331f47f04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/e19c1312b251b8b74be4003f47ed1b2a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/e4f187a97f9c9066a145f0980cad5a56.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/125056ff4d980d75822d0ed2d2236cb6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/16148f6761562e72de86ba32d823ea8a.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/1647431508190308a669745996a20e5d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/354deca4ff349e183816bdfa2fdd6037.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/39812ae577141997eac6a9713d859390.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/3ec3d6520b9879665e0212955ad5fabd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/4531d94ae73d263567295dd7085b2cad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/4615fab9ad851b7a5c4da37f3916a574.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/74f322a8901e9fd554a0d39a78d2fcca.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/a68849f339ec93019a3db55bdb6f8e52.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/b4f8c5e33db6e377a2cf843445907ae9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/d810f81f26fe02b87a9972d331f47f04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/e19c1312b251b8b74be4003f47ed1b2a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterClan.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterClan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterUser.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,9 +67,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -58,18 +109,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="caroline" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="C:\laragon\www\eter\.idea" />
-      </set>
-    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -197,7 +240,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -207,7 +249,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -230,18 +272,6 @@
       <command value="php bin/console make:migration" />
       <command value="php bin/console doctrine:migration:migrate" />
       <command value="php bin/console make:entity" />
-    </option>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -290,6 +320,11 @@
       <workItem from="1585324806500" duration="2279000" />
       <workItem from="1586176532660" duration="2840000" />
       <workItem from="1586245990778" duration="2312000" />
+      <workItem from="1587053860339" duration="14627000" />
+      <workItem from="1587137136729" duration="8408000" />
+      <workItem from="1587619763452" duration="10393000" />
+      <workItem from="1587709576325" duration="4014000" />
+      <workItem from="1587715197738" duration="1923000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -382,11 +417,95 @@
       <option name="project" value="LOCAL" />
       <updated>1586251449659</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="test">
+      <created>1587044527195</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1587044527195</updated>
+    </task>
+    <task id="LOCAL-00015" summary="test">
+      <created>1587044586637</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1587044586637</updated>
+    </task>
+    <task id="LOCAL-00016" summary="test navbar">
+      <created>1587057381095</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1587057381096</updated>
+    </task>
+    <task id="LOCAL-00017" summary="onglet social css">
+      <created>1587071238748</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1587071238748</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fin mise en place oglet social">
+      <created>1587145563468</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1587145563468</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix">
+      <created>1587559525247</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1587559525247</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix">
+      <created>1587559839361</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1587559839361</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fix back office plus envoie de mail">
+      <created>1587565828073</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1587565828073</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fix back office plus envoie de mail">
+      <created>1587578035264</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1587578035265</updated>
+    </task>
+    <task id="LOCAL-00023" summary="fix back office plus envoie de mail">
+      <created>1587578163458</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1587578163458</updated>
+    </task>
+    <task id="LOCAL-00024" summary="ajout sidebar">
+      <created>1587633812063</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1587633812064</updated>
+    </task>
+    <task id="LOCAL-00025" summary="fix">
+      <created>1587663302200</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1587663302200</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -398,6 +517,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -412,7 +532,14 @@
     <MESSAGE value="suite mise en forme back office" />
     <MESSAGE value="fin back office" />
     <MESSAGE value="ajout fichier easy_admin.yaml" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout fichier easy_admin.yaml" />
+    <MESSAGE value="test" />
+    <MESSAGE value="test navbar" />
+    <MESSAGE value="onglet social css" />
+    <MESSAGE value="fin mise en place oglet social" />
+    <MESSAGE value="fix back office plus envoie de mail" />
+    <MESSAGE value="ajout sidebar" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -428,58 +555,87 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2573" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1583842288438" />
-    <state x="690" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583579978729">
-      <screen x="0" y="30" width="1920" height="1050" />
+    <state x="2610" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587711771592">
+      <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="690" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583579978729" />
-    <state x="2493" y="34" key="CommitChangelistDialog2" timestamp="1586252220934">
+    <state x="2610" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587711771592" />
+    <state x="2493" y="34" key="CommitChangelistDialog2" timestamp="1587145562668">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251448796" />
-    <state x="2493" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252220934" />
+    <state x="2493" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586255105377" />
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583917916958" />
-    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1586252068136">
+    <state x="2493" y="34" key="CommitChangelistDialog2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587145562668" />
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1586254027850">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
+    <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199354" />
-    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1586252068136">
+    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1586254027850">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
+    <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199352" />
-    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1586252068136">
+    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1586254027850">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
+    <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199346" />
-    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1586252068136">
+    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1586254027850">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252068136" />
+    <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199353" />
-    <state x="2381" y="197" key="SettingsEditor" timestamp="1586181792395">
+    <state x="2104" y="116" key="MergeDialog" timestamp="1587662500364">
+      <screen x="1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="2104" y="116" key="MergeDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587662500364" />
+    <state x="2584" y="246" width="1081" height="587" key="MultipleFileMergeDialog" timestamp="1587662500364">
+      <screen x="1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="2584" y="246" width="1081" height="587" key="MultipleFileMergeDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587662500364" />
+    <state x="2381" y="197" width="1199" height="716" key="SettingsEditor" timestamp="1587143481099">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2381" y="197" key="SettingsEditor/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586181792395" />
-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1586252225560">
+    <state x="2381" y="197" width="1199" height="716" key="SettingsEditor/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587143481099" />
+    <state x="2012" y="122" width="1736" height="866" key="ShowDiffWithBranchDialog" timestamp="1586255055305">
+      <screen x="1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="2012" y="122" width="1736" height="866" key="ShowDiffWithBranchDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586255055305" />
+    <state x="2667" y="173" key="VCS.ChangeListViewerDialog" timestamp="1587044514520">
+      <screen x="1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
+    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1587663304328">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252225560" />
+    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />
+    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587663304328" />
     <state x="2731" y="432" width="324" height="261" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585127054866">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2731" y="432" width="324" height="261" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1585127054866" />
+    <state x="2012" y="122" width="1736" height="866" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1586254445954">
+      <screen x="1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="2012" y="122" width="1736" height="866" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254445954" />
     <state x="2576" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1583840208523">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2576" y="380" key="com.intellij.ide.util.TipDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1583840208523" />
-    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586252088632">
+    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587662638771">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252088632" />
+    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587662638771" />
+    <state x="2645" y="170" key="git4idea.branch.GitSmartOperationDialog" timestamp="1587563798328">
+      <screen x="1920" y="30" width="1920" height="1050" />
+    </state>
+    <state x="2645" y="170" key="git4idea.branch.GitSmartOperationDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587563798328" />
     <state x="2536" y="258" width="672" height="677" key="run.anything.popup" timestamp="1586251565489">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>

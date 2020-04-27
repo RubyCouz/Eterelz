@@ -7,7 +7,7 @@ background in progress
     background-position: center;
     background-size: cover;
     background-color: transparent;
-    height: 1500px;
+    /*height: 1500px;*/
 }
 /**
 home background
@@ -44,6 +44,8 @@ searchBar
 
 .search-box:hover > .search-btn {
     background: white;
+    padding-top: 10px;
+    padding-left: 13px;
 }
 
 .search-btn {
@@ -57,6 +59,7 @@ searchBar
     justify-content: center;
     align-items: center;
     transition: 0.4s;
+    padding-top: 10px;
 }
 
 .search-text {
@@ -260,19 +263,25 @@ footer {
 Mise en forme du formulaire
 */
 
-.row{
+#champs {
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+}
+
+.row {
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
-.container{
+.container {
     background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 20px;
 }
 
-#input::placeholder{
+#input::placeholder {
     color: white;
 }
 
@@ -284,36 +293,52 @@ Mise en forme du formulaire
     border-radius: 15px;
 }
 
-#inscription{
+#inscription {
     text-align: center;
     text-transform: uppercase;
     font-size: 30px;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 
-#champs {
-    font-size: 13px;
-    font-weight :bold;
-    color: red;
+.nav-link.waves-effect.waves-light {
+    margin-left: 0px;
+}
+
+#registration {
+    margin-left: 5px;
 }
 
 /**
-Cadre de prévisualisation de la photo de profil
+Cadre de prévisualisation avatar
 */
 
-#wrapper{
+#wrapper {
     /*text-align: center;*/
     margin: 70px auto;
 }
 
-#output_image{
+#output_image {
     width: 300px;
     height: 300px;
     border: 4px solid #000;
     border-radius: 50%;
 }
 
-.waves-effect{
+/**
+Bouton se connecter dans la barre de navigation
+*/
+
+.waves-effect {
     overflow: visible;
+}
+
+.btn-default {
+    background-color: #53C8E0 !important;
+    margin-left: 10px;
+}
+
+/*Peut être enlever pour la side-barre*/
+.sticky-top {
+    position: absolute;
 }

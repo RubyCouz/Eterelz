@@ -110,10 +110,23 @@
 
                                         <!--Body-->
                                         <div class="modal-body">
+
+                                        <div class="md-form form-sm mb-5">
+                                            <i class="fas fa-user-circle prefix"></i>
+                                            <input type="text" id="modalLRInput16" class="form-control form-control-sm validate">
+                                            <label data-error="wrong" data-success="right" for="modalLRInput16">Votre Login</label>
+                                        </div>
+
                                         <div class="md-form form-sm mb-5">
                                             <i class="fas fa-envelope prefix"></i>
                                             <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
                                             <label data-error="wrong" data-success="right" for="modalLRInput12">Votre email</label>
+                                        </div>
+
+                                        <div class="md-form form-sm mb-5">
+                                            <i class="fab fa-discord prefix"></i>
+                                            <input type="text" id="modalLRInput15" class="form-control form-control-sm validate">
+                                            <label data-error="wrong" data-success="right" for="modalLRInput15">Votre ID Discord</label>
                                         </div>
 
                                         <div class="md-form form-sm mb-5">
@@ -156,6 +169,10 @@
                             </div>
                         </li>
                     {% endif %}
+
+                    <div class="text-center">
+                        <a href="{{ path('logout') }}" class="btn btn-default" data-toggle="modal" data-target="#modalLRForm" data-backdrop="false">SE DECONNECTER</a>
+                    </div>
 
                     <li>
                         <form class="search-box bg-dark">

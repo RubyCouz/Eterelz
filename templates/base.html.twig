@@ -77,22 +77,24 @@
                                     <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
 
                                         <!--Body-->
+                                    <form action="{{ path('login') }}" method ="post">
                                         <div class="modal-body mb-1">
                                         <div class="md-form form-sm mb-5">
                                             <i class="fas fa-envelope prefix"></i>
-                                            <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                                            <input type="email" id="modalLRInput10" class="form-control form-control-sm validate" name="_username">
                                             <label data-error="wrong" data-success="right" for="modalLRInput10">Votre email</label>
                                         </div>
 
                                         <div class="md-form form-sm mb-4">
                                             <i class="fas fa-lock prefix"></i>
-                                            <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                                            <input type="password" id="modalLRInput11" class="form-control form-control-sm validate" name="_password">
                                             <label data-error="wrong" data-success="right" for="modalLRInput11">Votre mot de passe</label>
                                         </div>
                                         <div class="text-center mt-2">
-                                            <button class="btn btn-info">Se connecter<i class="fas fa-sign-in ml-1"></i></button>
+                                            <button class="btn btn-info" type="submit">Se connecter<i class="fas fa-sign-in ml-1"></i></button>
                                         </div>
                                         </div>
+                                    </form>
                                         <!--Footer-->
                                         <div class="modal-footer">
                                         <div class="options text-center text-md-right mt-1">
@@ -101,19 +103,33 @@
                                         </div>
                                         <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Fermer</button>
                                         </div>
-
+                                      
                                     </div>
                                     <!--/.Panel 7-->
 
                                     <!--Panel 8-->
                                     <div class="tab-pane fade" id="panel8" role="tabpanel">
 
+                                    <form action="{{ path('security_registration') }}" method ="post">
                                         <!--Body-->
                                         <div class="modal-body">
+
+                                        <div class="md-form form-sm mb-5">
+                                            <i class="fas fa-user-circle prefix"></i>
+                                            <input type="text" id="modalLRInput16" class="form-control form-control-sm validate">
+                                            <label data-error="wrong" data-success="right" for="modalLRInput16">Votre login</label>
+                                        </div>
+
                                         <div class="md-form form-sm mb-5">
                                             <i class="fas fa-envelope prefix"></i>
                                             <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
                                             <label data-error="wrong" data-success="right" for="modalLRInput12">Votre email</label>
+                                        </div>
+
+                                        <div class="md-form form-sm mb-5">
+                                            <i class="fab fa-discord prefix"></i>
+                                            <input type="text" id="modalLRInput15" class="form-control form-control-sm validate">
+                                            <label data-error="wrong" data-success="right" for="modalLRInput15">Votre ID Discord</label>
                                         </div>
 
                                         <div class="md-form form-sm mb-5">
@@ -129,9 +145,9 @@
                                         </div>
 
                                         <div class="text-center form-sm mt-2">
-                                            <button class="btn btn-info">S'inscrire<i class="fas fa-sign-in ml-1"></i></button>
+                                            <button class="btn btn-info" type="submit">S'inscrire<i class="fas fa-sign-in ml-1"></i></button>
                                         </div>
-
+                                    </form>
                                         </div>
                                         <!--Footer-->
                                         <div class="modal-footer">

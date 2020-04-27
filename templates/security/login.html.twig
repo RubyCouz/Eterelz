@@ -12,18 +12,17 @@
                         {% if error %}
 
                             <div class="alert-danger">
-                                <a class="uk-alert-close"></a>
                                 <p>{{ error.messageKey | trans(error.messageData, 'security') }}</p>
                             </div>
 
                         {% endif %}
 
                             <label for="username" class="">Email</label>
-                            <input type="text" id="username" name="_username" class="" value="{{ last_username }}">
+                            <input type="text" id="username" name="_username">
 
                         <div class="" >
                             <label for="password" class="">Mot de passe</label>
-                                <input type="password" id="password" name="_password" class="">
+                                <input type="password" id="password" name="_password">
                         </div>
 
                         <div class="" >
@@ -31,10 +30,10 @@
                                 <input type="checkbox" id="remember" class="" value="Se souvenir de moi"> Se souvenir de moi</input>
                         </div>
 
-                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        
 
                     <div class="" >
-                        <input type="submit" class="" value="Se connecter">
+                        <input type="submit" class="btn btn-success" value="Se connecter">
                     </div>
                 </form>
                 <div class="">

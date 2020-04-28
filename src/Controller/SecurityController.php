@@ -62,10 +62,11 @@ class SecurityController extends AbstractController {
 
             // Validation du remplacement du mot de passe par un encryptage
             $user->setUserPassword($hash);
-
+            $statut = 1;
+            $user->setStatut($statut);
             // Garde en mémoire les données soumises
             $manager->persist($user);
-            dd($user);
+            //dd($user);
             // Envoi des données à la BDD
             $manager->flush();
 

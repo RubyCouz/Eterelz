@@ -76,10 +76,10 @@
                                             </ul>
 
                                             <!-- Tab panels -->
-<div id="login">
+                                            <div id="login">
 
-</div>
 
+                                            </div>
                                         </div>
                                     </div>
                                     <!--/.Content-->
@@ -153,69 +153,6 @@
         <!-- /#sidebar-wrapper -->
     </header>
 
-
-    {#        <i class="fas fa-project-diagram network"></i>#}
-    {#        <i class="fab fa-twitch twitch" id="twitch"></i>#}
-    {#        <i class="fab fa-discord discord" id="discord"></i>#}
-    {#        <i class="fab fa-youtube youtube" id="youtube"></i>#}
-    {#        <i class="fab fa-twitter twitter" id="twitter"></i>#}
-    {#        <i class="fab fa-facebook-square facebook" id="facebook"></i>#}
-
-
-    {#sidebar menu utilisateur#}
-    {#<div id="offcanvas-nav-primary" uk-offcanvas="mode: reveal; overlay: true">#}
-    {#    <div class="uk-offcanvas-bar uk-flex uk-flex-column">#}
-    {#        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">#}
-    {#            <li class="uk-parent">#}
-    {#                <a href="#"><i class="fas fa-gamepad"></i> JEUX </a>#}
-    {#                <ul class="uk-nav-sub">#}
-    {#                    <li class="uk-active"><a href="#">Jeux 1</a></li>#}
-    {#                    <li class=""><a href="#">Jeux 2</a></li>#}
-    {#                    <li class=""><a href="#">Jeux 2</a></li>#}
-    {#                </ul>#}
-    {#            </li>#}
-    {#            <li class="uk-nav-divider"></li>#}
-    {#            <li class="uk-parent">#}
-    {#                <a href="#"><i class="far fa-calendar-alt"></i> EVENEMENTS</a>#}
-    {#                <ul class="uk-nav-sub">#}
-    {#                    <li><a href="#">SpeedRaid Destiny 2</a></li>#}
-    {#                    <li><a href="#">Nettoyage DZ</a></li>#}
-    {#                </ul>#}
-    {#            </li>#}
-    {#            <li class="uk-nav-divider"></li>#}
-    {#            <li class="uk-parent">#}
-    {#                <a href="#"><i class="fas fa-camera-retro"></i> PHOTOS</a>#}
-    {#                <ul class="uk-nav-sub">#}
-    {#                    <li class="uk-active"><a href="#">Artwork</a></li>#}
-    {#                    <li class=""><a href="#">Capture d'écran</a></li>#}
-    {#                    <li class=""><a href="#">Fonds d'écran 4k</a></li>#}
-    {#                </ul>#}
-    {#            </li>#}
-    {#            <li class="uk-nav-divider"></li>#}
-    {#            <li class="uk-parent">#}
-    {#                <a href="#"><i class="fas fa-film"></i> VIDEOS</a>#}
-    {#                <ul class="uk-nav-sub">#}
-    {#                    <li class="uk-active"><a href="#">Tutos</a></li>#}
-    {#                    <li class=""><a href="#">Bétisiers</a></li>#}
-    {#                </ul>#}
-    {#            </li>#}
-    {#            <li class="uk-nav-divider"></li>#}
-    {#            <li class="uk-parent">#}
-    {#                <a href="#"><i class="fab fa-discord"></i> DISCORD</a>#}
-    {#                <ul class="uk-nav-sub">#}
-    {#                    <li class="uk-active"><a href="#">Destiny 2</a></li>#}
-    {#                    <li class=""><a href="#">Black Desert Online</a></li>#}
-    {#                </ul>#}
-    {#            </li>#}
-    {#            <li class="uk-nav-divider"></li>#}
-    {#            <li class="uk-parent"><a href="" title="Lien vers le formulaire de contact"><i class="far fa-envelope"></i>#}
-    {#                    NOUS CONTACTER</a></li>#}
-    {#            <li class="uk-nav-divider"></li>#}
-    {#            <li class="uk-parent"><a href="" title="A propos d'Eterelz"><i class="far fa-address-card"></i> A PROPOS</a>#}
-    {#            </li>#}
-    {#        </ul>#}
-    {#    </div>#}
-    {#</div>#}
     <main>
         <!-- Page Content -->
 
@@ -251,15 +188,21 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
 <script>
-    $('#loginModal').click(function() {
-        $.ajax({
-            method: "POST",
-            url: "{{ path('security_registration') }}",
-            data: { inProgress: false }
-        })
-            .done(function(msg) {
-                 $('#login').append(msg);
 
+
+    // au clic sur le bouton se connecter (déclenchement modal)
+    $('#loginModal').click(function () {
+        // fonction ajax
+        $.ajax({
+            // définition de la méthode d'envoie
+            method: "POST",
+            // url destination / appel du contrôleur
+            url: "{{ path('security_registration') }}",
+        })
+            // s'il y a un retour du contrôleur, on déclenche une fonction qui prend en paramètre data => retour du contrôleur
+            .done(function (data) {
+                // on affiche la réponse du contrôleur dans l'élément ayant l'id login
+                $('#login').html(data);
             });
     });
 </script>

@@ -5,12 +5,14 @@ namespace App\Controller;
 
 use App\Entity\EterUser;
 use App\Form\RegistrationType;
+use App\Form\SigninType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
-/*use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;*/
+//use Symfony\Component\Mailer\MailerInterface;
+//use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -23,21 +25,19 @@ class SecurityController extends AbstractController {
      * @param Request $request
      * @param EntityManagerInterface $manager
      * @param UserPasswordEncoderInterface $encoder
-     * @param MailerInterface $mailer
      * @return Response
-     * @throws TransportExceptionInterface
      */
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder/*, MailerInterface $mailer*/) {
         
-        //Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
+        // Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
         $user = new EterUser(); 
 
         $inProgress = false;
 
-        //Création du formulaire selon la table user
-        $form = $this->createForm(RegistrationType::class, $user);
+        // Création du formulaire selon la table user
+        $form = $this->createForm(SigninType::class, $user);
 
-        //Analyse de la requête
+        // Analyse de la requête
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
@@ -60,39 +60,41 @@ class SecurityController extends AbstractController {
             //Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
             $hash = $encoder->encodePassword($user, $user->getUserPassword());
 
-            //Validation du remplacement du mot de passe par un encryptage
+            // Validation du remplacement du mot de passe par un encryptage
             $user->setUserPassword($hash);
 
-            //Garde en mémoire les données soumises
+            // Garde en mémoire les données soumises
             $manager->persist($user);
-
-            //Envoi des données à la BDD
+            dd($user);
+            // Envoi des données à la BDD
             $manager->flush();
 
-            //return $this->redirectToRoute('login');
+            // return $this->redirectToRoute('login');
 
-            //Envoi mail
+            // Envoi mail
 
-            /*$mail = $user->getUserMail();
+            // $mail = $user->getUserMail();
 
-            $email = (new Email())
-                ->from('contact@eterelz.org')
-                ->to($mail)
-                //->cc('cc@example.com')
-                //->bcc('bcc@example.com')
-                //->replyTo('fabien@example.com')
-                //->priority(Email::PRIORITY_HIGH)
-                ->subject('Confirmation d\'inscription')
-                ->text('Welcome')
-                ->html('<p>See Twig integration for better HTML integration!</p>');
+            // $email = (new Email())
+                // ->from('contact@eterelz.org')
+                // ->to($mail)
+                // ->cc('cc@example.com')
+                // ->bcc('bcc@example.com')
+                // ->replyTo('fabien@example.com')
+                // ->priority(Email::PRIORITY_HIGH)
+                // ->subject('Confirmation d\'inscription')
+                // ->text('Welcome')
+                // ->html('<p>See Twig integration for better HTML integration!</p>');
 
-            $mailer->send($email);*/
+            // $mailer->send($email);
+
+            return $this->redirectToRoute('home');
 
             return $this->redirectToRoute('home');
         }
 
-        //Affichage
-        return $this->render('security/registration.html.twig', [
+        // Affichage
+        return $this->render('security/loginModal.html.twig', [
             'inProgress' => $inProgress,
             'form' => $form->createView()
         ]);

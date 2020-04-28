@@ -4,7 +4,7 @@
 
         <div class="container">
 
-        {# Logo Eterelz #}
+        {# Affichage du logo Eterelz #}
         <img src="{{ asset('img/logo/logoEterelz.png') }}" class="align-center col-12" alt="Logo Eterelz" title="Logo Eterelz">
 
             {# Installation de la balise form de départ #}
@@ -118,6 +118,7 @@
                 {{ form_widget(form.user_password) }}
                 {{ form_errors(form.user_password) }}
                 {{ form_help(form.user_password) }}
+                {# Barre de force du mdp #}
                 <br>
                 <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="strength"></div>

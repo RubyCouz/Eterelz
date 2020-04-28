@@ -28,6 +28,8 @@ $(document).ready(function () {
     $('[data-toggle="offcanvas"]').click(function () {
         $('#wrapper').toggleClass('toggled');
     });
+
+
 });
 let closeFn;
 
@@ -81,14 +83,14 @@ close.onclick = () => {
 
 // Barre de force du mot de passe
 
-var pass = document.getElementById("registration_user_password")
+let pass = document.getElementById("registration_user_password")
 pass.addEventListener('keyup', function () {
     checkPassword(pass.value)
 })
 
 function checkPassword(password) {
-    var strengthBar = document.getElementById("strength")
-    var strength = 0;
+    let strengthBar = document.getElementById("strength")
+    let strength = 0;
     if (password.match(/[a-zA-Z0-9][a-zA-Z0-9]+/)) {
         strength += 1
     }
@@ -128,9 +130,9 @@ function checkPassword(password) {
 // Prévisualisation de la photo de profil
 
 function preview_image(event) {
-    var reader = new FileReader();
+    let reader = new FileReader();
     reader.onload = function () {
-        var output = document.getElementById('output_image');
+        let output = document.getElementById('output_image');
         output.src = reader.result;
     }
     reader.readAsDataURL(event.target.files[0]);

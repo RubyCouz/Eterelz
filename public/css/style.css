@@ -342,3 +342,7 @@ Bouton se connecter dans la barre de navigation
 .sticky-top {
     position: absolute;
 }
+
+.navbar.navbar-dark form .md-form .form-control {
+    color: black;
+}

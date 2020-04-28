@@ -5,12 +5,14 @@ namespace App\Controller;
 
 use App\Entity\EterUser;
 use App\Form\RegistrationType;
+use App\Form\SigninType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 //use Symfony\Component\Mailer\MailerInterface;
 //use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -23,9 +25,7 @@ class SecurityController extends AbstractController {
      * @param Request $request
      * @param EntityManagerInterface $manager
      * @param UserPasswordEncoderInterface $encoder
-     * @param MailerInterface $mailer
      * @return Response
-     * @throws TransportExceptionInterface
      */
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder/*, MailerInterface $mailer*/) {
         
@@ -35,7 +35,7 @@ class SecurityController extends AbstractController {
         $inProgress = false;
 
         // Création du formulaire selon la table user
-        $form = $this->createForm(RegistrationType::class, $user);
+        $form = $this->createForm(SigninType::class, $user);
 
         // Analyse de la requête
         $form->handleRequest($request);
@@ -44,17 +44,17 @@ class SecurityController extends AbstractController {
 
             // Téléchargement de la photo de profil
             // Récupération du champ User_Avatar de EterUser
-            $file = $user->getUserAvatar();
+//            $file = $user->getUserAvatar();
 
-            // Cryptage du nom du fichier téléchargé
-            if($file != null)
-            {
-            $fileName = uniqid().'.'.$file->getClientOriginalExtension();
-            // Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
-            $file->move($this->getParameter('upload_directory'), $fileName);
-            // Importation du fichier dans la BDD
-            $user->setUserAvatar($fileName);
-            }
+//            // Cryptage du nom du fichier téléchargé
+//            if($file != null)
+//            {
+//            $fileName = uniqid().'.'.$file->getClientOriginalExtension();
+//            // Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
+//            $file->move($this->getParameter('upload_directory'), $fileName);
+//            // Importation du fichier dans la BDD
+//            $user->setUserAvatar($fileName);
+//            }
 
             // Encryptage du mot de passe selon la configuration dans security.yaml de config
             // Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
@@ -65,7 +65,7 @@ class SecurityController extends AbstractController {
 
             // Garde en mémoire les données soumises
             $manager->persist($user);
-
+            dd($user);
             // Envoi des données à la BDD
             $manager->flush();
 
@@ -93,7 +93,7 @@ class SecurityController extends AbstractController {
         }
 
         // Affichage
-        return $this->render('security/registration.html.twig', [
+        return $this->render('security/loginModal.html.twig', [
             'inProgress' => $inProgress,
             'form' => $form->createView()
         ]);

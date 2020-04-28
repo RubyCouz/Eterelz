@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="test connexion modal">
+    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="fix modal inscription">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SigninType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SigninType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/security/loginModal.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/loginModal.html.twig" afterDir="false" />
     </list>
@@ -258,7 +258,7 @@
       <workItem from="1587709576325" duration="4014000" />
       <workItem from="1587715197738" duration="3073000" />
       <workItem from="1588002567444" duration="5111000" />
-      <workItem from="1588055311238" duration="5678000" />
+      <workItem from="1588055311238" duration="8019000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -449,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588060216758</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="fix modal inscription">
+      <created>1588064710448</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1588064710448</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +495,8 @@
     <MESSAGE value="ajout sidebar" />
     <MESSAGE value="fix" />
     <MESSAGE value="test connexion modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="test connexion modal" />
+    <MESSAGE value="fix modal inscription" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix modal inscription" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -557,13 +565,13 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1588060221491">
+    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1588064715214">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />
-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588060221491" />
+    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588064715214" />
     <state x="2731" y="432" width="324" height="261" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585127054866">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>

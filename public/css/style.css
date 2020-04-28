@@ -346,3 +346,7 @@ Bouton se connecter dans la barre de navigation
 .navbar.navbar-dark form .md-form .form-control {
     color: black;
 }
+
+.navbar.navbar-dark form .md-form input {
+    border-bottom: 1px solid #CED4DA;
+}

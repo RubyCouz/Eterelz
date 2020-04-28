@@ -59,17 +59,21 @@
                 {{ form_row(form.user_mail) }}
             </div>
 
-            <div class="md-form form-sm mb-5">
+            <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fab fa-discord prefix"></i>
                 {{ form_row(form.user_discord) }}
             </div>
 
-            <div class="md-form form-sm mb-5">
+            <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fas fa-lock prefix"></i>
                 {{ form_row(form.user_password) }}
+                <br>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="strength"></div>
+                </div>
             </div>
 
-            <div class="md-form form-sm mb-4">
+            <div id="login_modal" class="md-form form-sm mb-4">
                 <i class="fas fa-lock prefix"></i>
                 {{ form_row(form.confirm_user_password) }}
             </div>
@@ -97,3 +101,48 @@
     </div>
     <!--/.Panel 8-->
 </div>
+<script>
+// Barre de force du mot de passe
+var pass = document.getElementById("signin_user_password")
+    pass.addEventListener('keyup', function() {
+        checkPassword(pass.value)
+    })
+    function checkPassword(password) {
+        var strengthBar = document.getElementById("strength")
+        var strength = 0;
+            if (password.match(/[a-zA-Z0-9][a-zA-Z0-9]+/)) {
+                strength += 1
+            }
+            if (password.match(/[~<>?]+/)) {
+                strength += 1
+            }
+            if (password.match(/[!@£$%^&*()]+/)) {
+                strength += 1
+            }
+            if (password.length >= 8) {
+                strength += 1
+            }
+    
+    switch (strength) {
+        case 0 :
+            strengthBar.style.width = "0%";
+            break
+        case 1:
+            strengthBar.style.width = "25%";
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-danger")
+            break
+        case 2:
+            strengthBar.style.width = "50%";
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-warning")
+            break
+        case 3:
+            strengthBar.style.width = "75%";
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-success")
+            break
+        case 4:
+            strengthBar.style.width = "100%";
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-success")
+            break
+    }
+}
+</script>

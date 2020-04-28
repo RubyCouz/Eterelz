@@ -83,7 +83,7 @@ close.onclick = () => {
 
 // Barre de force du mot de passe
 
-var pass = document.getElementById("registration_user_password")
+/*var pass = document.getElementById("registration_user_password")
     pass.addEventListener('keyup', function() {
         checkPassword(pass.value)
     })
@@ -124,7 +124,7 @@ var pass = document.getElementById("registration_user_password")
             strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-success")
             break
     }
-}
+}*/
 
 //Prévisualisation de la photo de profil
 

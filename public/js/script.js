@@ -81,9 +81,9 @@ close.onclick = () => {
     logo.style.right = '3%';
 }
 
-// Barre de force du mot de passe
+/* Barre de force du mot de passe
 
-var pass = document.getElementById("registration_user_password")
+var pass = document.getElementById("signin_user_password")
 pass.addEventListener('keyup', function () {
     checkPassword(pass.value)
 })
@@ -125,7 +125,7 @@ function checkPassword(password) {
             strengthBar.setAttribute("class", "progress-bar progress-bar-striped progress-bar-animated bg-success")
             break
     }
-}
+}*/
 
 // Prévisualisation de la photo de profil
 

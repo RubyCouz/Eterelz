@@ -1,4 +1,10 @@
 security:
+    # encoders : définition ds methodes d'encodage des mdp
+    encoders:
+        App\Entity\EterUser:
+            algorithm: bcrypt
+            cost: 12
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     # provider : permet d'indiquer comment on récupère les utilisateurs et les authentifications
     providers:
@@ -6,24 +12,23 @@ security:
                 entity:
                     class: App\Entity\EterUser
                     property: user_mail
+     # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
     # firewalls : définit les composant qui vont permettre l'authentification
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
-
+            anonymous: lazy
+            provider: in_database
             form_login:
-                login_path: login
-                check_path: login
+                login_path: app_login
+                check_path: app_login
 
             logout:
                 path: /logout
                 target: /
-
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#firewalls-authentication
 
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
@@ -34,9 +39,4 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
-    # encoders : définition ds methodes d'encodage des mdp
-    encoders:
-        App\Entity\EterUser:
-            algorithm: bcrypt
-            cost: 12
-
+    

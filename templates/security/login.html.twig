@@ -5,7 +5,7 @@
         {% block body %}
 
             <div class="container">
-                <form action="{{ path('login') }}" method ="post">
+                <form action="{{ path('app_login') }}" method ="post">
                     {# Logo Eterelz #}
                     <img src="{{ asset('img/logo/logoEterelz.png') }}" class="align-center col-12" alt="Logo Eterelz" title="Logo Eterelz">
                         <legend class="align-center">Veuillez saisir vos identifiants de connexion</legend>
@@ -18,7 +18,7 @@
                         {% endif %}
 
                             <label for="username" class="">Email</label>
-                            <input type="text" id="username" name="_username">
+                            <input type="text" id="username" name="_username" value="{{ last_username }}">
 
                         <div class="" >
                             <label for="password" class="">Mot de passe</label>
@@ -30,7 +30,7 @@
                                 <input type="checkbox" id="remember" class="" value="Se souvenir de moi"> Se souvenir de moi</input>
                         </div>
 
-                        
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                     <div class="" >
                         <input type="submit" class="btn btn-success" value="Se connecter">

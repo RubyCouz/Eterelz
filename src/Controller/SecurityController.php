@@ -90,8 +90,6 @@ class SecurityController extends AbstractController {
             // $mailer->send($email);
 
             return $this->redirectToRoute('home');
-
-            return $this->redirectToRoute('home');
         }
 
         // Affichage
@@ -103,7 +101,7 @@ class SecurityController extends AbstractController {
         }
     
     /**
-     * @Route("/login", name="login")
+     * @Route("/login", name="app_login")
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */

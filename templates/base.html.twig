@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">-->
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -46,9 +46,9 @@
                         </button>
                     </li>
                     {% if app.user %}
-                        <li>
-                            <a href="{{ path('logout') }}" class="nav-link ml-2">SE DECONNECTER </a>
-                        </li>
+                        <div class="text-center">
+                        <a href="{{ path('logout') }}" class="btn btn-default">SE DECONNECTER</a>
+                    </div>
                     {% else %}
                         <li>
                             <!--Modal: Login / Register Form-->
@@ -93,11 +93,6 @@
                             </div>
                         </li>
                     {% endif %}
-
-                    <div class="text-center">
-                        <a href="{{ path('logout') }}" class="btn btn-default" data-toggle="modal"
-                           data-target="#modalLRForm" data-backdrop="false">SE DECONNECTER</a>
-                    </div>
 
                     <li>
                         <form class="search-box bg-dark">
@@ -144,7 +139,7 @@
                     <ul class="dropdown-menu animated fadeInLeft" role="menu">
                         <div class="dropdown-header">Dropdown heading</div>
                         <li><a href="#pictures">Pictures</a></li>
-                        <li><a href="#videos">Videeos</a></li>
+                        <li><a href="#videos">Videos</a></li>
                         <li><a href="#books">Books</a></li>
                         <li><a href="#art">Art</a></li>
                         <li><a href="#awards">Awards</a></li>
@@ -248,11 +243,11 @@
 
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
+<!-- Bootstrap tooltips 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>-->
+<!-- Bootstrap core JavaScript 
 <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
 <script>
@@ -262,7 +257,7 @@
             url: "{{ path('security_registration') }}",
             data: { inProgress: false }
         })
-            .done(function( msg ) {
+            .done(function(msg) {
                  $('#login').append(msg);
 
             });

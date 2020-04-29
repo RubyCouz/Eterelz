@@ -19,10 +19,10 @@ security:
             security: false
         main:
             anonymous: lazy
-            provider: in_database
+            provider: from_database
             form_login:
-                login_path: eter_login
-                check_path: eter_login
+                login_path: login
+                check_path: login
             logout:
                 path: /logout
                 target: /

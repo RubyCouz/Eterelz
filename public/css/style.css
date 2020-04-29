@@ -350,3 +350,7 @@ Bouton se connecter dans la barre de navigation
 .navbar.navbar-dark form .md-form input {
     border-bottom: 1px solid #CED4DA;
 }
+
+.md-form label.active {
+    color: #4285f4;
+}

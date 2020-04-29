@@ -28,7 +28,7 @@ easy_admin:
                     - {name: 'edit', icon: 'pencil', label: false}
                     - {name: 'delete', icon: 'trash', label: false}
         Role:
-            class: App\Entity\EterRole
+            class: App\Entity\EterLabel
             form:
                 fields:
                     - {property: 'role_name', label: 'Libellé du rôle'}

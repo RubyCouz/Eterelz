@@ -264,7 +264,7 @@ footer {
 }
 
 /**
-Mise en forme du formulaire
+Mise en forme du formulaire registration.html.twig
 */
 
 #champs {
@@ -347,10 +347,17 @@ Bouton se connecter dans la barre de navigation
     position: absolute;
 }
 
+/**
+Formulaire d'inscription loginModal.html.twig
+*/
 .navbar.navbar-dark form .md-form .form-control {
     color: black;
 }
 
 .navbar.navbar-dark form .md-form input {
     border-bottom: 1px solid #CED4DA;
+}
+
+.md-form label.active {
+    color: #4285f4;
 }

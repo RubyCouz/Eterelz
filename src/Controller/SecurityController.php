@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Entity\EterUser;
 use App\Form\RegistrationType;
 use App\Form\SigninType;

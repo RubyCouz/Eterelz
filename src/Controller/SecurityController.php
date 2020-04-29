@@ -101,7 +101,7 @@ class SecurityController extends AbstractController {
     }
     
     /**
-     * @Route("/login", name="login")
+     * @Route("/login", name="eter_login")
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
@@ -109,6 +109,7 @@ class SecurityController extends AbstractController {
         $error =$authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
         $inProgress = false;
+//        dd($error);
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,

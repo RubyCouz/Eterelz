@@ -287,6 +287,11 @@ class EterUser implements UserInterface
         return $this->role;
     }
 
+    public function setRole(): int
+    {
+        $this->role = 2;
+        return $this->role;
+    }
     public function addRole(EterRole $role): self
     {
         if (!$this->role->contains($role)) {
@@ -491,16 +496,26 @@ class EterUser implements UserInterface
     }
 
     // Les 5 fonctions obligatoires d'après Symfony pour le cryptage du mot de passe
-    public function getPassword() {}
+    public function getPassword() {
+        return $this->getUserPassword();
+    }
 
-    public function getUsername() {}
+    public function getUsername() {
+        return $this->getUserMail();
+    }
 
     public function eraseCredentials() {}
 
-    public function getSalt() {}
+    public function getSalt() {
+        return "";
+    }
 
     public function getRoles() {
-        return ['ROLE_USER'];
+        if ($this->role == 'administrateur')
+            return ["ROLE_ADMIN"];
+        if ($this->role == 'utilisateur')
+            return ["ROLE_USER"];
+        return [];
     }
 
     public function getUserAvatar()

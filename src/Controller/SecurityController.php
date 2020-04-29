@@ -64,6 +64,7 @@ class SecurityController extends AbstractController {
             $user->setUserPassword($hash);
             $statut = 1;
             $user->setStatut($statut);
+            $user->setUserRole('Utilisateur');
             // Garde en mémoire les données soumises
             $manager->persist($user);
             //dd($user);

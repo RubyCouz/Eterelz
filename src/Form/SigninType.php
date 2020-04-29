@@ -41,27 +41,21 @@ class SigninType extends AbstractType
 //            ])
             //---------------LOGIN---------------//
             ->add('user_login', TextType::class, [
-                'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'Caractère(s) non autorisé(s)', 'pattern' => '#[0-9a-zA-Zàâäéèêëïîôöùûüç!:_\-.?,/\#]$#'])],
-                'attr' => ['placeholder' => 'Saisissez votre login',
-                    'class' => 'form-control form-control-sm validate'
-                ]
+                'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'Caractère(s) non autorisé(s)', 'pattern' => '#[0-9a-zA-Zàâäéèêëïîôöùûüç!:_\-.?,/\#]$#'])]
             ])
             //---------------MAIL---------------//
             ->add('user_mail', EmailType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Email(['message' => 'Adresse mail non valide !'])],
-                'attr' => ['placeholder' => 'Saisissez votre adresse mail']
             ])
             //-------------PASSWORD-------------//
 
             ->add('user_password', PasswordType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'Mot de passe non valide !', 'pattern' => '#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#'])],
-                'attr' => ['placeholder' => 'Saisissez un mot de passe'],
                 'help' => 'Votre mot de passe doit contenir au moins une majuscule, une minuscule et des caractères spéciaux'
             ])
             //---------CONFIRM PASSWORD---------//
             ->add('confirm_user_password', PasswordType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ'])],
-                'attr' => ['placeholder' => 'Confirmez le mot de passe']
             ])
             //-------------ADRESSE-------------//
 //            ->add('user_address', TextType::class, [
@@ -81,7 +75,6 @@ class SigninType extends AbstractType
             //------------DISCORD------------//
             ->add('user_discord', TextType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'ID Discord non valide !', 'pattern' => '#^\D+\#\d{4}$#'])],
-                'attr' => ['placeholder' => 'Saisissez votre ID Discord']
             ])
             //-------------SEXE-------------//
 //            ->add('user_sex', ChoiceType::class, [

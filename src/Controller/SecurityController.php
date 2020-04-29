@@ -102,7 +102,7 @@ class SecurityController extends AbstractController {
     }
     
     /**
-     * @Route("/login", name="eter_login")
+     * @Route("/login", name="login")
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */

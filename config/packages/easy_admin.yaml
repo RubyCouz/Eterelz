@@ -28,13 +28,13 @@ easy_admin:
                     - {name: 'edit', icon: 'pencil', label: false}
                     - {name: 'delete', icon: 'trash', label: false}
         Role:
-            class: App\Entity\EterRole
+            class: App\Entity\EterLabel
             form:
                 fields:
-                    - {property: 'role_name', label: 'Libellé du rôle'}
+                    - {property: 'label_name', label: 'Etiquette'}
             list:
                 fields:
-                    - {property: 'role_name', label: 'Libellé du rôle'}
+                    - {property: 'label_name', label: 'Etiquette'}
                     - {property: 'eterUsers', label: 'Nombre utilisateurs'}
                 actions:
                     - {name: 'edit', icon: 'pencil', label: false}

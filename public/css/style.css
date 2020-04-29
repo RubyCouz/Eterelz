@@ -27,6 +27,12 @@ nav {
 .info-color {
     background-color: #9F1E5D !important;
 }
+.card-body {
+    background-color: #2E2E2E;
+}
+.card-header:first-child {
+    border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
+}
 /**
 searchBar
  */

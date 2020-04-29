@@ -64,6 +64,7 @@ class SecurityController extends AbstractController {
             $user->setUserPassword($hash);
             $statut = 1;
             $user->setStatut($statut);
+            $user->setUserRole('Utilisateur');
             // Garde en mémoire les données soumises
             $manager->persist($user);
             //dd($user);
@@ -101,7 +102,7 @@ class SecurityController extends AbstractController {
     }
     
     /**
-     * @Route("/login", name="login")
+     * @Route("/login", name="eter_login")
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
@@ -109,6 +110,7 @@ class SecurityController extends AbstractController {
         $error =$authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
         $inProgress = false;
+//        dd($error);
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,

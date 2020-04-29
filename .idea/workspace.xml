@@ -19,11 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="fix modal inscription">
+    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/SigninType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SigninType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCD/eterelz.sql" beforeDir="false" afterPath="$PROJECT_DIR$/MCD/eterelz.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterLabel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EterRoleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EterLabelRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/loginModal.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/loginModal.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +185,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Language Defaults" />
   </component>
   <component name="RecentsManager">
@@ -258,7 +263,8 @@
       <workItem from="1587709576325" duration="4014000" />
       <workItem from="1587715197738" duration="3073000" />
       <workItem from="1588002567444" duration="5111000" />
-      <workItem from="1588055311238" duration="8019000" />
+      <workItem from="1588055311238" duration="9633000" />
+      <workItem from="1588144683626" duration="12892000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -456,7 +462,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588064710448</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="commentaire ajax">
+      <created>1588067180421</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1588067180421</updated>
+    </task>
+    <task id="LOCAL-00030" summary="connexion">
+      <created>1588154378067</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1588154378067</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +516,9 @@
     <MESSAGE value="fix" />
     <MESSAGE value="test connexion modal" />
     <MESSAGE value="fix modal inscription" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix modal inscription" />
+    <MESSAGE value="commentaire ajax" />
+    <MESSAGE value="connexion" />
+    <option name="LAST_COMMIT_MESSAGE" value="connexion" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -508,10 +530,11 @@
     </state>
     <state x="2472" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584015133001" />
     <state x="552" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583526942849" />
-    <state x="2573" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583842288438">
+    <state x="2573" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588159504869">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2573" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1583842288438" />
+    <state x="2573" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588159504869" />
     <state x="2610" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587711771592">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
@@ -565,13 +588,13 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1588064715214">
+    <state x="2472" y="284" key="Vcs.Push.Dialog.v2" timestamp="1588154407077">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />
-    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588064715214" />
+    <state x="2472" y="284" key="Vcs.Push.Dialog.v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588154407077" />
     <state x="2731" y="432" width="324" height="261" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585127054866">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
@@ -584,20 +607,21 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2576" y="380" key="com.intellij.ide.util.TipDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1583840208523" />
-    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588007654916">
+    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588151023256">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252088632" />
-    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588007654916" />
+    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588151023256" />
     <state x="2645" y="170" key="git4idea.branch.GitSmartOperationDialog" timestamp="1588007625038">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2645" y="170" key="git4idea.branch.GitSmartOperationDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588007625038" />
-    <state x="2536" y="258" width="672" height="677" key="run.anything.popup" timestamp="1586251565489">
+    <state x="2536" y="258" width="672" height="677" key="run.anything.popup" timestamp="1588159426977">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2536" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586251565489" />
     <state x="616" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1583666787487" />
+    <state x="2536" y="258" width="672" height="677" key="run.anything.popup/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588159426977" />
     <state x="2536" y="208" width="670" height="676" key="search.everywhere.popup" timestamp="1585086973147">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>

@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterUserRepository")
  * @UniqueEntity(
@@ -18,6 +19,12 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class EterUser implements UserInterface
 {
+    // définition d'un tableau des rôles => constante
+    const ROLE = [
+        0 => 'Administrateur',
+        1 => 'Utilisateur'
+    ];
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -81,9 +88,9 @@ class EterUser implements UserInterface
     private $statut;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\EterRole", inversedBy="eterUsers")
+     * @ORM\ManyToMany(targetEntity="App\Entity\EterLabel", inversedBy="eterUsers")
      */
-    private $role;
+    private $label;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\EterClan", inversedBy="eterUsers")
@@ -136,6 +143,11 @@ class EterUser implements UserInterface
      * @var File
      */
     private $user_pic;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $user_role;
 
     public function __construct()
     {
@@ -279,27 +291,41 @@ class EterUser implements UserInterface
         return $this;
     }
 
-    /**
-     * @return Collection|EterRole[]
-     */
-    public function getRole(): Collection
+    public function getUserRole(): ?string
     {
-        return $this->role;
+        return $this->user_role;
     }
 
-    public function addRole(EterRole $role): self
+    public function setUserRole(?string $user_role): self
     {
-        if (!$this->role->contains($role)) {
-            $this->role[] = $role;
+        // role automatique par défaut
+        $user_role = 'Utilisateur';
+        $this->user_role = $user_role;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|EterLabel[]
+     */
+    public function getLabel(): Collection
+    {
+        return $this->label;
+    }
+
+    public function addLabel(EterLabel $label): self
+    {
+        if (!$this->label->contains($label)) {
+            $this->label[] = $label;
         }
 
         return $this;
     }
 
-    public function removeUserRole(EterRole $userRole): self
+    public function removeUserLabel(EterLabel $userLabel): self
     {
-        if ($this->role->contains($userRole)) {
-            $this->role->removeElement($userRole);
+        if ($this->label->contains($userLabel)) {
+            $this->label->removeElement($userLabel);
         }
 
         return $this;
@@ -491,16 +517,26 @@ class EterUser implements UserInterface
     }
 
     // Les 5 fonctions obligatoires d'après Symfony pour le cryptage du mot de passe
-    public function getPassword() {}
+    public function getPassword() {
+        return $this->getUserPassword();
+    }
 
-    public function getUsername() {}
+    public function getUsername() {
+        return $this->getUserMail();
+    }
 
     public function eraseCredentials() {}
 
-    public function getSalt() {}
+    public function getSalt() {
+        return "";
+    }
 
     public function getRoles() {
-        return ['ROLE_USER'];
+        if ($this->user_role == 'Administrateur')
+            return ["ROLE_ADMIN"];
+        if ($this->user_role == 'Utilisateur')
+            return ["ROLE_USER"];
+        return [];
     }
 
     public function getUserAvatar()

@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\EterRole;
+use App\Entity\EterLabel;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method EterRole|null find($id, $lockMode = null, $lockVersion = null)
- * @method EterRole|null findOneBy(array $criteria, array $orderBy = null)
- * @method EterRole[]    findAll()
- * @method EterRole[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method EterLabel|null find($id, $lockMode = null, $lockVersion = null)
+ * @method EterLabel|null findOneBy(array $criteria, array $orderBy = null)
+ * @method EterLabel[]    findAll()
+ * @method EterLabel[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EterRoleRepository extends ServiceEntityRepository
+class EterLabelRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, EterRole::class);
+        parent::__construct($registry, EterLabel::class);
     }
 
     // /**
-    //  * @return EterRole[] Returns an array of EterRole objects
+    //  * @return EterLabel[] Returns an array of EterLabel objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class EterRoleRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?EterRole
+    public function findOneBySomeField($value): ?EterLabel
     {
         return $this->createQueryBuilder('e')
             ->andWhere('e.exampleField = :val')

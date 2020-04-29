@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Entity\EterUser;
 use App\Form\RegistrationType;
 use App\Form\SigninType;
@@ -102,7 +101,7 @@ class SecurityController extends AbstractController {
     }
     
     /**
-     * @Route("/login", name="eter_login")
+     * @Route("/login", name="login")
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */

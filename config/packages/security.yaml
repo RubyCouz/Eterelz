@@ -15,8 +15,8 @@ security:
             anonymous: lazy # => chaque personne qui rentre sur le site est considéree comme annonyme
             provider: from_database
             form_login:
-                login_path: eter_login
-                check_path: eter_login
+                login_path: /login
+                check_path: /login
             logout:
                 path: /logout
                 target: /

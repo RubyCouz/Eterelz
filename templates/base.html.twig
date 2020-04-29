@@ -21,8 +21,8 @@
     {% block stylesheets %}{% endblock %}
 </head>
 <body class="{{ (inProgress == true) ? 'inProgress' : 'base' }}">
-{#navbar#}
 
+{#navbar#}
 
 <div id="wrapper">
     <div class="overlay"></div>
@@ -37,7 +37,7 @@
 
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        {#                        <a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
+                        {#<a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
                         <button type="button" class="hamburger animated fadeInLeft is-closed mt-1"
                                 data-toggle="offcanvas">
                             <span class="hamb-top"></span>
@@ -52,18 +52,19 @@
                         {% if is_granted('ROLE_ADMIN') %}
                             <div class="text-center">
                                 <a href="" class="btn btn-default">Back-office</a>
+                                <!-- La page admin ne s'affiche plus -->
                             </div>
                         {% endif %}
                     {% else %}
                         <li>
-                            <!--Modal: Login / Register Form-->
+                            <!-- Modal: Login / Register Form -->
                             <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog"
                                  aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog cascading-modal" role="document">
-                                    <!--Content-->
+                                    <!-- Content -->
                                     <div class="modal-content">
 
-                                        <!--Modal cascading tabs-->
+                                        <!-- Modal cascading tabs -->
                                         <div class="modal-c-tabs">
 
                                             <!-- Nav tabs -->
@@ -87,10 +88,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--/.Content-->
+                                    <!--/ .Content -->
                                 </div>
                             </div>
-                            <!--Modal: Login / Register Form-->
+                            <!-- Modal: Login / Register Form -->
 
                             <div class="text-center">
                                 <a href="" class="btn btn-default" data-toggle="modal" data-target="#modalLRForm"

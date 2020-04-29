@@ -329,9 +329,9 @@ Cadre de prévisualisation avatar
 Bouton se connecter dans la barre de navigation
 */
 
-/*.waves-effect {
+.waves-effect {
     overflow: visible;
-}*/
+}
 
 .btn-default {
     background-color: #53C8E0 !important;

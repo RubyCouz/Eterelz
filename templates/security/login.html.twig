@@ -5,13 +5,13 @@
         {% block body %}
 
             <div class="container">
-                <form action="{{ path('app_login') }}" method ="post">
+                <form action="{{ path('eter_login') }}" method="post">
                     {# Logo Eterelz #}
                     <img src="{{ asset('img/logo/logoEterelz.png') }}" class="align-center col-12" alt="Logo Eterelz" title="Logo Eterelz">
                         <legend class="align-center">Veuillez saisir vos identifiants de connexion</legend>
                         {% if error %}
 
-                            <div class="alert-danger">
+                            <div class="alert alert-danger">
                                 <p>{{ error.messageKey | trans(error.messageData, 'security') }}</p>
                             </div>
 

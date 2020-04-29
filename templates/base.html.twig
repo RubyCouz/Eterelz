@@ -47,8 +47,13 @@
                     </li>
                     {% if app.user %}
                         <div class="text-center">
-                        <a href="{{ path('logout') }}" class="btn btn-default">SE DECONNECTER</a>
-                    </div>
+                            <a href="{{ path('logout') }}" class="btn btn-default">SE DECONNECTER</a>
+                        </div>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <div class="text-center">
+                                <a href="" class="btn btn-default">Back-office</a>
+                            </div>
+                        {% endif %}
                     {% else %}
                         <li>
                             <!--Modal: Login / Register Form-->

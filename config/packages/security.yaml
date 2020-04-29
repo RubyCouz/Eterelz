@@ -8,12 +8,10 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     # provider : permet d'indiquer comment on récupère les utilisateurs et les authentifications
     providers:
-            in_database:
-                entity:
-                    class: App\Entity\EterUser
-                    property: user_mail
-     # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#firewalls-authentication
+        from_database:
+            entity:
+                class: App\Entity\EterUser
+                property: user_mail
     # firewalls : définit les composant qui vont permettre l'authentification
     firewalls:
         dev:
@@ -23,9 +21,8 @@ security:
             anonymous: lazy
             provider: in_database
             form_login:
-                login_path: app_login
-                check_path: app_login
-
+                login_path: eter_login
+                check_path: eter_login
             logout:
                 path: /logout
                 target: /
@@ -37,6 +34,6 @@ security:
     # Note: Only the *first* access control that matches will be used
     # access_control : définit les niveaux d'accès
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+         - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
     

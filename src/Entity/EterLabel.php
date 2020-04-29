@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\EterRoleRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\EterLabelRepository")
  */
-class EterRole
+class EterLabel
 {
     /**
      * @ORM\Id()
@@ -21,7 +21,7 @@ class EterRole
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $role_name;
+    private $label_name;
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\EterUser", mappedBy="role")
@@ -40,19 +40,19 @@ class EterRole
 
     public function getRoleName(): ?string
     {
-        return $this->role_name;
+        return $this->label_name;
     }
 
-    public function setRoleName(string $role_name): self
+    public function setRoleName(string $label_name): self
     {
-        $this->role_name = $role_name;
+        $this->label_name = $label_name;
 
         return $this;
     }
 
     public function __toString()
     {
-       return $this->role_name;
+       return $this->label_name;
     }
 
     /**
@@ -67,7 +67,7 @@ class EterRole
     {
         if (!$this->eterUsers->contains($eterUser)) {
             $this->eterUsers[] = $eterUser;
-            $eterUser->addUserRole($this);
+            $eterUser->addUserLabel($this);
         }
 
         return $this;
@@ -77,7 +77,7 @@ class EterRole
     {
         if ($this->eterUsers->contains($eterUser)) {
             $this->eterUsers->removeElement($eterUser);
-            $eterUser->removeUserRole($this);
+            $eterUser->removeUserLabel($this);
         }
 
         return $this;

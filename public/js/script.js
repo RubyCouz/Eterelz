@@ -110,30 +110,32 @@ function checkPassword(password) {
             break
         case 1:
             strengthBar.style.width = "25%";
-            strengthBar.setAttribute("class", "progress-bar progress-bar-striped progress-bar-animated bg-danger")
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-danger")
             break
         case 2:
             strengthBar.style.width = "50%";
-            strengthBar.setAttribute("class", "progress-bar progress-bar-striped progress-bar-animated bg-warning")
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-warning")
             break
         case 3:
             strengthBar.style.width = "75%";
-            strengthBar.setAttribute("class", "progress-bar progress-bar-striped progress-bar-animated bg-success")
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-success")
             break
         case 4:
             strengthBar.style.width = "100%";
-            strengthBar.setAttribute("class", "progress-bar progress-bar-striped progress-bar-animated bg-success")
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-success")
             break
     }
 }*/
 
-// Prévisualisation de la photo de profil
+//Prévisualisation de la photo de profil
 
-function preview_image(event) {
+function preview_image(event)
+{
     var reader = new FileReader();
-    reader.onload = function () {
+    reader.onload = function()
+    {
         var output = document.getElementById('output_image');
         output.src = reader.result;
     }
-    reader.readAsDataURL(event.target.files[0]);
+reader.readAsDataURL(event.target.files[0]);
 }

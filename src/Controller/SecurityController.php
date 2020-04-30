@@ -10,9 +10,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
-//use Symfony\Component\Mailer\MailerInterface;
-//use Symfony\Component\Mime\Email;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -27,7 +26,7 @@ class SecurityController extends AbstractController {
      * @param UserPasswordEncoderInterface $encoder
      * @return Response
      */
-    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder/*, MailerInterface $mailer*/) {
+    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, MailerInterface $mailer) {
         
         // Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
         $user = new EterUser(); 
@@ -67,28 +66,26 @@ class SecurityController extends AbstractController {
             $user->setUserRole('Utilisateur');
             // Garde en mémoire les données soumises
             $manager->persist($user);
-            //dd($user);
+            
             // Envoi des données à la BDD
             $manager->flush();
 
-            // return $this->redirectToRoute('login');
-
             // Envoi mail
 
-            // $mail = $user->getUserMail();
+            $mail = $user->getUserMail();
 
-            // $email = (new Email())
-                // ->from('contact@eterelz.org')
-                // ->to($mail)
+            $email = (new Email())
+                ->from('contact@eterelz.org')
+                ->to($mail)
                 // ->cc('cc@example.com')
                 // ->bcc('bcc@example.com')
                 // ->replyTo('fabien@example.com')
                 // ->priority(Email::PRIORITY_HIGH)
-                // ->subject('Confirmation d\'inscription')
-                // ->text('Welcome')
-                // ->html('<p>See Twig integration for better HTML integration!</p>');
+                ->subject('Confirmation d\'inscription')
+                ->text('Welcome')
+                ->html('<p>Votre inscription a bien été prise en compte !</p>');
 
-            // $mailer->send($email);
+            $mailer->send($email);
 
             return $this->redirectToRoute('home');
         }

@@ -11,7 +11,7 @@ function verif()
 
         else if (reg5.test(lemailconn) == false) 
             {
-                var html ="<div class='alert alert-warning'role='alert'>"+"Format incorrect !"+"</div>";
+                var html ="<div class='alert alert-warning'role='alert'>"+"Caractère(s) non autorisé(s) !"+"</div>";
                 $("#alertemailconn").append(html);
             }
             

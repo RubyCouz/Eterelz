@@ -21,24 +21,8 @@ class SigninType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        //---------------POUR POUVOIR SELECTIONNER LE SEXE---------------
-//        $choices=[
-//            'Masculin' => 'M',
-//            'Féminin' => 'F'
-//        ];
-
+ 
         $builder
-            //---------------AVATAR---------------//
-            // Demander si le nom d'avatar doit être unique
-            // Demander quels types de fichiers sont autorisés
-            // Demander la taille maximum de fichier autorisés
-//            ->add('user_avatar', FileType::class, [
-//                'attr' => ['placeholder' => 'Choisissez un avatar', 'onchange' => 'preview_image(event)'],
-//                'constraints' => [ new File([
-//                    'maxSize' => '1024k'
-//                ])
-//                ]
-//            ])
             //---------------LOGIN---------------//
             ->add('user_login', TextType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'Caractère(s) non autorisé(s)', 'pattern' => '#[0-9a-zA-Zàâäéèêëïîôöùûüç!:_\-.?,/\#]$#'])]
@@ -76,16 +60,6 @@ class SigninType extends AbstractType
             ->add('user_discord', TextType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'ID Discord non valide !', 'pattern' => '#^\D+\#\d{4}$#'])],
             ])
-            //-------------SEXE-------------//
-//            ->add('user_sex', ChoiceType::class, [
-//                'choices' => $choices,
-//                'expanded' => true,
-//                'multiple' => false
-//            ])
-            //---------DESCRIPTION---------//
-//            ->add('user_description', TextareaType::class, [
-//                'attr' => ['placeholder' => 'Saisissez une description']
-//            ])
         ;
     }
 

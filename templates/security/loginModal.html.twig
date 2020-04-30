@@ -46,12 +46,11 @@
 
         <!--Body-->
         <div class="modal-body">
-            {{ form_start(form, {'action' : path('security_registration'), 'id' : 'modalinscr'}) }}
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}, 'action' : path('security_registration')}) }}
             <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fas fa-user-circle prefix"></i>
                 {{ form_label(form.user_login, 'Votre login') }}
-                {{ form_widget(form.user_login, {'id': 'surnom'}) }}
-                <span id="alertsurnom"></span>
+                {{ form_widget(form.user_login) }}
             </div>
 
             <div id="login_modal" class="md-form form-sm mb-5">
@@ -76,6 +75,7 @@
                 {{ form_widget(form.user_password, {'id': 'mdp'}) }}
                 <span id="alertemdp"></span>
                 <br>
+                <!-- Barre de force du mdp -->
                 <div class="progress">
                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="strength"></div>
                 </div>
@@ -93,6 +93,7 @@
                     <i class="fas fa-sign-in ml-1"></i>
                 </button>
             </div>
+
             {{ form_end(form) }}
         </div>
         <!--Footer-->
@@ -108,28 +109,28 @@
     </div>
     <!--/.Panel 8-->
 </div>
-
-<script> var pass = document.getElementById("mdp")
-pass.addEventListener('keyup', function () {
-    checkPassword(pass.value)
-})
-
-function checkPassword(password) {
-    var strengthBar = document.getElementById("strength")
-    var strength = 0;
-    if (password.match(/[a-zA-Z0-9][a-zA-Z0-9]+/)) {
-        strength += 1
-    }
-    if (password.match(/[~?]+/)) {
-        strength += 1
-    }
-    if (password.match(/[!@£$%^&*()]+/)) {
-        strength += 1
-    }
-    if (password.length >= 8) {
-        strength += 1
-    }
-
+<script>
+// Barre de force du mot de passe
+var pass = document.getElementById("signin_user_password")
+    pass.addEventListener('keyup', function() {
+        checkPassword(pass.value)
+    })
+    function checkPassword(password) {
+        var strengthBar = document.getElementById("strength")
+        var strength = 0;
+            if (password.match(/[a-zA-Z0-9][a-zA-Z0-9]+/)) {
+                strength += 1
+            }
+            if (password.match(/[~?]+/)) {
+                strength += 1
+            }
+            if (password.match(/[!@£$%^&*()]+/)) {
+                strength += 1
+            }
+            if (password.length >= 8) {
+                strength += 1
+            }
+    
     switch (strength) {
         case 0 :
             strengthBar.style.width = "0%";

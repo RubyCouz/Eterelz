@@ -357,3 +357,14 @@ Formulaire d'inscription loginModal.html.twig
 .md-form label.active {
     color: #4285f4;
 }
+
+/**
+Message d'erreurs loginModal.html.twig
+*/
+#alert1, #alert2, #alert3, #alert4, #alert5, #alert6, #alert7 {
+    font-size: 13px;
+}
+
+#mail, #mdp, #email, #password, #identifiant, #discord, #conf_password {
+    margin-bottom: 10px;
+}

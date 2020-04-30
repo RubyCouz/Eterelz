@@ -30,7 +30,7 @@ class SigninType extends AbstractType
             //---------------MAIL---------------//
             ->add('user_mail', EmailType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Email(['message' => 'Adresse mail non valide !'])],
-            ])
+                ])
             //-------------DISCORD--------------//
             ->add('user_discord', TextType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'ID Discord non valide !', 'pattern' => '#^\D+\#\d{4}$#'])],

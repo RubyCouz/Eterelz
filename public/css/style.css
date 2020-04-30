@@ -285,7 +285,7 @@ Mise en forme du formulaire registration.html.twig
 }
 
 .container {
-    background-color: white;
+    /*background-color: white;*/
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 20px;

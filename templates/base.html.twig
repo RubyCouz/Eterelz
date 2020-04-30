@@ -21,8 +21,8 @@
     {% block stylesheets %}{% endblock %}
 </head>
 <body class="{{ (inProgress == true) ? 'inProgress' : 'base' }}">
-
 {#navbar#}
+
 
 <div id="wrapper">
     <div class="overlay"></div>
@@ -37,7 +37,7 @@
 
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        {#<a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
+                        {#                        <a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
                         <button type="button" class="hamburger animated fadeInLeft is-closed mt-1"
                                 data-toggle="offcanvas">
                             <span class="hamb-top"></span>
@@ -47,24 +47,23 @@
                     </li>
                     {% if app.user %}
                         <div class="text-center">
-                            <a href="{{ path('logout') }}" class="btn btn-default">Se déconnecter</a>
+                            <a href="{{ path('logout') }}" class="btn btn-default">SE DECONNECTER</a>
                         </div>
                         {% if is_granted('ROLE_ADMIN') %}
                             <div class="text-center">
-                                <a href="" class="btn btn-default">Back-office</a>
-                                <!-- La page admin ne s'affiche plus -->
+                                <a href="/eter/public/index.php/admin" class="btn btn-default">Back-office</a>
                             </div>
                         {% endif %}
                     {% else %}
                         <li>
-                            <!-- Modal: Login / Register Form -->
+                            <!--Modal: Login / Register Form-->
                             <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog"
                                  aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog cascading-modal" role="document">
-                                    <!-- Content -->
+                                    <!--Content-->
                                     <div class="modal-content">
 
-                                        <!-- Modal cascading tabs -->
+                                        <!--Modal cascading tabs-->
                                         <div class="modal-c-tabs">
 
                                             <!-- Nav tabs -->
@@ -88,14 +87,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!--/ .Content -->
+                                    <!--/.Content-->
                                 </div>
                             </div>
-                            <!-- Modal: Login / Register Form -->
+                            <!--Modal: Login / Register Form-->
 
                             <div class="text-center">
                                 <a href="" class="btn btn-default" data-toggle="modal" data-target="#modalLRForm"
-                                   data-backdrop="false" id="loginModal">Se connecter</a>
+                                   data-backdrop="false" id="loginModal">SE CONNECTER</a>
                             </div>
                         </li>
                     {% endif %}
@@ -156,7 +155,6 @@
                 <li><a href="#followme">Follow me</a></li>
             </ul>
         </nav>
-        <!-- /#sidebar-wrapper -->
     </header>
 
     <main>
@@ -194,6 +192,8 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
 <script>
+
+
     // au clic sur le bouton se connecter (déclenchement modal)
     $('#loginModal').click(function () {
         // fonction ajax

@@ -9,19 +9,23 @@
 
             <div class="md-form form-sm mb-5">
                 <i class="fas fa-envelope prefix"></i>
-                <input type="email" id="modalLRInput10" class="form-control form-control-sm validate" name="_username">
+                <input type="email" id="emailconn" class="form-control form-control-sm validate" name="_username">
+                <span id="alertemailconn"></span>
                 <label data-error="wrong" data-success="right" for="modalLRInput10">Votre email</label>
+                
             </div>
 
-            <div class="md-form form-sm mb-4">
+            <div class="md-form form-sm mb-5">
                 <i class="fas fa-lock prefix"></i>
-                <input type="password" id="modalLRInput11" class="form-control form-control-sm validate" name="_password">
+                <input type="password" id="mdpconn" class="form-control form-control-sm validate" name="_password">
+                <span id="alertmdpconn"></span>
                 <label data-error="wrong" data-success="right" for="modalLRInput11">Votre mot de passe</label>
+                
             </div>
 
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
             <div class="text-center mt-2">
-                <button class="btn btn-info" type="submit">Se connecter<i class="fas fa-sign-in ml-1"></i></button>
+                <button class="btn btn-info" type="submit" id="bouton_envoi_modalconn">Se connecter<i class="fas fa-sign-in ml-1"></i></button>
             </div>
             </form>
         </div>
@@ -42,30 +46,35 @@
 
         <!--Body-->
         <div class="modal-body">
-            {{ form_start(form, {'attr': {'novalidate': 'novalidate'}, 'action' : path('security_registration')}) }}
+            {{ form_start(form, {'action' : path('security_registration'), 'id' : 'modalinscr'}) }}
             <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fas fa-user-circle prefix"></i>
                 {{ form_label(form.user_login, 'Votre login') }}
-                {{ form_widget(form.user_login) }}
-                {{ form_errors(form.user_login) }}
+                {{ form_widget(form.user_login, {'id': 'surnom'}) }}
+                <span id="alertsurnom"></span>
             </div>
 
             <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fas fa-envelope prefix"></i>
                 {{ form_label(form.user_mail, 'Votre email') }}
-                {{ form_widget(form.user_mail) }}
+                {{ form_widget(form.user_mail, {'id': 'email'}) }}
+                <span id="alertemail"></span>
             </div>
 
             <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fab fa-discord prefix"></i>
                 {{ form_label(form.user_discord, 'Votre ID Discord') }}
-                {{ form_widget(form.user_discord) }}
+                {{ form_widget(form.user_discord, {'id': 'discord'}) }}
+                <span id="alertedisc"></span>
+                
+                
             </div>
 
             <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fas fa-lock prefix"></i>
                 {{ form_label(form.user_password, 'Votre mot de passe') }}
-                {{ form_widget(form.user_password) }}
+                {{ form_widget(form.user_password, {'id': 'mdp'}) }}
+                <span id="alertemdp"></span>
                 <br>
                 <div class="progress">
                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="strength"></div>
@@ -75,11 +84,12 @@
             <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fas fa-lock prefix"></i>
                 {{ form_label(form.confirm_user_password, 'Confirmez votre mot de passe') }}
-                {{ form_widget(form.confirm_user_password) }}
+                {{ form_widget(form.confirm_user_password, {'id': 'confmdp'}) }}
+                <span id="alerteconfmdp"></span>
             </div>
             
             <div class="text-center form-sm mt-2">
-                <button type="submit" class="btn btn-info">S'inscrire
+                <button type="submit" class="btn btn-info" id="bouton_envoi_modal">S'inscrire
                     <i class="fas fa-sign-in ml-1"></i>
                 </button>
             </div>
@@ -99,7 +109,7 @@
     <!--/.Panel 8-->
 </div>
 
-<script> var pass = document.getElementById("signin_user_password")
+<script> var pass = document.getElementById("mdp")
 pass.addEventListener('keyup', function () {
     checkPassword(pass.value)
 })
@@ -143,3 +153,5 @@ function checkPassword(password) {
     }
 }
 </script>
+
+<script src="{{ asset('js/inscrimodal_jquery.js') }}"></script>

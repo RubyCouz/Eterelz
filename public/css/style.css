@@ -354,3 +354,14 @@ Bouton se connecter dans la barre de navigation
 .md-form label.active {
     color: #4285f4;
 }
+
+/*Mise en forme message d'alerte JQuery*/
+
+#alertsurnom, #alertemail, #alertedisc, #alertemdp, #alerteconfmdp, #alertemailconn, #alertmdpconn {
+    font-size: 13px;
+}
+
+#emailconn, #mdpconn, #surnom, #email, #discord, #mdp, #confmdp
+{
+    margin-bottom: 10px;
+}

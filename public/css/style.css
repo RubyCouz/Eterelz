@@ -13,7 +13,7 @@ background in progress
 home background
  */
 .base {
-    background-image: url("../img/connection/signinBg.jpg");
+    /*background-image: url("../img/connection/signinBg.jpg");*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -383,4 +383,26 @@ Message d'erreurs loginModal.html.twig
 
 #mail, #mdp, #email, #password, #identifiant, #discord, #conf_password {
     margin-bottom: 10px;
+}
+
+#cards {
+    display: inline-block;
+    margin-top: 80px;
+}
+
+#eter {
+    background-color:#53C8E0;
+}
+
+.eters {
+    color: white;
+}
+
+.profil {
+    margin: 0px;
+    color: white;
+}
+
+#show {
+    margin-left: 40px;
 }

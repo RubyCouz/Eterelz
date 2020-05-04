@@ -384,3 +384,18 @@ Message d'erreurs loginModal.html.twig
 #mail, #mdp, #email, #password, #identifiant, #discord, #conf_password {
     margin-bottom: 10px;
 }
+
+.card-title{
+    text-align: center;
+    color:white;
+    font-size: 40px;
+}
+
+#rens{
+    color:white;
+    font-size: 20px;
+}
+
+#cardprofil{
+    background-color:#2E2E2E;
+}

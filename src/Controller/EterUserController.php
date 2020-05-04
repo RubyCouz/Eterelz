@@ -23,7 +23,7 @@ class EterUserController extends AbstractController
     {
         $inProgress = false;
         return $this->render('eter_user/index.html.twig', [
-            'eter_users' => $eterUserRepository->findAll(),
+            'eter_users' => $eterUserRepository->find($id),
             'inProgress' => $inProgress
         ]);
     }

@@ -86,7 +86,7 @@ searchBar
 }
 
 .backgroundSignin {
-    background-image: url("../img/connection/signinBg.jpg")
+    background-image: url("../img/connection/signinBg.jpg");
 }
 
 /**
@@ -285,7 +285,6 @@ Mise en forme du formulaire registration.html.twig
 }
 
 .container {
-   // background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 20px;
@@ -309,14 +308,6 @@ Mise en forme du formulaire registration.html.twig
     font-size: 30px;
     margin-top: 40px;
     margin-bottom: 40px;
-}
-
-.nav-link.waves-effect.waves-light {
-    margin-left: 0px;
-}
-
-#registration {
-    margin-left: 5px;
 }
 
 /**
@@ -366,6 +357,21 @@ Formulaire d'inscription loginModal.html.twig
 
 .md-form label.active {
     color: #4285f4;
+}
+
+.nav-link.waves-effect.waves-light {
+    margin-left: 0px;
+}
+
+#registration {
+    margin-left: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#mdp_perdu {
+    font-size: 14px;
+    margin-top:10px;
 }
 
 /**

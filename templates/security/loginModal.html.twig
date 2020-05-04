@@ -4,39 +4,34 @@
 
         <!--Body-->
         <div class="modal-body mb-1">
-
-         <form action="{{ path('login') }}" method="post">
-
+        <form action="{{ path('login') }}" method="post">
             <div class="md-form form-sm mb-5">
                 <i class="fas fa-envelope prefix"></i>
-                <input type="email" id="emailconn" class="form-control form-control-sm validate" name="_username">
-                <span id="alertemailconn"></span>
-                <label data-error="wrong" data-success="right" for="modalLRInput10">Votre email</label>
-                
+                <input type="email" id="mail" class="form-control form-control-sm validate" name="_username">
+                <label data-error="wrong" data-success="right" for="mail">Votre email</label>
+                <span id="alert6"></span>
             </div>
 
-            <div class="md-form form-sm mb-5">
+            <div class="md-form form-sm mb-4">
                 <i class="fas fa-lock prefix"></i>
-                <input type="password" id="mdpconn" class="form-control form-control-sm validate" name="_password">
-                <span id="alertmdpconn"></span>
-                <label data-error="wrong" data-success="right" for="modalLRInput11">Votre mot de passe</label>
-                
+                <input type="password" id="mdp" class="form-control form-control-sm validate" name="_password">
+                <label data-error="wrong" data-success="right" for="mdp">Votre mot de passe</label>
+                <span id="alert7"></span>
             </div>
 
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
             <div class="text-center mt-2">
-                <button class="btn btn-info" type="submit" id="bouton_envoi_modalconn">Se connecter<i class="fas fa-sign-in ml-1"></i></button>
+                <button type="submit" class="btn btn-info" id="bouton_envoi1">Se connecter<i class="fas fa-sign-in ml-1"></i></button>
             </div>
-            </form>
+        </form>
         </div>
-
         <!--Footer-->
         <div class="modal-footer">
             <div class="options text-center text-md-right mt-1">
-                <p>Pas encore membre ? <a id="registration" href="{{path('security_registration')}}" class="blue-text">S'inscrire</a></p>
-                <p>Mot de passe perdu ? <a id="registration" href="#" class="blue-text">Cliquez ici</a></p>
+                <p id="mdp_perdu">Mot de passe perdu ? <a id="registration" href="#" class="blue-text">Cliquez ici</a></p>
             </div>
-            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Fermer</button>
+            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Fermer
+            </button>
         </div>
     </div>
     <!--/.Panel 7-->
@@ -50,30 +45,29 @@
             <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fas fa-user-circle prefix"></i>
                 {{ form_label(form.user_login, 'Votre login') }}
-                {{ form_widget(form.user_login) }}
+                {{ form_widget(form.user_login, {'id':'identifiant'}) }}
+                <span id="alert1"></span>
             </div>
 
             <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fas fa-envelope prefix"></i>
                 {{ form_label(form.user_mail, 'Votre email') }}
-                {{ form_widget(form.user_mail, {'id': 'email'}) }}
-                <span id="alertemail"></span>
+                {{ form_widget(form.user_mail, {'id':'email'}) }}
+                <span id="alert2"></span>
             </div>
 
             <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fab fa-discord prefix"></i>
                 {{ form_label(form.user_discord, 'Votre ID Discord') }}
-                {{ form_widget(form.user_discord, {'id': 'discord'}) }}
-                <span id="alertedisc"></span>
-                
-                
+                {{ form_widget(form.user_discord, {'id':'discord'}) }}
+                <span id="alert3"></span>
             </div>
 
             <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fas fa-lock prefix"></i>
                 {{ form_label(form.user_password, 'Votre mot de passe') }}
-                {{ form_widget(form.user_password, {'id': 'mdp'}) }}
-                <span id="alertemdp"></span>
+                {{ form_widget(form.user_password, {'id':'password'}) }}
+                <span id="alert4"></span>
                 <br>
                 <!-- Barre de force du mdp -->
                 <div class="progress">
@@ -84,34 +78,27 @@
             <div id="login_modal" class="md-form form-sm mb-5">
                 <i class="fas fa-lock prefix"></i>
                 {{ form_label(form.confirm_user_password, 'Confirmez votre mot de passe') }}
-                {{ form_widget(form.confirm_user_password, {'id': 'confmdp'}) }}
-                <span id="alerteconfmdp"></span>
+                {{ form_widget(form.confirm_user_password, {'id':'conf_password'}) }}
+                <span id="alert5"></span>
             </div>
-            
+
             <div class="text-center form-sm mt-2">
-                <button type="submit" class="btn btn-info" id="bouton_envoi_modal">S'inscrire
-                    <i class="fas fa-sign-in ml-1"></i>
+                <button type="submit" class="btn btn-info" id="bouton_envoi2">S'inscrire<i class="fas fa-sign-in ml-1"></i></button>
+                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Fermer
                 </button>
             </div>
+        </div>
 
             {{ form_end(form) }}
         </div>
         <!--Footer-->
-        <div class="modal-footer">
-            <div class="options text-right">
-                <p class="pt-1">Déjà un compte ? <a href="{{path('login')}}" id="registration" class="blue-text">Se connecter</a></p>
-            </div>
-            <button type="button"
-                    class="btn btn-outline-info waves-effect ml-auto"
-                    data-dismiss="modal">Fermer
-            </button>
-        </div>
+        
     </div>
     <!--/.Panel 8-->
 </div>
 <script>
 // Barre de force du mot de passe
-var pass = document.getElementById("signin_user_password")
+var pass = document.getElementById("password")
     pass.addEventListener('keyup', function() {
         checkPassword(pass.value)
     })
@@ -137,22 +124,21 @@ var pass = document.getElementById("signin_user_password")
             break
         case 1:
             strengthBar.style.width = "25%";
-            strengthBar.setAttribute("class", "progress-bar progress-bar-striped progress-bar-animated bg-danger")
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-danger")
             break
         case 2:
             strengthBar.style.width = "50%";
-            strengthBar.setAttribute("class", "progress-bar progress-bar-striped progress-bar-animated bg-warning")
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-warning")
             break
         case 3:
             strengthBar.style.width = "75%";
-            strengthBar.setAttribute("class", "progress-bar progress-bar-striped progress-bar-animated bg-success")
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-success")
             break
         case 4:
             strengthBar.style.width = "100%";
-            strengthBar.setAttribute("class", "progress-bar progress-bar-striped progress-bar-animated bg-success")
+            strengthBar.setAttribute ("class","progress-bar progress-bar-striped progress-bar-animated bg-success")
             break
     }
 }
 </script>
-
-<script src="{{ asset('js/inscrimodal_jquery.js') }}"></script>
+<script src="{{ asset('js/inscription_modal_jquery.js') }}"></script>

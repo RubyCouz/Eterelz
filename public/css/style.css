@@ -86,7 +86,7 @@ searchBar
 }
 
 .backgroundSignin {
-    background-image: url("../img/connection/signinBg.jpg")
+    background-image: url("../img/connection/signinBg.jpg");
 }
 
 /**
@@ -279,13 +279,12 @@ Mise en forme du formulaire registration.html.twig
     color: red;
 }
 
-.row{
+.row {
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
 .container {
-    /*background-color: white;*/
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 20px;
@@ -309,14 +308,6 @@ Mise en forme du formulaire registration.html.twig
     font-size: 30px;
     margin-top: 40px;
     margin-bottom: 40px;
-}
-
-.nav-link.waves-effect.waves-light {
-    margin-left: 0px;
-}
-
-#registration {
-    margin-left: 5px;
 }
 
 /**
@@ -368,13 +359,28 @@ Formulaire d'inscription loginModal.html.twig
     color: #4285f4;
 }
 
-/*Mise en forme message d'alerte JQuery*/
+.nav-link.waves-effect.waves-light {
+    margin-left: 0px;
+}
 
-#alertsurnom, #alertemail, #alertedisc, #alertemdp, #alerteconfmdp, #alertemailconn, #alertmdpconn {
+#registration {
+    margin-left: 5px;
+    font-size: 14px;
+    margin-top:10px;
+}
+
+#mdp_perdu {
+    font-size: 14px;
+    margin-top:10px;
+}
+
+/**
+Message d'erreurs loginModal.html.twig
+*/
+#alert1, #alert2, #alert3, #alert4, #alert5, #alert6, #alert7 {
     font-size: 13px;
 }
 
-#emailconn, #mdpconn, #surnom, #email, #discord, #mdp, #confmdp
-{
+#mail, #mdp, #email, #password, #identifiant, #discord, #conf_password {
     margin-bottom: 10px;
 }

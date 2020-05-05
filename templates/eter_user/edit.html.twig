@@ -1,13 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit EterUser{% endblock %}
-
 {% block body %}
-    <h1>Edit EterUser</h1>
 
-    {{ include('eter_user/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('eter_user_index') }}">back to list</a>
+<div class="container">
+    <div class="card mb-3">
+        <div id ="cardprofil" class="row no-gutters">
+            <div class="col-md-4 pl-3">
+                <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Modification du profil</h5>
+                        {{ form_start(form) }}
+                        <div>
+                            <div>
+                                <label id="editinp">Votre Login</label>
+                            </div>
+                            <div>
+                            {{ form_widget(form.user_login) }}
+                            {{ form_errors(form.user_login) }}
+                            </div>
+                        </div>
+                        <button class="btn btn-success">{{ button_label|default('Mettre à jour') }}</button>
+                        {{ form_end(form) }}
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {#<a href="{{ path('eter_user_index') }}">back to list</a>#}
 
     {{ include('eter_user/_delete_form.html.twig') }}
 {% endblock %}

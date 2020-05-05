@@ -385,6 +385,9 @@ Message d'erreurs loginModal.html.twig
     margin-bottom: 10px;
 }
 
+/*
+Mise en forme show.html.twig
+*/
 .card-title{
     text-align: center;
     color:white;
@@ -398,4 +401,24 @@ Message d'erreurs loginModal.html.twig
 
 #cardprofil{
     background-color:#2E2E2E;
+}
+
+#image{
+    width: 70%;
+    margin-top: 85px;
+    margin-left: 55px;
+}
+
+#modifier{
+    margin-left: 888px;
+    margin-top: -5px;
+}
+
+/*
+Mise en forme show.html.twig
+*/
+
+#editinp{
+    color:white;
+    font-size: 20px;
 }

@@ -8,7 +8,7 @@
     <div class="card mb-3">
         <div id ="cardprofil" class="row no-gutters">
             <div class="col-md-4 pl-3">
-                <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img" alt="...">
+                <img id="image" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img" alt="...">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
@@ -24,9 +24,8 @@
                         <div id="rens" class="card-text">Rôle : {{ eter_user.userRole }}</div>
                 </div>
             </div>
-            <a type="button" class="btn btn-info m-auto" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
-            {{ include('eter_user/_delete_form.html.twig') }}
         </div>
     </div>
+    <a type="button" id="modifier" class="btn btn-info" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
 </div>
 {% endblock %}

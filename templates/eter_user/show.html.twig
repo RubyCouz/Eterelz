@@ -13,21 +13,20 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">Votre profil</h5>
-                        <p id="rens" class="card-text">Login : {{ eter_user.userLogin }}</p>
-                        <p id="rens" class="card-text">Email : {{ eter_user.userMail }}</p>
-                        <p id="rens" class="card-text">Adresse : {{ eter_user.userAddress }}</p>
-                        <p id="rens" class="card-text">Code Postal : {{ eter_user.userZip }}</p>
-                        <p id="rens" class="card-text">Ville : {{ eter_user.userCity }}</p>
-                        <p id="rens" class="card-text">Discord : {{ eter_user.userDiscord }}</p>
-                        <p id="rens" class="card-text">Genre : {{ eter_user.userSex }}</p>
-                        <p id="rens" class="card-text">Description : {{ eter_user.userDescription }}</p>
-                        <p id="rens" class="card-text">Rôle : {{ eter_user.userRole }}</p>
+                        <div id="rens" class="card-text">Login : {{ eter_user.userLogin }}</div>
+                        <div id="rens" class="card-text">Email : {{ eter_user.userMail }}</div>
+                        <div id="rens" class="card-text">Adresse : {{ eter_user.userAddress }}</div>
+                        <div id="rens" class="card-text">Code Postal : {{ eter_user.userZip }}</div>
+                        <div id="rens" class="card-text">Ville : {{ eter_user.userCity }}</div>
+                        <div id="rens" class="card-text">Discord : {{ eter_user.userDiscord }}</div>
+                        <div id="rens" class="card-text">Genre : {{ eter_user.userSex }}</div>
+                        <div id="rens" class="card-text">Description : {{ eter_user.userDescription }}</div>
+                        <div id="rens" class="card-text">Rôle : {{ eter_user.userRole }}</div>
                 </div>
             </div>
             <a type="button" class="btn btn-info m-auto" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
+            {{ include('eter_user/_delete_form.html.twig') }}
         </div>
     </div>
-
-    {{ include('eter_user/_delete_form.html.twig') }}
 </div>
 {% endblock %}

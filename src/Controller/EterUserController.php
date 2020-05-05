@@ -23,7 +23,7 @@ class EterUserController extends AbstractController
     {
         $inProgress = false;
         return $this->render('eter_user/index.html.twig', [
-            'eter_users' => $eterUserRepository->find($id),
+            'eter_users' => $eterUserRepository->findAll(),
             'inProgress' => $inProgress
         ]);
     }
@@ -77,7 +77,7 @@ class EterUserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('eter_user_index');
+            return $this->redirectToRoute('eter_user_show', ['id' => $eterUser->getId()]);
         }
 
         return $this->render('eter_user/edit.html.twig', [

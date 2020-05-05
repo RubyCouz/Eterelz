@@ -12,6 +12,7 @@ class EterUserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('id')
             ->add('user_login')
             ->add('user_date')
             ->add('user_mail')

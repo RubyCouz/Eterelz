@@ -385,6 +385,9 @@ Message d'erreurs loginModal.html.twig
     margin-bottom: 10px;
 }
 
+/**
+Mise en forme index.html.twig
+*/
 #cards {
     display: inline-block;
     margin-top: 80px;
@@ -405,4 +408,41 @@ Message d'erreurs loginModal.html.twig
 
 #show {
     margin-left: 40px;
+}
+
+/**
+Mise en forme show.html.twig
+*/
+.card-title{
+    text-align: center;
+    color:white;
+    font-size: 40px;
+}
+
+#rens{
+    color:white;
+    font-size: 20px;
+}
+
+#cardprofil{
+    background-color:#2E2E2E;
+}
+
+#image{
+    width: 70%;
+    margin-top: 85px;
+    margin-left: 55px;
+}
+
+#modifier {
+    margin-left: 888px;
+    margin-top: -5px;
+}
+
+/**
+Mise en forme edit.html.twig
+*/
+#editimp{
+    color:white;
+    font-size: 20px;
 }

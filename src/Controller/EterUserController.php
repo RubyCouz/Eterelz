@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/eter/user")
+ * @Route("/eteruser")
  */
 
 class EterUserController extends AbstractController
@@ -59,6 +59,7 @@ class EterUserController extends AbstractController
     public function show(EterUser $eterUser): Response
     {
         $inProgress = false;
+
         return $this->render('eter_user/show.html.twig', [
             'eter_user' => $eterUser,
             'inProgress' => $inProgress
@@ -77,7 +78,7 @@ class EterUserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('eter_user_index');
+            return $this->redirectToRoute('eter_user_show', ['id' => $eterUser->getId()]);
         }
 
         return $this->render('eter_user/edit.html.twig', [

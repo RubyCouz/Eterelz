@@ -25,8 +25,7 @@
                     <label id="input" class="form-control btn btn-primary">AVATAR</label>
                 </div>
                 <div class="col-8">
-                {{ form_widget(form.user_avatar) }}
-                {{ form_errors(form.user_avatar) }}
+                {{ form_row(form.user_avatar) }}
                 </div>
             </div>
 
@@ -35,8 +34,8 @@
                     <label id="input" class="form-control btn btn-primary">LOGIN *</label>
                 </div>
                 <div class="col-8">
-                {{ form_widget(form.user_login) }}
-                {{ form_errors(form.user_login) }}
+                {{ form_row(form.user_login) }}
+                
                 </div>
             </div>
 
@@ -45,8 +44,7 @@
                     <label id="input" class="form-control btn btn-primary">ADRESSE</label>
                 </div>
                 <div class="col-8">
-                {{ form_widget(form.user_address) }}
-                {{ form_errors(form.user_address) }}
+                {{ form_row(form.user_address) }}
                 </div>
             </div>
             
@@ -55,8 +53,7 @@
                     <label id="input" class="form-control btn btn-primary">CODE POSTAL</label>
                 </div>
                 <div class="col-8">
-                {{ form_widget(form.user_zip) }}
-                {{ form_errors(form.user_zip) }}
+                {{ form_row(form.user_zip) }}
                 </div>
             </div>
 
@@ -65,8 +62,7 @@
                     <label id="input" class="form-control btn btn-primary">VILLE</label>
                 </div>
                 <div class="col-8">
-                {{ form_widget(form.user_city) }}
-                {{ form_errors(form.user_city) }}
+                {{ form_row(form.user_city) }}
                 </div>
             </div>
 
@@ -75,8 +71,7 @@
                     <label id="input" class="form-control btn btn-primary">ID DISCORD *</label>
                 </div>
                 <div class="col-8">
-                {{ form_widget(form.user_discord) }}
-                {{ form_errors(form.user_discord) }}
+                {{ form_row(form.user_discord) }}
                 </div>
             </div>
 
@@ -85,8 +80,7 @@
                     <label id="input" class="form-control btn btn-primary">SEXE</label>
                 </div>
                 <div class="col-8">
-                {{ form_widget(form.user_sex) }}
-                {{ form_errors(form.user_sex) }}
+                {{ form_row(form.user_sex) }}
                 </div>
             </div>
 
@@ -95,8 +89,7 @@
                     <label id="input" class="form-control btn btn-primary">DESCRIPTION</label>
                 </div>
                 <div class="col-8">
-                {{ form_widget(form.user_description) }}
-                {{ form_errors(form.user_description) }}
+                {{ form_row(form.user_description) }}
                 </div>
             </div>
 
@@ -105,8 +98,7 @@
                     <label id="input" class="form-control btn btn-primary">MAIL *</label>
                 </div>
                 <div class="col-8">
-                {{ form_widget(form.user_mail) }}
-                {{ form_errors(form.user_mail) }}
+                {{ form_row(form.user_mail) }}
                 </div>
             </div>
 
@@ -115,8 +107,7 @@
                     <label id="input" class="form-control btn btn-primary">MOT DE PASSE *</label>
                 </div>
                 <div class="col-8">
-                {{ form_widget(form.user_password) }}
-                {{ form_errors(form.user_password) }}
+                {{ form_row(form.user_password) }}
                 {{ form_help(form.user_password) }}
                 {# Barre de force du mdp #}
                 <br>
@@ -131,8 +122,7 @@
                     <label id="input" class="form-control btn btn-primary">CONFIRMATION DU MOT DE PASSE *</label>
                 </div>
                 <div class="col-8">
-                {{ form_widget(form.confirm_user_password) }}
-                {{ form_errors(form.confirm_user_password) }}
+                {{ form_row(form.confirm_user_password) }}
                 </div>
             </div>
 

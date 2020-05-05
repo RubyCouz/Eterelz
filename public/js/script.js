@@ -81,28 +81,29 @@ close.onclick = () => {
     logo.style.right = '3%';
 }
 
-// Barre de force du mot de passe
+/* Barre de force du mot de passe
 
-/*var pass = document.getElementById("registration_user_password")
-    pass.addEventListener('keyup', function() {
-        checkPassword(pass.value)
-    })
-    function checkPassword(password) {
-        var strengthBar = document.getElementById("strength")
-        var strength = 0;
-            if (password.match(/[a-zA-Z0-9][a-zA-Z0-9]+/)) {
-                strength += 1
-            }
-            if (password.match(/[~<>?]+/)) {
-                strength += 1
-            }
-            if (password.match(/[!@£$%^&*()]+/)) {
-                strength += 1
-            }
-            if (password.length >= 8) {
-                strength += 1
-            }
-    
+var pass = document.getElementById("signin_user_password")
+pass.addEventListener('keyup', function () {
+    checkPassword(pass.value)
+})
+
+function checkPassword(password) {
+    var strengthBar = document.getElementById("strength")
+    var strength = 0;
+    if (password.match(/[a-zA-Z0-9][a-zA-Z0-9]+/)) {
+        strength += 1
+    }
+    if (password.match(/[~<>?]+/)) {
+        strength += 1
+    }
+    if (password.match(/[!@£$%^&*()]+/)) {
+        strength += 1
+    }
+    if (password.length >= 8) {
+        strength += 1
+    }
+
     switch (strength) {
         case 0 :
             strengthBar.style.width = "0%";

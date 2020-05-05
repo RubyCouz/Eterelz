@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS
+    <!-- Bootstrap core CSS 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">-->
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
@@ -81,10 +81,8 @@
                                             </ul>
 
                                             <!-- Tab panels -->
-                                            <div id="login">
-
-
-                                            </div>
+                                            <div id="login"></div>
+                                            <div id="login2"></div>
                                         </div>
                                     </div>
                                     <!--/.Content-->
@@ -144,7 +142,7 @@
                     <ul class="dropdown-menu animated fadeInLeft" role="menu">
                         <div class="dropdown-header">Dropdown heading</div>
                         <li><a href="#pictures">Pictures</a></li>
-                        <li><a href="#videos">Videeos</a></li>
+                        <li><a href="#videos">Videos</a></li>
                         <li><a href="#books">Books</a></li>
                         <li><a href="#art">Art</a></li>
                         <li><a href="#awards">Awards</a></li>
@@ -184,10 +182,10 @@
 
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips
+<!-- Bootstrap tooltips 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>-->
-<!-- Bootstrap core JavaScript -->
-<!--<script type="text/javascript"
+<!-- Bootstrap core JavaScript 
+<script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
@@ -198,7 +196,7 @@
     $('#loginModal').click(function () {
         // fonction ajax
         $.ajax({
-            // définition de la méthode d'envoie
+            // définition de la méthode d'envoi
             method: "POST",
             // url destination / appel du contrôleur
             url: "{{ path('security_registration') }}",

@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EterUser index{% endblock %}
+
+{% block body %}
+    <h1>EterUser index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>User_login</th>
+                <th>User_date</th>
+                <th>User_mail</th>
+                <th>User_password</th>
+                <th>User_address</th>
+                <th>User_zip</th>
+                <th>User_city</th>
+                <th>User_discord</th>
+                <th>User_sex</th>
+                <th>Statut</th>
+                <th>User_description</th>
+                <th>User_update</th>
+                <th>User_avatar</th>
+                <th>User_role</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for eter_user in eter_users %}
+            <tr>
+                <td>{{ eter_user.id }}</td>
+                <td>{{ eter_user.userLogin }}</td>
+                <td>{{ eter_user.userDate ? eter_user.userDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ eter_user.userMail }}</td>
+                <td>{{ eter_user.userPassword }}</td>
+                <td>{{ eter_user.userAddress }}</td>
+                <td>{{ eter_user.userZip }}</td>
+                <td>{{ eter_user.userCity }}</td>
+                <td>{{ eter_user.userDiscord }}</td>
+                <td>{{ eter_user.userSex }}</td>
+                <td>{{ eter_user.statut ? 'Yes' : 'No' }}</td>
+                <td>{{ eter_user.userDescription }}</td>
+                <td>{{ eter_user.userUpdate ? eter_user.userUpdate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ eter_user.userAvatar }}</td>
+                <td>{{ eter_user.userRole }}</td>
+                <td>
+                    <a href="{{ path('eter_user_show', {'id': eter_user.id}) }}">show</a>
+                    <a href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="16">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('eter_user_new') }}">Create new</a>
+{% endblock %}

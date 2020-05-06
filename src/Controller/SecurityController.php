@@ -27,7 +27,7 @@ class SecurityController extends AbstractController {
      */
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, MailerInterface $mailer) {
         
-        // Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
+        // Définition de la variable en signalant que l'on veut créer une nouvelle entité
         $user = new EterUser(); 
 
         $inProgress = false;

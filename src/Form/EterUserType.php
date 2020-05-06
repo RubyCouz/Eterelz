@@ -19,75 +19,72 @@ class EterUserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $choices=[
-            
-            'Masculin' => 'M',
-            'Féminin' => 'F'
-        ];
+        /*$choices=[
+            'Masculin' => 'Masculin',
+            'Féminin' => 'Féminin'
+        ];*/
+
         $builder
             //->add('id')
             ->add('user_login', TextType::class, [
                 'required' => false,
-                'label' => 'Votre login',
-                'constraints' => new Regex(['message' => 'Caractère(s) non autorisé(s)', 'pattern' => '#[0-9a-zA-Zàâäéèêëïîôöùûüç!:_\-.?,/\#]$#'])]
-                )
+                'constraints' => [new Regex(['message' => 'Caractère(s) non autorisé(s)', 'pattern' => '#[0-9a-zA-Zàâäéèêëïîôöùûüç!:_\-.?,/\#]$#'])],
+            ])
             //->add('user_date')
             ->add('user_mail', EmailType::class, [
                 'required' => false,
-                'constraints' => new Email(['message' => 'Adresse mail non valide !']),
-                'label' => 'Votre email'
+                'constraints' => [new Email(['message' => 'Adresse mail non valide !'])],
             ])
             //->add('user_password')
             ->add('user_address', TextType::class, [
                 'required' => false,
                 'constraints' => [new Regex(['message' => 'Adresse non valide !', 'pattern' => '#[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)*#'])],
-                'label' => 'Votre adresse'
             ])
             ->add('user_zip', TextType::class, [
                 'required' => false,
                 'constraints' => [new Regex(['message' => 'Code postal non valide !', 'pattern' => '#^[0-9]{5}$#'])],
-                'label' => 'Votre code postal'
             ])
             ->add('user_city', TextType::class, [
                 'required' => false,
                 'constraints' => [new Regex(['message' => 'Ville non valide !', 'pattern' => '#^[A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï]+([\'\s-][A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï])?#'])],
-                'label' => 'Votre ville'
             ])
             ->add('user_discord', TextType::class, [
                 'required' => false,
                 'constraints' => [new Regex(['message' => 'ID Discord non valide !', 'pattern' => '#^\D+\#\d{4}$#'])],
-                'label' => 'Votre ID Discord'
             ])
-            
-            //Voir pour rendre le choix du sexe facultatif
-            ->add('user_sex', ChoiceType::class, [
+            //->add('user_sex', ChoiceType::class, [
+            /*Voir pour rendre le choix du sexe facultatif
                 'choices' => $choices,
                 'expanded' => true,
-                'multiple' => false,
-                'label' => 'Sexe',
-                'required' => false
-            ])
+                'multiple' => false
+            ])*/
             //->add('statut')
             ->add('user_description', TextareaType::class, [
                 'required' => false,
-                'label' => 'Ajouter une description'
             ])
             //->add('user_update')
             ->add('user_avatar', FileType::class, [
                 'required' => false,
-                'attr' => ['onchange' => 'preview_image(event)'],
+                'attr' => ['placeholder' => 'Choisissez un fichier', 'onchange' => 'preview_image(event)'],
                 'constraints' => [ new File([
-                    'maxSize' => '1024k'
+                'maxSize' => '1024k'
                     ])
-                ],
-                'label' => 'Ajouter un avatar'
+                ]
             ])
             //->add('user_role')
             //->add('label')
-            ->add('user_clan')
-            ->add('user_game')
-            ->add('eterEvents')
-            ->add('user_stream')
+            ->add('user_clan', TextType::class, [
+                'required' => false
+            ])
+            ->add('user_game', TextType::class, [
+                'required' => false
+            ])
+            ->add('eterEvents', TextType::class, [
+                'required' => false
+            ])
+            ->add('user_stream', TextType::class, [
+                'required' => false
+            ])
         ;
     }
 

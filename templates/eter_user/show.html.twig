@@ -3,29 +3,55 @@
 {% block title %}Profil{% endblock %}
 
 {% block body %}
-    <h1>EterUser</h1>
-<div class="container">
-    <div class="card mb-3">
+
+<div class="container" id="card">
+    <div class="card">
+    <h5 class="card-title">Votre profil</h5>
         <div id ="cardprofil" class="row no-gutters">
-            <div class="col-md-4 pl-3">
-                <img id="image" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img" alt="...">
+            <div id="show1" class="col-md-12">
+                <img id="image" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img" alt="default_profil">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card-body">
-                    <h5 class="card-title">Votre profil</h5>
-                        <div id="rens" class="card-text">Login : {{ eter_user.userLogin }}</div>
-                        <div id="rens" class="card-text">Email : {{ eter_user.userMail }}</div>
-                        <div id="rens" class="card-text">Adresse : {{ eter_user.userAddress }}</div>
-                        <div id="rens" class="card-text">Code Postal : {{ eter_user.userZip }}</div>
-                        <div id="rens" class="card-text">Ville : {{ eter_user.userCity }}</div>
-                        <div id="rens" class="card-text">Discord : {{ eter_user.userDiscord }}</div>
-                        <div id="rens" class="card-text">Genre : {{ eter_user.userSex }}</div>
-                        <div id="rens" class="card-text">Description : {{ eter_user.userDescription }}</div>
-                        <div id="rens" class="card-text">Rôle : {{ eter_user.userRole }}</div>
+                        <div id="rens" class="card-text">Login</div>
+                        <div id="edit_rens">{{ eter_user.userLogin }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">Email</div>
+                        <div id="edit_rens">{{ eter_user.userMail }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">ID Discord</div>
+                        <div id="edit_rens">{{ eter_user.userDiscord }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">Adresse</div>
+                        <div contentEditable=false data-text="Pas encore d'adresse..." id="edit_rens">{{ eter_user.userAddress }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">Code Postal</div>
+                        <div contentEditable=false data-text="Pas encore de code postal..." id="edit_rens">{{ eter_user.userZip }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">Ville</div>
+                        <div contentEditable=false data-text="Pas encore de ville..."id="edit_rens">{{ eter_user.userCity }}</div>
+                        <br>
+
+                        {#<div id="rens" class="card-text">Sexe</div>
+                        <div id="edit_rens">{{ eter_user.userSex }}</div>
+                        <br>#}
+
+                        <div id="rens" class="card-text">Description</div>
+                        <div contentEditable=false data-text="Pas encore de description..." id="edit_rens">{{ eter_user.userDescription }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">Rôle</div>
+                        <div id="edit_rens">{{ eter_user.userRole }}</div>
                 </div>
             </div>
         </div>
+        <a type="button" id="modifier" class="btn btn-info" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
     </div>
-    <a type="button" id="modifier" class="btn btn-info" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
+    
 </div>
 {% endblock %}

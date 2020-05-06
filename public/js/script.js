@@ -128,7 +128,7 @@ close.onclick = () => {
 
 //Prévisualisation de la photo de profil
 
-function preview_image(event)
+/*function preview_image(event)
 {
     var reader = new FileReader();
     reader.onload = function()
@@ -137,4 +137,4 @@ function preview_image(event)
         output.src = reader.result;
     }
 reader.readAsDataURL(event.target.files[0]);
-}
+}*/

@@ -1,47 +1,199 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit EterUser{% endblock %}
+{% block title %}Modification du profil{% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="card mb-3">
+
+{{ form_start(form) }}
+
+<div class="container" id="card">
+    <div class="card">
+    <h5 class="card-title2">Modification du profil</h5>
         <div id ="cardprofil" class="row no-gutters">
             <div class="col-md-4 pl-3">
-                <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img" alt="...">
+                <img id="editimg" class="card-img" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" alt="default_profil">
+                <div id="edit_img">
+                    {{ form_widget(form.user_avatar) }}
+                    {{ form_errors(form.user_avatar) }}
+                </div>
             </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Modification du profil</h5>
-                    {{ form_start(form) }}
-                     <div>
-                        <div>
-                            <label id="editimp">Votre Login</label>
-                        </div>
-                        <div>
+
+            <div id="editoblig" class="col-md-8">
+{#------------------------------LOGIN------------------------------#}
+
+                        <div class="row pl-5 pr-5">
+                            <div class="col-md-12">
+                                <label id="editinp">Votre Login</label>
+                            </div>
+                            <div class="col-md-12">
                             {{ form_widget(form.user_login) }}
                             {{ form_errors(form.user_login) }}
+                            </div>
                         </div>
-                    </div>
 
-                     <div>
-                        <div>
-                            <label id="editimp">Votre Email</label>
-                        </div>
-                        <div>
+{#------------------------------EMAIL------------------------------#}
+
+                        <div class="row pl-5 pr-5">
+                            <div class="col-md-12">
+                                <label id="editinp">Votre Email</label>
+                            </div>
+                            <div class="col-md-12">
                             {{ form_widget(form.user_mail) }}
                             {{ form_errors(form.user_mail) }}
+                            </div>
                         </div>
-                    </div>
 
-                    <button class="btn btn-success">{{ button_label|default('Mettre à jour') }}</button>
-                    
-                    {{ form_end(form) }}
+{#------------------------------DISCORD----------------------------#}
+
+                        <div class="row pl-5 pr-5">
+                            <div class="col-md-12">
+                                <label id="editinp">Votre ID Discord</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_discord) }}
+                            {{ form_errors(form.user_discord) }}
+                            </div>
+                        </div>
+            
+            </div>
+
+            <div class="col-md-12">
+                <div class="card-body">
+
+{#-----------------------------ADRESSE-----------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label id="editinp">Votre Adresse</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_address) }}
+                            {{ form_errors(form.user_address) }}
+                            </div>
+                        </div>
+
+{#---------------------------CODE POSTAL---------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label id="editinp">Votre Code Postal</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_zip) }}
+                            {{ form_errors(form.user_zip) }}
+                            </div>
+                        </div>
+
+{#------------------------------VILLE------------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label id="editinp">Votre Ville</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_city) }}
+                            {{ form_errors(form.user_city) }}
+                            </div>
+                        </div>
+
+{#-------------------------------SEXE-------------------------------#}
+
+                        {#<div class="row">
+                            <div class="col-md-12">
+                                <label id="editinp">Sexe</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_sex) }}
+                            {{ form_errors(form.user_sex) }}
+                            </div>
+                        </div>#}
+
+{#---------------------------DESCRIPTION----------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label id="editinp">Description</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_description) }}
+                            {{ form_errors(form.user_description) }}
+                            </div>
+                        </div>
+
+{#-------------------------------CLAN-------------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label id="editinp">Votre(Vos) clan(s)</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_clan) }}
+                            {{ form_errors(form.user_clan) }}
+                            </div>
+                        </div>
+
+{#------------------------------JEUX--------------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label id="editinp">Votre(Vos) jeu(x)</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_game) }}
+                            {{ form_errors(form.user_game) }}
+                            </div>
+                        </div>
+
+{#---------------------------EVENEMENTS-----------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label id="editinp">Votre(Vos) évènement(s)</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.eterEvents) }}
+                            {{ form_errors(form.eterEvents) }}
+                            </div>
+                        </div>
+
+{#----------------------------STREAMS-------------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label id="editinp">Votre(Vos) stream(s)</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_stream) }}
+                            {{ form_errors(form.user_stream) }}
+                            </div>
+                        </div>
+
+                        <div id="editbutton" class="row">
+                        <button class="btn btn-success">{{ button_label|default('Mettre à jour') }}</button>
+{{ form_end(form) }}
+                        {{ include('eter_user/_delete_form.html.twig') }}
+                        {#<a href="{{ path('eter_user_index') }}">Retour</a>#}
+                        </div>
+                        
                 </div>
             </div>
         </div>
     </div>
 </div>
-    {#<a href="{{ path('eter_user_index') }}">back to list</a>#}
 
-    {{ include('eter_user/_delete_form.html.twig') }}
+{#Prévisualisation de la photo de profil#}
+
+<script> 
+function preview_image(event)
+{
+    var reader = new FileReader();
+    reader.onload = function()
+    {
+        var output = document.getElementById('editimg');
+        output.src = reader.result;
+    }
+reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+
 {% endblock %}

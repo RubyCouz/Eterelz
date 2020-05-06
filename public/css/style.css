@@ -7,18 +7,20 @@ background in progress
     background-position: center;
     background-size: cover;
     background-color: transparent;
+    background-attachment: fixed;
     /*height: 1500px;*/
 }
 /**
 home background
  */
 .base {
-    /*background-image: url("../img/connection/signinBg.jpg");*/
+    background-image: url("../img/connection/signinBg.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-color: transparent;
-    min-height: 150%;
+    background-attachment: fixed;
+    /*min-height: 150%;*/
 }
 nav {
     height: 65px;
@@ -284,7 +286,7 @@ Mise en forme du formulaire registration.html.twig
     padding-bottom: 15px;
 }
 
-.container {
+#registration {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 20px;
@@ -413,36 +415,95 @@ Mise en forme index.html.twig
 /**
 Mise en forme show.html.twig
 */
-.card-title{
+.card-title {
     text-align: center;
     color:white;
-    font-size: 40px;
+    font-size: 50px;
 }
 
-#rens{
+#rens {
     color:white;
-    font-size: 20px;
+    font-size: 25px;
 }
 
-#cardprofil{
+#edit_rens {
+    color: grey;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+}
+
+#cardprofil {
     background-color:#2E2E2E;
 }
 
-#image{
-    width: 70%;
-    margin-top: 85px;
-    margin-left: 55px;
+#image {
+    width: 30%;
+    border: 4px solid #000;
+}
+
+#show1 {
+    text-align: center;
 }
 
 #modifier {
-    margin-left: 888px;
+    margin-left: 800px;
+    margin-right: 22px;
     margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+[contentEditable=false]:empty:not(:focus):before{
+    content:attr(data-text)
 }
 
 /**
 Mise en forme edit.html.twig
 */
-#editimp{
+#editinp{
     color:white;
     font-size: 20px;
+}
+
+.card-title2 {
+    color:white;
+    font-size: 50px;
+}
+
+#card {
+    margin-top: 90px;
+}
+
+.card {
+    background-color:#2E2E2E;
+}
+
+h5 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+#editimg {
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 345px;
+    height: 300px;
+    border: 4px solid #000;
+}
+
+#edit_img {
+    margin-left: 10px;
+}
+
+#editoblig {
+    margin-top: 25px;
+}
+
+#editbutton {
+    margin-bottom: -20px;
+    padding-left: 760px;
 }

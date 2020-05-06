@@ -19,62 +19,53 @@ class EterUserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $choices=[
+        /*$choices=[
             'Masculin' => 'Masculin',
             'Féminin' => 'Féminin'
-        ];
+        ];*/
 
         $builder
             //->add('id')
             ->add('user_login', TextType::class, [
                 'required' => false,
-                'label' => 'Votre login',
                 'constraints' => [new Regex(['message' => 'Caractère(s) non autorisé(s)', 'pattern' => '#[0-9a-zA-Zàâäéèêëïîôöùûüç!:_\-.?,/\#]$#'])],
             ])
             //->add('user_date')
             ->add('user_mail', EmailType::class, [
                 'required' => false,
-                'label' => 'Votre email',
                 'constraints' => [new Email(['message' => 'Adresse mail non valide !'])],
             ])
             //->add('user_password')
             ->add('user_address', TextType::class, [
                 'required' => false,
-                'label' => 'Votre adresse',
                 'constraints' => [new Regex(['message' => 'Adresse non valide !', 'pattern' => '#[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)*#'])],
             ])
             ->add('user_zip', TextType::class, [
                 'required' => false,
-                'label' => 'Votre code postal',
                 'constraints' => [new Regex(['message' => 'Code postal non valide !', 'pattern' => '#^[0-9]{5}$#'])],
             ])
             ->add('user_city', TextType::class, [
                 'required' => false,
-                'label' => 'Votre ville',
                 'constraints' => [new Regex(['message' => 'Ville non valide !', 'pattern' => '#^[A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï]+([\'\s-][A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï])?#'])],
             ])
             ->add('user_discord', TextType::class, [
                 'required' => false,
-                'label' => 'Votre ID Discord',
                 'constraints' => [new Regex(['message' => 'ID Discord non valide !', 'pattern' => '#^\D+\#\d{4}$#'])],
             ])
-            ->add('user_sex', ChoiceType::class, [
-            //Voir pour rendre le choix du sexe facultatif
-                'label' => 'Votre sexe',
+            //->add('user_sex', ChoiceType::class, [
+            /*Voir pour rendre le choix du sexe facultatif
                 'choices' => $choices,
                 'expanded' => true,
                 'multiple' => false
-            ])
+            ])*/
             //->add('statut')
             ->add('user_description', TextareaType::class, [
                 'required' => false,
-                'label' => 'Ajouter une description',
             ])
             //->add('user_update')
             ->add('user_avatar', FileType::class, [
                 'required' => false,
-                'label' => 'Ajouter un avatar',
-                'attr' => ['onchange' => 'preview_image(event)'],
+                'attr' => ['placeholder' => 'Choisissez un fichier', 'onchange' => 'preview_image(event)'],
                 'constraints' => [ new File([
                 'maxSize' => '1024k'
                     ])

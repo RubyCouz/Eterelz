@@ -73,6 +73,7 @@ class EterUserType extends AbstractType
             ])
             //->add('user_role')
             //->add('label')
+            //ChoiceType::class
             ->add('user_clan')
             ->add('user_game')
             ->add('eterEvents')

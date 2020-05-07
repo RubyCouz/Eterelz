@@ -73,18 +73,10 @@ class EterUserType extends AbstractType
             ])
             //->add('user_role')
             //->add('label')
-            ->add('user_clan', TextType::class, [
-                'required' => false
-            ])
-            ->add('user_game', TextType::class, [
-                'required' => false
-            ])
-            ->add('eterEvents', TextType::class, [
-                'required' => false
-            ])
-            ->add('user_stream', TextType::class, [
-                'required' => false
-            ])
+            ->add('user_clan')
+            ->add('user_game')
+            ->add('eterEvents')
+            ->add('user_stream')
         ;
     }
 

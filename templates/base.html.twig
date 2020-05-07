@@ -58,7 +58,7 @@
                         <li>
                             <!--Modal: Login / Register Form-->
                             <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog"
-                                 aria-labelledby="myModalLabel" aria-hidden="true">
+                                    aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog cascading-modal" role="document">
                                     <!--Content-->
                                     <div class="modal-content">
@@ -70,8 +70,8 @@
                                             <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
                                                 <li class="nav-item">
                                                     <a class="nav-link active" data-toggle="tab" href="#panel7"
-                                                       role="tab"><i class="fas fa-user mr-1"></i>
-                                                        Connexion</a>
+                                                        role="tab"><i class="fas fa-user mr-1"></i>
+                                                            Connexion</a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
@@ -134,7 +134,7 @@
                 </div>
                 <li><a href="#home">Home</a></li>
                 {% if app.user %}
-                <li><a href="#profiluser">Profil</a></li>
+                <li><a href="{{path('eter_user_show', {'id': app.user.id}) }}#user">Profil</a></li>
                 {% endif %}
                 <li><a href="#about">About</a></li>
                 <li><a href="#events">Events</a></li>

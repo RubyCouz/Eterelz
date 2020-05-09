@@ -38,8 +38,6 @@ class EterEvent
      */
     private $event_creation;
 
-
-
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\EterUser", inversedBy="eterEvents")
      */

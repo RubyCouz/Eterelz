@@ -5,10 +5,13 @@ namespace App\Controller;
 use App\Entity\EterUser;
 use App\Form\EterUserType;
 use App\Repository\EterUserRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
  * @Route("/eteruser")
@@ -23,7 +26,7 @@ class EterUserController extends AbstractController
     {
         $inProgress = false;
         return $this->render('eter_user/index.html.twig', [
-            'eter_users' => $eterUserRepository->find($id),
+            'eter_users' => $eterUserRepository->findAll(),
             'inProgress' => $inProgress
         ]);
     }
@@ -59,6 +62,7 @@ class EterUserController extends AbstractController
     public function show(EterUser $eterUser): Response
     {
         $inProgress = false;
+
         return $this->render('eter_user/show.html.twig', [
             'eter_user' => $eterUser,
             'inProgress' => $inProgress
@@ -68,18 +72,45 @@ class EterUserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="eter_user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, EterUser $eterUser): Response
+    public function edit(Request $request, EterUser $eterUser, SluggerInterface $slugger): Response
     {
+        $user = new EterUser(); 
         $inProgress = false;
         $form = $this->createForm(EterUserType::class, $eterUser);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $brochureFile */
+            $avatarFile = $form->get('user_avatar')->getData();
+
+            // this condition is needed because the 'brochure' field is not required
+            // so the PDF file must be processed only when a file is uploaded
+            if ($avatarFile) {
+                $originalFilename = pathinfo($avatarFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$avatarFile->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $avatarFile->move(
+                        $this->getParameter('upload_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $user->setUserAvatar($newFilename);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('eter_user_index');
+            return $this->redirectToRoute('eter_user_show', ['id' => $eterUser->getId()]);
+        
         }
-
         return $this->render('eter_user/edit.html.twig', [
             'eter_user' => $eterUser,
             'form' => $form->createView(),

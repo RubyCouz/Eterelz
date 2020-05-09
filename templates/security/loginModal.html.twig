@@ -28,7 +28,7 @@
         <!--Footer-->
         <div class="modal-footer">
             <div class="options text-center text-md-right mt-1">
-                <p id="mdp_perdu">Mot de passe perdu ? <a id="registration" href="#" class="blue-text">Cliquez ici</a></p>
+                <p>Mot de passe perdu ? <a id="registration" href="#" class="blue-text">Cliquez ici</a></p>
             </div>
             <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Fermer
             </button>
@@ -84,21 +84,17 @@
 
             <div class="text-center form-sm mt-2">
                 <button type="submit" class="btn btn-info" id="bouton_envoi2">S'inscrire<i class="fas fa-sign-in ml-1"></i></button>
-                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Fermer
-                </button>
+                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Fermer</button>
             </div>
-        </div>
 
             {{ form_end(form) }}
         </div>
-        <!--Footer-->
-        
     </div>
     <!--/.Panel 8-->
 </div>
 <script>
 // Barre de force du mot de passe
-var pass = document.getElementById("mdp")
+var pass = document.getElementById("password")
     pass.addEventListener('keyup', function() {
         checkPassword(pass.value)
     })

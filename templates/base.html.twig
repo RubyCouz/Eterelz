@@ -47,11 +47,11 @@
                     </li>
                     {% if app.user %}
                         <div class="text-center">
-                            <a href="{{ path('logout') }}" class="btn btn-default">SE DECONNECTER</a>
+                            <a href="{{ path('logout') }}" class="btn btn-default">Se déconnecter</a>
                         </div>
                         {% if is_granted('ROLE_ADMIN') %}
                             <div class="text-center">
-                                <a href="/eter/public/index.php/admin" class="btn btn-default">Back-office</a>
+                                <a href="http://127.0.0.1:8000/admin" class="btn btn-default">Back-office</a>
                             </div>
                         {% endif %}
                     {% else %}
@@ -92,7 +92,7 @@
 
                             <div class="text-center">
                                 <a href="" class="btn btn-default" data-toggle="modal" data-target="#modalLRForm"
-                                   data-backdrop="false" id="loginModal">SE CONNECTER</a>
+                                   data-backdrop="false" id="loginModal">Se connecter</a>
                             </div>
                         </li>
                     {% endif %}
@@ -133,6 +133,9 @@
                         <a href="#">Brand</a></div>
                 </div>
                 <li><a href="#home">Home</a></li>
+                {% if app.user %}
+                <li><a href="{{ path('eter_user_show', {'id': app.user.id}) }}#user">Profil</a></li>
+                {% endif %}
                 <li><a href="#about">About</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#team">Team</a></li>

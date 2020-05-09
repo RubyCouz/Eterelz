@@ -3,33 +3,73 @@
 {% block title %}Profil{% endblock %}
 
 {% block body %}
-    <h1>EterUser</h1>
-<div class="container">
-    <div class="card mb-3">
+
+<div class="container" id="card">
+    <div class="card">
+    <h5 class="card-title">Votre profil</h5>
         <div id ="cardprofil" class="row no-gutters">
-            <div class="col-md-4">
-                <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img" alt="...">
+            <div id="show1" class="col-md-12">
+            {# Mettre un if si l'image est téléchargé on l'affiche sinon image par défaut #}
+            {# Mettre lien image avec asset #}
+                <img id="image" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img" alt="default_profil">
             </div>
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card-body">
-                    <h5 class="card-title">Votre profil</h5>
-                        <p id="rens" class="card-text">Login : {{ eter_user.userLogin }}</p>
-                        <p id="rens" class="card-text">Email : {{ eter_user.userMail }}</p>
-                        <p id="rens" class="card-text">Adresse : {{ eter_user.userAddress }}</p>
-                        <p id="rens" class="card-text">Code Postal : {{ eter_user.userZip }}</p>
-                        <p id="rens" class="card-text">Ville : {{ eter_user.userCity }}</p>
-                        <p id="rens" class="card-text">Discord : {{ eter_user.userDiscord }}</p>
-                        <p id="rens" class="card-text">Genre : {{ eter_user.userSex }}</p>
-                        <p id="rens" class="card-text">Description : {{ eter_user.userDescription }}</p>
-                        <p id="rens" class="card-text">Rôle : {{ eter_user.userRole }}</p>
+                        <div id="rens" class="card-text">Login</div>
+                        <div id="edit_rens">{{ eter_user.userLogin }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">Email</div>
+                        <div id="edit_rens">{{ eter_user.userMail }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">ID Discord</div>
+                        <div id="edit_rens">{{ eter_user.userDiscord }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">Adresse</div>
+                        <div contentEditable=false data-text="Pas encore d'adresse..." id="edit_rens">{{ eter_user.userAddress }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">Code Postal</div>
+                        <div contentEditable=false data-text="Pas encore de code postal..." id="edit_rens">{{ eter_user.userZip }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">Ville</div>
+                        <div contentEditable=false data-text="Pas encore de ville..." id="edit_rens">{{ eter_user.userCity }}</div>
+                        <br>
+
+                        {#<div id="rens" class="card-text">Sexe</div>
+                        <div id="edit_rens">{{ eter_user.userSex }}</div>
+                        <br>#}
+
+                        <div id="rens" class="card-text">Description</div>
+                        <div contentEditable=false data-text="Pas encore de description..." id="edit_rens">{{ eter_user.userDescription }}</div>
+                        <br>
+
+                        {#<div id="rens" class="card-text">Votre(Vos) clan(s)</div>
+                        <div contentEditable=false data-text="Pas encore de clan..." id="edit_rens">{{ eter_user.user_clan }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">Votre(Vos) jeu(x)</div>
+                        <div contentEditable=false data-text="Pas encore de clan..." id="edit_rens">{{ eter_user.user_game }}</div>
+                        <br>
+
+                        <div id="rens" class="card-text">Votre(Vos) évènement(s)</div>
+                        <div contentEditable=false data-text="Pas encore d'évènements..." id="edit_rens">{{ eter_user.eterEvents }}</div>
+                        <br>
+                        
+                        <div id="rens" class="card-text">Votre(Vos) stream(s)</div>
+                        <div contentEditable=false data-text="Pas encore de stream..." id="edit_rens">{{ eter_user.user_stream }}</div>
+                        <br>#}
+
+                        <div id="rens" class="card-text">Rôle</div>
+                        <div id="edit_rens">{{ eter_user.userRole }}</div>
                 </div>
             </div>
         </div>
-        <a href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">edit</a>
+        <a type="button" id="modifier" class="btn btn-info" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
     </div>
-
-    <a href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">edit</a>
-
-    {{ include('eter_user/_delete_form.html.twig') }}
+    
 </div>
 {% endblock %}

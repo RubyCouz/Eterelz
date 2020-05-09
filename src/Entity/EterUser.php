@@ -108,7 +108,7 @@ class EterUser implements UserInterface
     private $user_stream;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\EterEvent", mappedBy="event_init")
+     * @ORM\ManyToMany(targetEntity="App\Entity\EterEvent", mappedBy="event_orga")
      */
     private $eterEvents;
 

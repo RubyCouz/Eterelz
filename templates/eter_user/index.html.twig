@@ -3,59 +3,39 @@
 {% block title %}EterUser index{% endblock %}
 
 {% block body %}
-    <h1>EterUser index</h1>
+    
+    {% for eter_user in eter_users %}
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>User_login</th>
-                <th>User_date</th>
-                <th>User_mail</th>
-                <th>User_password</th>
-                <th>User_address</th>
-                <th>User_zip</th>
-                <th>User_city</th>
-                <th>User_discord</th>
-                <th>User_sex</th>
-                <th>Statut</th>
-                <th>User_description</th>
-                <th>User_update</th>
-                <th>User_avatar</th>
-                <th>User_role</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for eter_user in eter_users %}
-            <tr>
-                <td>{{ eter_user.id }}</td>
-                <td>{{ eter_user.userLogin }}</td>
-                <td>{{ eter_user.userDate ? eter_user.userDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ eter_user.userMail }}</td>
-                <td>{{ eter_user.userPassword }}</td>
-                <td>{{ eter_user.userAddress }}</td>
-                <td>{{ eter_user.userZip }}</td>
-                <td>{{ eter_user.userCity }}</td>
-                <td>{{ eter_user.userDiscord }}</td>
-                <td>{{ eter_user.userSex }}</td>
-                <td>{{ eter_user.statut ? 'Yes' : 'No' }}</td>
-                <td>{{ eter_user.userDescription }}</td>
-                <td>{{ eter_user.userUpdate ? eter_user.userUpdate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ eter_user.userAvatar }}</td>
-                <td>{{ eter_user.userRole }}</td>
-                <td>
-                    <a href="{{ path('eter_user_show', {'id': eter_user.id}) }}">show</a>
-                    <a href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="16">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('eter_user_new') }}">Create new</a>
+    <div id="cards" class="card mb-2 ml-2 mr-2" style="width: 25rem;">
+
+        <div class="card-header">
+        <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img-top" alt="Photo profil">
+        </div>
+
+        <div id="eter" class="card-body">
+            <p class="eters">Login : {{ eter_user.userLogin }}</p>
+            <p class="eters">Email : {{ eter_user.userMail }}</p>
+            <p class="eters">ID Discord : {{ eter_user.userDiscord }}</p>
+            <p class="eters">Adresse : {{ eter_user.userAddress }}<p>
+            <p class="eters">Code Postal : {{ eter_user.userZip }}</p>
+            <p class="eters">Ville : {{ eter_user.userCity }}</p>
+            <p class="eters">Sexe : {{ eter_user.userSex }}</p>
+            <p class="eters">Description : {{ eter_user.userDescription }}</p>
+            {#<p class="eters">Votre(Vos) clan(s) : {{ eter_user.user_clan }}</p>
+            <p class="eters">Votre(Vos) jeu(x) : {{ eter_user.user_game }}</p>
+            <p class="eters">Votre(Vos) évènement(s) : {{ eter_user.eterEvents }}</p>
+            <p class="eters">Votre(Vos) stream(s) : {{ eter_user.user_stream }}</p>#}
+            <p class="eters">Rôle : {{ eter_user.userRole }}</p>
+        </div>
+
+        <div class="card-footer">
+        <button id="show" type="button" class="btn btn-primary"><a class= "profil" href="{{ path('eter_user_show', {'id': eter_user.id}) }}">AFFICHER</a></button>
+        <button id="edit" type="button" class="btn btn-danger"><a class= "profil" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">MODIFIER</a></button>
+        </div>
+
+    </div>
+    
+    {% endfor %}
+    
 {% endblock %}

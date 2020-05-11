@@ -7,6 +7,7 @@ use App\Form\EterUserType;
 use App\Repository\EterUserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -90,7 +91,7 @@ class EterUserController extends AbstractController
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$avatarFile->guessExtension();
 
-                // Move the file to the directory where brochures are stored
+                // Move the file to the directory where pictures are stored
                 try {
                     $avatarFile->move(
                         $this->getParameter('upload_directory'),
@@ -100,9 +101,11 @@ class EterUserController extends AbstractController
                     // ... handle exception if something happens during file upload
                 }
 
-                // updates the 'brochureFilename' property to store the PDF file name
+                // updates the 'Filename' property to store the PDF file name
                 // instead of its contents
-                $user->setUserAvatar($newFilename);
+                $user->setUserAvatar(
+                    new File($this->getParameter('upload_directory').'/'.$user->getUserAvatar())
+                );
             }
 
             $this->getDoctrine()->getManager()->flush();

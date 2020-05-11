@@ -10,11 +10,13 @@
     <div class="card">
     <h5 class="card-title2">Modification du profil</h5>
         <div id ="cardprofil" class="row no-gutters">
+{#------------------------------AVATAR-----------------------------#}
+
             <div class="col-md-4 pl-3">
                 <img id="editimg" class="card-img" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" alt="default_profil">
                 <div id="edit_img">
-                    {{ form_widget(form.user_avatar2) }}
-                    {{ form_errors(form.user_avatar2) }}
+                    {{ form_widget(form.user_avatar) }}
+                    {{ form_errors(form.user_avatar) }}
                 </div>
             </div>
 

@@ -85,34 +85,47 @@ class EterUserController extends AbstractController
     public function edit(Request $request, EterUser $eterUser, SluggerInterface $slugger): Response
     {
         $inProgress = false;
+
+        //Création du formulaire à partir du formulaire type EterUserType.php
         $form = $this->createForm(EterUserType::class, $eterUser);
+
+        //Paramétrage de l'acceptation des requêtes SQL
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
-            $avatarFile = $form['user_avatar2']->getData();
-            // this condition is needed because the 'brochure' field is not required
-            // so the PDF file must be processed only when a file is uploaded
+
+            //Récupération des données du fichier uplodé
+            $avatarFile = $form['user_avatar']->getData();
+            
+            //Si un fichier a été déposé
             if ($avatarFile) {
+
+                //Récupération du nom du fichier original
                 $originalFilename = pathinfo($avatarFile->getClientOriginalName(), PATHINFO_FILENAME);
-                // this is needed to safely include the file name as part of the URL
+
+                //Sécurisation du nom du fichier
                 $safeFilename = $slugger->slug($originalFilename);
+
+                //Nouveau nom du fichier et ajout de l'extension
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$avatarFile->guessExtension();
+
+                //Indication du nouveau nom de fichier
                 $eterUser->setUserAvatar($newFilename);
-                // Move the file to the directory where brochures are stored
-//                dump($newFilename);
-//                dd($newFilename);
+                
+                //Déplacement du fichier dans le dossier de destination
                 try {
                     $avatarFile->move(
                         $this->getParameter('upload_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
-                    dd($e);
+                } 
+                catch (FileException $e) {
+                    //Possibilité d'indiquer un message d'erreur si l'upload echoue
                 }
-                // updates the 'brochureFilename' property to store the PDF file name
-                // instead of its contents
             }
+            //Insertion dans la BDD
             $this->getDoctrine()->getManager()->flush();
+
             return $this->redirectToRoute('eter_user_show', ['id' => $eterUser->getId()]);
         }
         return $this->render('eter_user/edit.html.twig', [

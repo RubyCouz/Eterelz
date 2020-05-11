@@ -21,6 +21,8 @@ class EterUserController extends AbstractController
 {
     /**
      * @Route("/", name="eter_user_index", methods={"GET"})
+     * @param EterUserRepository $eterUserRepository
+     * @return Response
      */
     public function index(EterUserRepository $eterUserRepository): Response
     {
@@ -33,6 +35,8 @@ class EterUserController extends AbstractController
 
     /**
      * @Route("/new", name="eter_user_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -58,6 +62,8 @@ class EterUserController extends AbstractController
 
     /**
      * @Route("/{id}", name="eter_user_show", methods={"GET"})
+     * @param EterUser $eterUser
+     * @return Response
      */
     public function show(EterUser $eterUser): Response
     {
@@ -71,6 +77,10 @@ class EterUserController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="eter_user_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param EterUser $eterUser
+     * @param SluggerInterface $slugger
+     * @return Response
      */
     public function edit(Request $request, EterUser $eterUser, SluggerInterface $slugger): Response
     {
@@ -80,8 +90,7 @@ class EterUserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var UploadedFile $brochureFile */
-            $avatarFile = $form->get('user_avatar')->getData();
+            $avatarFile = $form['user_avatar2']->getData();
 
             // this condition is needed because the 'brochure' field is not required
             // so the PDF file must be processed only when a file is uploaded
@@ -90,8 +99,10 @@ class EterUserController extends AbstractController
                 // this is needed to safely include the file name as part of the URL
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$avatarFile->guessExtension();
-
+                $user->setUserAvatar($newFilename);
                 // Move the file to the directory where brochures are stored
+//                dump($newFilename);
+//                dd($newFilename);
                 try {
                     $avatarFile->move(
                         $this->getParameter('upload_directory'),
@@ -99,15 +110,13 @@ class EterUserController extends AbstractController
                     );
                 } catch (FileException $e) {
                     // ... handle exception if something happens during file upload
+                    dd($e);
                 }
-
                 // updates the 'brochureFilename' property to store the PDF file name
                 // instead of its contents
-                $user->setUserAvatar($newFilename);
+
             }
-
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('eter_user_show', ['id' => $eterUser->getId()]);
         
         }

@@ -23,27 +23,22 @@ class SecurityController extends AbstractController {
      * @param Request $request
      * @param EntityManagerInterface $manager
      * @param UserPasswordEncoderInterface $encoder
+     * @param MailerInterface $mailer
      * @return Response
+     * @throws TransportExceptionInterface
      */
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, MailerInterface $mailer) {
-        
         // Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
         $user = new EterUser(); 
-
         $inProgress = false;
-
         // Création du formulaire selon la table user
         $form = $this->createForm(SigninType::class, $user);
-
         // Analyse de la requête
         $form->handleRequest($request);
-
         if($form->isSubmitted() && $form->isValid()) {
-
             // Téléchargement de la photo de profil
             // Récupération du champ User_Avatar de EterUser
             $file = $user->getUserAvatar();
-
             // Cryptage du nom du fichier téléchargé
             if($file != null)
             {
@@ -53,11 +48,9 @@ class SecurityController extends AbstractController {
             // Importation du fichier dans la BDD
             $user->setUserAvatar($fileName); 
             }
-
             // Encryptage du mot de passe selon la configuration dans security.yaml de config
             // Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
             $hash = $encoder->encodePassword($user, $user->getUserPassword());
-
             // Validation du remplacement du mot de passe par un encryptage
             $user->setUserPassword($hash);
             $statut = 1;
@@ -68,11 +61,8 @@ class SecurityController extends AbstractController {
             //dd($user);
             // Envoi des données à la BDD
             $manager->flush();
-
             // Envoi mail
-
             $mail = $user->getUserMail();
-
             $email = (new Email())
                 ->from('contact@eterelz.org')
                 ->to($mail)
@@ -83,13 +73,9 @@ class SecurityController extends AbstractController {
                 ->subject('Confirmation d\'inscription')
                 ->text('Welcome')
                 ->html('<p>Votre inscription a bien été prise en compte !</p>');
-
             $mailer->send($email);
-
             return $this->redirectToRoute('home');
-
         }
-
         // Affichage
         return $this->render('security/loginModal.html.twig', [
             'inProgress' => $inProgress,

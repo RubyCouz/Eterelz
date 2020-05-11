@@ -51,7 +51,7 @@
                         </div>
                         {% if is_granted('ROLE_ADMIN') %}
                             <div class="text-center">
-                                <a href="http://127.0.0.1:8000/admin" class="btn btn-default">Back-office</a>
+                                <a href="/eter/public/index.php/admin" class="btn btn-default">Back-office</a>
                             </div>
                         {% endif %}
                     {% else %}
@@ -67,14 +67,14 @@
                                         <div class="modal-c-tabs">
 
                                             <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                                            <ul class="nav nav-tabs md-tabs tabs-2" role="tablist">
                                                 <li class="nav-item">
-                                                    <a class="nav-link active" data-toggle="tab" href="#panel7"
+                                                    <a class="nav-link login" data-toggle="tab" href="#panel7"
                                                        role="tab"><i class="fas fa-user mr-1"></i>
                                                         Connexion</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
+                                                    <a class="nav-link signin" data-toggle="tab" href="#panel8" role="tab"><i
                                                                 class="fas fa-user-plus mr-1"></i>
                                                         Inscription</a>
                                                 </li>

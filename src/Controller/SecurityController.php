@@ -23,41 +23,35 @@ class SecurityController extends AbstractController {
      * @param Request $request
      * @param EntityManagerInterface $manager
      * @param UserPasswordEncoderInterface $encoder
+     * @param MailerInterface $mailer
      * @return Response
+     * @throws TransportExceptionInterface
      */
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, MailerInterface $mailer) {
         
         // Définition de la variable en signalant que l'on veut créer une nouvelle entité
         $user = new EterUser(); 
-
         $inProgress = false;
-
         // Création du formulaire selon la table user
         $form = $this->createForm(SigninType::class, $user);
-
         // Analyse de la requête
         $form->handleRequest($request);
-
         if($form->isSubmitted() && $form->isValid()) {
-
-            //Téléchargement de la photo de profil
-            //Récupération du champ User_Avatar de EterUser
+            // Téléchargement de la photo de profil
+            // Récupération du champ User_Avatar de EterUser
             $file = $user->getUserAvatar();
-            //Cryptage du nom du fichier téléchargé
-
-            if($file != null){
-            
+            // Cryptage du nom du fichier téléchargé
+            if($file != null)
+            {
             $fileName = uniqid().'.'.$file->getClientOriginalExtension();
-            //Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
+            // Récupération des informations de téléchargement et récupération du chemin du dossier où sera importé le fichier
             $file->move($this->getParameter('upload_directory'), $fileName);
-            //Importation du fichier dans la BDD
-            $user->setUserAvatar($fileName);
-            
+            // Importation du fichier dans la BDD
+            $user->setUserAvatar($fileName); 
             }
-            //Encryptage du mot de passe selon la configuration dans security.yaml de config
-            //Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
+            // Encryptage du mot de passe selon la configuration dans security.yaml de config
+            // Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
             $hash = $encoder->encodePassword($user, $user->getUserPassword());
-
             // Validation du remplacement du mot de passe par un encryptage
             $user->setUserPassword($hash);
             $statut = 1;
@@ -65,14 +59,11 @@ class SecurityController extends AbstractController {
             $user->setUserRole('Utilisateur');
             // Garde en mémoire les données soumises
             $manager->persist($user);
-            
+            //dd($user);
             // Envoi des données à la BDD
             $manager->flush();
-
             // Envoi mail
-
             $mail = $user->getUserMail();
-
             $email = (new Email())
                 ->from('contact@eterelz.org')
                 ->to($mail)
@@ -83,19 +74,15 @@ class SecurityController extends AbstractController {
                 ->subject('Confirmation d\'inscription')
                 ->text('Welcome')
                 ->html('<p>Votre inscription a bien été prise en compte !</p>');
-
             $mailer->send($email);
-
             return $this->redirectToRoute('home');
         }
-
         // Affichage
         return $this->render('security/loginModal.html.twig', [
             'inProgress' => $inProgress,
             'form' => $form->createView()
         ]);
-
-        }
+    }
     
     /**
      * @Route("/login", name="login")
@@ -106,7 +93,6 @@ class SecurityController extends AbstractController {
         $error =$authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
         $inProgress = false;
-//        dd($error);
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,

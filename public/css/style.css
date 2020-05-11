@@ -20,6 +20,7 @@ home background
     background-position: center;
     background-size: cover;
     background-color: transparent;
+    background-attachment: fixed;
     /*min-height: 150%;*/
 }
 nav {
@@ -31,6 +32,7 @@ nav {
 }
 .card-body {
     background-color: #2E2E2E;
+    /*border-radius: 0 0 calc(1rem - 1px) calc(1rem - 1px) !important;*/
 }
 .card-header:first-child {
     border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
@@ -145,7 +147,18 @@ navbar
 .footer {
     height: 200px;
 }
-
+/**
+Modal connexion
+ */
+.modal-content {
+    background-color: #2E2E2E;
+}
+.login {
+    border-radius: 25px 0 0 25px !important;
+}
+.signin {
+    border-radius: 0 25px 25px 0 !important;
+}
 /**
 table
  */
@@ -286,7 +299,7 @@ Mise en forme du formulaire registration.html.twig
     padding-bottom: 15px;
 }
 
-.container {
+#registration {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 20px;
@@ -368,7 +381,7 @@ Formulaire d'inscription loginModal.html.twig
 #registration {
     margin-left: 5px;
     font-size: 14px;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 #mdp_perdu {
@@ -385,6 +398,31 @@ Message d'erreurs loginModal.html.twig
 
 #mail, #mdp, #email, #password, #identifiant, #discord, #conf_password {
     margin-bottom: 10px;
+}
+
+/**
+Mise en forme index.html.twig
+*/
+#cards {
+    display: inline-block;
+    margin-top: 80px;
+}
+
+#eter {
+    background-color:#53C8E0;
+}
+
+.eters {
+    color: white;
+}
+
+.profil {
+    margin: 0px;
+    color: white;
+}
+
+#show {
+    margin-left: 40px;
 }
 
 /**
@@ -418,6 +456,7 @@ Mise en forme show.html.twig
 
 #image {
     width: 30%;
+    border: 4px solid #000;
 }
 
 #show1 {

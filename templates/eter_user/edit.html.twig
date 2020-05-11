@@ -11,11 +11,10 @@
     <h5 class="card-title2">Modification du profil</h5>
         <div id ="cardprofil" class="row no-gutters">
             <div class="col-md-4 pl-3">
-            {# Mettre une condition pour afficher l'image #}
-                <img id="editimg" class="card-img" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" alt="profil_default">
+                <img id="editimg" class="card-img" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" alt="default_profil">
                 <div id="edit_img">
-                    {{ form_widget(form.user_avatar) }}
-                    {{ form_errors(form.user_avatar) }}
+                    {{ form_widget(form.user_avatar2) }}
+                    {{ form_errors(form.user_avatar2) }}
                 </div>
             </div>
 
@@ -97,7 +96,7 @@
                             </div>
                         </div>
 
-{#------------------------------GENRE------------------------------#}
+{#-------------------------------SEXE-------------------------------#}
 
                         {#<div class="row">
                             <div class="col-md-12">
@@ -171,7 +170,7 @@
 
                         <div id="editbutton" class="row">
                         <button class="btn btn-success">{{ button_label|default('Mettre à jour') }}</button>
-                        {{ form_end(form) }}
+{{ form_end(form) }}
                         {{ include('eter_user/_delete_form.html.twig') }}
                         {#<a href="{{ path('eter_user_index') }}">Retour</a>#}
                         </div>

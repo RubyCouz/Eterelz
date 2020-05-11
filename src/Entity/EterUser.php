@@ -134,7 +134,6 @@ class EterUser implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\File(mimeTypes={ "image/png", "image/jpeg", "image/jpg" })
      */
     private $user_avatar;
 

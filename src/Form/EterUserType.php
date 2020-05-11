@@ -63,7 +63,7 @@ class EterUserType extends AbstractType
                 'required' => false,
             ])
             //->add('user_update')
-            ->add('user_avatar2', FileType::class, [
+            ->add('user_avatar', FileType::class, [
                 //unmapped => fichier non associé à aucune propriété d'entité, validation impossible avec les annotations
                 'mapped' => false,
                 'required' => false,
@@ -75,7 +75,6 @@ class EterUserType extends AbstractType
             ])
             //->add('user_role')
             //->add('label')
-            //ChoiceType::class
             ->add('user_clan')
             ->add('user_game')
             ->add('eterEvents')

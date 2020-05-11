@@ -88,10 +88,8 @@ class EterUserController extends AbstractController
         $inProgress = false;
         $form = $this->createForm(EterUserType::class, $eterUser);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $avatarFile = $form['user_avatar2']->getData();
-
             // this condition is needed because the 'brochure' field is not required
             // so the PDF file must be processed only when a file is uploaded
             if ($avatarFile) {
@@ -99,7 +97,7 @@ class EterUserController extends AbstractController
                 // this is needed to safely include the file name as part of the URL
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$avatarFile->guessExtension();
-                
+                $eterUser->setUserAvatar($newFilename);
                 // Move the file to the directory where brochures are stored
 //                dump($newFilename);
 //                dd($newFilename);
@@ -113,11 +111,9 @@ class EterUserController extends AbstractController
                 }
                 // updates the 'brochureFilename' property to store the PDF file name
                 // instead of its contents
-                $eteruser->setUserAvatar($newFilename);
             }
             $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('eter_user_show', ['id' => $eterUser->getId()]);
-        
         }
         return $this->render('eter_user/edit.html.twig', [
             'eter_user' => $eterUser,

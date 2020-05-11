@@ -85,7 +85,6 @@ class EterUserController extends AbstractController
      */
     public function edit(Request $request, EterUser $eterUser, SluggerInterface $slugger): Response
     {
-        $user = new EterUser(); 
         $inProgress = false;
         $form = $this->createForm(EterUserType::class, $eterUser);
         $form->handleRequest($request);
@@ -100,7 +99,7 @@ class EterUserController extends AbstractController
                 // this is needed to safely include the file name as part of the URL
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$avatarFile->guessExtension();
-                $user->setUserAvatar($newFilename);
+                
                 // Move the file to the directory where brochures are stored
 //                dump($newFilename);
 //                dd($newFilename);
@@ -111,11 +110,10 @@ class EterUserController extends AbstractController
                     );
                 } catch (FileException $e) {
                     // ... handle exception if something happens during file upload
-                    dd($e);
                 }
                 // updates the 'brochureFilename' property to store the PDF file name
                 // instead of its contents
-
+                $eteruser->setUserAvatar($newFilename);
             }
             $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('eter_user_show', ['id' => $eterUser->getId()]);

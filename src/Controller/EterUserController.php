@@ -137,6 +137,9 @@ class EterUserController extends AbstractController
 
     /**
      * @Route("/{id}", name="eter_user_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param EterUser $eterUser
+     * @return Response
      */
     public function delete(Request $request, EterUser $eterUser): Response
     {

@@ -11,17 +11,13 @@
     <h5 class="card-title2">Modification du profil</h5>
         <div id ="cardprofil" class="row no-gutters">
             <div class="col-md-4 pl-3">
-                {% if form.user_avatar is not defined %}
+                
                 <div id="edit_img">
-                <img id="editimg" class="card-img" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" alt="default_profil">
+                <img id="editimg" class="card-img" src="{{ asset('public/img/upload/profil_pic/238-2385282-snorlax-fondo-de-pantalla-hd-5eb963473ed70.jpeg') }}" alt="default_profil">
                     {{ form_widget(form.user_avatar) }}
                     {{ form_errors(form.user_avatar) }}
                 </div>
-                {% else %}
-                <img id="editimg" class="card-img" src="{{ asset('upload/profil_pic') }}" alt="default_profil">
-                {{ form_widget(form.user_avatar) }}
-                {{ form_errors(form.user_avatar) }}
-                {% endif %}
+                
             </div>
 
             <div id="editoblig" class="col-md-8">

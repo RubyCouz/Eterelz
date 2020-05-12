@@ -10,7 +10,15 @@
     <div id="cards" class="card mb-2 ml-2 mr-2" style="width: 25rem;">
 
         <div class="card-header">
-        <img src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img-top" alt="Photo profil">
+                {% if eter_user.userAvatar %}
+
+                <img id="image" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) }}" alt="default_profil">
+
+                {% else %}
+
+                <img id="image" src="{{ asset('img/upload/profil_pic/default-profil.jpg') }}" alt="default_profil">
+
+                {% endif %}
         </div>
 
         <div id="eter" class="card-body">

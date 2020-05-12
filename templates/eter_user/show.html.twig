@@ -9,9 +9,15 @@
     <h5 class="card-title">Votre profil</h5>
         <div id ="cardprofil" class="row no-gutters">
             <div id="show1" class="col-md-12">
-            {# Mettre un if si l'image est téléchargé on l'affiche sinon image par défaut #}
-            {# Mettre lien image avec asset #}
-                <img id="image" src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg" class="card-img" alt="default_profil">
+                {% if eter_user.userAvatar %}
+                
+                <img id="image" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) }}" alt="default_profil">
+                
+                {% else %}
+                
+                <img id="image" src="{{ asset('img/upload/profil_pic/default-profil.jpg') }}" alt="default_profil">
+                
+                {% endif %}
             </div>
             <div class="col-md-12">
                 <div class="card-body">

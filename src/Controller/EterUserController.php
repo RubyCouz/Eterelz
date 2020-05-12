@@ -131,8 +131,7 @@ class EterUserController extends AbstractController
         return $this->render('eter_user/edit.html.twig', [
             'eter_user' => $eterUser,
             'form' => $form->createView(),
-            'inProgress' => $inProgress,
-            'img' => $eterUser -> getUserAvatar()
+            'inProgress' => $inProgress
         ]);
     }
 

@@ -13,13 +13,15 @@
             <div class="col-md-4 pl-3">
                 {% if eter_user.userAvatar %}
                 <div id="edit_img">
-                <img id="editimg" class="card-img" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) }}" alt="default_profil">
+                <img id="editimg" class="card-img"
+                     src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) }}" alt="default_profil">
                 {{ form_widget(form.user_avatar) }}
                 {{ form_errors(form.user_avatar) }}
                 </div>
                 {% else %}
                 <div id="edit_img">
-                <img id="editimg" class="card-img" src="{{ asset('img/upload/profil_pic/default-profil.jpg') }}" alt="default_profil">
+                <img id="editimg" class="card-img"
+                     src="{{ asset('img/upload/profil_pic/default-profil.jpg') }}" alt="default_profil">
                     {{ form_widget(form.user_avatar) }}
                     {{ form_errors(form.user_avatar) }}
                 </div>

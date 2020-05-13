@@ -71,8 +71,9 @@ class SecurityController extends AbstractController {
                 //->html('<p>Votre inscription a bien été prise en compte !</p>')
                 ->htmlTemplate('emails/signup.html.twig')
                 ->context([
-                    'expiration_date' => new \DateTime('+1 minute'),
+                    'expiration_date' => new \DateTime('+3 minutes'),
                     'username' => $user->getUserLogin(),
+                    'date' => new \DateTime('now')
                 ])
                 ;
 

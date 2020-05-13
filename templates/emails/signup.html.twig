@@ -1,11 +1,12 @@
-<h1>Welcome {{ username }}!</h1>
+<h1>Bienvenue {{ username }} !</h1>
 
 <p>
-    You signed up as {{ username }} the following email:
+    Vous vous êtes enregistré(e) en tant que {{ username }} avec l'adresse suivante :
 </p>
 <p><code>{{ email.to[0].address }}</code></p>
 
 <p>
-    <a href="H:\CLEMENT\Eterelz\templates\home\index.html.twig">Click here to activate your account</a>
-    (this link is valid until {{ expiration_date|date('F jS G:i') }})
+    <a href="http://127.0.0.1:8000/" >Cliquez ici pour activer votre compte</a>
+    (Ce lien est valide jusqu'au {{ expiration_date|date('F jS G:i') }})
 </p>
+

@@ -1,0 +1,13 @@
+<img src="{{ email.image('@images/logoEterelz_redim.png') }}" alt="Logo">
+
+<h1>Bienvenue {{ username }} !</h1>
+
+<p>
+    Vous vous êtes enregistré avec le login {{ username }} et avec l'adresse email suivante :
+</p>
+<p><code>{{ email.to[0].address }}</code></p>
+
+<p>
+    <a href="http://127.0.0.1:8000/">Cliquez sur ce lien pour activer votre compte</a>
+    (ce lien est valide jusqu'au {{ expiration_date|date('F jS G:i') }})
+</p>

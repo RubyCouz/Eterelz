@@ -3,16 +3,17 @@
 namespace App\Controller;
 
 use App\Entity\EterUser;
-use App\Form\RegistrationType;
 use App\Form\SigninType;
+//use App\Form\RegistrationType;
+//use Symfony\Component\Mime\Email;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -51,7 +52,8 @@ class SecurityController extends AbstractController {
             $manager->flush();
             // Envoi mail
             $mail = $user->getUserMail();
-            $email = (new Email())
+
+            $email = (new TemplatedEmail())
                 ->from('contact@eterelz.org')
                 ->to($mail)
                 // ->cc('cc@example.com')
@@ -59,8 +61,16 @@ class SecurityController extends AbstractController {
                 // ->replyTo('fabien@example.com')
                 // ->priority(Email::PRIORITY_HIGH)
                 ->subject('Confirmation d\'inscription')
-                ->text('Welcome')
-                ->html('<p>Votre inscription a bien été prise en compte !</p>');
+                //->text('Welcome')
+                //->html('<p>Votre inscription a bien été prise en compte !</p>')
+                ->htmlTemplate('emails/signup.html.twig')
+                ->context([
+                    'date' => new \DateTime('now'),
+                    'expiration_date' => new \DateTime('+3 minute'),
+                    'username' => $user->getUserLogin(),
+                ])
+                ;
+
             $mailer->send($email);
             return $this->redirectToRoute('home');
         }

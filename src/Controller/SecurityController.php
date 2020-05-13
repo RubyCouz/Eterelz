@@ -6,11 +6,12 @@ use App\Entity\EterUser;
 use App\Form\RegistrationType;
 use App\Form\SigninType;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
+//use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -37,22 +38,28 @@ class SecurityController extends AbstractController {
         // Analyse de la requête
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
+
             // Encryptage du mot de passe selon la configuration dans security.yaml de config
             // Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
             $hash = $encoder->encodePassword($user, $user->getUserPassword());
+
             // Validation du remplacement du mot de passe par un encryptage
             $user->setUserPassword($hash);
+
             $statut = 1;
             $user->setStatut($statut);
             $user->setUserRole('Utilisateur');
+
             // Garde en mémoire les données soumises
             $manager->persist($user);
-            //dd($user);
+
             // Envoi des données à la BDD
             $manager->flush();
+
             // Envoi mail
             $mail = $user->getUserMail();
-            $email = (new Email())
+
+            $email = (new TemplatedEmail())
                 ->from('contact@eterelz.org')
                 ->to($mail)
                 // ->cc('cc@example.com')
@@ -60,8 +67,15 @@ class SecurityController extends AbstractController {
                 // ->replyTo('fabien@example.com')
                 // ->priority(Email::PRIORITY_HIGH)
                 ->subject('Confirmation d\'inscription')
-                ->text('Welcome')
-                ->html('<p>Votre inscription a bien été prise en compte !</p>');
+                //->text('Welcome')
+                //->html('<p>Votre inscription a bien été prise en compte !</p>')
+                ->htmlTemplate('emails/signup.html.twig')
+                ->context([
+                    'expiration_date' => new \DateTime('+1 minute'),
+                    'username' => $user->getUserLogin(),
+                ])
+                ;
+
             $mailer->send($email);
             return $this->redirectToRoute('home');
         }

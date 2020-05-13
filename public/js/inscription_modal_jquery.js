@@ -16,12 +16,14 @@ function verif()
      if (mail === "") 
      {            
         var html = '<div class="alert alert-danger" role="alert">Votre email doit être renseigné !</div>';
-        $("#alert6").append(html); 
+        $("#alert6").append(html);
+        return false;
      }
      else if (mail_v.test(mail) == false)
      {
         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
         $("#alert6").append(html);
+        return false;
      }
      else
      {
@@ -87,12 +89,14 @@ function verif2()
     if (identifiant === "") 
     {            
         var html = '<div class="alert alert-danger" role="alert">Veuillez créer un login !</div>';
-        $("#alert1").append(html); 
+        $("#alert1").append(html);
+        return false;
     }
     else if (identifiant_v.test(identifiant) == false)
     {
         var html = '<div class="alert alert-warning" role="alert">Caractère(s) non autorisé(s) !</div>';
         $("#alert1").append(html);
+        return false;
     }
     else
     {
@@ -105,12 +109,14 @@ function verif2()
      if (email === "") 
      {            
         var html = '<div class="alert alert-danger" role="alert">Votre email doit être renseigné !</div>';
-        $("#alert2").append(html); 
+        $("#alert2").append(html);
+        return false;
      }
      else if (email_v.test(email) == false)
      {
         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
         $("#alert2").append(html);
+        return false;
      }
      else
      {
@@ -123,12 +129,14 @@ function verif2()
       if (discord === "") 
       {            
          var html = '<div class="alert alert-danger" role="alert">Veuillez créer un ID Discord !</div>';
-         $("#alert3").append(html); 
+         $("#alert3").append(html);
+         return false;
       }
       else if (discord_v.test(discord) == false)
       {
          var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
          $("#alert3").append(html);
+         return false;
       }
       else
       {
@@ -141,12 +149,14 @@ function verif2()
      if (password === "") 
      {            
         var html = '<div class="alert alert-danger" role="alert">Veuillez créer un mot de passe !</div>';
-        $("#alert4").append(html); 
+        $("#alert4").append(html);
+        return false;
      }
      else if (password_v.test(password) == false)
      {
         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
         $("#alert4").append(html);
+        return false;
      }
      else
      {

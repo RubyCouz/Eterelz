@@ -527,3 +527,29 @@ h5 {
     margin-bottom: -20px;
     padding-left: 760px;
 }
+
+/**
+Mise en forme message de succès d'activation de compte base.html.twig
+*/
+#alert_registration {
+    margin-top: 20px;
+}
+
+/**
+Mise en forme forgotten_password.html.twig
+*/
+#forgot_pass2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#forgot_pass1 {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+#forgot_img {
+    margin-top: 60px;
+}

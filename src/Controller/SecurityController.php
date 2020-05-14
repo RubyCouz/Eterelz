@@ -4,10 +4,12 @@ namespace App\Controller;
 
 use App\Entity\EterUser;
 use App\Form\RegistrationType;
+use App\Form\ResetPassType;
 use App\Form\SigninType;
 use App\Repository\EterUserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
@@ -15,6 +17,8 @@ use Symfony\Component\Mailer\MailerInterface;
 //use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
@@ -94,9 +98,14 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/activation/{token}", name="activation")
+     * @param $token
+     * @param EterUserRepository $entityRepo
+     * @param EntityManagerInterface $manager
+     * @return RedirectResponse
      */
     public function activation($token, EterUserRepository $entityRepo, EntityManagerInterface $manager){
 
+        $inProgress = false;
         // On vérifie si un utilisateur a ce token
         $user = $entityRepo->findOneBy(['activation_token' => $token]);
 
@@ -115,7 +124,9 @@ class SecurityController extends AbstractController {
         $this->addFlash('success', 'Votre compte a bien été activé');
 
         //On retourne à l'accueil
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('home', [
+            'inProgress' => $inProgress,
+        ]);
 
     }
 
@@ -139,6 +150,94 @@ class SecurityController extends AbstractController {
      * @Route("/logout", name="logout")
      */
     public function logout() {
+
+    }
+
+    /**
+     * @Route("/forgot_password", name="app_forgotten_password")
+     * @param Request $request
+     * @param EterUserRepository $entityRepo
+     * @param MailerInterface $mailer
+     * @param TokenGeneratorInterface $tokenGenerator
+     * @param EntityManagerInterface $manager
+     * @return RedirectResponse|Response
+     * @throws TransportExceptionInterface
+     */
+    public function forgottenPass(Request $request, EterUserRepository $entityRepo, MailerInterface $mailer,
+                                  TokenGeneratorInterface $tokenGenerator, EntityManagerInterface $manager){
+        $inProgress = false;
+        //Création du formulaire
+        $form = $this->createForm(ResetPassType::class);
+
+        //Traitement du formulaire
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+
+            $data= $form->getData();
+
+            //Recherche de l'utilisateur avec cet email
+            $user = $entityRepo->findOneBy(['user_mail' => $data]);
+
+            //Si l'utilisateur n'existe pas
+            if(!$user){
+                // Envoi d'un message flash
+                $this->addFlash('danger', 'Cette adresse n\'existe pas');
+
+                return $this->redirectToRoute('home', [
+                    'inProgress' => $inProgress
+                ]);
+            }
+
+            // Génération d'un token
+            $token = $tokenGenerator->generateToken();
+
+            try{
+                $user->setResetToken($token);
+                $manager->persist($user);
+                $manager->flush();
+            }catch(\Exception $e){
+                $this->addFlash('warning', 'Une erreur est survenue : '. $e->getMessage());
+
+                return $this->redirectToRoute('home', [
+                    'inProgress' => $inProgress
+                ]);
+            }
+
+            //Génération de l'URL de réinitialisation du mot de passe
+            $url = $this->GenerateUrl('app_reset_password', ['token' => $token],
+                UrlGeneratorInterface::ABSOLUTE_URL);
+
+            //Envoi du message
+            $mail = $user->getUserMail();
+
+            $email = (new TemplatedEmail())
+                ->from('contact@eterelz.org')
+                ->to($mail)
+                ->subject('Réinitialisation du mot de passe')
+                ->html('<p>Voici le lien pour réinitialiser votre mot de passe : </p>'.$url, 'text/html' );
+
+            //Envoi de l'email
+            $mailer->send($email);
+
+            //Création du message Flash
+            $this->addFlash('success', 'Un email de réinitialisation vous a été envoyé');
+
+            return $this->redirectToRoute('home', [
+                'inProgress' => $inProgress
+            ]);
+        }
+        // Envoi vers la page de demande de l'email
+        return $this->render('security/forgotten_password.html.twig', [
+            'emailForm' => $form->createView(),
+            'inProgress' => $inProgress
+            ]);
+    }
+
+    /**
+     * @Route("/reset_password/{token}", name="app_reset_password")
+     */
+    public function resetPassword(){
 
     }
 }

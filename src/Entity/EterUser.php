@@ -148,6 +148,11 @@ class EterUser implements UserInterface
      */
     private $user_role;
 
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $activation_token;
+
     public function __construct()
     {
         $this->user_date = new \DateTime('Europe/Paris');
@@ -572,6 +577,18 @@ class EterUser implements UserInterface
     public function setUserUpdate(\DateTimeInterface $user_update): self
     {
         $this->user_update = $user_update;
+
+        return $this;
+    }
+
+    public function getActivationToken(): ?string
+    {
+        return $this->activation_token;
+    }
+
+    public function setActivationToken(?string $activation_token): self
+    {
+        $this->activation_token = $activation_token;
 
         return $this;
     }

@@ -167,6 +167,12 @@
 
     <footer class="footer">
 
+        {% for message in app.flashes('success') %}
+            <div id="alert_registration" class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
     </footer>
 </div>
 <!-- /#wrapper -->

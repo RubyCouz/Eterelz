@@ -521,3 +521,11 @@ h5 {
     margin-bottom: -20px;
     padding-left: 760px;
 }
+
+/**
+Message succès activation compte dans base.html.twig
+*/
+
+#alert_registration{
+    margin-top: 20px;
+}

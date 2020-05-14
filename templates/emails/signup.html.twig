@@ -6,7 +6,7 @@
 <p><code>{{ email.to[0].address }}</code></p>
 
 <p>
-    <a href="http://127.0.0.1:8000/" >Cliquez ici pour activer votre compte</a>
+    <a href="{{ absolute_url(path('activation', {'token' : token})) }}" >Cliquez ici pour activer votre compte</a>
     (Ce lien est valide jusqu'au {{ expiration_date|date('F jS G:i') }})
 </p>
 

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\EterUser;
 use App\Form\RegistrationType;
 use App\Form\SigninType;
+use App\Repository\EterUserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
@@ -46,6 +47,9 @@ class SecurityController extends AbstractController {
             // Validation du remplacement du mot de passe par un encryptage
             $user->setUserPassword($hash);
 
+            //On génère le token d'activation
+            $user->setActivationToken(uniqid());
+
             $statut = 1;
             $user->setStatut($statut);
             $user->setUserRole('Utilisateur');
@@ -73,7 +77,8 @@ class SecurityController extends AbstractController {
                 ->context([
                     'expiration_date' => new \DateTime('+3 minutes'),
                     'username' => $user->getUserLogin(),
-                    'date' => new \DateTime('now')
+                    'date' => new \DateTime('now'),
+                    'token' => $user->getActivationToken()
                 ])
                 ;
 
@@ -86,7 +91,34 @@ class SecurityController extends AbstractController {
             'form' => $form->createView()
         ]);
     }
-    
+
+    /**
+     * @Route("/activation/{token}", name="activation")
+     */
+    public function activation($token, EterUserRepository $entityRepo, EntityManagerInterface $manager){
+
+        // On vérifie si un utilisateur a ce token
+        $user = $entityRepo->findOneBy(['activation_token' => $token]);
+
+        //Si aucun utilisateur n'existe avec ce token
+        if(!$user){
+            //Erreur 404
+            throw $this->createNotFoundException('Cet utilisateur n\'existe pas');
+        }
+
+        // On supprime le token
+        $user->setActivationToken(null);
+        $manager->persist($user);
+        $manager->flush();
+
+        //On envoie un message flash
+        $this->addFlash('success', 'Votre compte a bien été activé');
+
+        //On retourne à l'accueil
+        return $this->redirectToRoute('home');
+
+    }
+
     /**
      * @Route("/login", name="login")
      * @param AuthenticationUtils $authenticationUtils

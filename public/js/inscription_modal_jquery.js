@@ -25,11 +25,7 @@ function verif()
         $("#alert6").append(html);
         return false;
      }
-     else
-     {
-         var html = '<div class="alert alert-success" role="alert">Votre email est validé</div>';
-         $("#alert6").append(html);
-     }
+     else{}
 
       // PASSWORD
 
@@ -45,11 +41,7 @@ function verif()
         $("#alert7").append(html);
         return false;
      }
-     else
-     {
-         var html = '<div class="alert alert-success" role="alert">Votre mot de passe est validé</div>';
-         $("#alert7").append(html);
-     }
+     else{}
 
     // Si aucun test n'a renvoyé faux, c'est qu'il n'y a pas d'erreur, le script arrive ici, le formulaire est envoyé via submit()
     document.forms[0].submit();

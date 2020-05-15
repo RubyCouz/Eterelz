@@ -28,73 +28,74 @@ class SecurityController extends AbstractController {
      * @Route("/inscription", name="security_registration")
      * @param Request $request
      * @param EntityManagerInterface $manager
+     * @param EterUserRepository $entityRepo
      * @param UserPasswordEncoderInterface $encoder
      * @param MailerInterface $mailer
      * @return Response
      * @throws TransportExceptionInterface
      */
-    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, MailerInterface $mailer) {
-        
+    public function registration(Request $request, EntityManagerInterface $manager, EterUserRepository $entityRepo, UserPasswordEncoderInterface $encoder, MailerInterface $mailer)
+    {
+
         // Définition de la variable en signalant que l'on veut créer une nouvelle entité
-        $user = new EterUser(); 
+        $user = new EterUser();
         $inProgress = false;
         // Création du formulaire selon la table user
         $form = $this->createForm(SigninType::class, $user);
         // Analyse de la requête
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
 
-            // Encryptage du mot de passe selon la configuration dans security.yaml de config
-            // Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
-            $hash = $encoder->encodePassword($user, $user->getUserPassword());
+                // Encryptage du mot de passe selon la configuration dans security.yaml de config
+                // Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
+                $hash = $encoder->encodePassword($user, $user->getUserPassword());
 
-            // Validation du remplacement du mot de passe par un encryptage
-            $user->setUserPassword($hash);
+                // Validation du remplacement du mot de passe par un encryptage
+                $user->setUserPassword($hash);
 
-            //On génère le token d'activation
-            $user->setActivationToken(uniqid());
+                //On génère le token d'activation
+                $user->setActivationToken(uniqid());
 
-            $statut = 1;
-            $user->setStatut($statut);
-            $user->setUserRole('Utilisateur');
+                $statut = 1;
+                $user->setStatut($statut);
+                $user->setUserRole('Utilisateur');
 
-            // Garde en mémoire les données soumises
-            $manager->persist($user);
+                // Garde en mémoire les données soumises
+                $manager->persist($user);
 
-            // Envoi des données à la BDD
-            $manager->flush();
+                // Envoi des données à la BDD
+                $manager->flush();
 
-            // Envoi mail
-            $mail = $user->getUserMail();
+                // Envoi mail
+                $mail = $user->getUserMail();
 
-            $email = (new TemplatedEmail())
-                ->from('contact@eterelz.org')
-                ->to($mail)
-                // ->cc('cc@example.com')
-                // ->bcc('bcc@example.com')
-                // ->replyTo('fabien@example.com')
-                // ->priority(Email::PRIORITY_HIGH)
-                ->subject('Confirmation d\'inscription')
-                //->text('Welcome')
-                //->html('<p>Votre inscription a bien été prise en compte !</p>')
-                ->htmlTemplate('emails/signup.html.twig')
-                ->context([
-                    'expiration_date' => new \DateTime('+3 minutes'),
-                    'username' => $user->getUserLogin(),
-                    'date' => new \DateTime('now'),
-                    'token' => $user->getActivationToken()
-                ])
-                ;
+                $email = (new TemplatedEmail())
+                    ->from('contact@eterelz.org')
+                    ->to($mail)
+                    // ->cc('cc@example.com')
+                    // ->bcc('bcc@example.com')
+                    // ->replyTo('fabien@example.com')
+                    // ->priority(Email::PRIORITY_HIGH)
+                    ->subject('Confirmation d\'inscription')
+                    //->text('Welcome')
+                    //->html('<p>Votre inscription a bien été prise en compte !</p>')
+                    ->htmlTemplate('emails/signup.html.twig')
+                    ->context([
+                        'expiration_date' => new \DateTime('+3 minutes'),
+                        'username' => $user->getUserLogin(),
+                        'date' => new \DateTime('now'),
+                        'token' => $user->getActivationToken()
+                    ]);
 
-            $mailer->send($email);
-            return $this->redirectToRoute('home');
+                $mailer->send($email);
+                return $this->redirectToRoute('home');
         }
-        // Affichage
-        return $this->render('security/loginModal.html.twig', [
-            'inProgress' => $inProgress,
-            'form' => $form->createView()
-        ]);
-    }
+            // Affichage
+            return $this->render('security/loginModal.html.twig', [
+                'inProgress' => $inProgress,
+                'form' => $form->createView()
+            ]);
+        }
 
     /**
      * @Route("/activation/{token}", name="activation")
@@ -136,14 +137,25 @@ class SecurityController extends AbstractController {
      * @return Response
      */
     public function login(AuthenticationUtils $authenticationUtils) {
+
         $error =$authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
         $inProgress = false;
-        return $this->render('security/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error' => $error,
-            'inProgress' => $inProgress
-        ]);
+        if($error){
+            $this->addFlash('danger', 'Cet email n\'existe pas ou le mot de passe est erroné');
+            return $this->render('home/index.html.twig', [
+                'error' => $error,
+                'inProgress' => $inProgress
+            ]);
+        }
+        else{
+
+            return $this->render('security/login.html.twig', [
+                'last_username' => $lastUsername,
+                'error' => $error,
+                'inProgress' => $inProgress
+            ]);
+        }
     }
 
     /**

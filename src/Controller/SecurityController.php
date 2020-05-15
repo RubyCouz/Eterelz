@@ -236,8 +236,41 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/reset_password/{token}", name="app_reset_password")
+     * @param $token
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @param EntityManagerInterface $manager
+     * @return Response
      */
-    public function resetPassword(){
+    public function resetPassword($token, Request $request, UserPasswordEncoderInterface $passwordEncoder, EntityManagerInterface $manager){
+        $inProgress = false;
+        // Recherche de l'utilisateur avec le token fourni
+        $user = $this->getDoctrine()->getRepository(EterUser::class)->findOneBy(['reset_token' => $token]);
 
+        if(!$user){
+            $this->addFlash('danger', 'Token inconnu');
+            return $this->redirectToRoute('home',[
+                'inProgress' => $inProgress]);
+        }
+
+        // Si le formulaire est envoyé en méthode POST
+        if($request->isMethod('POST')){
+
+            //On supprime le token
+            $user->setResetToken(null);
+
+            //On crypte le mot de passe
+            $user->setUserPassword($passwordEncoder->encodePassword($user, $request->request->get('password')));
+            $manager->persist($user);
+            $manager->flush();
+
+            $this->addFlash('success', 'Mot de passe modifié avec succès');
+
+            return $this->redirectToRoute('home',[
+                'inProgress' => $inProgress]);
+        }
+        else{
+            return $this->render('security/reset_password.html.twig', ['token' => $token, 'inProgress' => $inProgress]);
+        }
     }
 }

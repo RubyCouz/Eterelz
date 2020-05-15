@@ -20,14 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
-      <change afterPath="$PROJECT_DIR$/src/Form/ResetPassType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/forgotten_password.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/reset_password.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/loginModal.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/loginModal.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/reset_password.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/reset_password.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +272,8 @@
       <workItem from="1589293706208" duration="1764000" />
       <workItem from="1589295540412" duration="67000" />
       <workItem from="1589353901994" duration="21162000" />
-      <workItem from="1589436895884" duration="20875000" />
+      <workItem from="1589436895884" duration="21663000" />
+      <workItem from="1589527022953" duration="5893000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -544,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589451641015</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Activation_token ok + mdp perdu en cours">
+      <created>1589468451349</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1589468451350</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,7 +568,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="reprise bdd, test formatage back office" />
     <MESSAGE value="fin établissement bdd" />
     <MESSAGE value="back-office suite" />
     <MESSAGE value="fin mise en place back office et installation uploader vich" />
@@ -589,7 +592,8 @@
     <MESSAGE value="Configuration durée email valide" />
     <MESSAGE value="Config mail inscription en cours" />
     <MESSAGE value="Mail confirmation inscription avec lien + Token" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mail confirmation inscription avec lien + Token" />
+    <MESSAGE value="Activation_token ok + mdp perdu en cours" />
+    <option name="LAST_COMMIT_MESSAGE" value="Activation_token ok + mdp perdu en cours" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -677,10 +681,10 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1589451647583">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1589468455350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589451647583" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589468455350" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />

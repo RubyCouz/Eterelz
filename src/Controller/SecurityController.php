@@ -74,6 +74,7 @@ class SecurityController extends AbstractController {
             $mailer->send($email);
             return $this->redirectToRoute('home');
         }
+        
         // Affichage
         return $this->render('security/loginModal.html.twig', [
             'inProgress' => $inProgress,
@@ -92,7 +93,7 @@ class SecurityController extends AbstractController {
         // Si aucun utilisateur n'existe avec ce token
         if(!$user) {
             // Erreur 404
-            throw $this->createNotFoundException('Cet utilisateur n\'existe pas');
+            throw $this->createNotFoundException('Cet utilisateur n\'existe pas !');
         }
 
         // On supprime le token
@@ -116,14 +117,24 @@ class SecurityController extends AbstractController {
      * @return Response
      */
     public function login(AuthenticationUtils $authenticationUtils) {
+
         $error =$authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
         $inProgress = false;
-        return $this->render('security/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error' => $error,
-            'inProgress' => $inProgress
-        ]);
+        if($error){
+            $this->addFlash('danger', 'Cet email n\'existe pas ou le mot de passe est erroné !');
+            return $this->render('home/index.html.twig', [
+                'error' => $error,
+                'inProgress' => $inProgress
+            ]);
+        }
+        else{
+            return $this->render('security/login.html.twig', [
+                'last_username' => $lastUsername,
+                'error' => $error,
+                'inProgress' => $inProgress
+            ]);
+        }
     }
 
     /**
@@ -138,7 +149,7 @@ class SecurityController extends AbstractController {
      */
     public function forgottenPass(Request $request, EterUserRepository $entityRepo, MailerInterface $mailer, TokenGeneratorInterface $tokenGenerator, EntityManagerInterface $manager) {
         $inProgress = false;
-        // Création le formulaire
+        // Création du formulaire
         $form = $this->createForm(ResetPassType::class);
 
         // Traitement du formulaire
@@ -157,7 +168,7 @@ class SecurityController extends AbstractController {
             if(!$user) {
 
                 // On envoie un message flash
-                $this->addFlash('danger', 'Cette adresse mail n\'existe pas');
+                $this->addFlash('danger', 'Cette adresse mail n\'existe pas !');
                 return $this->redirectToRoute('home',[
                     'inProgress' => $inProgress
                 ]);

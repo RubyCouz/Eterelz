@@ -36,7 +36,7 @@
 
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        {#                        <a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
+                        {#<a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
                         <button type="button" class="hamburger animated fadeInLeft is-closed mt-1"
                                 data-toggle="offcanvas">
                             <span class="hamb-top"></span>
@@ -167,7 +167,19 @@
     <footer class="footer">
 
         {% for message in app.flashes('success') %}
-            <div id="alert_registration" class="alert alert-success">
+            <div id="alert_registration" class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% for message in app.flashes('warning') %}
+            <div id="alert_registration" class="alert alert-warning" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        {% for message in app.flashes('danger') %}
+            <div id="alert_registration" class="alert alert-danger" role="alert">
                 {{ message }}
             </div>
         {% endfor %}

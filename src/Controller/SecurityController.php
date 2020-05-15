@@ -61,13 +61,7 @@ class SecurityController extends AbstractController {
             $email = (new TemplatedEmail())
                 ->from('contact@eterelz.org')
                 ->to($mail)
-                // ->cc('cc@example.com')
-                // ->bcc('bcc@example.com')
-                // ->replyTo('fabien@example.com')
-                // ->priority(Email::PRIORITY_HIGH)
                 ->subject('Confirmation d\'inscription')
-                //->text('Welcome')
-                //->html('<p>Votre inscription a bien été prise en compte !</p>')
                 ->htmlTemplate('emails/signup.html.twig')
                 ->context([
                     'date' => new \DateTime('now'),
@@ -91,6 +85,7 @@ class SecurityController extends AbstractController {
      * @Route("/activation/{token}", name="activation")
      */
     public function activation($token, Request $request, EterUserRepository $entityRepo, EntityManagerInterface $manager) {
+        $inProgress = false;
         // On vérifie si un utilisateur a ce token
         $user = $entityRepo->findOneBy(['activation_token' => $token]);
 
@@ -109,7 +104,9 @@ class SecurityController extends AbstractController {
         $this->addFlash('success', 'Votre compte a bien été activé');
 
         // On retourne à l'accueil
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('home',[
+            'inProgress' => $inProgress
+        ]);
     }
 
     
@@ -140,6 +137,7 @@ class SecurityController extends AbstractController {
      * @Route("/forgot_password", name="app_forgotten_password")
      */
     public function forgottenPass(Request $request, EterUserRepository $entityRepo, MailerInterface $mailer, TokenGeneratorInterface $tokenGenerator, EntityManagerInterface $manager) {
+        $inProgress = false;
         // Création le formulaire
         $form = $this->createForm(ResetPassType::class);
 
@@ -160,7 +158,6 @@ class SecurityController extends AbstractController {
 
                 // On envoie un message flash
                 $this->addFlash('danger', 'Cette adresse mail n\'existe pas');
-                $inProgress = false;
                 return $this->redirectToRoute('home',[
                     'inProgress' => $inProgress
                 ]);
@@ -175,37 +172,35 @@ class SecurityController extends AbstractController {
                 $manager->flush();
             }catch(\Exception $e) {
                 $this->addFlash('warning', 'Une erreur est survenue : '. $e->getMessage());
-                $inProgress = false;
                 return $this->redirectToRoute('home',[
                     'inProgress' => $inProgress
                 ]);
             }
 
-            // On génére l'url de réinitialisation
-            $url = $this->generateUrl('app_reset_password', ['token' => $token], UrlGeneratorInterface::ABSOLUTE_URL);
-
-            // On envoie le message
+            // Envoi mail
             $mail = $user->getUserMail();
 
             $email = (new TemplatedEmail())
                 ->from('contact@eterelz.org')
                 ->to($mail)
                 ->subject('Réinitialisation du mot de passe')
-                ->html("<p>Voici le lien pour réinitialiser votre mot de passe. Veuillez cliquer sur le lien suivant : " . $url ."</p>", 'text/html')
+                ->htmlTemplate('emails/reset_password.html.twig')
+                ->context([
+                    'username' => $user->getUserLogin(),
+                    'token' => $user->getResetToken(),
+                ])
                 ;
 
             $mailer->send($email);
 
             // On crée le message flash
             $this->addFlash('success', 'Un e-mail de réinitialisation du mot de passe vous a été envoyé');
-            $inProgress = false;
             return $this->redirectToRoute('home',[
                 'inProgress' => $inProgress
             ]);
         }
 
         // On envoie vers la page de demande de l'email
-        $inProgress = false;
         return $this->render('security/forgotten_password.html.twig', [
             'emailForm' => $form->createView(),
             'inProgress' => $inProgress
@@ -215,7 +210,38 @@ class SecurityController extends AbstractController {
     /**
      * @Route("/reset_password/{token}", name="app_reset_password")
      */
-    public function resetPassword() {
+    public function resetPassword($token, Request $request, UserPasswordEncoderInterface $passwordEncoder, EntityManagerInterface $manager) {
+        $inProgress = false;
+        // On cherche l'utilisateur avec le token fourni
+        $user = $this->getDoctrine()->getRepository(EterUser::class)->findOneBy(['reset_token' => $token]);
 
+        if(!$user) {
+            $this->addFlash('danger', 'Token inconnu');
+            return $this->redirectToRoute('home',[
+                'inProgress' => $inProgress
+            ]);
+        }
+
+        // On vérifie si le formulaire est envoyé en méthode POST
+        if($request->isMethod('POST')) {
+            // On supprime le token
+            $user->setResetToken(null);
+
+            // On crypte le mot de passe
+            $user->setUserPassword($passwordEncoder->encodePassword($user, $request->request->get('password')));
+            $manager->persist($user);
+            $manager->flush();
+
+            $this->addFlash('success', 'Mot de passe modifié avec succès');
+            return $this->redirectToRoute('home',[
+                'inProgress' => $inProgress
+            ]);
+        }
+        else {
+            return $this->render('security/reset_password.html.twig', [
+                'token'=> $token,
+                'inProgress' => $inProgress
+            ]);
+        }
     }
 }

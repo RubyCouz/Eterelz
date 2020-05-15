@@ -204,9 +204,9 @@ class SecurityController extends AbstractController {
                 ]);
             }
 
-            //Génération de l'URL de réinitialisation du mot de passe
+            /*Génération de l'URL de réinitialisation du mot de passe
             $url = $this->GenerateUrl('app_reset_password', ['token' => $token],
-                UrlGeneratorInterface::ABSOLUTE_URL);
+                UrlGeneratorInterface::ABSOLUTE_URL);*/
 
             //Envoi du message
             $mail = $user->getUserMail();
@@ -215,7 +215,11 @@ class SecurityController extends AbstractController {
                 ->from('contact@eterelz.org')
                 ->to($mail)
                 ->subject('Réinitialisation du mot de passe')
-                ->html('<p>Voici le lien pour réinitialiser votre mot de passe : </p>'.$url, 'text/html' );
+                ->htmlTemplate('emails/reset_password.html.twig')
+                ->context([
+                    'username' => $user->getUserLogin(),
+                    'token' => $user->getResetToken()
+                ]);
 
             //Envoi de l'email
             $mailer->send($email);

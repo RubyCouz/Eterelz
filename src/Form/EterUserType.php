@@ -2,7 +2,10 @@
 
 namespace App\Form;
 
+use App\Entity\EterClan;
+use App\Entity\EterGame;
 use App\Entity\EterUser;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
@@ -76,7 +79,12 @@ class EterUserType extends AbstractType
             //->add('user_role')
             //->add('label')
             ->add('user_clan')
-            ->add('user_game')
+            ->add('user_game', EntityType::class, [
+                'class' => EterGame::class,
+                'choice_label'=>'game_name',
+                'expanded' => true,
+                'multiple' => true
+            ])
             ->add('eterEvents')
             ->add('user_stream')
         ;

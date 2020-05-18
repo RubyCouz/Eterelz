@@ -547,3 +547,11 @@ Mise en forme forgotten_password.html.twig
 #forgot_img {
     margin-top: 60px;
 }
+
+/**
+Mise en forme label des jeux
+*/
+
+.form-check-label{
+    color:white;
+}

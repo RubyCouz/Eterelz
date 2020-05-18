@@ -553,3 +553,11 @@ Mise en forme forgotten_password.html.twig
 #forgot_img {
     margin-top: 60px;
 }
+
+#button_envoi3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}

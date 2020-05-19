@@ -2,9 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\EterGame;
 use App\Entity\EterUser;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Regex;
@@ -94,7 +96,12 @@ class EterUserType extends AbstractType
             //ChoiceType::class
             ->add('user_clan')
 
-            ->add('user_game')
+            ->add('user_game', EntityType::class, [
+                'class' => EterGame::class,
+                'choice_label'=>'game_name',
+                'expanded' => true,
+                'multiple' => true
+            ])
 
             ->add('eterEvents')
             

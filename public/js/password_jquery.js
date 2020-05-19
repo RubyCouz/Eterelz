@@ -12,21 +12,21 @@ function verif3()
      // EMAIL
 
      if (mail === "") 
-     {            
+     {  
+     /* 
+    On doit bloquer l'èvènement par défaut - ici l'envoi du formulaire avec l'instruction preventDefault(). Le paramètre 'event' est un objet (nommé librement) représentant l'évènement
+    */   
+        event.preventDefault();        
         var html = '<div class="alert alert-danger" role="alert">Votre email doit être renseigné !</div>';
         $("#alert8").append(html);
-        return false; 
      }
      else if (mail_v.test(mail) == false)
      {
+        event.preventDefault();
         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
         $("#alert8").append(html);
-        return false;
      }
-     else
-     {
-         
-     }
+    
 
     // Si aucun test n'a renvoyé faux, c'est qu'il n'y a pas d'erreur, le script arrive ici, le formulaire est envoyé via submit()
     document.forms[0].submit();
@@ -34,11 +34,7 @@ function verif3()
 
      $("#bouton_envoi3").click(function(event) 
 {
-    /* 
-    On doit bloquer l'èvènement par défaut - ici l'envoi du formulaire avec l'instruction preventDefault(). Le paramètre 'event' est un objet (nommé librement) représentant l'évènement
-    */         
-    event.preventDefault();
- 
+            
     // Appel de la fonction verif()
     verif3();             
 });

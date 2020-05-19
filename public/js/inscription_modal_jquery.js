@@ -14,34 +14,37 @@ function verif()
      // EMAIL
 
      if (mail === "") 
-     {            
-        var html = '<div class="alert alert-danger" role="alert">Votre email doit être renseigné !</div>';
-        $("#alert6").append(html);
-        return false;
-     }
-     else if (mail_v.test(mail) == false)
      {
-        var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
-        $("#alert6").append(html);
-        return false;
+         event.preventDefault();
+         var html = '<div class="alert alert-danger" role="alert">Votre email doit être renseigné !</div>';
+         $("#alert6").append(html);
+
      }
-     else{}
+     else if (mail_v.test(mail) === false)
+     {
+         event.preventDefault();
+         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
+         $("#alert6").append(html);
+     }
 
       // PASSWORD
 
      if (mdp === "") 
-     {            
-        var html = '<div class="alert alert-danger" role="alert">Veuillez saisir votre mot de passe !</div>';
-        $("#alert7").append(html); 
-        return false;
-     }
-     else if (mdp_v.test(mdp) == false)
      {
-        var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
-        $("#alert7").append(html);
-        return false;
+         event.preventDefault();
+         var html = '<div class="alert alert-danger" role="alert">Veuillez saisir votre mot de passe !</div>';
+         $("#alert7").append(html);
+         return false;
+
      }
-     else{}
+     else if (mdp_v.test(mdp) === false)
+     {
+         event.preventDefault();
+         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
+         $("#alert7").append(html);
+         return false;
+
+     }
 
     // Si aucun test n'a renvoyé faux, c'est qu'il n'y a pas d'erreur, le script arrive ici, le formulaire est envoyé via submit()
     document.forms[0].submit();
@@ -51,9 +54,7 @@ function verif()
 {
     /* 
     On doit bloquer l'èvènement par défaut - ici l'envoi du formulaire avec l'instruction preventDefault(). Le paramètre 'event' est un objet (nommé librement) représentant l'évènement
-    */         
-    event.preventDefault();
- 
+    */
     // Appel de la fonction verif()
     verif();             
 });

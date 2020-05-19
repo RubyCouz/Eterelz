@@ -2,7 +2,6 @@
 
 namespace App\Form;
 
-use App\Entity\EterClan;
 use App\Entity\EterGame;
 use App\Entity\EterUser;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -15,7 +14,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class EterUserType extends AbstractType

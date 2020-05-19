@@ -11,15 +11,16 @@ function verif()
 
     if (mailf === "")
     {
+        //On doit bloquer l'èvènement par défaut - ici l'envoi du formulaire avec l'instruction preventDefault(). Le paramètre 'event' est un objet (nommé librement) représentant l'évènement
+        event.preventDefault();
         var html = '<div class="alert alert-danger" role="alert">Votre email doit être renseigné !</div>';
         $("#alertforgot").append(html);
-        return false;
     }
     else if (mailf_v.test(mailf) === false)
     {
+        event.preventDefault();
         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
         $("#alertforgot").append(html);
-        return false;
     }
     else{}
 
@@ -27,13 +28,8 @@ function verif()
     document.forms[0].submit();
 }
 
-$("#button_forgot").click(function(event)
+$('#button_forgot').click(function(event)
 {
-    /*
-    On doit bloquer l'èvènement par défaut - ici l'envoi du formulaire avec l'instruction preventDefault(). Le paramètre 'event' est un objet (nommé librement) représentant l'évènement
-    */
-    event.preventDefault();
-
     // Appel de la fonction verif()
     verif();
 });

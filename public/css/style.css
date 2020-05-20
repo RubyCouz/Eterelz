@@ -363,7 +363,7 @@ Bouton se connecter dans la barre de navigation
 Formulaire d'inscription loginModal.html.twig
 */
 .navbar.navbar-dark form .md-form .form-control {
-    color: black;
+    color: #4285f4;
 }
 
 .navbar.navbar-dark form .md-form input {
@@ -387,6 +387,22 @@ Formulaire d'inscription loginModal.html.twig
 #mdp_perdu {
     font-size: 14px;
     margin-top:10px;
+}
+
+.nav-link {
+    background: linear-gradient(40deg, #ff6ec4, #7873f5) !important;
+    color: white !important;
+    border: white !important;
+}
+
+.modal-c-tabs {
+    margin-left: -15px;
+    margin-right: -16px;
+}
+
+.modal-footer {
+    margin-left: 14px;
+    margin-right: 17px;
 }
 
 /**

@@ -80,103 +80,83 @@ function verif2()
     // LOGIN
 
     if (identifiant === "") 
-    {            
+    {
+        event.preventDefault();
         var html = '<div class="alert alert-danger" role="alert">Veuillez créer un login !</div>';
         $("#alert1").append(html);
-        return false;
     }
-    else if (identifiant_v.test(identifiant) == false)
+    else if (identifiant_v.test(identifiant) === false)
     {
+        event.preventDefault();
         var html = '<div class="alert alert-warning" role="alert">Caractère(s) non autorisé(s) !</div>';
         $("#alert1").append(html);
-        return false;
-    }
-    else
-    {
-        var html = '<div class="alert alert-success" role="alert">Votre login est validé</div>';
-        $("#alert1").append(html);
+
     }
 
      // EMAIL
 
      if (email === "") 
-     {            
+     {
+         event.preventDefault();
         var html = '<div class="alert alert-danger" role="alert">Votre email doit être renseigné !</div>';
         $("#alert2").append(html);
-        return false;
+
      }
-     else if (email_v.test(email) == false)
+     else if (email_v.test(email) === false)
      {
+         event.preventDefault();
         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
         $("#alert2").append(html);
-        return false;
-     }
-     else
-     {
-         var html = '<div class="alert alert-success" role="alert">Votre email est validé</div>';
-         $("#alert2").append(html);
+
      }
 
       // ID DISCORD
 
       if (discord === "") 
-      {            
+      {
+          event.preventDefault();
          var html = '<div class="alert alert-danger" role="alert">Veuillez créer un ID Discord !</div>';
          $("#alert3").append(html);
-         return false;
       }
-      else if (discord_v.test(discord) == false)
+      else if (discord_v.test(discord) === false)
       {
+          event.preventDefault();
          var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
          $("#alert3").append(html);
-         return false;
-      }
-      else
-      {
-          var html = '<div class="alert alert-success" role="alert">Votre ID Discord est validé</div>';
-          $("#alert3").append(html);
       }
 
       // PASSWORD
 
      if (password === "") 
-     {            
+     {
+         event.preventDefault();
         var html = '<div class="alert alert-danger" role="alert">Veuillez créer un mot de passe !</div>';
         $("#alert4").append(html);
-        return false;
      }
-     else if (password_v.test(password) == false)
+     else if (password_v.test(password) === false)
      {
+         event.preventDefault();
         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
         $("#alert4").append(html);
-        return false;
-     }
-     else
-     {
-         var html = '<div class="alert alert-success" role="alert">Votre mot de passe est validé</div>';
-         $("#alert4").append(html);
+
      }
 
      // CONFIRMATION PASSWORD
 
      if (conf_password === "") 
-     {            
+     {
+         event.preventDefault();
         var html = '<div class="alert alert-danger" role="alert">Veuillez confirmer votre mot de passe !</div>';
         $("#alert5").append(html);
         return false;
      }
      else if (conf_password !== password)
      {
+         event.preventDefault();
         var html = '<div class="alert alert-warning" role="alert">Les deux mots de passe sont différents !</div>';
         $("#alert5").append(html);
         return false;
      }
-     else
-     {
-         var html = '<div class="alert alert-success" role="alert">Votre confirmation de mot de passe est validée</div>';
-         $("#alert5").append(html);
-     }
-
 
     // Si aucun test n'a renvoyé faux, c'est qu'il n'y a pas d'erreur, le script arrive ici, le formulaire est envoyé via submit()
     document.forms[1].submit();
@@ -184,11 +164,7 @@ function verif2()
 
      $("#bouton_envoi2").click(function(event) 
 {
-    /* 
-    On doit bloquer l'èvènement par défaut - ici l'envoi du formulaire avec l'instruction preventDefault(). Le paramètre 'event' est un objet (nommé librement) représentant l'évènement
-    */         
-    event.preventDefault();
- 
+
     // Appel de la fonction verif()
     verif2();             
 });

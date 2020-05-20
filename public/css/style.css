@@ -99,10 +99,12 @@ navbar
     width: 10em;
     height: auto;
 }
+
 .menu-social {
     font-size: 25px;
     color: #53C8E0 !important;
 }
+
 .nav-link {
     color: #53C8E0 !important;
 }
@@ -142,10 +144,10 @@ navbar
     width: 400px;
 }
 
-
 .footer {
     height: 200px;
 }
+
 /**
 Modal connexion
  */
@@ -158,6 +160,7 @@ Modal connexion
 .signin {
     border-radius: 0 25px 25px 0 !important;
 }
+
 /**
 table
  */
@@ -354,6 +357,7 @@ Bouton se connecter dans la barre de navigation
 }
 
 /*Peut être enlever pour la side-barre*/
+
 .sticky-top {
     position: absolute;
 }
@@ -361,8 +365,10 @@ Bouton se connecter dans la barre de navigation
 /**
 Formulaire d'inscription loginModal.html.twig
 */
+
 .navbar.navbar-dark form .md-form .form-control {
-    color: black;
+    color: #4285F4;
+    font-size: 15px;
 }
 
 .navbar.navbar-dark form .md-form input {
@@ -388,9 +394,35 @@ Formulaire d'inscription loginModal.html.twig
     margin-top:10px;
 }
 
+.nav-link {
+    background: linear-gradient(40deg, #ff6ec4, #7873f5) !important;
+    color: white !important;
+    border: white !important;
+    border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0 !important;
+}
+
+.modal-c-tabs {
+    margin-left: -15px;
+    margin-right: -16px;
+}
+
+.modal-footer {
+    margin-left: 14px;
+    margin-right: 17px;
+}
+
+.show-password {
+	font-size: 9px;
+	text-transform: uppercase;
+	position: absolute;
+    cursor: pointer;
+    margin-left: 420px;
+}
+
 /**
 Message d'erreurs loginModal.html.twig
 */
+
 #alert1, #alert2, #alert3, #alert4, #alert5, #alert6, #alert7 {
     font-size: 13px;
 }
@@ -402,6 +434,7 @@ Message d'erreurs loginModal.html.twig
 /**
 Mise en forme index.html.twig
 */
+
 #cards {
     display: inline-block;
     margin-top: 80px;
@@ -434,18 +467,19 @@ Mise en forme index.html.twig
 /**
 Mise en forme show.html.twig
 */
+
 .card-title {
     text-align: center;
     color:white;
     font-size: 50px;
 }
 
-#rens {
+#rens1, #rens2, #rens3, #rens4, #rens5, #rens6, #rens7, #rens8, #rens9, #rens10, #rens11, #rens12, #rens13 {
     color:white;
     font-size: 25px;
 }
 
-#edit_rens {
+#edit_rens1, #edit_rens2, #edit_rens3, #edit_rens4, #edit_rens5, #edit_rens6, #edit_rens7, #edit_rens8, #edit_rens9, #edit_rens10, #edit_rens11, #edit_rens12, #edit_rens13 {
     color: grey;
     border: 2px solid grey;
     border-radius: 5px;
@@ -485,6 +519,7 @@ Mise en forme show.html.twig
 /**
 Mise en forme edit.html.twig
 */
+
 #editinp{
     color:white;
     font-size: 20px;
@@ -531,6 +566,7 @@ h5 {
 /**
 Mise en forme message de succès d'activation de compte base.html.twig
 */
+
 #alert_registration {
     margin-top: 20px;
 }
@@ -538,6 +574,7 @@ Mise en forme message de succès d'activation de compte base.html.twig
 /**
 Mise en forme forgotten_password.html.twig
 */
+
 #forgot_pass2 {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -560,6 +597,22 @@ Mise en forme forgotten_password.html.twig
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 15px;
+}
+
+/**
+Mise en forme reset_password.html.twig
+*/
+
+#bouton_envoi4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}
+
+#pass {
+    margin-bottom: 10px;
 }
 
 /**

@@ -72,6 +72,10 @@ class SecurityController extends AbstractController {
                 ;
 
             $mailer->send($email);
+
+            // On envoie un message flash
+            $this->addFlash('success', 'Un email de confirmation vous a été envoyé');
+
             return $this->redirectToRoute('home');
         }
         

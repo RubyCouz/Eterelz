@@ -368,6 +368,7 @@ Formulaire d'inscription loginModal.html.twig
 
 .navbar.navbar-dark form .md-form .form-control {
     color: #4285F4;
+    font-size: 15px;
 }
 
 .navbar.navbar-dark form .md-form input {
@@ -408,6 +409,14 @@ Formulaire d'inscription loginModal.html.twig
 .modal-footer {
     margin-left: 14px;
     margin-right: 17px;
+}
+
+.show-password {
+	font-size: 9px;
+	text-transform: uppercase;
+	position: absolute;
+    cursor: pointer;
+    margin-left: 420px;
 }
 
 /**
@@ -465,12 +474,12 @@ Mise en forme show.html.twig
     font-size: 50px;
 }
 
-#rens {
+#rens1, #rens2, #rens3, #rens4, #rens5, #rens6, #rens7, #rens8, #rens9, #rens10, #rens11, #rens12, #rens13 {
     color:white;
     font-size: 25px;
 }
 
-#edit_rens {
+#edit_rens1, #edit_rens2, #edit_rens3, #edit_rens4, #edit_rens5, #edit_rens6, #edit_rens7, #edit_rens8, #edit_rens9, #edit_rens10, #edit_rens11, #edit_rens12, #edit_rens13 {
     color: grey;
     border: 2px solid grey;
     border-radius: 5px;

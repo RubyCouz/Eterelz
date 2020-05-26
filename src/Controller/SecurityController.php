@@ -56,6 +56,10 @@ class SecurityController extends AbstractController {
                 //On génère le token d'activation
                 $user->setActivationToken(uniqid());
 
+                //On génère la date de l'inscription
+                $date = new \DateTime('Europe/Paris');
+                $user->setCreatedAt($date);
+
                 $statut = 1;
                 $user->setStatut($statut);
                 $user->setUserRole('Utilisateur');
@@ -81,7 +85,7 @@ class SecurityController extends AbstractController {
                     //->html('<p>Votre inscription a bien été prise en compte !</p>')
                     ->htmlTemplate('emails/signup.html.twig')
                     ->context([
-                        'expiration_date' => new \DateTime('+3 minutes'),
+                        'expiration_date' => new \DateTime('+1 minute'),
                         'username' => $user->getUserLogin(),
                         'date' => new \DateTime('now'),
                         'token' => $user->getActivationToken()
@@ -111,6 +115,15 @@ class SecurityController extends AbstractController {
     public function activation($token, EterUserRepository $entityRepo, EntityManagerInterface $manager){
 
         $inProgress = false;
+
+        //Comparaison des dates pour validation d'activation du compte
+
+        $date = new \DateTime('+1 minute');
+        $user = getCreatedAt();
+        if($user > $date){
+            throw $this->createNotFoundException('Le lien n\'est plus valide');
+        }
+
         // On vérifie si un utilisateur a ce token
         $user = $entityRepo->findOneBy(['activation_token' => $token]);
 

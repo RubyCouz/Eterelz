@@ -20,12 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/Brenda-5eccdadc7bc29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/Brenda-5eccdd4686885.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/Brenda-5eccdf2418e24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/Brenda-5ecce15f37273.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/KoCGOY-5ecce1196fcd8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/MV5BOGQ2MzlmMDItNDE0NS00OTVhLThlYzgtZjUzMWZlZmYyMjk1XkEyXkFqcGdeQXVyNTA1NDY3NzY-at-V1-5eccddc680b9d.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/MV5BOGQ2MzlmMDItNDE0NS00OTVhLThlYzgtZjUzMWZlZmYyMjk1XkEyXkFqcGdeQXVyNTA1NDY3NzY-at-V1-5eccdf5c8d85e.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/MV5BOGQ2MzlmMDItNDE0NS00OTVhLThlYzgtZjUzMWZlZmYyMjk1XkEyXkFqcGdeQXVyNTA1NDY3NzY-at-V1-5ecce291797cd.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/patate-sexy-1-5eccdfcca95d5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/patate-sexy-1-5ecce34c33520.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/patate-sexy-1-5ecd0a5d06b12.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/thumb-1920-558676-5eccdb34be8ef.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/thumb-1920-558676-5eccdd7ba552e.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/thumb-1920-558676-5eccde21e8912.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/thumb-1920-558676-5eccde5dd5b18.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/eter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/eter.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/eter_user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eter_user/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/eter_user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eter_user/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/loginModal.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/loginModal.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/registration.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/registration.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +114,6 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
@@ -169,6 +190,10 @@
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/vendor/symfony/templating" />
+      <path value="$PROJECT_DIR$/vendor/liip/imagine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/imagine/imagine" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
     </include_path>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -198,7 +223,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -289,7 +314,12 @@
       <workItem from="1589803403589" duration="9596000" />
       <workItem from="1589872222776" duration="14394000" />
       <workItem from="1589955755994" duration="616000" />
-      <workItem from="1589959592734" duration="16297000" />
+      <workItem from="1589959592734" duration="16745000" />
+      <workItem from="1590224045523" duration="230000" />
+      <workItem from="1590224292727" duration="757000" />
+      <workItem from="1590390119981" duration="7807000" />
+      <workItem from="1590401299799" duration="599000" />
+      <workItem from="1590473662849" duration="16757000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -613,7 +643,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589970415295</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Masquage/Affichage mot de passe">
+      <created>1589986248997</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1589986248997</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +670,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="test navbar" />
     <MESSAGE value="onglet social css" />
     <MESSAGE value="fin mise en place oglet social" />
     <MESSAGE value="fix back office plus envoie de mail" />
@@ -658,7 +694,8 @@
     <MESSAGE value="Essais erreur mdp perdu + jeux profil" />
     <MESSAGE value="Messages erreur mdp oublié ok" />
     <MESSAGE value="Messages erreur nouveau mdp ok + CSS LoginModal ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Messages erreur nouveau mdp ok + CSS LoginModal ok" />
+    <MESSAGE value="Masquage/Affichage mot de passe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Masquage/Affichage mot de passe" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -692,9 +729,10 @@
     <state x="2493" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586255105377" />
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583917916958" />
     <state x="2493" y="34" key="CommitChangelistDialog2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587145562668" />
-    <state x="899" y="273" key="FileChooserDialogImpl" timestamp="1589295117975">
+    <state x="899" y="273" key="FileChooserDialogImpl" timestamp="1590390528417">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="899" y="273" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590390528417" />
     <state x="899" y="273" key="FileChooserDialogImpl/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589295117975" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1589443360438">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -732,9 +770,10 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2584" y="246" width="1081" height="587" key="MultipleFileMergeDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588174995839" />
-    <state x="461" y="165" width="1199" height="716" key="SettingsEditor" timestamp="1589967043653">
+    <state x="461" y="165" width="1199" height="716" key="SettingsEditor" timestamp="1590390533990">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590390533990" />
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589967043653" />
     <state x="2381" y="197" key="SettingsEditor/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586181792395" />
     <state x="2381" y="197" width="1199" height="716" key="SettingsEditor/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587143481099" />
@@ -746,10 +785,10 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1589970417106">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1589986250636">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589970417106" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589986250636" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />
@@ -776,9 +815,10 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2645" y="170" key="git4idea.branch.GitSmartOperationDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588007625038" />
-    <state x="567" y="148" width="1105" height="741" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1589295131272">
+    <state x="567" y="148" width="968" height="684" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1590390533297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="567" y="148" width="968" height="684" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590390533297" />
     <state x="567" y="148" width="1105" height="741" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589295131272" />
     <state x="616" y="226" width="672" height="671" key="run.anything.popup" timestamp="1589458714328">
       <screen x="0" y="0" width="1920" height="1040" />

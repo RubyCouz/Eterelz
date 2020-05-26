@@ -158,9 +158,15 @@ class EterUser implements UserInterface
      */
     private $reset_token;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $created_at;
+
     public function __construct()
     {
         $this->user_date = new \DateTime('Europe/Paris');
+        $this->created_at = new \DateTime('Europe/Paris');
         $this->role = new ArrayCollection();
         $this->user_clan = new ArrayCollection();
         $this->user_game = new ArrayCollection();
@@ -606,6 +612,18 @@ class EterUser implements UserInterface
     public function setResetToken(?string $reset_token): self
     {
         $this->reset_token = $reset_token;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $created_at): self
+    {
+        $this->created_at = $created_at;
 
         return $this;
     }

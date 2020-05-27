@@ -11,11 +11,11 @@
             <div id="show1" class="col-md-12">
                 {% if eter_user.userAvatar %}
 
-                <img id="image" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) }}" alt="default_profil">
+                <img id="image" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) | imagine_filter('profil') }}" alt="default_profil">
 
                 {% else %}
 
-                <img id="image" src="{{ asset('img/upload/profil_pic/default-profil.jpg') }}" alt="default_profil">
+                <img id="image" src="{{ asset('img/upload/profil_pic/default-profil.jpg') | imagine_filter('profil') }}" alt="default_profil">
 
                 {% endif %}
             </div>

@@ -56,10 +56,6 @@ class SecurityController extends AbstractController {
                 //On génère le token d'activation
                 $user->setActivationToken(uniqid());
 
-                //On génère la date de l'inscription
-                $date = new \DateTime('Europe/Paris');
-                $user->setCreatedAt($date);
-
                 $statut = 1;
                 $user->setStatut($statut);
                 $user->setUserRole('Utilisateur');
@@ -116,14 +112,6 @@ class SecurityController extends AbstractController {
 
         $inProgress = false;
 
-        //Comparaison des dates pour validation d'activation du compte
-
-        $date = new \DateTime('+1 minute');
-        $user = getCreatedAt();
-        if($user > $date){
-            throw $this->createNotFoundException('Le lien n\'est plus valide');
-        }
-
         // On vérifie si un utilisateur a ce token
         $user = $entityRepo->findOneBy(['activation_token' => $token]);
 
@@ -131,6 +119,29 @@ class SecurityController extends AbstractController {
         if(!$user){
             //Erreur 404
             throw $this->createNotFoundException('Cet utilisateur n\'existe pas');
+        }
+
+        else if($user){
+
+            //Comparaison des dates pour validation d'activation du compte
+
+            $date = new \DateTime('Europe/Paris');
+
+            //Insertion de la date à laquelle l'utilisateur a cliqué sur le lien
+            $user->setUserDate($date);
+
+            //Récupération de la date renouvelée
+            $datereg = $user->getUserDate();
+
+            //Initialisation de la date limite
+            $datelimit = $date->modify('+1 minute');
+
+            //Condition de validation du lien
+            if($datereg > $datelimit){
+
+                throw $this->createNotFoundException('Le lien n\'est plus valide');
+
+            }
         }
 
         // On supprime le token

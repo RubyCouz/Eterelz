@@ -34,14 +34,12 @@ function verif()
         var html = '<div class="alert alert-danger" role="alert">Veuillez saisir votre mot de passe !</div>';
         $("#alert7").append(html); 
         event.preventDefault();
-        return false;
      }
      else if (mdp_v.test(mdp) == false)
      {
         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
         $("#alert7").append(html);
         event.preventDefault();
-        return false;
      }
 
     // Si aucun test n'a renvoyé faux, c'est qu'il n'y a pas d'erreur, le script arrive ici, le formulaire est envoyé via submit()
@@ -79,12 +77,14 @@ function verif2()
         var html = '<div class="alert alert-danger" role="alert">Veuillez créer un login !</div>';
         $("#alert1").append(html);
         event.preventDefault();  
+        return false;
     }
     else if (identifiant_v.test(identifiant) == false)
     {
         var html = '<div class="alert alert-warning" role="alert">Caractère(s) non autorisé(s) !</div>';
         $("#alert1").append(html);
         event.preventDefault();
+        return false;
     }
     else
     {
@@ -99,12 +99,14 @@ function verif2()
         var html = '<div class="alert alert-danger" role="alert">Votre email doit être renseigné !</div>';
         $("#alert2").append(html);
         event.preventDefault();
+        return false;
      }
      else if (email_v.test(email) == false)
      {
         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
         $("#alert2").append(html);
         event.preventDefault();
+        return false;
      }
      else
      {
@@ -119,12 +121,14 @@ function verif2()
          var html = '<div class="alert alert-danger" role="alert">Veuillez créer un ID Discord !</div>';
          $("#alert3").append(html);
          event.preventDefault(); 
+         return false;
       }
       else if (discord_v.test(discord) == false)
       {
          var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
          $("#alert3").append(html);
          event.preventDefault();
+         return false;
       }
       else
       {
@@ -139,12 +143,14 @@ function verif2()
         var html = '<div class="alert alert-danger" role="alert">Veuillez créer un mot de passe !</div>';
         $("#alert4").append(html); 
         event.preventDefault(); 
+        return false;
      }
      else if (password_v.test(password) == false)
      {
         var html = '<div class="alert alert-warning" role="alert">Format non valide !</div>';
         $("#alert4").append(html);
         event.preventDefault();
+        return false;
      }
      else
      {

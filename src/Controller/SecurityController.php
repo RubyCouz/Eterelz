@@ -36,25 +36,38 @@ class SecurityController extends AbstractController {
         // Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
         $user = new EterUser(); 
         $inProgress = false;
+
         // Création du formulaire selon la table user
         $form = $this->createForm(SigninType::class, $user);
+
         // Analyse de la requête
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()) {
+        if($form->isSubmitted() && $form->isValid())
+        {
             // Encryptage du mot de passe selon la configuration dans security.yaml de config
             // Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
             $hash = $encoder->encodePassword($user, $user->getUserPassword());
+
             // Validation du remplacement du mot de passe par un encryptage
             $user->setUserPassword($hash);
+
             // On génère le token d'activation
             $user->setActivationToken(uniqid());
+
+            // On génère la date d'inscription, utile plus tard pour le lien d'activation
+            $dateinscr = strtotime('now');
+            $user->setDateInscr($dateinscr);
+
             $statut = 1;
             $user->setStatut($statut);
             $user->setUserRole('Utilisateur');
+
             // Garde en mémoire les données soumises
             $manager->persist($user);
+
             // Envoi des données à la BDD
             $manager->flush();
+
             // Envoi mail
             $mail = $user->getUserMail();
 
@@ -65,7 +78,7 @@ class SecurityController extends AbstractController {
                 ->htmlTemplate('emails/signup.html.twig')
                 ->context([
                     'date' => new \DateTime('now'),
-                    'expiration_date' => new \DateTime('+3 minute'),
+                    'expiration_date' => new \DateTime('+1 day'),
                     'username' => $user->getUserLogin(),
                     'token' => $user->getActivationToken(),
                 ])
@@ -95,9 +108,40 @@ class SecurityController extends AbstractController {
         $user = $entityRepo->findOneBy(['activation_token' => $token]);
 
         // Si aucun utilisateur n'existe avec ce token
-        if(!$user) {
-            // Erreur 404
-            throw $this->createNotFoundException('Cet utilisateur n\'existe pas !');
+        if(!$user)
+        {
+            // On envoie un message flash
+            $this->addFlash('danger', 'Cet utilisateur n\'existe pas');
+            // On retourne à l'accueil
+            return $this->redirectToRoute('home', [
+                'inProgress' => $inProgress,
+            ]);
+        }
+
+        else if($user)
+        {
+            // Définition de la date du clic sur le lien
+            $datelien = strtotime('now');
+            // Enregistrement en BDD de la date du clic sur le lien
+            $user->setDateLien($datelien);
+            // Récupération de la date d'inscription
+            $dateinscr = $user-> getDateInscr();
+            // Calcul pour déterminer l'intervalle de temps entre les deux dates
+            $dateinterval = ($datelien - $dateinscr );
+
+            // Condition de validation du lien (ici 24 heures)
+            if($dateinterval > 86400)
+            {
+                // Suppression du compte et message d'alerte
+                $manager->remove($user);
+                $manager->flush();
+                $this->addFlash('danger', 'Le lien n\'est plus valide, veuillez vous réinscrire');
+
+                // On retourne à l'accueil
+                return $this->redirectToRoute('home', [
+                    'inProgress' => $inProgress,
+                ]);
+            }
         }
 
         // On supprime le token

@@ -56,6 +56,10 @@ class SecurityController extends AbstractController {
                 //On génère le token d'activation
                 $user->setActivationToken(uniqid());
 
+                //On génère la date d'inscription, utile plus tard pour le lien d'activation
+                $dateinscr = strtotime('now');
+                $user->setDateInscr($dateinscr);
+
                 $statut = 1;
                 $user->setStatut($statut);
                 $user->setUserRole('Utilisateur');
@@ -81,7 +85,7 @@ class SecurityController extends AbstractController {
                     //->html('<p>Votre inscription a bien été prise en compte !</p>')
                     ->htmlTemplate('emails/signup.html.twig')
                     ->context([
-                        'expiration_date' => new \DateTime('+1 minute'),
+                        'expiration_date' => new \DateTime('+1 day'),
                         'username' => $user->getUserLogin(),
                         'date' => new \DateTime('now'),
                         'token' => $user->getActivationToken()
@@ -117,30 +121,41 @@ class SecurityController extends AbstractController {
 
         //Si aucun utilisateur n'existe avec ce token
         if(!$user){
-            //Erreur 404
-            throw $this->createNotFoundException('Cet utilisateur n\'existe pas');
+            //Message AddFlash pour signaler un utilisateur inexistant
+            $this->addFlash('danger', 'Cet utilisateur n\'existe pas');
+
+            //On retourne à l'accueil
+            return $this->redirectToRoute('home', [
+                'inProgress' => $inProgress,
+            ]);
         }
 
         else if($user){
 
-            //Comparaison des dates pour validation d'activation du compte
+            //Définition de la date du clic sur le lien
+            $datelien = strtotime('now');
 
-            $date = new \DateTime('Europe/Paris');
+            //Enregistrement en BDD de la date du clic sur le lien
+            $user->setDateLien($datelien);
 
-            //Insertion de la date à laquelle l'utilisateur a cliqué sur le lien
-            $user->setUserDate($date);
+            //Récupération de la date d'inscription
+            $dateinscr = $user-> getDateInscr();
 
-            //Récupération de la date renouvelée
-            $datereg = $user->getUserDate();
+            //Calcul pour définir l'intervalle de temps entre les deux dates
+            $dateinterval = ($datelien - $dateinscr );
 
-            //Initialisation de la date limite
-            $datelimit = $date->modify('+1 minute');
+            //Condition de validation du lien (ici 24 heures)
+            if($dateinterval > 86400){
 
-            //Condition de validation du lien
-            if($datereg > $datelimit){
+                //Suppression du compte provisoire et message d'alerte
+                $manager->remove($user);
+                $manager->flush();
+                $this->addFlash('danger', 'Le lien n\'est plus valide, veuillez vous réinscrire');
 
-                throw $this->createNotFoundException('Le lien n\'est plus valide');
-
+                //On retourne à l'accueil
+                return $this->redirectToRoute('home', [
+                    'inProgress' => $inProgress,
+                ]);
             }
         }
 

@@ -21,9 +21,27 @@
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/emails/signup.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/signup.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/Brenda-5eccdadc7bc29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/Brenda-5eccdd4686885.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/Brenda-5eccdf2418e24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/Brenda-5ecce15f37273.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/KoCGOY-5ecce1196fcd8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/MV5BOGQ2MzlmMDItNDE0NS00OTVhLThlYzgtZjUzMWZlZmYyMjk1XkEyXkFqcGdeQXVyNTA1NDY3NzY-at-V1-5eccddc680b9d.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/MV5BOGQ2MzlmMDItNDE0NS00OTVhLThlYzgtZjUzMWZlZmYyMjk1XkEyXkFqcGdeQXVyNTA1NDY3NzY-at-V1-5eccdf5c8d85e.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/MV5BOGQ2MzlmMDItNDE0NS00OTVhLThlYzgtZjUzMWZlZmYyMjk1XkEyXkFqcGdeQXVyNTA1NDY3NzY-at-V1-5ecce291797cd.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/patate-sexy-1-5eccdfcca95d5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/patate-sexy-1-5ecce34c33520.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/thumb-1920-558676-5eba996bafd1e.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/thumb-1920-558676-5ebaa6a8bea2e.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/thumb-1920-558676-5eccdb34be8ef.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/thumb-1920-558676-5eccdd7ba552e.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/thumb-1920-558676-5eccde21e8912.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/upload/profil_pic/thumb-1920-558676-5eccde5dd5b18.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/inscription_modal_jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/inscription_modal_jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/eter_user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eter_user/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/eter_user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eter_user/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,14 +316,7 @@
       <workItem from="1590473662849" duration="17191000" />
       <workItem from="1590563197755" duration="15505000" />
       <workItem from="1590650610439" duration="24000" />
-      <workItem from="1590650652047" duration="10800000" />
-    </task>
-    <task id="LOCAL-00001" summary="début de chantier">
-      <created>1583359113034</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1583359113034</updated>
+      <workItem from="1590650652047" duration="17172000" />
     </task>
     <task id="LOCAL-00002" summary="mise en page affichage connection">
       <created>1583440864213</created>
@@ -643,7 +654,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590592780850</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Lien confirmation validité 24h ok">
+      <created>1590667296201</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1590667296203</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -663,7 +681,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix back office plus envoie de mail" />
     <MESSAGE value="ajout sidebar" />
     <MESSAGE value="fix" />
     <MESSAGE value="test connexion modal" />
@@ -688,7 +705,8 @@
     <MESSAGE value="Masquage/Affichage mot de passe" />
     <MESSAGE value="Redimension images ok + validité lien en cours" />
     <MESSAGE value="Essais durée lien validité activation compte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Essais durée lien validité activation compte" />
+    <MESSAGE value="Lien confirmation validité 24h ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lien confirmation validité 24h ok" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -778,10 +796,10 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1590592785122">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1590667299677">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590592785122" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590667299677" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589986250636" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />

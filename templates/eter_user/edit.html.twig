@@ -178,8 +178,10 @@
                             </div>
                         </div>
 
-                        <div id="editbutton" class="row">
+                        <div id="editbutton" >
+                            <button class="btn btn-info">Retour</button>
                         <button class="btn btn-success">{{ button_label|default('Mettre à jour') }}</button>
+                        </div>
 {{ form_end(form) }}
                         {{ include('eter_user/_delete_form.html.twig') }}
                         {#<a href="{{ path('eter_user_index') }}">Retour</a>#}

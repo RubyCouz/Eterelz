@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profil{% endblock %}
+{% block title %}Affichage du profil{% endblock %}
 
 {% block body %}
 
@@ -74,7 +74,10 @@
                 </div>
             </div>
         </div>
-        <a type="button" id="modifier" class="btn btn-info" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
+        <div id="modifier">
+        <a class="btn btn-info" href="{{ path('home') }}">Retour</a>
+        <a class="btn btn-success" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
+        </div>
     </div>
     
 </div>

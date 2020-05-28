@@ -9,5 +9,5 @@
 
 <p>
     <a href="{{ absolute_url(path('activation', {'token': token})) }}">Cliquez sur ce lien pour activer votre compte</a>
-    (ce lien est valide jusqu'au {{ expiration_date|date('F jS G:i') }})
+    (ce lien est valide 24h, jusqu'au {{ expiration_date|date('d/m/Y G:i') }})
 </p>

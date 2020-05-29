@@ -10,24 +10,22 @@
     <div class="card">
     <h5 class="card-title2">Modification du profil</h5>
         <div id ="cardprofil" class="row no-gutters">
-{#------------------------------AVATAR-----------------------------#}
-
             <div class="col-md-4 pl-3">
-
-            {% if eter_user.userAvatar %}
+                {% if eter_user.userAvatar %}
                 <div id="edit_img">
-                <img id="editimg" class="card-img" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) }}" alt="default_profil">
-                    {{ form_widget(form.user_avatar) }}
-                    {{ form_errors(form.user_avatar) }}
+                <img id="editimg" class="card-img"
+                     src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) | imagine_filter('profil') }}" alt="default_profil">
+                {{ form_widget(form.user_avatar) }}
+                {{ form_errors(form.user_avatar) }}
                 </div>
                 {% else %}
                 <div id="edit_img">
-                <img id="editimg" class="card-img" src="{{ asset('img/upload/profil_pic/default-profil.jpg') }}" alt="default_profil">
+                <img id="editimg" class="card-img"
+                     src="{{ asset('img/upload/profil_pic/default-profil.jpg') | imagine_filter('profil') }}" alt="default_profil">
                     {{ form_widget(form.user_avatar) }}
                     {{ form_errors(form.user_avatar) }}
                 </div>
                 {% endif %}
-
             </div>
 
             <div id="editoblig" class="col-md-8">
@@ -180,8 +178,10 @@
                             </div>
                         </div>
 
-                        <div id="editbutton" class="row">
+                        <div id="editbutton" >
+                            <button class="btn btn-info">Retour</button>
                         <button class="btn btn-success">{{ button_label|default('Mettre à jour') }}</button>
+                        </div>
 {{ form_end(form) }}
                         {{ include('eter_user/_delete_form.html.twig') }}
                         {#<a href="{{ path('eter_user_index') }}">Retour</a>#}

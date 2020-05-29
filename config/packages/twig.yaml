@@ -2,7 +2,5 @@ twig:
     default_path: '%kernel.project_dir%/templates'
     # Thème bootstrap pour le formulaire
     form_themes: ['bootstrap_4_layout.html.twig']
-    paths:
-        '%kernel.project_dir%/public/img/logo': images
     date:
         timezone: Europe/Paris

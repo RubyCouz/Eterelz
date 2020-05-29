@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profil{% endblock %}
+{% block title %}Affichage du profil{% endblock %}
 
 {% block body %}
 
@@ -10,13 +10,13 @@
         <div id ="cardprofil" class="row no-gutters">
             <div id="show1" class="col-md-12">
                 {% if eter_user.userAvatar %}
-                
+
                 <img id="image" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) | imagine_filter('profil') }}" alt="default_profil">
-                
+
                 {% else %}
-                
-                <img id="image" src="{{ asset('img/upload/profil_pic/default-profil.jpg') }}" alt="default_profil">
-                
+
+                <img id="image" src="{{ asset('img/upload/profil_pic/default-profil.jpg') | imagine_filter('profil') }}" alt="default_profil">
+
                 {% endif %}
             </div>
             <div class="col-md-12">
@@ -58,10 +58,10 @@
                         <br>
 
                         <div id="rens10" class="card-text">Votre(Vos) jeu(x)</div>
-                        <div contentEditable=false data-text="Pas encore de jeu..." id="edit_rens10">{{ eter_user.userGame }}</div>
+                        <div contentEditable=false data-text="Pas encore de clan..." id="edit_rens10">{{ eter_user.user_game }}</div>
                         <br>
 
-                        {#<div id="rens11" class="card-text">Votre(Vos) évènement(s)</div>
+                        <div id="rens11" class="card-text">Votre(Vos) évènement(s)</div>
                         <div contentEditable=false data-text="Pas encore d'évènements..." id="edit_rens11">{{ eter_user.eterEvents }}</div>
                         <br>
                         
@@ -75,8 +75,8 @@
             </div>
         </div>
         <div id="modifier">
-            <a class="btn btn-info" href="{{ path('home') }}">Retour</a>
-            <a class="btn btn-success" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
+        <a class="btn btn-info" href="{{ path('home') }}">Retour</a>
+        <a class="btn btn-success" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
         </div>
     </div>
     

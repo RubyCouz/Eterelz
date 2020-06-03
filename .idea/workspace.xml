@@ -34,6 +34,13 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -80,7 +87,6 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
@@ -157,6 +163,10 @@
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/vendor/symfony/templating" />
+      <path value="$PROJECT_DIR$/vendor/liip/imagine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/imagine/imagine" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
     </include_path>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -179,6 +189,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -260,24 +276,29 @@
       <workItem from="1588055311238" duration="9633000" />
       <workItem from="1588144683626" duration="21505000" />
       <workItem from="1589293620796" duration="64000" />
-      <workItem from="1589293706208" duration="1426000" />
-      <workItem from="1589307205720" duration="192000" />
-      <workItem from="1589307460696" duration="530000" />
-      <workItem from="1591172041650" duration="153000" />
-    </task>
-    <task id="LOCAL-00001" summary="début de chantier">
-      <created>1583359113034</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1583359113034</updated>
-    </task>
-    <task id="LOCAL-00002" summary="mise en page affichage connection">
-      <created>1583440864213</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1583440864213</updated>
+      <workItem from="1589293706208" duration="1764000" />
+      <workItem from="1589295540412" duration="67000" />
+      <workItem from="1589353901994" duration="21162000" />
+      <workItem from="1589436895884" duration="21663000" />
+      <workItem from="1589527022953" duration="8622000" />
+      <workItem from="1589537759090" duration="9862000" />
+      <workItem from="1589782181482" duration="626000" />
+      <workItem from="1589786445440" duration="8673000" />
+      <workItem from="1589803403589" duration="9596000" />
+      <workItem from="1589872222776" duration="14394000" />
+      <workItem from="1589955755994" duration="616000" />
+      <workItem from="1589959592734" duration="16745000" />
+      <workItem from="1590224045523" duration="230000" />
+      <workItem from="1590224292727" duration="757000" />
+      <workItem from="1590390119981" duration="7807000" />
+      <workItem from="1590401299799" duration="599000" />
+      <workItem from="1590473662849" duration="17191000" />
+      <workItem from="1590563197755" duration="15505000" />
+      <workItem from="1590650610439" duration="24000" />
+      <workItem from="1590650652047" duration="18526000" />
+      <workItem from="1590733396694" duration="10362000" />
+      <workItem from="1591080089651" duration="2900000" />
+      <workItem from="1591088978599" duration="613000" />
     </task>
     <task id="LOCAL-00003" summary="mise en page affichage connection">
       <created>1583440965855</created>
@@ -503,7 +524,126 @@
       <option name="project" value="LOCAL" />
       <updated>1589293984498</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Config IntelliJ">
+      <created>1589295367385</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1589295367385</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Configuration durée email valide">
+      <created>1589365653400</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1589365653400</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Config mail inscription en cours">
+      <created>1589382105501</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1589382105501</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Mail confirmation inscription avec lien + Token">
+      <created>1589451641014</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1589451641015</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Activation_token ok + mdp perdu en cours">
+      <created>1589468451349</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1589468451350</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Mot de passe oublié ok">
+      <created>1589535035713</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1589535035713</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Email lien réinitialisation mdp ok">
+      <created>1589536863784</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1589536863784</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Erreur adresse mail inexistante modal login">
+      <created>1589553733029</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1589553733029</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Message erreur mdp oublié">
+      <created>1589796753831</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1589796753831</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Essais erreur mdp perdu + jeux profil">
+      <created>1589813937788</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1589813937788</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Messages erreur mdp oublié ok">
+      <created>1589901214103</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1589901214103</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Messages erreur nouveau mdp ok + CSS LoginModal ok">
+      <created>1589970415295</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1589970415295</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Masquage/Affichage mot de passe">
+      <created>1589986248997</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1589986248997</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Redimension images ok + validité lien en cours">
+      <created>1590505311729</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1590505311729</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Essais durée lien validité activation compte">
+      <created>1590592780850</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1590592780850</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Lien confirmation validité 24h ok">
+      <created>1590667296201</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1590667296203</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Login modal retravaillée + bouton retour edit show">
+      <created>1590676124086</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1590676124087</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,23 +663,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="début de chantier" />
-    <MESSAGE value="mise en page affichage connection" />
-    <MESSAGE value="ajout utilisateur ok &#10;hashage mdp ok&#10;mise en page tableau utilisateur&#10;reprise bdd" />
-    <MESSAGE value="début établissement back-office" />
-    <MESSAGE value="reprise bdd, test formatage back office" />
-    <MESSAGE value="fin établissement bdd" />
-    <MESSAGE value="back-office suite" />
-    <MESSAGE value="fin mise en place back office et installation uploader vich" />
-    <MESSAGE value="suite mise en forme back office" />
-    <MESSAGE value="fin back office" />
-    <MESSAGE value="ajout fichier easy_admin.yaml" />
-    <MESSAGE value="test" />
-    <MESSAGE value="test navbar" />
-    <MESSAGE value="onglet social css" />
-    <MESSAGE value="fin mise en place oglet social" />
-    <MESSAGE value="fix back office plus envoie de mail" />
-    <MESSAGE value="ajout sidebar" />
     <MESSAGE value="fix" />
     <MESSAGE value="test connexion modal" />
     <MESSAGE value="fix modal inscription" />
@@ -548,20 +671,40 @@
     <MESSAGE value="connexion ok" />
     <MESSAGE value="personnalisation page login" />
     <MESSAGE value="Mise en forme edit.html.twig" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mise en forme edit.html.twig" />
+    <MESSAGE value="Config IntelliJ" />
+    <MESSAGE value="Configuration durée email valide" />
+    <MESSAGE value="Config mail inscription en cours" />
+    <MESSAGE value="Mail confirmation inscription avec lien + Token" />
+    <MESSAGE value="Activation_token ok + mdp perdu en cours" />
+    <MESSAGE value="Mot de passe oublié ok" />
+    <MESSAGE value="Email lien réinitialisation mdp ok" />
+    <MESSAGE value="Erreur adresse mail inexistante modal login" />
+    <MESSAGE value="Message erreur mdp oublié" />
+    <MESSAGE value="Essais erreur mdp perdu + jeux profil" />
+    <MESSAGE value="Messages erreur mdp oublié ok" />
+    <MESSAGE value="Messages erreur nouveau mdp ok + CSS LoginModal ok" />
+    <MESSAGE value="Masquage/Affichage mot de passe" />
+    <MESSAGE value="Redimension images ok + validité lien en cours" />
+    <MESSAGE value="Essais durée lien validité activation compte" />
+    <MESSAGE value="Lien confirmation validité 24h ok" />
+    <MESSAGE value="Login modal retravaillée + bouton retour edit show" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login modal retravaillée + bouton retour edit show" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2472" y="213" key="#Big_Data_Tools_Connections/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584012583118" />
-    <state x="393" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589307875315">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="552" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589294582427">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="393" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1589307875315" />
     <state x="552" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589294582427" />
     <state x="2472" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584015133001" />
     <state x="552" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583526942849" />
+    <state x="779" y="202" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1589354961208">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="779" y="202" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589354961208" />
     <state x="2573" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588159504869">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
@@ -579,34 +722,38 @@
     <state x="2493" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586255105377" />
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583917916958" />
     <state x="2493" y="34" key="CommitChangelistDialog2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587145562668" />
-    <state x="899" y="273" key="FileChooserDialogImpl" timestamp="1589295117975">
+    <state x="899" y="273" key="FileChooserDialogImpl" timestamp="1591081895964">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="899" y="273" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1591081895964" />
     <state x="899" y="273" key="FileChooserDialogImpl/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589295117975" />
-    <state width="1877" height="264" key="GridCell.Tab.0.bottom" timestamp="1586254027850">
-      <screen x="1920" y="30" width="1920" height="1050" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1589443360438">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589443360438" />
     <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.bottom/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199354" />
-    <state width="1877" height="264" key="GridCell.Tab.0.center" timestamp="1586254027850">
-      <screen x="1920" y="30" width="1920" height="1050" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1589443360437">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589443360437" />
     <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.center/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199352" />
-    <state width="1877" height="264" key="GridCell.Tab.0.left" timestamp="1586254027850">
-      <screen x="1920" y="30" width="1920" height="1050" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1589443360437">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589443360437" />
     <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.left/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199346" />
-    <state width="1877" height="264" key="GridCell.Tab.0.right" timestamp="1586254027850">
-      <screen x="1920" y="30" width="1920" height="1050" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1589443360437">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589443360437" />
     <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199353" />
-    <state width="196" height="320" key="HiddenNamespacesPopup" timestamp="1589307829156">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1589294324057">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="196" height="320" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1589307829156" />
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589294324057" />
     <state x="1924" y="116" width="1883" height="877" key="MergeDialog" timestamp="1588174995808">
       <screen x="1920" y="30" width="1920" height="1050" />
@@ -616,10 +763,15 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2584" y="246" width="1081" height="587" key="MultipleFileMergeDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588174995839" />
-    <state x="461" y="165" width="1199" height="716" key="SettingsEditor" timestamp="1589295134045">
+    <state x="788" y="243" key="NewPhpClassDialog" timestamp="1590737083618">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589295134045" />
+    <state x="788" y="243" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590737083618" />
+    <state x="461" y="165" width="1199" height="716" key="SettingsEditor" timestamp="1591081901239">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1591081901239" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589967043653" />
     <state x="2381" y="197" key="SettingsEditor/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586181792395" />
     <state x="2381" y="197" width="1199" height="716" key="SettingsEditor/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587143481099" />
     <state x="2012" y="122" width="1736" height="866" key="ShowDiffWithBranchDialog" timestamp="1586255055305">
@@ -630,10 +782,11 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1589293997084">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1590676127263">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589293997084" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1590676127263" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589986250636" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />
@@ -650,28 +803,43 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2576" y="380" key="com.intellij.ide.util.TipDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1583840208523" />
-    <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588151023256">
-      <screen x="1920" y="30" width="1920" height="1050" />
+    <state x="767" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589355233614">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="767" y="432" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589355233614" />
     <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586252088632" />
     <state x="2687" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588151023256" />
     <state x="2645" y="170" key="git4idea.branch.GitSmartOperationDialog" timestamp="1588007625038">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2645" y="170" key="git4idea.branch.GitSmartOperationDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588007625038" />
-    <state x="567" y="148" width="1105" height="741" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1589295131272">
+    <state x="567" y="148" width="968" height="684" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1591081900220">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="567" y="148" width="968" height="684" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040/1920.0.1680.1010@0.0.1920.1040" timestamp="1591081900220" />
     <state x="567" y="148" width="1105" height="741" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589295131272" />
-    <state x="2536" y="258" width="672" height="677" key="run.anything.popup" timestamp="1588159426977">
-      <screen x="1920" y="30" width="1920" height="1050" />
+    <state x="616" y="226" width="672" height="671" key="run.anything.popup" timestamp="1589458714328">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="616" y="226" width="672" height="671" key="run.anything.popup/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589458714328" />
     <state x="2536" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586251565489" />
     <state x="616" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1583666787487" />
     <state x="2536" y="258" width="672" height="677" key="run.anything.popup/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1588159426977" />
-    <state x="2536" y="208" width="670" height="676" key="search.everywhere.popup" timestamp="1585086973147">
-      <screen x="1920" y="30" width="1920" height="1050" />
+    <state x="616" y="176" width="672" height="670" key="search.everywhere.popup" timestamp="1589373163724">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="616" y="176" width="672" height="670" key="search.everywhere.popup/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589373163723" />
     <state x="2536" y="208" width="670" height="676" key="search.everywhere.popup/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1585086973147" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Form/EterUserType.php</url>
+          <line>3</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

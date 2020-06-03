@@ -132,7 +132,7 @@
                     <div class="sidebar-brand">
                         <a href="#">Brand</a></div>
                 </div>
-                <li><a href="#home">Home</a></li>
+                <li><a href="{{ path('home') }}#home">Home</a></li>
                 {% if app.user %}
                 <li><a href="{{ path('eter_user_show', {'id': app.user.id}) }}#user">Profil</a></li>
                 {% endif %}
@@ -166,6 +166,22 @@
     </main>
 
     <footer class="footer">
+
+        {% for message in app.flashes('success') %}
+            <div id="alert_registration" class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('warning') %}
+            <div id="alert_registration" class="alert alert-warning" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('danger') %}
+            <div id="alert_registration" class="alert alert-danger" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
 
     </footer>
 </div>

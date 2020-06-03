@@ -148,6 +148,26 @@ class EterUser implements UserInterface
      */
     private $user_role;
 
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $activation_token;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $reset_token;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $date_inscr;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $date_lien;
+
     public function __construct()
     {
         $this->user_date = new \DateTime('Europe/Paris');
@@ -576,5 +596,51 @@ class EterUser implements UserInterface
         return $this;
     }
 
+    public function getActivationToken(): ?string
+    {
+        return $this->activation_token;
+    }
 
+    public function setActivationToken(?string $activation_token): self
+    {
+        $this->activation_token = $activation_token;
+
+        return $this;
+    }
+
+    public function getResetToken(): ?string
+    {
+        return $this->reset_token;
+    }
+
+    public function setResetToken(?string $reset_token): self
+    {
+        $this->reset_token = $reset_token;
+
+        return $this;
+    }
+
+    public function getDateInscr(): ?int
+    {
+        return $this->date_inscr;
+    }
+
+    public function setDateInscr(int $date_inscr): self
+    {
+        $this->date_inscr = $date_inscr;
+
+        return $this;
+    }
+
+    public function getDateLien(): ?int
+    {
+        return $this->date_lien;
+    }
+
+    public function setDateLien(int $date_lien): self
+    {
+        $this->date_lien = $date_lien;
+
+        return $this;
+    }
 }

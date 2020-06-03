@@ -363,7 +363,8 @@ Bouton se connecter dans la barre de navigation
 Formulaire d'inscription loginModal.html.twig
 */
 .navbar.navbar-dark form .md-form .form-control {
-    color: black;
+    color: #4285f4;
+    font-size: 15px;
 }
 
 .navbar.navbar-dark form .md-form input {
@@ -387,6 +388,31 @@ Formulaire d'inscription loginModal.html.twig
 #mdp_perdu {
     font-size: 14px;
     margin-top:10px;
+}
+
+.nav-link {
+    background: linear-gradient(40deg, #ff6ec4, #7873f5) !important;
+    color: white !important;
+    border: white !important;
+    border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0 !important;
+}
+
+.modal-c-tabs {
+    margin-left: -15px;
+    margin-right: -16px;
+}
+
+.modal-footer {
+    margin-left: 14px;
+    margin-right: 17px;
+}
+
+.show-password {
+    font-size: 9px;
+    text-transform: uppercase;
+    position: absolute;
+    cursor: pointer;
+    margin-left: 420px;
 }
 
 /**
@@ -434,12 +460,12 @@ Mise en forme show.html.twig
     font-size: 50px;
 }
 
-#rens {
+#rens1, #rens2, #rens3, #rens4, #rens5, #rens6, #rens7, #rens8, #rens9, #rens10, #rens11, #rens12, #rens13{
     color:white;
     font-size: 25px;
 }
 
-#edit_rens {
+#edit_rens1, #edit_rens2, #edit_rens3, #edit_rens4, #edit_rens5, #edit_rens6, #edit_rens7, #edit_rens8, #edit_rens9, #edit_rens10, #edit_rens11, #edit_rens12, #edit_rens13{
     color: grey;
     border: 2px solid grey;
     border-radius: 5px;
@@ -457,7 +483,7 @@ Mise en forme show.html.twig
 #image {
     margin-top: 20px;
     width: 350px;
-    height: 300px;
+    height: 350px;
     border: 4px solid #000;
 }
 
@@ -466,8 +492,7 @@ Mise en forme show.html.twig
 }
 
 #modifier {
-    margin-left: 800px;
-    margin-right: 22px;
+    margin-left: 733px;
     margin-top: -5px;
     margin-bottom: 20px;
 }
@@ -505,7 +530,7 @@ h5 {
 #editimg {
     margin-top: 20px;
     width: 350px;
-    height: 300px;
+    height: 350px;
     border: 4px solid #000;
 }
 
@@ -519,5 +544,39 @@ h5 {
 
 #editbutton {
     margin-bottom: -20px;
-    padding-left: 760px;
+    padding-left: 635px;
+}
+
+/**
+Message succès activation compte dans base.html.twig
+*/
+
+#alert_registration{
+    margin-top: 20px;
+}
+
+/**
+Mise en forme forgotten_password.html.twig
+*/
+#forgot_pass2 {
+    margin-top: 30px;
+    color: white;
+}
+
+#forgot_pass1 {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+#forgot_img {
+    margin-top: 60px;
+}
+
+/**
+Mise en forme label des jeux
+*/
+
+.form-check-label{
+    color:white;
 }

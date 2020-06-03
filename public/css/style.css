@@ -580,3 +580,34 @@ Mise en forme label des jeux
 .form-check-label{
     color:white;
 }
+
+/**
+Mise en forme list.html.twig
+*/
+
+#produits {
+    margin-left: 10px;
+}
+
+#liste {
+    border: solid #00C851;
+    padding: 10px;
+    margin-left: -20px;
+    margin-right: 5px;
+    padding-bottom: 70px;
+}
+
+#titre1 {
+    margin-top: 90px;
+    text-align: center;
+    color: white;
+}
+
+#titre2 {
+    color: #00C851;
+    text-align: center;
+}
+
+#ligne {
+    border-top: 1px solid #00C851;
+}

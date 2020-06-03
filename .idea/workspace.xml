@@ -20,7 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -262,6 +261,9 @@
       <workItem from="1588144683626" duration="21505000" />
       <workItem from="1589293620796" duration="64000" />
       <workItem from="1589293706208" duration="1426000" />
+      <workItem from="1589307205720" duration="192000" />
+      <workItem from="1589307460696" duration="530000" />
+      <workItem from="1591172041650" duration="153000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -553,9 +555,10 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2472" y="213" key="#Big_Data_Tools_Connections/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584012583118" />
-    <state x="552" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589294582427">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="393" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589307875315">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="393" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1589307875315" />
     <state x="552" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589294582427" />
     <state x="2472" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584015133001" />
     <state x="552" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583526942849" />
@@ -600,9 +603,10 @@
     </state>
     <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254027850" />
     <state width="1877" height="264" key="GridCell.Tab.0.right/0.30.1920.1050@0.30.1920.1050" timestamp="1585067199353" />
-    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1589294324057">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="196" height="320" key="HiddenNamespacesPopup" timestamp="1589307829156">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="196" height="320" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1589307829156" />
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589294324057" />
     <state x="1924" y="116" width="1883" height="877" key="MergeDialog" timestamp="1588174995808">
       <screen x="1920" y="30" width="1920" height="1050" />

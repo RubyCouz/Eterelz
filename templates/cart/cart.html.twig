@@ -1,43 +1,52 @@
 {% extends'base.html.twig' %}
-{% block title %}Votre panier
-{% endblock %}
+
+{% block title %}Votre panier{% endblock %}
+
 {% block body %}
+
     <div>
-        <h1>Votre panier</h1>
+        <h1 id="panier">Votre panier</h1>
     </div>
     {% if items | length > 0 %}
+    <div id="table1">
         <table class="table">
             <thead>
             <tr>
-                <th>Produit</th>
-                <th>Prix</th>
-                <th>Quantité</th>
-                <th>Total</th>
-                <th></th>
+                <th id="image_panier1"></th>
+                <th id="produits2">Produit</th>
+                <th id="prix">Prix</th>
+                <th id="quantite">Quantité</th>
+                <th id="total">Sous-Total</th>
+                <th id="supp"></th>
             </tr>
             </thead>
             <tbody>
             {% for item in items %}
                 <tr>
+                    <td><img id="image_panier" src="{{ asset('img/upload/product/' ~ item.product.productImage) }}"></td>
                     <td>{{ item.product.productTitle }}</td>
-                    <td>{{ item.product.productPrice }} €</td>
-                    <td>{{ item.quantity }}</td>
-                    <td>{{ item.product.productPrice * item.quantity}} €</td>
-                    <td>
-                        <a href="{{ path('cart_remove', {'id': item.product.id}) }}"class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></td>
+                    <td>{{ item.product.productPrice | number_format(2,',') }} &euro;</td>
+                    <td><input type="number" value="{{ item.quantity }}"></td>
+                    <td>{{ (item.product.productPrice * item.quantity) | number_format(2,',') }} &euro;</td>
+                    <td id="supprimer"><a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></td>
                 </tr>
             {% endfor %}
             </tbody>
             <tfoot>
             <tr>
-                <td colspan="3"class="text-right">Total :
-                </td>
-                <td>{{ total }} €</td>
+                <td></td>
+                <td colspan="3" class="text-right">Total :</td>
+                <td id="text-right">{{ total | number_format(2,',') }} &euro;</td>
                 <td></td>
             </tr>
             </tfoot>
         </table>
+        </div>
     {% else %}
-        <p>Surprise, c'est vide !</p>
+        <p id="panier_vide">Votre panier est vide !</p>
+        <div id="boutique">
+        <a href="{{ path('product_index') }}" class="btn btn-info"><i class="fas fa-shopping-cart mr-2"></i>BOUTIQUE</a>
+        </div>
     {% endif %}
+
 {% endblock %}

@@ -11,16 +11,21 @@
     <div id="produits" class="row">
         {% for eter_product in products %}
             <div class="col-4 mt-4">
+
                 <div id="liste">
                     <h2 id="titre2">
                         {{ eter_product.productTitle }}
-                        -
-                        {{ eter_product.productPrice }}
-                        €
                     </h2>
                     <img class="img-fluid rounded" src="{{ asset('img/upload/product/' ~ eter_product.productImage) }}" alt="Image de {{ eter_product.productTitle }}">
                     <hr id="ligne">
-                    <a href="{{ path('cart_add', {'id': eter_product.id}) }}" class="btn btn-success float-right"><i class="fas fa-shopping-cart mr-1"></i>Ajouter</a>
+                    <div id="price">{{ eter_product.productPrice }} €</div>
+                    {% if app.user %}
+                        <a href="{{ path('cart_add', {'id': eter_product.id}) }}"class="btn btn-success float-right"><i class="fas fa-shopping-cart mr-1"></i>Ajouter</a>
+                    {% else %}
+                        <a href="{{ path('login') }}"class="btn btn-success float-right"><i class="fas fa-shopping-cart mr-1"></i>Ajouter</a>
+                    {% endif %}
+                        <a href="#" class="btn btn-info float-right">
+                            <i class="fas fa-info-circle mr-1"></i>Plus d'infos</a>
                 </div>
 
             </div>

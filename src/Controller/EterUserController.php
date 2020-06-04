@@ -119,7 +119,8 @@ class EterUserController extends AbstractController
                         $this->getParameter('upload_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {
+                } 
+                catch (FileException $e) {
                     //Possibilité d'indiquer un message d'erreur si l'upload échoue
                 }
             }

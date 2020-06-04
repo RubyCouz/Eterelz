@@ -352,8 +352,9 @@ Bouton se connecter dans la barre de navigation
 }
 
 .btn-default {
-    background-color: #53C8E0 !important;
+    background-color: #33B5E5 !important;
     margin-left: 10px;
+    margin-right: -2px;
 }
 
 /*Peut être enlever pour la side-barre*/
@@ -671,31 +672,33 @@ Mise en forme cart.html.twig
 }
 
 #table1 {
-    padding-left: 250px;
-    padding-right: 250px;
+    padding-left: 150px;
+    padding-right: 150px;
 }
 
 .table {
     background-color: #CACFD2;
+    border: solid 5px #566573;
 }
 
 #supprimer {
     text-align: center;
-    border-bottom: 2px solid #566573;
+    border-bottom: solid 2px #566573;
 }
 
 #image_panier1, #produits2, #prix, #quantite, #total {
     width: 5%;
-    border-bottom: 2px solid #566573;
+    border-bottom: solid 2px #566573;
+    font-weight: bold;
 }
 
 #produits2 {
-    border-bottom: 2px solid #566573;
+    border-bottom: solid 2px #566573;
 }
 
 #supp {
     width: 5%;
-    border-bottom: 2px solid #566573;
+    border-bottom: solid 2px #566573;
 }
 
 td, th {
@@ -708,13 +711,24 @@ td, th {
 
 #image_panier {
     width: 100%;
-}
-
-.text-right{
-    margin-left: 10px;
+    border-radius: 5px;
 }
 
 #panier_vide {
-    margin-top: 90px;
+    margin-top: 40px;
+    text-align: center;
     color: white;
+    font-size: 18px;
+}
+
+.text-right, #text-right {
+    font-weight: bold;
+}
+
+.btn {
+    border-radius: 10px;
+}
+
+#boutique {
+    text-align: center;
 }

@@ -120,7 +120,7 @@ class EterUserController extends AbstractController
                     );
                 } 
                 catch (FileException $e) {
-                    //Possibilité d'indiquer un message d'erreur si l'upload echoue
+                    //Possibilité d'indiquer un message d'erreur si l'upload échoue
                 }
             }
             //Insertion dans la BDD

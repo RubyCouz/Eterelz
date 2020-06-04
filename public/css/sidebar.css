@@ -183,14 +183,17 @@ html { height: 100%;}
 a[href*="#home"]::before {
     content: "\f015" !important;
 }
+a[href*="#prod"]::before {
+    content: "\f54e" !important;
+}
 a[href*="#user"]::before {
     content: "\f406" !important;
 }
+a[href*="#cart"]::before {
+    content: "\f07a" !important;
+}
 a[href*="#about"]::before {
     content: "\f129" !important;
-}
-a[href*="#events"]::before {
-    content: "\f073" !important;
 }
 a[href*="#events"]::before {
     content: "\f073" !important;

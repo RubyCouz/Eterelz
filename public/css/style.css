@@ -652,3 +652,69 @@ Mise en forme list.html.twig
 #ligne {
     border-top: 1px solid #00C851;
 }
+
+#price {
+    color: #00C851;
+    text-align: center;
+    font-size: 30px;
+}
+
+/**
+Mise en forme cart.html.twig
+*/
+
+#panier {
+    margin-top: 90px;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#table1 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.table {
+    background-color: #CACFD2;
+}
+
+#supprimer {
+    text-align: center;
+    border-bottom: 2px solid #566573;
+}
+
+#image_panier1, #produits2, #prix, #quantite, #total {
+    width: 5%;
+    border-bottom: 2px solid #566573;
+}
+
+#produits2 {
+    border-bottom: 2px solid #566573;
+}
+
+#supp {
+    width: 5%;
+    border-bottom: 2px solid #566573;
+}
+
+td, th {
+    text-align: center;
+}
+
+.table td, .table th {
+    border-top: 2px solid #566573;
+}
+
+#image_panier {
+    width: 40%;
+}
+
+.text-right{
+    margin-left: 10px;
+}
+
+#panier_vide {
+    margin-top: 90px;
+    color: white;
+}

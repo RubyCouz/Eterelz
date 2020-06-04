@@ -132,7 +132,9 @@
                         <a href="#">Brand</a></div>
                 </div>
                 <li><a href="{{ path('home') }}#home">Home</a></li>
+                <li><a href="{{ path('product_index') }}#prod">Boutique</a></li>
                 {% if app.user %}
+                <li><a href="{{ path('cart_index') }}#cart">Panier</a></li>
                 <li><a href="{{ path('eter_user_show', {'id': app.user.id}) }}#user">Profil</a></li>
                 {% endif %}
                 <li><a href="#about">About</a></li>

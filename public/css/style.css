@@ -671,8 +671,8 @@ Mise en forme cart.html.twig
 }
 
 #table1 {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 250px;
+    padding-right: 250px;
 }
 
 .table {
@@ -707,7 +707,7 @@ td, th {
 }
 
 #image_panier {
-    width: 40%;
+    width: 100%;
 }
 
 .text-right{

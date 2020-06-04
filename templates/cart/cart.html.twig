@@ -1,50 +1,49 @@
 {% extends'base.html.twig' %}
 
-{% block title %}Votre panier!
-{% endblock %}
+{% block title %}Votre panier{% endblock %}
 
 {% block body %}
-    <div>
-        <h1>Votre panier</h1>
-    </div>
 
-    {% if items | length > 0 %}
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Produit</th>
-                <th>Prix</th>
-                <th>Quantité</th>
-                <th>Total</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for item in items %}
-                <tr>
-                    <td>{{ item.product.productTitle }}</td>
-                    <td>{{ item.product.productPrice }} €</td>
-                    <td>{{ item.quantity }}</td>
-                    <td>{{ item.product.productPrice * item.quantity}} €</td>
-                    <td>
-                        <a href="{{ path('cart_remove', {'id': item.product.id}) }}"class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-            <tfoot>
-            <tr>
-                <td colspan="3"class="text-right">Total :
-                </td>
-                <td>{{ total }} €</td>
-                <td></td>
-            </tr>
-            </tfoot>
-        </table>
-    {% else %}
-        <p>Surprise, c'est vide !</p>
+<div>
+    <h1 id="panier">Votre panier</h1>
+</div>
+{% if items | length > 0 %}
+<div id="table">
+<table class="table">
+<thead>
+<tr>
+    <th id="image_panier1"></th>
+    <th id="produits">Produit</th>
+    <th id="prix">Prix</th>
+    <th id="quantite">Quantité</th>
+    <th id="total">Total</th>
+    <th id="supp"></th>
+</tr>
+</thead>
+<tbody>
+{% for item in items %}
+<tr>
+    <td><img id="image_panier" class="img-fluid rounded" src="{{ asset('img/upload/product/' ~ item.product.productImage) }}"></td>
+    <td>{{ item.product.productTitle }}</td>
+    <td>{{ item.product.productPrice }} €</td>
+    <td>{{ item.quantity }}</td>
+    <td>{{ item.product.productPrice * item.quantity}} €</td>
+    <td id="supprimer"><a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></td>
+</tr>
+{% endfor %}
+</tbody>
+<tfoot>
+<tr>
+    <td></td>
+    <td colspan="3" class="text-right">Total :</td>
+    <td>{{ total }} €</td>
+    <td></td>
+</tr>
+</tfoot>
+</table>
+</div>
+{% else %}
+    <p>Surprise, c'est vide !</p>
     {% endif %}
 
 {% endblock %}

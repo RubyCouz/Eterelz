@@ -21,11 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/sidebar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cart/cart.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/cart.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +274,7 @@
       <workItem from="1589307460696" duration="530000" />
       <workItem from="1591172041650" duration="153000" />
       <workItem from="1591185395061" duration="10077000" />
-      <workItem from="1591254861990" duration="8825000" />
+      <workItem from="1591254861990" duration="9740000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -530,7 +528,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591195848252</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Panier + onglets ecommerce ok">
+      <created>1591265900801</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1591265900801</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +555,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ajout utilisateur ok &#10;hashage mdp ok&#10;mise en page tableau utilisateur&#10;reprise bdd" />
     <MESSAGE value="début établissement back-office" />
     <MESSAGE value="reprise bdd, test formatage back office" />
     <MESSAGE value="fin établissement bdd" />
@@ -575,7 +579,8 @@
     <MESSAGE value="Mise en forme edit.html.twig" />
     <MESSAGE value="Test push" />
     <MESSAGE value="E-commerce en cours" />
-    <option name="LAST_COMMIT_MESSAGE" value="E-commerce en cours" />
+    <MESSAGE value="Panier + onglets ecommerce ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Panier + onglets ecommerce ok" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -657,10 +662,10 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1591195868260">
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1591265907139">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591195868260" />
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591265907139" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589293997084" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />

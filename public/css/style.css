@@ -619,7 +619,7 @@ Mise en forme list.html.twig
 /**
 Mise en forme cart.html.twig
 */
-/*
+
 #panier {
     margin-top: 90px;
     color: white;
@@ -627,7 +627,7 @@ Mise en forme cart.html.twig
     margin-bottom: 40px;
 }
 
-#table {
+#table1 {
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -640,12 +640,12 @@ Mise en forme cart.html.twig
     text-align: center;
 }
 
-#image_panier1, #produits, #prix, #quantite, #total {
+#image_panier1, #produits2, #prix, #quantite, #total {
     width: 5%;
     border-bottom: 2px solid #566573;
 }
 
-#produits {
+#produits2 {
     border-bottom: 2px solid #566573;
 }
 
@@ -673,5 +673,5 @@ td, th {
 .text-right{
     margin-left: 500px;
 }
-*/
+
 

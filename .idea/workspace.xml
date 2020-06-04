@@ -22,6 +22,7 @@
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cart/cart.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/cart.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,7 +273,8 @@
       <workItem from="1589307460696" duration="530000" />
       <workItem from="1591172041650" duration="153000" />
       <workItem from="1591185395061" duration="10077000" />
-      <workItem from="1591254861990" duration="10232000" />
+      <workItem from="1591254861990" duration="12175000" />
+      <workItem from="1591274056560" duration="7219000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -540,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591266566213</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Taille panier modifiée">
+      <created>1591267027108</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1591267027108</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="reprise bdd, test formatage back office" />
     <MESSAGE value="fin établissement bdd" />
     <MESSAGE value="back-office suite" />
     <MESSAGE value="fin mise en place back office et installation uploader vich" />
@@ -585,7 +593,8 @@
     <MESSAGE value="E-commerce en cours" />
     <MESSAGE value="Panier + onglets ecommerce ok" />
     <MESSAGE value="Mise en forme panier" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mise en forme panier" />
+    <MESSAGE value="Taille panier modifiée" />
+    <option name="LAST_COMMIT_MESSAGE" value="Taille panier modifiée" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -599,6 +608,10 @@
     <state x="552" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589294582427" />
     <state x="2472" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1584015133001" />
     <state x="552" y="214" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583526942849" />
+    <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591273761547">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="363" y="100" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1591273761547" />
     <state x="2573" y="30" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1588159504869">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
@@ -667,10 +680,10 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1591266570066">
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1591267029272">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591266570066" />
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591267029272" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589293997084" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />

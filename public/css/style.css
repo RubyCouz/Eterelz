@@ -584,17 +584,6 @@ Mise en forme label des jeux
 /**
 Mise en forme list.html.twig
 */
-#produits {
-    margin-left: 10px;
-}
-
-#liste {
-    border: solid #00C851;
-    padding: 10px;
-    margin-left: -20px;
-    margin-right: 5px;
-    padding-bottom: 70px;
-}
 
 #titre1 {
     margin-top: 90px;
@@ -602,18 +591,44 @@ Mise en forme list.html.twig
     color: white;
 }
 
-#titre2 {
-    color: #00C851;
-    text-align: center;
+#list {
+    width: 23rem;
 }
 
-#ligne {
-    border-top: 1px solid #00C851;
+#card_header {
+    border-bottom: 1px solid #2D2D2D;
 }
-#price {
-    color: #00C851;
-    text-align: center;
-    font-size: 30px;
+
+#card_body {
+    border-bottom: 1px solid white;
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+#product_title {
+    color: white;
+}
+
+#product_price {
+    color: white;
+    font-size:20px;
+}
+
+/**
+Mise en forme modal list.html.twig
+*/
+
+#modal_title {
+    color: #FF33F8;
+}
+
+#modal_body {
+    color: white;
+    text-align: justify;
+}
+
+.close {
+    color: white;
 }
 
 /**

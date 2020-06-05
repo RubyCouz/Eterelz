@@ -26,9 +26,9 @@
                 <tr>
                     <td><img id="image_panier" class="img-fluid rounded" src="{{ asset('img/upload/product/' ~ item.product.productImage) }}"></td>
                     <td>{{ item.product.productTitle }}</td>
-                    <td>{{ item.product.productPrice | number_format(2,',') }} &euro;</td>
+                    <td>{{ item.product.productPrice | number_format(2,',','.') }} &euro;</td>
                     <td><input type="number" value="{{ item.quantity }}"></td>
-                    <td>{{ (item.product.productPrice * item.quantity) | number_format(2,',')}} &euro;</td>
+                    <td>{{ (item.product.productPrice * item.quantity) | number_format(2,',','.') }} &euro;</td>
                     <td id="supprimer"><a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></td>
                 </tr>
             {% endfor %}
@@ -37,13 +37,15 @@
             <tr>
                 <td></td>
                 <td colspan="3" class="text-right">Total :</td>
-                <td id="text-right">{{ total | number_format(2,',')}} &euro;</td>
-                <td></td>
+                <td id="text-right">{{ total | number_format(2,',','.') }} &euro;</td>
+                <td><a href="#" class="btn btn-success"><i class="fas fa-check-circle mr-2"></i>Valider</a></td>
             </tr>
         </tfoot>
     </table>
 </div>
-
+    <div id="boutique">
+        <a href="{{ path('product_index') }}" class="btn btn-info"><i class="fas fa-arrow-circle-left mr-2"></i></i>Retour à la boutique</a>
+    </div>
 {% else %}
     <p id="panier_vide">Votre panier est vide !</p>
         <div id="boutique">
@@ -53,6 +55,6 @@
             </a>
         </div>
 {% endif %}
-
+    <script src="{{ asset('js/cart.js') }}"></script>
 {% endblock %}
 

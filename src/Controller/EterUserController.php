@@ -114,12 +114,12 @@ class EterUserController extends AbstractController
                 $eterUser->setUserAvatar($newFilename);
 
                 //Déplacement du fichier dans le dossier de destination
-                try {
+                try{
                     $avatarFile->move(
                         $this->getParameter('upload_directory'),
                         $newFilename
                     );
-                } catch (FileException $e) {
+                }catch (FileException $e) {
                     //Possibilité d'indiquer un message d'erreur si l'upload échoue
                 }
             }

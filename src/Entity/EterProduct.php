@@ -37,6 +37,11 @@ class EterProduct
      */
     private $product_quantity;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $product_description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,4 +94,17 @@ class EterProduct
 
         return $this;
     }
+
+    public function getProductDescription(): ?string
+    {
+        return $this->product_description;
+    }
+
+    public function setProductDescription(?string $product_description): self
+    {
+        $this->product_description = $product_description;
+
+        return $this;
+    }
+
 }

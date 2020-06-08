@@ -22,13 +22,13 @@
                     <h3 id="product_title">{{ eter_product.productTitle }}</h3>
 
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop{{ eter_product.id }}">
                         <i class="fas fa-info-circle mr-1"></i>PLUS D'INFOS
                     </button>
 
                     <!-- Modal -->
 
-                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal fade" id="staticBackdrop{{ eter_product.id }}" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">

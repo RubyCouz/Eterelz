@@ -1,5 +1,5 @@
 <?php
-// commit
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -168,6 +168,16 @@ class EterUser implements UserInterface
      */
     private $date_lien;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=EterProduct::class, mappedBy="eter_user")
+     */
+    private $eterProducts;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $user_order_date;
+
     public function __construct()
     {
         $this->user_date = new \DateTime('Europe/Paris');
@@ -178,6 +188,7 @@ class EterUser implements UserInterface
         $this->eterEvents = new ArrayCollection();
         $this->eterComments = new ArrayCollection();
         $this->eterContents = new ArrayCollection();
+        $this->eterProducts = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -640,6 +651,46 @@ class EterUser implements UserInterface
     public function setDateLien(?int $date_lien): self
     {
         $this->date_lien = $date_lien;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|EterProduct[]
+     */
+    public function getEterProducts(): Collection
+    {
+        return $this->eterProducts;
+    }
+
+    public function addEterProduct(EterProduct $eterProduct): self
+    {
+        if (!$this->eterProducts->contains($eterProduct)) {
+            $this->eterProducts[] = $eterProduct;
+            $eterProduct->addEterUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEterProduct(EterProduct $eterProduct): self
+    {
+        if ($this->eterProducts->contains($eterProduct)) {
+            $this->eterProducts->removeElement($eterProduct);
+            $eterProduct->removeEterUser($this);
+        }
+
+        return $this;
+    }
+
+    public function getUserOrderDate(): ?\DateTimeInterface
+    {
+        return $this->user_order_date;
+    }
+
+    public function setUserOrderDate(?\DateTimeInterface $user_order_date): self
+    {
+        $this->user_order_date = $user_order_date;
 
         return $this;
     }

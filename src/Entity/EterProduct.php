@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\EterProductRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +43,16 @@ class EterProduct
      * @ORM\Column(type="text", nullable=true)
      */
     private $product_description;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=EterUser::class, inversedBy="eterProducts")
+     */
+    private $eter_user;
+
+    public function __construct()
+    {
+        $this->eter_user = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -103,6 +115,32 @@ class EterProduct
     public function setProductDescription(?string $product_description): self
     {
         $this->product_description = $product_description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|EterUser[]
+     */
+    public function getEterUser(): Collection
+    {
+        return $this->eter_user;
+    }
+
+    public function addEterUser(EterUser $eterUser): self
+    {
+        if (!$this->eter_user->contains($eterUser)) {
+            $this->eter_user[] = $eterUser;
+        }
+
+        return $this;
+    }
+
+    public function removeEterUser(EterUser $eterUser): self
+    {
+        if ($this->eter_user->contains($eterUser)) {
+            $this->eter_user->removeElement($eterUser);
+        }
 
         return $this;
     }

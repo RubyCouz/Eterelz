@@ -21,8 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200603122620.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200605133442.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20200609123855.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cart/cart.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/cart.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/list.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +287,8 @@
       <workItem from="1591254861990" duration="12175000" />
       <workItem from="1591274056560" duration="8055000" />
       <workItem from="1591337648206" duration="19824000" />
-      <workItem from="1591600615634" duration="13349000" />
+      <workItem from="1591600615634" duration="14597000" />
+      <workItem from="1591685915376" duration="16949000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -573,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591368287713</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Modal description ok + essais panier JavaScript">
+      <created>1591627251607</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1591627251608</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +604,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fin mise en place back office et installation uploader vich" />
     <MESSAGE value="suite mise en forme back office" />
     <MESSAGE value="fin back office" />
     <MESSAGE value="ajout fichier easy_admin.yaml" />
@@ -618,7 +628,8 @@
     <MESSAGE value="Taille panier modifiée" />
     <MESSAGE value="Mise en forme panier ok + input quantité en cours" />
     <MESSAGE value="Mise en forme liste produits et panier + essais JS cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mise en forme liste produits et panier + essais JS cart" />
+    <MESSAGE value="Modal description ok + essais panier JavaScript" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modal description ok + essais panier JavaScript" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -704,10 +715,10 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1591368292063">
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1591627257392">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591368292063" />
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1591627257392" />
     <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.37.1680.1010@0.0.1920.1040" timestamp="1589293997084" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />

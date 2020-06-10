@@ -30,7 +30,7 @@ class EterProduct
     private $product_image;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $product_price;
 
@@ -83,7 +83,7 @@ class EterProduct
         return $this;
     }
 
-    public function getProductPrice(): ?int
+    public function getProductPrice(): ?float
     {
         return $this->product_price;
     }

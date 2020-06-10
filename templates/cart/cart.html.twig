@@ -26,13 +26,17 @@
                 <tr>
                     <td><img id="image_panier" class="img-fluid rounded" src="{{ asset('img/upload/product/' ~ item.product.productImage) }}"></td>
                     <td>{{ item.product.productTitle }}</td>
-                    <td><input type="text" id="price" value="{{ item.product.productPrice | number_format(2,',','.') }}"> &euro;</td>
+                    <td>{{ item.product.productPrice | number_format(2,',','.') }} &euro;</td>
                     <td>
-                        <button id="moins" class="btn btn-info" onclick="cartupdatemoins()">-</button>
-                        <input type="text" id="qty" value="{{ item.quantity }}">
-                        <button id="plus" class="btn btn-info" onclick="cartupdateplus()">+</button>
+                        <div class="row" id="qte">
+
+                            <button id="moins" class="circle"><i class="fas fa-minus"></i></button>
+                            <input type="hidden" id="qty" value="{{ item.quantity }}">{{ item.quantity }}
+                            <button id="plus" class="circle"><i class="fas fa-plus"></i></button>
+
+                        </div>
                     </td>
-                    <td><input type="text" id="calculprix" value="{{ (item.product.productPrice * item.quantity) | number_format(2,',','.') }}"> &euro;</td>
+                    <td>{{ (item.product.productPrice * item.quantity) | number_format(2,',','.') }}&euro;</td>
                     <td id="supprimer"><a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></td>
                 </tr>
             {% endfor %}
@@ -60,22 +64,11 @@
         </div>
 {% endif %}
 
-    {# Essai JavaScript pour mettre à jour le prix selon quantité #}
+{% block javascripts %}
 
-{% for item in items %}
-    <script>
-        function cartupdateplus(){
-            var qty = document.getElementById('qty').value;
-            var calcul = document.getElementById('calculprix').value;
-            var price = document.getElementById('price').value;
-            qty++;
-            calcul = price * qty;
-        }
+    <script src="{{ asset('js/cart.js') }}"></script>
 
-        function cartupdatemoins(){
-            (document.getElementById('qty').value)--;
-        }
-    </script>
-    {% endfor %}
+{% endblock %}
+
 {% endblock %}
 

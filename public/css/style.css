@@ -703,4 +703,23 @@ td, th {
     text-align: center;
 }
 
+.circle{
+    border-radius : 100%;
+}
+
+#plus{
+    margin-left: 10px;
+}
+
+#moins{
+    margin-right : 10px;
+}
+
+#qte{
+    display: block;
+    text-align: center;
+    margin-top: -20px;
+
+}
+
 

@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="card-footer">
-                    <p id="product_price"> Prix : {{ eter_product.productPrice }} &euro;</p>
+                    <p id="product_price"> Prix : {{ eter_product.productPrice | number_format(2,',','.') }} &euro;</p>
                     {% if app.user %}
                         <a href="{{ path('cart_add', {'id': eter_product.id}) }}"class="btn btn-success"><i class="fas fa-shopping-cart mr-1"></i>AJOUTER</a>
                     {% else %}

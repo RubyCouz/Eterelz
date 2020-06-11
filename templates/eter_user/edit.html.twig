@@ -124,7 +124,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Description</label>
+                                <label id="editinp">Votre Description</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_description) }}
@@ -136,7 +136,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) clan(s)</label>
+                                <label id="editinp">Votre(Vos) Clan(s)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_clan) }}
@@ -148,7 +148,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) jeu(x)</label>
+                                <label id="editinp">Votre(Vos) Jeu(x)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_game) }}
@@ -160,7 +160,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) évènement(s)</label>
+                                <label id="editinp">Votre(Vos) Evènement(s)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.eterEvents) }}
@@ -172,7 +172,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) stream(s)</label>
+                                <label id="editinp">Votre(Vos) Stream(s)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_stream) }}
@@ -192,19 +192,8 @@
     </div>
 </div>
 
-{#Prévisualisation de la photo de profil#}
-
-<script> 
-function preview_image(event)
-{
-    var reader = new FileReader();
-    reader.onload = function()
-    {
-        var output = document.getElementById('editimg');
-        output.src = reader.result;
-    }
-reader.readAsDataURL(event.target.files[0]);
-}
-</script>
+{% block javascripts %}
+<script src="{{ asset('js/edit_profil.js') }}"></script>
+{% endblock %}
 
 {% endblock %}

@@ -95,6 +95,11 @@ searchBar
 /**
 navbar
  */
+
+#fixe {
+    position: fixed;
+}
+
 .logo {
     width: 10em;
     height: auto;
@@ -738,6 +743,24 @@ td, th {
     font-size: 18px;
 }
 
+#panier_vide2 {
+    width: 10%;
+    height: 0;
+    padding-bottom: 15%;
+    position: relative;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+}
+
+#panier_vide2, iframe {
+    
+    margin: 0 auto;
+}
+
 .text-right, #text-right {
     font-weight: bold;
 }
@@ -748,4 +771,22 @@ td, th {
 
 #boutique {
     text-align: center;
+}
+
+.circle{
+    border-radius : 100%;
+}
+
+#plus{
+    margin-left: 10px;
+}
+
+#moins{
+    margin-right : 10px;
+}
+
+#qte{
+    display: block;
+    text-align: center;
+    margin-top: -20px;
 }

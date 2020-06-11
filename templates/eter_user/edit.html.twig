@@ -178,10 +178,9 @@
                             </div>
                         </div>
 
-                        <div id="editbutton" >
+                        <div id="editbutton" class="row">
                             <button class="btn btn-info">Retour</button>
                         <button class="btn btn-success">{{ button_label|default('Mettre à jour') }}</button>
-                        </div>
 {{ form_end(form) }}
                         {{ include('eter_user/_delete_form.html.twig') }}
                         {#<a href="{{ path('eter_user_index') }}">Retour</a>#}
@@ -192,19 +191,10 @@
     </div>
 </div>
 
-{#Prévisualisation de la photo de profil#}
+    {% block javascripts %}
 
-<script> 
-function preview_image(event)
-{
-    var reader = new FileReader();
-    reader.onload = function()
-    {
-        var output = document.getElementById('editimg');
-        output.src = reader.result;
-    }
-reader.readAsDataURL(event.target.files[0]);
-}
-</script>
+<script src="{{ asset('js/edit_profil.js') }}"></script>
+
+    {% endblock %}
 
 {% endblock %}

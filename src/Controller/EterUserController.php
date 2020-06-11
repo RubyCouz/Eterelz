@@ -7,6 +7,7 @@ use App\Form\EterUserType;
 use App\Repository\EterUserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -140,13 +141,18 @@ class EterUserController extends AbstractController
      */
     public function delete(Request $request, EterUser $eterUser): Response
     {
+
         $inProgress = false;
         if ($this->isCsrfTokenValid('delete'.$eterUser->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($eterUser);
             $entityManager->flush();
+            $session = new Session();
+            $session->invalidate();
         }
 
-        return $this->redirectToRoute('eter_user_index');
+        $this->addFlash('success', 'Votre compte a bien été supprimé');
+
+        return $this->redirectToRoute('home');
     }
 }

@@ -12,8 +12,9 @@ class ResetPassType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', EmailType::class)
-        ;
+            ->add('email', EmailType::class, [
+                'attr' => ['placeholder' => 'Saisissez votre adresse email']
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

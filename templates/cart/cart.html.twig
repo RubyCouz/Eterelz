@@ -26,7 +26,14 @@
                     <td><img id="image_panier" src="{{ asset('img/upload/product/' ~ item.product.productImage) }}" alt="Image de {{ item.product.productTitle }}"></td>
                     <td>{{ item.product.productTitle }}</td>
                     <td>{{ item.product.productPrice | number_format(2,',','.') }} &euro;</td>
-                    <td><input type="number" value="{{ item.quantity }}"></td>
+                    {#<td><input type="number" value="{{ item.quantity }}"></td>#}
+                    <td>
+                    <div class="row" id="qte">
+                        <button id="moins" class="circle"><i class="fas fa-minus"></i></button>
+                        <input type="hidden" id="qty" value="{{ item.quantity }}">{{ item.quantity }}
+                        <button id="plus" class="circle"><i class="fas fa-plus"></i></button>
+                    </div>
+                    </td>
                     <td>{{ (item.product.productPrice * item.quantity) | number_format(2,',','.') }} &euro;</td>
                     <td id="supprimer"><a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></td>
                 </tr>
@@ -47,12 +54,16 @@
         </div>
     {% else %}
         <p id="panier_vide">Votre panier est vide !</p>
-        <div style="width:10%;height:0;margin-left:565px;padding-bottom:10%;position:relative;">
-        <iframe src="https://giphy.com/embed/MalMjCM93s7Z8V0zHk" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <div id="panier_vide2">
+        <iframe src="https://giphy.com/embed/MalMjCM93s7Z8V0zHk" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
         </div>
         <div id="boutique">
         <a href="{{ path('product_index') }}" class="btn btn-info"><i class="fas fa-shopping-cart mr-2"></i>BOUTIQUE</a>
         </div>
     {% endif %}
+
+{% block javascripts %}
+<script src="{{ asset('js/cart.js') }}"></script>
+{% endblock %}
 
 {% endblock %}

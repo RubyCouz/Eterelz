@@ -8,6 +8,7 @@ use App\Repository\EterUserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -148,6 +149,14 @@ class EterUserController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('eter_user_index');
+        // Destruction de la session
+        $session = new Session();
+        $session->invalidate();
+
+        // On envoie un message flash
+        // $this->addFlash('success', 'Votre compte a bien été supprimé');
+
+        return $this->redirectToRoute('home');
+
     }
 }

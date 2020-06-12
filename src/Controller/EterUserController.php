@@ -153,9 +153,8 @@ class EterUserController extends AbstractController
         $session->invalidate();
 
         // On envoie un message flash
-        // $this->addFlash('success', 'Votre compte a bien été supprimé');
+        $this->addFlash('success', 'Votre compte a bien été supprimé');
 
         return $this->redirectToRoute('home');
-
     }
 }

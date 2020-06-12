@@ -31,7 +31,7 @@
                     <div class="row" id="qte">
                         <button class="circle minus"><i class="fas fa-minus"></i></button>
                         <span class="qty">{{ item.quantity }}</span>
-                        <input type="hidden" value="{{ item.quantity }}">
+                        <input type="hidden" value="{{ item.quantity }}" class="inputQty">
                         <button class="circle plus"><i class="fas fa-plus"></i></button>
                     </div>
                     </td>
@@ -64,7 +64,7 @@
     {% endif %}
 
 {% block javascripts %}
-<script src="{{ asset('js/cart.js') }}"></script>
+
 {% endblock %}
 
 {% endblock %}

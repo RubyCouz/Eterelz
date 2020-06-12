@@ -19,63 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
-      <change afterPath="$PROJECT_DIR$/public/css/jquery.tagit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/tagit.ui-zendesk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/1341645301-54103-5eb9518cd1278.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/1348161301-28192-5eb94559f3db6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/1366979294-85989-5eb947ce2d48d.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/1378296902-82067-5eb9504352e93.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/1389942901-14615-5eb941c51ecae.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/wallhaven-0pwjmp-5eb9450501d15.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/wallhaven-0pwjmp-5eb947096b0da.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/wallhaven-0q6j2l-5eb945f1293b2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/wallhaven-0q6j2l-5eb947991f560.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/wallhaven-4vmz65-5eb94b1d46834.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/wallhaven-4x1x2l-5eb950c9d3a74.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/wallhaven-4y6rd0-5eb9497722d19.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/wallhaven-4yyv2d-5eb948f2cfe33.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/add-collection-widget.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/tag-it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/.githooks/install.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/.githooks/post-commit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/.githooks/pre-commit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/README.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/_static/examples.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/_static/master.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/_static/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/_static/screenshot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/_static/subpage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/css/jquery.tagit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/css/tagit.ui-zendesk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/examples.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/js/tag-it.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/js/tag-it.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/tag-it-master/prototype.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/EterGameController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/EterGameType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/eter_game/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/eter_game/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/eter_game/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/eter_game/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/eter_game/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/eter_game/show.html.twig" afterDir="false" />
+    <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCD/eterelz.lo1" beforeDir="false" afterPath="$PROJECT_DIR$/MCD/eterelz.lo1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCD/eterelz.loo" beforeDir="false" afterPath="$PROJECT_DIR$/MCD/eterelz.loo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/EterUserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EterUserType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cart/cart.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/cart.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/emails/signup.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/signup.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -327,7 +276,7 @@
       <workItem from="1590761236391" duration="4436000" />
       <workItem from="1591606853566" duration="3892000" />
       <workItem from="1591783143289" duration="814000" />
-      <workItem from="1591948716347" duration="5965000" />
+      <workItem from="1591948716347" duration="8271000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -595,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589288223639</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="fix cart js">
+      <created>1591958121149</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1591958121149</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,7 +595,8 @@
     <MESSAGE value="connexion ok" />
     <MESSAGE value="personnalisation page login" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="fix cart js" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix cart js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -661,9 +618,10 @@
     </state>
     <state x="690" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583579978729" />
     <state x="2610" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587711771592" />
-    <state x="2493" y="34" key="CommitChangelistDialog2" timestamp="1587145562668">
-      <screen x="1920" y="30" width="1920" height="1050" />
+    <state x="-1347" y="50" key="CommitChangelistDialog2" timestamp="1591958120198">
+      <screen x="-1920" y="50" width="1920" height="1030" />
     </state>
+    <state x="-1347" y="50" key="CommitChangelistDialog2/-1920.50.1920.1030/0.40.1536.824@-1920.50.1920.1030" timestamp="1591958120198" />
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251448796" />
     <state x="2493" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586255105377" />
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583917916958" />
@@ -720,10 +678,10 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="-1368" y="299" key="Vcs.Push.Dialog.v2" timestamp="1590759199394">
+    <state x="-1368" y="299" key="Vcs.Push.Dialog.v2" timestamp="1591958123178">
       <screen x="-1920" y="50" width="1920" height="1030" />
     </state>
-    <state x="-1368" y="299" key="Vcs.Push.Dialog.v2/-1920.50.1920.1030/0.40.1536.824@-1920.50.1920.1030" timestamp="1590759199394" />
+    <state x="-1368" y="299" key="Vcs.Push.Dialog.v2/-1920.50.1920.1030/0.40.1536.824@-1920.50.1920.1030" timestamp="1591958123178" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />

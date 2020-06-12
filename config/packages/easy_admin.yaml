@@ -13,7 +13,7 @@ easy_admin:
                     - {property: 'user_discord', label: 'Discord'}
                     - {property: 'statut', label: 'Etat'}
                     - {property: 'label', label: 'Etiquette'}
-                    - {property: 'user_role', label: 'Rôle'}
+                    - {property: 'user_role', label: 'Role'}
                     - {property: 'user_clan', label: 'Clan'}
                     - {property: 'user_game', label: 'Jeux joués'}
                     - {property: 'user_pic', type: 'file', label: 'photo de profil'}

@@ -87,24 +87,25 @@ class EterUserController extends AbstractController
     {
         $inProgress = false;
 
-        //Création du formulaire à partir du formulaire type EterUserType.php
+        //Création du formulaire à partir du formulaire type EterUserType
         $form = $this->createForm(EterUserType::class, $eterUser);
 
         //Paramétrage de l'acceptation des requêtes SQL
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
 
-            //Récupération des données du fichier uplodé
+            //Récupération des données du fichier uploadé
             $avatarFile = $form['user_avatar']->getData();
-            
+
             //Si un fichier a été déposé
             if ($avatarFile) {
 
                 //Récupération du nom du fichier original
                 $originalFilename = pathinfo($avatarFile->getClientOriginalName(), PATHINFO_FILENAME);
 
-                //Sécurisation du nom du fichier
+                //Sécurisation du nom de fichier
                 $safeFilename = $slugger->slug($originalFilename);
 
                 //Nouveau nom du fichier et ajout de l'extension
@@ -112,7 +113,7 @@ class EterUserController extends AbstractController
 
                 //Indication du nouveau nom de fichier
                 $eterUser->setUserAvatar($newFilename);
-                
+
                 //Déplacement du fichier dans le dossier de destination
                 try {
                     $avatarFile->move(
@@ -124,9 +125,9 @@ class EterUserController extends AbstractController
                     //Possibilité d'indiquer un message d'erreur si l'upload échoue
                 }
             }
+
             //Insertion dans la BDD
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('eter_user_show', ['id' => $eterUser->getId()]);
         }
         return $this->render('eter_user/edit.html.twig', [

@@ -23,6 +23,7 @@
 <body class="{{ (inProgress == true) ? 'inProgress' : 'base' }}">
 {#navbar#}
 
+
 <div id="wrapper">
     <div class="overlay"></div>
 
@@ -36,7 +37,7 @@
 
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        {#<a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
+                        {#                        <a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
                         <button type="button" class="hamburger animated fadeInLeft is-closed mt-1"
                                 data-toggle="offcanvas">
                             <span class="hamb-top"></span>
@@ -50,14 +51,14 @@
                         </div>
                         {% if is_granted('ROLE_ADMIN') %}
                             <div class="text-center">
-                                <a href="http://127.0.0.1:8000/admin" class="btn btn-default">Back-office</a>
+                                <a href="/eter/public/index.php/admin" class="btn btn-default">Back-office</a>
                             </div>
                         {% endif %}
                     {% else %}
                         <li>
                             <!--Modal: Login / Register Form-->
                             <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog"
-                                 aria-labelledby="myModalLabel" aria-hidden="true">
+                                    aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog cascading-modal" role="document">
                                     <!--Content-->
                                     <div class="modal-content">
@@ -171,28 +172,8 @@
 
     <footer class="footer">
 
-        {% for message in app.flashes('success') %}
-            <div id="alert_registration" class="alert alert-success" role="alert">
-                {{ message }}
-            </div>
-        {% endfor %}
-
-        {% for message in app.flashes('warning') %}
-            <div id="alert_registration" class="alert alert-warning" role="alert">
-                {{ message }}
-            </div>
-        {% endfor %}
-
-        {% for message in app.flashes('danger') %}
-            <div id="alert_registration" class="alert alert-danger" role="alert">
-                {{ message }}
-            </div>
-        {% endfor %}
-
     </footer>
-
 </div>
-
 <!-- /#wrapper -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -202,7 +183,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/feb810672a.js" crossorigin="anonymous"></script>
-<script src="{{ asset('js/cta.js') }}"></script>
+<script src="{{ asset('js/add-collection-widget.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 
 <!-- Bootstrap tooltips 
@@ -212,8 +193,9 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
-
 <script>
+
+
     // au clic sur le bouton se connecter (déclenchement modal)
     $('#loginModal').click(function () {
         // fonction ajax
@@ -230,7 +212,7 @@
             });
     });
 </script>
-
+<script src="{{ asset('js/cart.js') }}"></script>
 {% block javascripts %}
 
 {% endblock %}

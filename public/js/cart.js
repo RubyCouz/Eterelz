@@ -1,13 +1,38 @@
-// Essai JavaScript pour mettre à jour le prix selon quantité */
+// récupération des éléments
+ let plus = document.querySelector('.plus');
+console.log(document.querySelector('.plus'));
 
-document.getElementById('plus').onclick =function() {cartupdateplus()};
+ let minus = document.querySelector('.minus');
+ let qty = document.querySelector('.qty');
 
+// récupération de la valeur dans l'input
+ let inputQty = document.querySelector('.inputQty').value;
+
+// évènement
+
+// plus.click = cartupdateplus;
+// minus.onclick = cartupdatemoins;
+
+/*
+ action déclencher lors des events
+ */
+// incrémentation qté article
 function cartupdateplus(){
-    var qty = parseInt(document.getElementById('qty').value);
-    var qty1 = qty+1;
-    document.getElementById('qty').value = qty1;
+    let qtyValor = parseInt(inputQty);
+    qtyValor += 1; // qtyValor ++
+    inputQty = qtyValor;
+    qty.innerHTML = qtyValor;
+console.log(qtyValor);
 }
 
+// décrémentation article
 function cartupdatemoins(){
-(document.getElementById('qty').value)--;
+    let qtyValor = parseInt(inputQty);
+    qtyValor -= 1; // qtyValor--
+    inputQty = qtyValor;
+    qty.innerHTML = qtyValor;
+
 }
+
+plus.addEventListener('click', cartupdateplus);
+minus.addEventListener('click', cartupdatemoins);

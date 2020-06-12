@@ -98,7 +98,7 @@ class EterUser implements UserInterface
     private $user_clan;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\EterGame", inversedBy="eterUsers")
+     * @ORM\ManyToMany(targetEntity="App\Entity\EterGame", inversedBy="eterUsers", cascade={"persist"})
      */
     private $user_game;
 

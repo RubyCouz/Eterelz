@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EterGame index{% endblock %}
+
+{% block body %}
+    <h1>EterGame index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Game_name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for eter_game in eter_games %}
+            <tr>
+                <td>{{ eter_game.id }}</td>
+                <td>{{ eter_game.gameName }}</td>
+                <td>
+                    <a href="{{ path('eter_game_show', {'id': eter_game.id}) }}">show</a>
+                    <a href="{{ path('eter_game_edit', {'id': eter_game.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('eter_game_new') }}">Create new</a>
+{% endblock %}

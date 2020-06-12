@@ -29,9 +29,10 @@
                     {#<td><input type="number" value="{{ item.quantity }}"></td>#}
                     <td>
                     <div class="row" id="qte">
-                        <button id="moins" class="circle"><i class="fas fa-minus"></i></button>
-                        <input type="hidden" id="qty" value="{{ item.quantity }}">{{ item.quantity }}
-                        <button id="plus" class="circle"><i class="fas fa-plus"></i></button>
+                        <button class="circle minus"><i class="fas fa-minus"></i></button>
+                        <span class="qty">{{ item.quantity }}</span>
+                        <input type="hidden" value="{{ item.quantity }}">
+                        <button class="circle plus"><i class="fas fa-plus"></i></button>
                     </div>
                     </td>
                     <td>{{ (item.product.productPrice * item.quantity) | number_format(2,',','.') }} &euro;</td>

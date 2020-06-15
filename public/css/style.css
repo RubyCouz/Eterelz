@@ -790,3 +790,14 @@ iframe {
     text-align: center;
     margin-top: -20px;
 }
+
+/**
+Mise en forme recapitulatif.html.twig
+*/
+
+#livraison {
+    color: white;
+    margin-left: 20px;
+    margin-top: 40px;
+    font-size: 20px;
+}

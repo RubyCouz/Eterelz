@@ -12,9 +12,9 @@
         <table class="table">
             <thead>
             <tr>
-                <th id="image_panier1"></th>
-                <th id="produits2">Produit</th>
-                <th id="prix">Prix</th>
+                <th id="image_panier1">Produit</th>
+                <th id="produits2">Description</th>
+                <th id="prix">Prix unitaire</th>
                 <th id="quantite">Quantité</th>
                 <th id="total">Sous-Total</th>
                 <th id="supp"></th>
@@ -64,7 +64,7 @@
     {% endif %}
 
 {% block javascripts %}
-
+<script src="{{ asset('js/cart.js') }}"></script>
 {% endblock %}
 
 {% endblock %}

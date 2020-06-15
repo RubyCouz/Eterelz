@@ -1,37 +1,37 @@
-// récupération des éléments
+// Récupération des éléments
  let plus = document.querySelector('.plus');
 console.log(document.querySelector('.plus'));
 
  let minus = document.querySelector('.minus');
  let qty = document.querySelector('.qty');
 
-// récupération de la valeur dans l'input
+// Récupération de la valeur dans l'input
  let inputQty = document.querySelector('.inputQty').value;
 
-// évènement
-
-// plus.click = cartupdateplus;
-// minus.onclick = cartupdatemoins;
-
 /*
- action déclencher lors des events
+ Action déclenchée lors des events
  */
-// incrémentation qté article
+// Incrémentation qté article
 function cartupdateplus(){
     let qtyValor = parseInt(inputQty);
     qtyValor += 1; // qtyValor ++
     inputQty = qtyValor;
     qty.innerHTML = qtyValor;
-console.log(qtyValor);
 }
 
-// décrémentation article
+// Décrémentation article
 function cartupdatemoins(){
     let qtyValor = parseInt(inputQty);
     qtyValor -= 1; // qtyValor--
     inputQty = qtyValor;
     qty.innerHTML = qtyValor;
-
+    if(qtyValor < 0){
+        inputQty = 0;
+        qty.innerHTML = 0;
+    }
+    else if(qtyValor === 0){
+       confirm('Voulez-vous supprimer le produit du panier');
+    }
 }
 
 plus.addEventListener('click', cartupdateplus);

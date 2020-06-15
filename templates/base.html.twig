@@ -37,7 +37,7 @@
 
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        {#                        <a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
+                        {#<a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
                         <button type="button" class="hamburger animated fadeInLeft is-closed mt-1"
                                 data-toggle="offcanvas">
                             <span class="hamb-top"></span>
@@ -164,15 +164,15 @@
     </header>
 
     <main>
-        <!-- Page Content -->
+   
+    {% block body %}{% endblock %}
 
-        <!-- /#page-content-wrapper -->
-        {% block body %}{% endblock %}
     </main>
 
     <footer class="footer">
 
     </footer>
+
 </div>
 <!-- /#wrapper -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -212,9 +212,6 @@
             });
     });
 </script>
-<script src="{{ asset('js/cart.js') }}"></script>
-{% block javascripts %}
-
-{% endblock %}
+{% block javascripts %}{% endblock %}
 </body>
 </html>

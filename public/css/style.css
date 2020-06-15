@@ -96,6 +96,9 @@ searchBar
 /**
 navbar
  */
+#fixe{
+    position:fixed;
+}
 .logo {
     width: 10em;
     height: auto;

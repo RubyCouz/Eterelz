@@ -7,6 +7,7 @@
     <div>
         <h1 id="panier">Votre panier</h1>
     </div>
+    {# Si il y a des produits dans mon panier #}
     {% if items | length > 0 %}
     <div id="table1">
         <table class="table">
@@ -21,6 +22,7 @@
             </tr>
             </thead>
             <tbody>
+            {# Pour chaque élèment dans mon tableau items #}
             {% for item in items %}
                 <tr>
                     <td><img id="image_panier" src="{{ asset('img/upload/product/' ~ item.product.productImage) }}" alt="Image de {{ item.product.productTitle }}"></td>
@@ -54,6 +56,7 @@
         <a href="{{ path('product_index') }}" class="btn btn-info"><i class="fas fa-arrow-circle-left mr-2"></i>RETOUR A LA BOUTIQUE</a>
         </div>
     {% else %}
+    {# Sinon on indique que le panier est vide #}
         <p id="panier_vide">Votre panier est vide !</p>
         <div id="panier_vide2">
         <iframe src="https://giphy.com/embed/MalMjCM93s7Z8V0zHk" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>

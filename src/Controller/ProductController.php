@@ -11,12 +11,11 @@ class ProductController extends AbstractController
 {
     /**
      * @Route("/product", name="product_index")
-     * @param EterProductRepository $eterProductRepository
-     * @return Response
      */
     public function index(EterProductRepository $eterProductRepository )
     {
         $inProgress = false;
+        // Affichage de la liste des produits
         return $this->render('product/list.html.twig', [
             'products' => $eterProductRepository->findAll(),
             'inProgress' => $inProgress

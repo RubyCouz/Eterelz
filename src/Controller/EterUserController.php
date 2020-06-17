@@ -7,8 +7,8 @@ use App\Form\EterUserType;
 use App\Repository\EterUserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,8 +22,6 @@ class EterUserController extends AbstractController
 {
     /**
      * @Route("/", name="eter_user_index", methods={"GET"})
-     * @param EterUserRepository $eterUserRepository
-     * @return Response
      */
     public function index(EterUserRepository $eterUserRepository): Response
     {
@@ -36,8 +34,6 @@ class EterUserController extends AbstractController
 
     /**
      * @Route("/new", name="eter_user_new", methods={"GET","POST"})
-     * @param Request $request
-     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -63,8 +59,6 @@ class EterUserController extends AbstractController
 
     /**
      * @Route("/{id}", name="eter_user_show", methods={"GET"})
-     * @param EterUser $eterUser
-     * @return Response
      */
     public function show(EterUser $eterUser): Response
     {
@@ -78,10 +72,6 @@ class EterUserController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="eter_user_edit", methods={"GET","POST"})
-     * @param Request $request
-     * @param EterUser $eterUser
-     * @param SluggerInterface $slugger
-     * @return Response
      */
     public function edit(Request $request, EterUser $eterUser, SluggerInterface $slugger): Response
     {
@@ -115,12 +105,13 @@ class EterUserController extends AbstractController
                 $eterUser->setUserAvatar($newFilename);
 
                 //Déplacement du fichier dans le dossier de destination
-                try{
+                try {
                     $avatarFile->move(
                         $this->getParameter('upload_directory'),
                         $newFilename
                     );
-                }catch (FileException $e) {
+                } 
+                catch (FileException $e) {
                     //Possibilité d'indiquer un message d'erreur si l'upload échoue
                 }
             }
@@ -141,18 +132,19 @@ class EterUserController extends AbstractController
      */
     public function delete(Request $request, EterUser $eterUser): Response
     {
-
+        $inProgress = false;
         if ($this->isCsrfTokenValid('delete'.$eterUser->getId(), $request->request->get('_token'))) {
-            /*$entityManager = $this->getDoctrine()->getManager();
+            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($eterUser);
             $entityManager->flush();
-            $session = new Session();
-            $session->invalidate();*/
-            $eterUser->setUserDesactivate(1);
-            $this->getDoctrine()->getManager()->flush();
         }
 
-        $this->addFlash('danger', 'Votre compte a bien été désactivé');
+        // Destruction de la session
+        $session = new Session();
+        $session->invalidate();
+
+        // On envoie un message flash
+        // $this->addFlash('success', 'Votre compte a bien été supprimé');
 
         return $this->redirectToRoute('home');
     }

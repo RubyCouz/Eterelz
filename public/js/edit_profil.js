@@ -1,4 +1,4 @@
-/*Prévisualisation de la photo de profil*/
+// Prévisualisation de la photo de profil
 
 function preview_image(event)
 {

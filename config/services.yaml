@@ -6,6 +6,7 @@
 parameters:
     locale: 'fr'
     upload_directory: '%kernel.project_dir%/public/img/upload/profil_pic' # insertion des directives de téléchargement de la photo de profil
+
 services:
     # default configuration for services in *this* file
     _defaults:

@@ -4,64 +4,63 @@
 
 {% block body %}
 
-    <div id="titre1">
-        <h1>Les produits</h1>
-    </div>
+<div id="titre1">
+    <h1>Les produits</h1>
+</div>
 
-    <div class="row d-flex justify-content-center">
+<div class="row d-flex justify-content-center">
 
-        {% for eter_product in products %}
+{% for eter_product in products %}
 
-            <div id="list" class="card text-center mb-2 ml-2 border border-primary">
-                <div id="card_header" class="card-header">
-                    <img src="{{ asset('img/upload/product/' ~ eter_product.productImage) }}" alt="Image de {{ eter_product.productTitle }}" class="card-img-top">
-                </div>
+    <div id="list" class="card text-center mb-2 ml-2 border border-info">
+        <div id="card_header" class="card-header">
+            <img src="{{ asset('img/upload/product/' ~ eter_product.productImage) }}" alt="Image de {{ eter_product.productTitle }}" class="card-img-top">
+        </div>
 
-                <div id="card_body" class="card-body">
+        <div id="card_body" class="card-body">
 
-                    <h3 id="product_title">{{ eter_product.productTitle }}</h3>
+            <h3 id="product_title">{{ eter_product.productTitle }}</h3>
 
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop{{ eter_product.id }}">
-                        <i class="fas fa-info-circle mr-1"></i>PLUS D'INFOS
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#staticBackdrop{{eter_product.id}}">
+            <i class="fas fa-info-circle mr-1"></i>PLUS D'INFOS
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop{{eter_product.id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal_title" class="modal-title" id="staticBackdropLabel">{{ eter_product.productTitle }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
                     </button>
-
-                    <!-- Modal -->
-
-                    <div class="modal fade" id="staticBackdrop{{ eter_product.id }}" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 id="modal_title" class="modal-title" id="staticBackdropLabel">{{ eter_product.productTitle }}</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div id="modal_body" class="modal-body">
-                                    {{ eter_product.productDescription }}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">FERMER</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-
-                <div class="card-footer">
-                    <p id="product_price"> Prix : {{ eter_product.productPrice | number_format(2,',','.') }} &euro;</p>
-                    {% if app.user %}
-                        <a href="{{ path('cart_add', {'id': eter_product.id}) }}"class="btn btn-success"><i class="fas fa-shopping-cart mr-1"></i>AJOUTER</a>
-                    {% else %}
-                        <a href="{{ path('login') }}"class="btn btn-success"><i class="fas fa-shopping-cart mr-1"></i>Ajouter</a>
-                    {% endif %}
+                <div id="modal_body" class="modal-body">
+                    {{ eter_product.productDescription }}
                 </div>
-
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">FERMER</button>
+                </div>
+                </div>
+            </div>
             </div>
 
-        {% endfor %}
+        </div>
+
+        <div class="card-footer">
+            <p id="product_price"> Prix : {{ eter_product.productPrice | number_format(2,',','.') }} &euro;</p>
+            {% if app.user %}
+                <a href="{{ path('cart_add', {'id': eter_product.id}) }}"class="btn btn-success"><i class="fas fa-shopping-cart mr-1"></i>AJOUTER</a>
+            {% else %}
+                <a href="{{ path('login') }}"class="btn btn-success"><i class="fas fa-shopping-cart mr-1"></i>AJOUTER</a>
+            {% endif %}
+        </div>
 
     </div>
+
+{% endfor %}
+
+</div>
 
 {% endblock %}

@@ -3,23 +3,24 @@
 namespace App\Controller;
 
 use App\Entity\EterUser;
-use App\Form\SigninType;
-//use App\Form\RegistrationType;
-//use Symfony\Component\Mime\Email;
+use App\Form\RegistrationType;
 use App\Form\ResetPassType;
+use App\Form\SigninType;
 use App\Repository\EterUserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
+use Symfony\Component\Mailer\MailerInterface;
+//use Symfony\Component\Mime\Email;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 
 class SecurityController extends AbstractController {
 
@@ -27,117 +28,134 @@ class SecurityController extends AbstractController {
      * @Route("/inscription", name="security_registration")
      * @param Request $request
      * @param EntityManagerInterface $manager
+     * @param EterUserRepository $entityRepo
      * @param UserPasswordEncoderInterface $encoder
      * @param MailerInterface $mailer
      * @return Response
      * @throws TransportExceptionInterface
      */
-    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, MailerInterface $mailer) {
-        // Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
-        $user = new EterUser(); 
-        $inProgress = false;
+    public function registration(Request $request, EntityManagerInterface $manager, EterUserRepository $entityRepo, UserPasswordEncoderInterface $encoder, MailerInterface $mailer)
+    {
 
+        // Définition de la variable en signalant que l'on veut créer une nouvelle entité
+        $user = new EterUser();
+        $inProgress = false;
         // Création du formulaire selon la table user
         $form = $this->createForm(SigninType::class, $user);
-
         // Analyse de la requête
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid())
-        {
-            // Encryptage du mot de passe selon la configuration dans security.yaml de config
-            // Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
-            $hash = $encoder->encodePassword($user, $user->getUserPassword());
+        if ($form->isSubmitted() && $form->isValid()) {
 
-            // Validation du remplacement du mot de passe par un encryptage
-            $user->setUserPassword($hash);
+                // Encryptage du mot de passe selon la configuration dans security.yaml de config
+                // Le premier paramètre détermine la façon de crypter, le second ce qu'il faut crypter
+                $hash = $encoder->encodePassword($user, $user->getUserPassword());
 
-            // On génère le token d'activation
-            $user->setActivationToken(uniqid());
+                // Validation du remplacement du mot de passe par un encryptage
+                $user->setUserPassword($hash);
 
-            // On génère la date d'inscription, utile plus tard pour le lien d'activation
-            $dateinscr = strtotime('now');
-            $user->setDateInscr($dateinscr);
+                //On génère le token d'activation
+                $user->setActivationToken(uniqid());
 
-            $statut = 1;
-            $user->setStatut($statut);
-            $user->setUserRole('Utilisateur');
+                //On génère la date d'inscription, utile plus tard pour le lien d'activation
+                $dateinscr = strtotime('now');
+                $user->setDateInscr($dateinscr);
 
-            // Garde en mémoire les données soumises
-            $manager->persist($user);
+                $statut = 1;
+                $user->setStatut($statut);
+                $user->setUserRole('Utilisateur');
 
-            // Envoi des données à la BDD
-            $manager->flush();
+                $desactive = 0;
+                $user->setUserDesactivate($desactive);
 
-            // Envoi mail
-            $mail = $user->getUserMail();
+                // Garde en mémoire les données soumises
+                $manager->persist($user);
 
-            $email = (new TemplatedEmail())
-                ->from('contact@eterelz.org')
-                ->to($mail)
-                ->subject('Confirmation d\'inscription')
-                ->htmlTemplate('emails/signup.html.twig')
-                ->context([
-                    'date' => new \DateTime('now'),
-                    'expiration_date' => new \DateTime('+1 day'),
-                    'username' => $user->getUserLogin(),
-                    'token' => $user->getActivationToken(),
-                ])
-                ;
+                // Envoi des données à la BDD
+                $manager->flush();
 
-            $mailer->send($email);
+                // Envoi mail
+                $mail = $user->getUserMail();
 
-            // On envoie un message flash
-            $this->addFlash('success', 'Un email de confirmation vous a été envoyé');
+                $email = (new TemplatedEmail())
+                    ->from('contact@eterelz.org')
+                    ->to($mail)
+                    // ->cc('cc@example.com')
+                    // ->bcc('bcc@example.com')
+                    // ->replyTo('fabien@example.com')
+                    // ->priority(Email::PRIORITY_HIGH)
+                    ->subject('Confirmation d\'inscription')
+                    //->text('Welcome')
+                    //->html('<p>Votre inscription a bien été prise en compte !</p>')
+                    ->htmlTemplate('emails/signup.html.twig')
+                    ->context([
+                        'expiration_date' => new \DateTime('+1 day'),
+                        'username' => $user->getUserLogin(),
+                        'date' => new \DateTime('now'),
+                        'token' => $user->getActivationToken()
+                    ]);
 
-            return $this->redirectToRoute('home');
+                $mailer->send($email);
+
+                //Création du message Flash
+                $this->addFlash('success', 'Un email de confirmation vous a été envoyé');
+
+                return $this->redirectToRoute('home');
         }
-        
-        // Affichage
-        return $this->render('security/loginModal.html.twig', [
-            'inProgress' => $inProgress,
-            'form' => $form->createView()
-        ]);
-    }
+            // Affichage
+            return $this->render('security/loginModal.html.twig', [
+                'inProgress' => $inProgress,
+                'form' => $form->createView()
+            ]);
+        }
 
     /**
      * @Route("/activation/{token}", name="activation")
+     * @param $token
+     * @param EterUserRepository $entityRepo
+     * @param EntityManagerInterface $manager
+     * @return RedirectResponse
      */
-    public function activation($token, Request $request, EterUserRepository $entityRepo, EntityManagerInterface $manager) {
+    public function activation($token, EterUserRepository $entityRepo, EntityManagerInterface $manager){
+
         $inProgress = false;
+
         // On vérifie si un utilisateur a ce token
         $user = $entityRepo->findOneBy(['activation_token' => $token]);
 
-        // Si aucun utilisateur n'existe avec ce token
-        if(!$user)
-        {
-            // On envoie un message flash
+        //Si aucun utilisateur n'existe avec ce token
+        if(!$user){
+            //Message AddFlash pour signaler un utilisateur inexistant
             $this->addFlash('danger', 'Cet utilisateur n\'existe pas');
-            // On retourne à l'accueil
+
+            //On retourne à l'accueil
             return $this->redirectToRoute('home', [
                 'inProgress' => $inProgress,
             ]);
         }
 
-        else if($user)
-        {
-            // Définition de la date du clic sur le lien
+        else if($user){
+
+            //Définition de la date du clic sur le lien
             $datelien = strtotime('now');
-            // Enregistrement en BDD de la date du clic sur le lien
+
+            //Enregistrement en BDD de la date du clic sur le lien
             $user->setDateLien($datelien);
-            // Récupération de la date d'inscription
+
+            //Récupération de la date d'inscription
             $dateinscr = $user-> getDateInscr();
-            // Calcul pour déterminer l'intervalle de temps entre les deux dates
+
+            //Calcul pour définir l'intervalle de temps entre les deux dates
             $dateinterval = ($datelien - $dateinscr );
 
-            // Condition de validation du lien (ici 24 heures)
-            if($dateinterval > 86400)
-            {
-                // Suppression du compte et message d'alerte
+            //Condition de validation du lien (ici 24 heures)
+            if($dateinterval > 86400){
+
+                //Suppression du compte provisoire et message d'alerte
                 $manager->remove($user);
                 $manager->flush();
                 $this->addFlash('danger', 'Le lien n\'est plus valide, veuillez vous réinscrire');
 
-                // On retourne à l'accueil
+                //On retourne à l'accueil
                 return $this->redirectToRoute('home', [
                     'inProgress' => $inProgress,
                 ]);
@@ -149,31 +167,41 @@ class SecurityController extends AbstractController {
         $manager->persist($user);
         $manager->flush();
 
-        // On envoie un message flash
+        //On envoie un message flash
         $this->addFlash('success', 'Votre compte a bien été activé');
 
-        // On retourne à l'accueil
-        return $this->redirectToRoute('home',[
-            'inProgress' => $inProgress
+        //On retourne à l'accueil
+        return $this->redirectToRoute('home', [
+            'inProgress' => $inProgress,
         ]);
+
     }
 
-    
     /**
      * @Route("/login", name="login")
+     * @param EterUser $eterUser
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
-    public function login(AuthenticationUtils $authenticationUtils) {
+    public function login(EterUser $eterUser, AuthenticationUtils $authenticationUtils) {
 
         $error =$authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
+        $userDesactive = $eterUser->getUserDesactivate();
         $inProgress = false;
         if($error){
-            $this->addFlash('danger', 'Cet email n\'existe pas ou le mot de passe est erroné !');
+            $this->addFlash('danger', 'Cet email n\'existe pas ou le mot de passe est erroné');
             return $this->render('home/index.html.twig', [
                 'error' => $error,
                 'inProgress' => $inProgress
+            ]);
+        }
+        else if($userDesactive === true){
+            $this->addFlash('danger', 'Votre compte a été désactivé, connexion impossible');
+
+            return $this->render('security/login.html.twig', [
+                'error' => $error,
+                'inProgress' => $inProgress,
             ]);
         }
         else{
@@ -194,49 +222,60 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/forgot_password", name="app_forgotten_password")
+     * @param Request $request
+     * @param EterUserRepository $entityRepo
+     * @param MailerInterface $mailer
+     * @param TokenGeneratorInterface $tokenGenerator
+     * @param EntityManagerInterface $manager
+     * @return RedirectResponse|Response
+     * @throws TransportExceptionInterface
      */
-    public function forgottenPass(Request $request, EterUserRepository $entityRepo, MailerInterface $mailer, TokenGeneratorInterface $tokenGenerator, EntityManagerInterface $manager) {
+    public function forgottenPass(Request $request, EterUserRepository $entityRepo, MailerInterface $mailer,
+                                  TokenGeneratorInterface $tokenGenerator, EntityManagerInterface $manager){
         $inProgress = false;
-        // Création du formulaire
+        //Création du formulaire
         $form = $this->createForm(ResetPassType::class);
 
-        // Traitement du formulaire
+        //Traitement du formulaire
         $form->handleRequest($request);
 
-        // Si le formulaire est valide
         if($form->isSubmitted() && $form->isValid()) {
 
-            // On récupère les données
-            $data = $form->getData();
+            $data= $form->getData();
 
-            // On cherche si un utilisateur a cet email
+            //Recherche de l'utilisateur avec cet email
             $user = $entityRepo->findOneBy(['user_mail' => $data]);
 
-            // Si l'utilisateur n'existe pas
-            if(!$user) {
+            //Si l'utilisateur n'existe pas
+            if(!$user){
+                // Envoi d'un message flash
+                $this->addFlash('danger', 'Cette adresse n\'existe pas');
 
-                // On envoie un message flash
-                $this->addFlash('danger', 'Cette adresse mail n\'existe pas !');
-                return $this->redirectToRoute('home',[
+                return $this->redirectToRoute('home', [
                     'inProgress' => $inProgress
                 ]);
             }
 
-            // On génère un token
+            // Génération d'un token
             $token = $tokenGenerator->generateToken();
 
-            try {
+            try{
                 $user->setResetToken($token);
                 $manager->persist($user);
                 $manager->flush();
-            }catch(\Exception $e) {
+            }catch(\Exception $e){
                 $this->addFlash('warning', 'Une erreur est survenue : '. $e->getMessage());
-                return $this->redirectToRoute('home',[
+
+                return $this->redirectToRoute('home', [
                     'inProgress' => $inProgress
                 ]);
             }
 
-            // Envoi mail
+            /*Génération de l'URL de réinitialisation du mot de passe
+            $url = $this->GenerateUrl('app_reset_password', ['token' => $token],
+                UrlGeneratorInterface::ABSOLUTE_URL);*/
+
+            //Envoi du message
             $mail = $user->getUserMail();
 
             $email = (new TemplatedEmail())
@@ -246,20 +285,20 @@ class SecurityController extends AbstractController {
                 ->htmlTemplate('emails/reset_password.html.twig')
                 ->context([
                     'username' => $user->getUserLogin(),
-                    'token' => $user->getResetToken(),
-                ])
-                ;
+                    'token' => $user->getResetToken()
+                ]);
 
+            //Envoi de l'email
             $mailer->send($email);
 
-            // On crée le message flash
-            $this->addFlash('success', 'Un e-mail de réinitialisation du mot de passe vous a été envoyé');
-            return $this->redirectToRoute('home',[
+            //Création du message Flash
+            $this->addFlash('success', 'Un email de réinitialisation vous a été envoyé');
+
+            return $this->redirectToRoute('home', [
                 'inProgress' => $inProgress
             ]);
         }
-
-        // On envoie vers la page de demande de l'email
+        // Envoi vers la page de demande de l'email
         return $this->render('security/forgotten_password.html.twig', [
             'emailForm' => $form->createView(),
             'inProgress' => $inProgress
@@ -268,39 +307,41 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/reset_password/{token}", name="app_reset_password")
+     * @param $token
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @param EntityManagerInterface $manager
+     * @return Response
      */
-    public function resetPassword($token, Request $request, UserPasswordEncoderInterface $passwordEncoder, EntityManagerInterface $manager) {
+    public function resetPassword($token, Request $request, UserPasswordEncoderInterface $passwordEncoder, EntityManagerInterface $manager){
         $inProgress = false;
-        // On cherche l'utilisateur avec le token fourni
+        // Recherche de l'utilisateur avec le token fourni
         $user = $this->getDoctrine()->getRepository(EterUser::class)->findOneBy(['reset_token' => $token]);
 
-        if(!$user) {
+        if(!$user){
             $this->addFlash('danger', 'Token inconnu');
             return $this->redirectToRoute('home',[
-                'inProgress' => $inProgress
-            ]);
+                'inProgress' => $inProgress]);
         }
 
-        // On vérifie si le formulaire est envoyé en méthode POST
-        if($request->isMethod('POST')) {
-            // On supprime le token
+        // Si le formulaire est envoyé en méthode POST
+        if($request->isMethod('POST')){
+
+            //On supprime le token
             $user->setResetToken(null);
 
-            // On crypte le mot de passe
+            //On crypte le mot de passe
             $user->setUserPassword($passwordEncoder->encodePassword($user, $request->request->get('password')));
             $manager->persist($user);
             $manager->flush();
 
             $this->addFlash('success', 'Mot de passe modifié avec succès');
+
             return $this->redirectToRoute('home',[
-                'inProgress' => $inProgress
-            ]);
+                'inProgress' => $inProgress]);
         }
-        else {
-            return $this->render('security/reset_password.html.twig', [
-                'token'=> $token,
-                'inProgress' => $inProgress
-            ]);
+        else{
+            return $this->render('security/reset_password.html.twig', ['token' => $token, 'inProgress' => $inProgress]);
         }
     }
 }

@@ -283,7 +283,7 @@ a[href*="#followme"]::before {
 .hamburger.is-closed .hamb-top,
 .hamburger.is-closed .hamb-middle,
 .hamburger.is-closed .hamb-bottom {
-    background-color: #33B5E5;
+    background-color: #53C8E0;
 }
 .hamburger.is-closed .hamb-top {
     top: 5px;

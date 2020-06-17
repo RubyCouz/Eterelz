@@ -7,4 +7,4 @@ liip_imagine:
             jpeg_quality: 85
             filters:
                 thumbnail:
-                    size: [1000, 1000]
+                    size: [1920, 1080]

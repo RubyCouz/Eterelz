@@ -1,5 +1,5 @@
 <?php
-
+// commit
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -98,7 +98,7 @@ class EterUser implements UserInterface
     private $user_clan;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\EterGame", inversedBy="eterUsers", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="App\Entity\EterGame", inversedBy="eterUsers")
      */
     private $user_game;
 
@@ -159,12 +159,12 @@ class EterUser implements UserInterface
     private $reset_token;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $date_inscr;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $date_lien;
 
@@ -177,6 +177,11 @@ class EterUser implements UserInterface
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $user_order_date;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $user_desactivate;
 
     public function __construct()
     {
@@ -636,7 +641,7 @@ class EterUser implements UserInterface
         return $this->date_inscr;
     }
 
-    public function setDateInscr(?int $date_inscr): self
+    public function setDateInscr(int $date_inscr): self
     {
         $this->date_inscr = $date_inscr;
 
@@ -648,7 +653,7 @@ class EterUser implements UserInterface
         return $this->date_lien;
     }
 
-    public function setDateLien(?int $date_lien): self
+    public function setDateLien(int $date_lien): self
     {
         $this->date_lien = $date_lien;
 
@@ -695,5 +700,15 @@ class EterUser implements UserInterface
         return $this;
     }
 
+    public function getUserDesactivate(): ?bool
+    {
+        return $this->user_desactivate;
+    }
 
+    public function setUserDesactivate(bool $user_desactivate): self
+    {
+        $this->user_desactivate = $user_desactivate;
+
+        return $this;
+    }
 }

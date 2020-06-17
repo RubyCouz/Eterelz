@@ -144,5 +144,4 @@ class EterProduct
 
         return $this;
     }
-
 }

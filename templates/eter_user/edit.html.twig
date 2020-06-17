@@ -10,24 +10,22 @@
     <div class="card">
     <h5 class="card-title2">Modification du profil</h5>
         <div id ="cardprofil" class="row no-gutters">
-{#------------------------------AVATAR-----------------------------#}
-
             <div class="col-md-4 pl-3">
-
-            {% if eter_user.userAvatar %}
+                {% if eter_user.userAvatar %}
                 <div id="edit_img">
-                <img id="editimg" class="card-img" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) | imagine_filter('profil') }}" alt="default_profil">
-                    {{ form_widget(form.user_avatar) }}
-                    {{ form_errors(form.user_avatar) }}
+                <img id="editimg" class="card-img"
+                     src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) | imagine_filter('profil') }}" alt="default_profil">
+                {{ form_widget(form.user_avatar) }}
+                {{ form_errors(form.user_avatar) }}
                 </div>
                 {% else %}
                 <div id="edit_img">
-                <img id="editimg" class="card-img" src="{{ asset('img/upload/profil_pic/default-profil.jpg') | imagine_filter('profil') }}" alt="default_profil">
+                <img id="editimg" class="card-img"
+                     src="{{ asset('img/upload/profil_pic/default-profil.jpg') | imagine_filter('profil') }}" alt="default_profil">
                     {{ form_widget(form.user_avatar) }}
                     {{ form_errors(form.user_avatar) }}
                 </div>
                 {% endif %}
-
             </div>
 
             <div id="editoblig" class="col-md-8">
@@ -124,7 +122,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre Description</label>
+                                <label id="editinp">Description</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_description) }}
@@ -136,7 +134,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) Clan(s)</label>
+                                <label id="editinp">Votre(Vos) clan(s)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_clan) }}
@@ -148,7 +146,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) Jeu(x)</label>
+                                <label id="editinp">Votre(Vos) jeu(x)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_game) }}
@@ -160,7 +158,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) Evènement(s)</label>
+                                <label id="editinp">Votre(Vos) évènement(s)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.eterEvents) }}
@@ -172,7 +170,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) Stream(s)</label>
+                                <label id="editinp">Votre(Vos) stream(s)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_stream) }}
@@ -181,10 +179,11 @@
                         </div>
 
                         <div id="editbutton" class="row">
-                        <button class="btn btn-info">Retour</button>
+                            <button class="btn btn-info">Retour</button>
                         <button class="btn btn-success">{{ button_label|default('Mettre à jour') }}</button>
 {{ form_end(form) }}
                         {{ include('eter_user/_delete_form.html.twig') }}
+                        {#<a href="{{ path('eter_user_index') }}">Retour</a>#}
                         </div>
                 </div>
             </div>
@@ -192,8 +191,10 @@
     </div>
 </div>
 
-{% block javascripts %}
+    {% block javascripts %}
+
 <script src="{{ asset('js/edit_profil.js') }}"></script>
-{% endblock %}
+
+    {% endblock %}
 
 {% endblock %}

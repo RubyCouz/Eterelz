@@ -64,6 +64,9 @@ class SecurityController extends AbstractController {
                 $user->setStatut($statut);
                 $user->setUserRole('Utilisateur');
 
+                $desactive = 0;
+                $user->setUserDesactivate($desactive);
+
                 // Garde en mémoire les données soumises
                 $manager->persist($user);
 
@@ -176,13 +179,15 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/login", name="login")
+     * @param EterUser $eterUser
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
-    public function login(AuthenticationUtils $authenticationUtils) {
+    public function login(EterUser $eterUser, AuthenticationUtils $authenticationUtils) {
 
         $error =$authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
+        $userDesactive = $eterUser->getUserDesactivate();
         $inProgress = false;
         if($error){
             $this->addFlash('danger', 'Cet email n\'existe pas ou le mot de passe est erroné');
@@ -191,8 +196,15 @@ class SecurityController extends AbstractController {
                 'inProgress' => $inProgress
             ]);
         }
-        else{
+        else if($userDesactive === true){
+            $this->addFlash('danger', 'Votre compte a été désactivé, connexion impossible');
 
+            return $this->render('security/login.html.twig', [
+                'error' => $error,
+                'inProgress' => $inProgress,
+            ]);
+        }
+        else{
             return $this->render('security/login.html.twig', [
                 'last_username' => $lastUsername,
                 'error' => $error,

@@ -4,3 +4,5 @@ twig:
     form_themes: ['bootstrap_4_layout.html.twig']
     date:
         timezone: Europe/Paris
+    paths:
+        '%kernel.project_dir%/public/img/logo': images

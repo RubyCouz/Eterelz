@@ -21,7 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EterUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EterUserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20200609123855.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20200617075446.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/emails/signup.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/emails/signup.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +187,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -278,6 +284,11 @@
       <workItem from="1591948716347" duration="8271000" />
       <workItem from="1592202729483" duration="14135000" />
       <workItem from="1592292300501" duration="5810000" />
+      <workItem from="1592299228507" duration="1003000" />
+      <workItem from="1592310862214" duration="283000" />
+      <workItem from="1592311233563" duration="69000" />
+      <workItem from="1592311548392" duration="2899000" />
+      <workItem from="1592379063925" duration="17427000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -573,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592218180597</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Commentaires CartController">
+      <created>1592300245781</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1592300245782</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +611,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="début établissement back-office" />
     <MESSAGE value="reprise bdd, test formatage back office" />
     <MESSAGE value="fin établissement bdd" />
     <MESSAGE value="back-office suite" />
@@ -618,7 +635,8 @@
     <MESSAGE value="JS quantité panier ok" />
     <MESSAGE value="CSS panier vide" />
     <MESSAGE value="Navbar fix + Quantité panier js en cours" />
-    <option name="LAST_COMMIT_MESSAGE" value="Navbar fix + Quantité panier js en cours" />
+    <MESSAGE value="Commentaires CartController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commentaires CartController" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -637,7 +655,6 @@
     <state x="2610" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1587711771592">
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
-    <state x="690" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1583579978729" />
     <state x="2610" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587711771592" />
     <state x="-1347" y="50" key="CommitChangelistDialog2" timestamp="1591958120198">
       <screen x="-1920" y="50" width="1920" height="1030" />
@@ -706,11 +723,11 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1592218185997">
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1592300252486">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="-1368" y="299" key="Vcs.Push.Dialog.v2/-1920.50.1920.1030/0.40.1536.824@-1920.50.1920.1030" timestamp="1591958123178" />
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592218185997" />
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592300252486" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />
@@ -743,12 +760,15 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="559" y="248" width="621" height="436" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1366.728@0.0.1366.728" timestamp="1592231563721" />
+    <state x="406" y="135" key="refactoring.ChangeSignatureDialog" timestamp="1592387857511">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="406" y="135" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1592387857511" />
     <state x="-1304" y="274" width="672" height="665" key="run.anything.popup" timestamp="1590758208452">
       <screen x="-1920" y="50" width="1920" height="1030" />
     </state>
     <state x="-1304" y="274" width="672" height="665" key="run.anything.popup/-1920.50.1920.1030/0.40.1536.824@-1920.50.1920.1030" timestamp="1590758208452" />
     <state x="2536" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586251565489" />
-    <state x="616" y="258" width="672" height="677" key="run.anything.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1583666787487" />
     <state x="2536" y="258" width="672" height="677" key="run.anything.popup/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1589288344303" />
     <state x="2536" y="208" width="672" height="676" key="search.everywhere.popup" timestamp="1589288398101">
       <screen x="1920" y="30" width="1920" height="1050" />

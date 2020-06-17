@@ -142,16 +142,17 @@ class EterUserController extends AbstractController
     public function delete(Request $request, EterUser $eterUser): Response
     {
 
-        $inProgress = false;
         if ($this->isCsrfTokenValid('delete'.$eterUser->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
+            /*$entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($eterUser);
             $entityManager->flush();
             $session = new Session();
-            $session->invalidate();
+            $session->invalidate();*/
+            $eterUser->setUserDesactivate(1);
+            $this->getDoctrine()->getManager()->flush();
         }
 
-        $this->addFlash('success', 'Votre compte a bien été supprimé');
+        $this->addFlash('danger', 'Votre compte a bien été désactivé');
 
         return $this->redirectToRoute('home');
     }

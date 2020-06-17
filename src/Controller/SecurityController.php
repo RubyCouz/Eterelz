@@ -25,6 +25,12 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/inscription", name="security_registration")
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @param UserPasswordEncoderInterface $encoder
+     * @param MailerInterface $mailer
+     * @return Response
+     * @throws TransportExceptionInterface
      */
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, MailerInterface $mailer) {
         // Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
@@ -155,6 +161,8 @@ class SecurityController extends AbstractController {
     
     /**
      * @Route("/login", name="login")
+     * @param AuthenticationUtils $authenticationUtils
+     * @return Response
      */
     public function login(AuthenticationUtils $authenticationUtils) {
 

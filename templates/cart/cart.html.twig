@@ -31,10 +31,10 @@
                         </td>
                         <td>
                             <div class="row" id="qte">
-                                <button class="circle minus"><i class="fas fa-minus"></i></button>
+                                {#<button class="circle minus"><i class="fas fa-minus"></i></button>#}
                                 <span class="qty">{{ item.quantity }}</span>
                                 <input type="hidden" value="{{ item.quantity }}" class="inputQty">
-                                <button class="circle plus"><i class="fas fa-plus"></i></button>
+                                {#<button class="circle plus"><i class="fas fa-plus"></i></button>#}
                             </div>
                         </td>
                         <td>
@@ -50,8 +50,8 @@
                     <td></td>
                     <td colspan="3" class="text-right">Total :</td>
                     <td id="text-right">
-                        <span class="totalfinal">{{ (item.product.productPrice * item.quantity) | number_format(2,',','.') }} &euro;</span>
-                        <input type="hidden" value="{{ (item.product.productPrice * item.quantity) | number_format(2,',','.') }} &euro;" class="inputTotalFinal">
+                        <span class="totalfinal">{{ total | number_format(2,',','.') }} &euro;</span>
+                        <input type="hidden" value="{{ total | number_format(2,',','.') }} &euro;" class="inputTotalFinal">
                     </td>
                     <td><a href="#" class="btn btn-success"><i class="fas fa-check-circle mr-2"></i>VALIDER</a></td>
                 </tr>

@@ -179,29 +179,19 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/login", name="login")
-     * @param EterUser $eterUser
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
-    public function login(EterUser $eterUser, AuthenticationUtils $authenticationUtils) {
+    public function login(AuthenticationUtils $authenticationUtils) {
 
         $error =$authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
-        $userDesactive = $eterUser->getUserDesactivate();
         $inProgress = false;
         if($error){
             $this->addFlash('danger', 'Cet email n\'existe pas ou le mot de passe est erroné');
             return $this->render('home/index.html.twig', [
                 'error' => $error,
                 'inProgress' => $inProgress
-            ]);
-        }
-        else if($userDesactive === true){
-            $this->addFlash('danger', 'Votre compte a été désactivé, connexion impossible');
-
-            return $this->render('security/login.html.twig', [
-                'error' => $error,
-                'inProgress' => $inProgress,
             ]);
         }
         else{

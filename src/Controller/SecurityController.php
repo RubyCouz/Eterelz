@@ -25,12 +25,6 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/inscription", name="security_registration")
-     * @param Request $request
-     * @param EntityManagerInterface $manager
-     * @param UserPasswordEncoderInterface $encoder
-     * @param MailerInterface $mailer
-     * @return Response
-     * @throws TransportExceptionInterface
      */
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, MailerInterface $mailer) {
         // Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
@@ -57,6 +51,10 @@ class SecurityController extends AbstractController {
             // On génère la date d'inscription, utile plus tard pour le lien d'activation
             $dateinscr = strtotime('now');
             $user->setDateInscr($dateinscr);
+            
+            // Par défaut la désactivation est sur 0 (false)
+            $desactivate = 0;
+            $user->setUserDesactivate($desactivate);
 
             $statut = 1;
             $user->setStatut($statut);
@@ -161,8 +159,6 @@ class SecurityController extends AbstractController {
     
     /**
      * @Route("/login", name="login")
-     * @param AuthenticationUtils $authenticationUtils
-     * @return Response
      */
     public function login(AuthenticationUtils $authenticationUtils) {
 

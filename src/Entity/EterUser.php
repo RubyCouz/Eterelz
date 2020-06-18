@@ -178,6 +178,11 @@ class EterUser implements UserInterface
      */
     private $user_order_date;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $user_desactivate;
+
     public function __construct()
     {
         $this->user_date = new \DateTime('Europe/Paris');
@@ -691,6 +696,18 @@ class EterUser implements UserInterface
     public function setUserOrderDate(?\DateTimeInterface $user_order_date): self
     {
         $this->user_order_date = $user_order_date;
+
+        return $this;
+    }
+
+    public function getUserDesactivate(): ?bool
+    {
+        return $this->user_desactivate;
+    }
+
+    public function setUserDesactivate(bool $user_desactivate): self
+    {
+        $this->user_desactivate = $user_desactivate;
 
         return $this;
     }

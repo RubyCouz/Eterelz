@@ -51,7 +51,7 @@
                         </div>
                         {% if is_granted('ROLE_ADMIN') %}
                             <div class="text-center">
-                                <a href="/eter/public/index.php/admin" class="btn btn-default">Back-office</a>
+                                <a href="http://127.0.0.1:8000/admin" class="btn btn-default">Back-office</a>
                             </div>
                         {% endif %}
                     {% else %}
@@ -134,19 +134,17 @@
                 </div>
                 <li><a href="{{ path('home') }}#home">Home</a></li>
                 {% if is_granted('ROLE_ADMIN') %}
-                <li><a href="{{ path('eter_user_index') }}#admin">Utilisateurs</a></li>
+                    <li><a href="{{ path('eter_user_index') }}#admin">Utilisateurs</a></li>
                 {% endif %}
-                <li><a href="{{ path('product_index') }}#prod">Boutique</a></li>
+                    <li><a href="{{ path('product_index') }}#prod">Boutique</a></li>
                 {% if app.user %}
-                <li><a href="{{ path('cart_index') }}#cart">Panier</a></li>
-                <li><a href="{{ path('eter_user_show', {'id': app.user.id}) }}#user">Profil</a></li>
+                    <li><a href="{{ path('cart_index') }}#cart">Panier</a></li>
+                    <li><a href="{{ path('eter_user_show', {'id': app.user.id}) }}#user">Profil</a></li>
                 {% endif %}
-                <li><a href="#about">About</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#team">Team</a></li>
-                <li class="dropdown">
-                    <a href="#works" class="dropdown-toggle" data-toggle="dropdown">Works <span
-                                class="caret"></span></a>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li class="dropdown"><a href="#works" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
                     <ul class="dropdown-menu animated fadeInLeft" role="menu">
                         <div class="dropdown-header">Dropdown heading</div>
                         <li><a href="#pictures">Pictures</a></li>
@@ -201,6 +199,7 @@
 <script src="https://kit.fontawesome.com/feb810672a.js" crossorigin="anonymous"></script>
 <script src="{{ asset('js/add-collection-widget.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
+{#<script src="{{ asset('js/cart.js') }}"></script>#}
 
 <!-- Bootstrap tooltips 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>-->

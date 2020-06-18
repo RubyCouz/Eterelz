@@ -217,9 +217,11 @@ css widget social
     transition: 0.3s ease;
     z-index: 1021;
 }
+
 .modal-close-btn:hover {
     opacity: 1;
 }
+
 .modal--2 { background: #4A90E2; }
 .modal--3 { background: #FFD200; }
 .modal--4 { background: #4CBB47; }
@@ -229,6 +231,7 @@ css widget social
     visibility: visible;
     pointer-events: auto;
 }
+
 .dialog {
     background: #4A90E2;
     min-width: 300px;
@@ -240,6 +243,7 @@ css widget social
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
+
 .sidebar {
     left: auto;
     top: -150px;
@@ -252,16 +256,19 @@ css widget social
     opacity: 1;
     visibility: visible;
 }
+
 .sidebar.show {
     -webkit-transform: translateX(0);
     transform: translateX(0);
 }
+
 .sidebar__block {
     border-radius: 5px;
     background: white;
     opacity: 0.3;
     margin-top: 32px;
 }
+
 .quote-box__bubble {
     position: relative;
     background: white;
@@ -271,6 +278,7 @@ css widget social
     max-width: 480px;
     margin: 0 auto 20px;
 }
+
 .quote-box__bubble:after {
     content: '';
     display: block;
@@ -529,7 +537,7 @@ Mise en forme show.html.twig
 Mise en forme edit.html.twig
 */
 
-#editinp{
+#editinp {
     color:white;
     font-size: 20px;
 }
@@ -775,31 +783,20 @@ iframe {
     text-align: center;
 }
 
-.circle{
+.circle {
     border-radius : 100%;
 }
 
-#plus{
+#plus {
     margin-left: 10px;
 }
 
-#moins{
+#moins {
     margin-right : 10px;
 }
 
-#qte{
+#qte {
     display: block;
     text-align: center;
     margin-top: -20px;
-}
-
-/**
-Mise en forme recapitulatif.html.twig
-*/
-
-#livraison {
-    color: white;
-    margin-left: 20px;
-    margin-top: 40px;
-    font-size: 20px;
 }

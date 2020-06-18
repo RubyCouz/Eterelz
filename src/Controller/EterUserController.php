@@ -7,8 +7,8 @@ use App\Form\EterUserType;
 use App\Repository\EterUserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -152,7 +152,8 @@ class EterUserController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
         }
 
-        $this->addFlash('danger', 'Votre compte a bien été désactivé');
+        // On envoie un message flash
+        $this->addFlash('success', 'Votre compte a été désactivé');
 
         return $this->redirectToRoute('home');
     }

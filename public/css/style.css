@@ -146,10 +146,10 @@ navbar
     width: 400px;
 }
 
-
 .footer {
     height: 200px;
 }
+
 /**
 Modal connexion
  */
@@ -162,6 +162,7 @@ Modal connexion
 .signin {
     border-radius: 0 25px 25px 0 !important;
 }
+
 /**
 table
  */
@@ -353,11 +354,13 @@ Bouton se connecter dans la barre de navigation
 }
 
 .btn-default {
-    background-color: #53C8E0 !important;
+    background-color: #33B5E5 !important;
     margin-left: 10px;
+    margin-right: -2px;
 }
 
 /*Peut être enlever pour la side-barre*/
+
 .sticky-top {
     position: absolute;
 }
@@ -365,8 +368,9 @@ Bouton se connecter dans la barre de navigation
 /**
 Formulaire d'inscription loginModal.html.twig
 */
+
 .navbar.navbar-dark form .md-form .form-control {
-    color: #4285f4;
+    color: #4285F4;
     font-size: 15px;
 }
 
@@ -421,6 +425,7 @@ Formulaire d'inscription loginModal.html.twig
 /**
 Message d'erreurs loginModal.html.twig
 */
+
 #alert1, #alert2, #alert3, #alert4, #alert5, #alert6, #alert7 {
     font-size: 13px;
 }
@@ -432,6 +437,7 @@ Message d'erreurs loginModal.html.twig
 /**
 Mise en forme index.html.twig
 */
+
 #cards {
     display: inline-block;
     margin-top: 80px;
@@ -454,9 +460,21 @@ Mise en forme index.html.twig
     margin-left: 40px;
 }
 
+a:hover {
+    color: white;
+}
+
+#image_index {
+    margin-left: 5px;
+    width: 350px;
+    height: 350px;
+    border: 4px solid #000;
+}
+
 /**
 Mise en forme show.html.twig
 */
+
 .card-title {
     text-align: center;
     color:white;
@@ -507,6 +525,7 @@ Mise en forme show.html.twig
 /**
 Mise en forme edit.html.twig
 */
+
 #editinp{
     color:white;
     font-size: 20px;
@@ -554,15 +573,19 @@ h5 {
 Message succès activation compte dans base.html.twig
 */
 
-#alert_registration{
-    margin-top: 20px;
+#alert_registration {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 /**
 Mise en forme forgotten_password.html.twig
 */
+
 #forgot_pass2 {
     margin-top: 30px;
+    margin-bottom: 20px;
     color: white;
 }
 
@@ -574,6 +597,30 @@ Mise en forme forgotten_password.html.twig
 
 #forgot_img {
     margin-top: 60px;
+}
+
+#bouton_envoi3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}
+
+/**
+Mise en forme reset_password.html.twig
+*/
+
+#bouton_envoi4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}
+
+#pass {
+    margin-bottom: 10px;
 }
 
 /**
@@ -652,12 +699,12 @@ Mise en forme cart.html.twig
 
 .table {
     background-color: #CACFD2;
-    border : solid 5px #566573;
+    border: solid 5px #566573;
 }
 
 #supprimer {
     text-align: center;
-    border-bottom : solid 2px #566573;
+    border-bottom: solid 2px #566573;
 }
 
 #image_panier1, #produits2, #prix, #quantite, #total {
@@ -685,6 +732,7 @@ td, th {
 
 #image_panier {
     width: 100%;
+    border-radius: 5px;
 }
 
 #panier_vide {
@@ -740,7 +788,6 @@ iframe {
     display: block;
     text-align: center;
     margin-top: -20px;
-
 }
 
 

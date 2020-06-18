@@ -43,16 +43,20 @@
                         </td>
                         <td id="supprimer"><a href="{{ path('cart_remove', {'id': item.product.id}) }}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a></td>
                     </tr>
-                {% endfor %}
+
                 </tbody>
                 <tfoot>
                 <tr>
                     <td></td>
                     <td colspan="3" class="text-right">Total :</td>
-                    <td id="text-right">{{ total | number_format(2,',','.') }} &euro;</td>
+                    <td id="text-right">
+                        <span class="totalfinal">{{ (item.product.productPrice * item.quantity) | number_format(2,',','.') }} &euro;</span>
+                        <input type="hidden" value="{{ (item.product.productPrice * item.quantity) | number_format(2,',','.') }} &euro;" class="inputTotalFinal">
+                    </td>
                     <td><a href="#" class="btn btn-success"><i class="fas fa-check-circle mr-2"></i>VALIDER</a></td>
                 </tr>
                 </tfoot>
+                {% endfor %}
             </table>
         </div>
         <div id="boutique">

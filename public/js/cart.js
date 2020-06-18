@@ -3,12 +3,14 @@ let plus = document.querySelector('.plus');
 let minus = document.querySelector('.minus');
 let qty = document.querySelector('.qty');
 let subtotal = document.querySelector('.subtotal');
+let totalfinal = document.querySelector('.totalfinal');
 //let priceunit = document.querySelector('.priceUnit')
 
 // récupération de la valeur dans l'input
 let inputQty = document.querySelector('.inputQty').value;
 let inputSubtotal =  document.querySelector('.inputSubtotal').value;
 let inputPrice = document.querySelector('.inputPrice').value;
+let inputTotalFinal = document.querySelector('.inputTotalFinal').value;
 
 // évènement
 
@@ -29,6 +31,8 @@ function cartupdateplus(){
         inputSubtotal = parseFloat(priceValor) * parseFloat(qtyValor);
         //console.log(inputSubtotal.toFixed(2));
         subtotal.innerHTML = inputSubtotal+" &euro;";
+       /*inputTotalFinal += parseFloat(inputSubtotal);
+       totalfinal.innerHTML = array_sum();*/
     }
 }
 

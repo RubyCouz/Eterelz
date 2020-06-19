@@ -50,8 +50,6 @@ class RegistrationType extends AbstractType
                 'attr' => ['placeholder' => 'Saisissez votre adresse mail']
             ])
         //-------------PASSWORD-------------//
-        // Rechercher barre de force pour le mot de passe
-        // Exclure l'acceptation des caractères < et >
             ->add('user_password', PasswordType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'Mot de passe non valide !', 'pattern' => '#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#'])],
                 'attr' => ['placeholder' => 'Saisissez un mot de passe', 'id' => 'password'],

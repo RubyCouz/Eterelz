@@ -598,6 +598,10 @@ Mise en forme message de succès d'activation de compte base.html.twig
 Mise en forme forgotten_password.html.twig
 */
 
+#forgot {
+    margin-top: 30px;
+}
+
 #forgot_pass2 {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -625,6 +629,26 @@ Mise en forme forgotten_password.html.twig
 /**
 Mise en forme reset_password.html.twig
 */
+
+#forgot1 {
+    margin-top: 30px;
+}
+
+#forgot_pass4 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#forgot_pass3 {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+#forgot_img1 {
+    margin-top: 60px;
+}
 
 #bouton_envoi4 {
     margin-top: 30px;

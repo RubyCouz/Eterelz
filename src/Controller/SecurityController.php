@@ -21,6 +21,7 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Validator\Constraints\IsTrue;
 
 class SecurityController extends AbstractController {
 
@@ -28,13 +29,12 @@ class SecurityController extends AbstractController {
      * @Route("/inscription", name="security_registration")
      * @param Request $request
      * @param EntityManagerInterface $manager
-     * @param EterUserRepository $entityRepo
      * @param UserPasswordEncoderInterface $encoder
      * @param MailerInterface $mailer
      * @return Response
      * @throws TransportExceptionInterface
      */
-    public function registration(Request $request, EntityManagerInterface $manager, EterUserRepository $entityRepo, UserPasswordEncoderInterface $encoder, MailerInterface $mailer)
+    public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, MailerInterface $mailer)
     {
 
         // Définition de la variable en signalant que l'on veut créer une nouvelle entité
@@ -79,13 +79,7 @@ class SecurityController extends AbstractController {
                 $email = (new TemplatedEmail())
                     ->from('contact@eterelz.org')
                     ->to($mail)
-                    // ->cc('cc@example.com')
-                    // ->bcc('bcc@example.com')
-                    // ->replyTo('fabien@example.com')
-                    // ->priority(Email::PRIORITY_HIGH)
                     ->subject('Confirmation d\'inscription')
-                    //->text('Welcome')
-                    //->html('<p>Votre inscription a bien été prise en compte !</p>')
                     ->htmlTemplate('emails/signup.html.twig')
                     ->context([
                         'expiration_date' => new \DateTime('+1 day'),
@@ -182,19 +176,20 @@ class SecurityController extends AbstractController {
      * @param AuthenticationUtils $authenticationUtils
      * @return Response
      */
-    public function login(AuthenticationUtils $authenticationUtils) {
+    public function login(AuthenticationUtils $authenticationUtils)
+    {
 
-        $error =$authenticationUtils->getLastAuthenticationError();
+        $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
         $inProgress = false;
-        if($error){
+        if ($error) {
             $this->addFlash('danger', 'Cet email n\'existe pas ou le mot de passe est erroné');
             return $this->render('home/index.html.twig', [
                 'error' => $error,
                 'inProgress' => $inProgress
             ]);
-        }
-        else{
+        } else {
+
             return $this->render('security/login.html.twig', [
                 'last_username' => $lastUsername,
                 'error' => $error,
@@ -202,6 +197,7 @@ class SecurityController extends AbstractController {
             ]);
         }
     }
+
 
     /**
      * @Route("/logout", name="logout")

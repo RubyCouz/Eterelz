@@ -141,7 +141,7 @@ class SecurityController extends AbstractController {
             //Calcul pour définir l'intervalle de temps entre les deux dates
             $dateinterval = ($datelien - $dateinscr );
 
-            //Condition de validation du lien (ici 24 heures)
+            //Condition de validation du lien (ici 24 heures retranscries en secondes)
             if($dateinterval > 86400){
 
                 //Suppression du compte provisoire et message d'alerte
@@ -256,10 +256,6 @@ class SecurityController extends AbstractController {
                     'inProgress' => $inProgress
                 ]);
             }
-
-            /*Génération de l'URL de réinitialisation du mot de passe
-            $url = $this->GenerateUrl('app_reset_password', ['token' => $token],
-                UrlGeneratorInterface::ABSOLUTE_URL);*/
 
             //Envoi du message
             $mail = $user->getUserMail();

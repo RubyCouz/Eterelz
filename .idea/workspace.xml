@@ -26,18 +26,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_06_2020_16_05_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_06_2020_16_05__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_06_2020_16_08_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_06_2020_16_08_[Default_Changelist]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_06_2020_16_08__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_06_2020_16_08__Default_Changelist_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_06_2020_16_09_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_06_2020_16_09__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_06_2020_16_12_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_06_2020_16_12__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_06_2020_16_06_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_06_2020_16_06__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
     </list>
@@ -311,7 +299,8 @@
       <workItem from="1592554976214" duration="744000" />
       <workItem from="1592556668167" duration="4495000" />
       <workItem from="1592568414015" duration="420000" />
-      <workItem from="1592577055316" duration="1895000" />
+      <workItem from="1592577055316" duration="2668000" />
+      <workItem from="1592764970657" duration="3954000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -635,7 +624,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592490914960</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Modifs diverses">
+      <created>1592579735513</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1592579735513</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +668,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="suite mise en forme back office" />
     <MESSAGE value="fin back office" />
     <MESSAGE value="ajout fichier easy_admin.yaml" />
     <MESSAGE value="test" />
@@ -697,7 +692,8 @@
     <MESSAGE value="Fix" />
     <MESSAGE value="Merge dev ok" />
     <MESSAGE value="Merge dev ok + panier ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge dev ok + panier ok" />
+    <MESSAGE value="Modifs diverses" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modifs diverses" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="213" key="#Big_Data_Tools_Connections" timestamp="1584012583118">
@@ -726,7 +722,6 @@
     <state x="-1347" y="50" key="CommitChangelistDialog2/-1920.50.1920.1030/0.40.1536.824@-1920.50.1920.1030" timestamp="1591958120198" />
     <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251448796" />
     <state x="2493" y="34" key="CommitChangelistDialog2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586255105377" />
-    <state x="573" y="34" key="CommitChangelistDialog2/0.30.1920.1050@0.30.1920.1050" timestamp="1583917916958" />
     <state x="2493" y="34" key="CommitChangelistDialog2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587145562668" />
     <state x="644" y="144" key="FileChooserDialogImpl" timestamp="1592231451790">
       <screen x="0" y="0" width="1366" height="728" />
@@ -788,14 +783,13 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1592490921378">
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1592579740961">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="-1368" y="299" key="Vcs.Push.Dialog.v2/-1920.50.1920.1030/0.40.1536.824@-1920.50.1920.1030" timestamp="1591958123178" />
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592490921378" />
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592579740961" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
-    <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050@0.30.1920.1050" timestamp="1583918013367" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1589288235708" />
     <state x="2731" y="432" width="324" height="261" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1585127054866">
       <screen x="1920" y="30" width="1920" height="1050" />

@@ -12,17 +12,17 @@
         <div id ="cardprofil" class="row no-gutters">
 {#------------------------------AVATAR-----------------------------#}
 
-            <div class="col-md-4 pl-3">
+            <div id="editoblig" class="col-lg-4 md-12 sm-12">
 
             {% if eter_user.userAvatar %}
-                <div id="edit_img">
-                <img id="editimg" class="card-img" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) | imagine_filter('profil') }}" alt="default_profil">
+                <div>
+                <img class="card-img" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) | imagine_filter('profil') }}" alt="default_profil">
                     {{ form_widget(form.user_avatar) }}
                     {{ form_errors(form.user_avatar) }}
                 </div>
                 {% else %}
-                <div id="edit_img">
-                <img id="editimg" class="card-img" src="{{ asset('img/upload/profil_pic/default-profil.jpg') | imagine_filter('profil') }}" alt="default_profil">
+                <div>
+                <img class="card-img" src="{{ asset('img/upload/profil_pic/default-profil.jpg') | imagine_filter('profil') }}" alt="default_profil">
                     {{ form_widget(form.user_avatar) }}
                     {{ form_errors(form.user_avatar) }}
                 </div>
@@ -30,10 +30,10 @@
 
             </div>
 
-            <div id="editoblig" class="col-md-8">
+            <div id="editoblig" class="col-lg-8 md-12 sm-12">
 {#------------------------------LOGIN------------------------------#}
 
-                        <div class="row pl-5 pr-5">
+                        <div class="row">
                             <div class="col-md-12">
                                 <label id="editinp">Votre Login</label>
                             </div>
@@ -45,7 +45,7 @@
 
 {#------------------------------EMAIL------------------------------#}
 
-                        <div class="row pl-5 pr-5">
+                        <div class="row">
                             <div class="col-md-12">
                                 <label id="editinp">Votre Email</label>
                             </div>
@@ -57,7 +57,7 @@
 
 {#------------------------------DISCORD----------------------------#}
 
-                        <div class="row pl-5 pr-5">
+                        <div class="row">
                             <div class="col-md-12">
                                 <label id="editinp">Votre ID Discord</label>
                             </div>

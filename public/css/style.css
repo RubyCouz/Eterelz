@@ -528,7 +528,7 @@ Mise en forme show.html.twig
 }
 
 #modifier {
-    margin-left: 733px;
+    margin-left: -15px;
     margin-top: -5px;
     margin-bottom: 20px;
 }
@@ -542,6 +542,7 @@ Mise en forme edit.html.twig
 */
 
 #editinp {
+    margin-top: 20px;
     color:white;
     font-size: 20px;
 }
@@ -564,19 +565,14 @@ h5 {
     padding-top: 20px;
 }
 
-#editimg {
-    margin-top: 20px;
-    width: 350px;
-    height: 350px;
+.card-img {
     border: 4px solid #000;
-}
-
-#edit_img {
-    margin-left: 5px;
 }
 
 #editoblig {
     margin-top: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #editbutton {

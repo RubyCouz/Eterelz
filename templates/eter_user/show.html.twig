@@ -74,11 +74,12 @@
                 </div>
             </div>
         </div>
-        <div id="modifier">
-            <a class="btn btn-info" href="{{ path('home') }}">Retour</a>
-            <a class="btn btn-success" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
+        <div class="row">
+            <div class ="col-12" id="modifier">
+                <a class="btn btn-success float-right" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>
+                <a class="btn btn-info float-right" href="{{ path('home') }}">Retour</a>
+            </div>
         </div>
     </div>
-    
 </div>
 {% endblock %}

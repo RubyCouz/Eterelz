@@ -177,13 +177,14 @@
                             {{ form_errors(form.user_stream) }}
                             </div>
                         </div>
+                        <div class="row">
+                            <div {#id="editbutton"#} class="col-12">
+                                <button class="btn btn-success float-left">{{ button_label|default('Mettre à jour') }}</button>
+                                <button class="btn btn-info float-left">Retour</button>
 
-                        <div id="editbutton" class="row">
-                            <button class="btn btn-info">Retour</button>
-                            <button class="btn btn-success">{{ button_label|default('Mettre à jour') }}</button>
 {{ form_end(form) }}
-                            {{ include('eter_user/_delete_form.html.twig') }}
-
+                                {{ include('eter_user/_delete_form.html.twig') }}
+                            </div>
                         </div>
                 </div>
             </div>

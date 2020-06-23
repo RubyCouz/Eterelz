@@ -8,135 +8,188 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="icon" type="image/jpg" href="{{ asset('img/favicon/favicon') }}">
     <link rel="stylesheet" href="{{ asset('css/hover-min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
 <body class="{{ (inProgress == true) ? 'inProgress' : 'base' }}">
 {#navbar#}
 
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#">
-            <img src="{{ asset('img/logo/logoEterelz.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
-                 class="logo">
-        </a>
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            {% if app.user %}
-                <li>
-                    <a href="{{ path('logout') }}" class="nav-link">SE DECONNECTER </a>
-                </li>
-            {% else %}
-                <li>
-                    <a href="{{ path('login') }}" title="Se connecter" class="nav-link">SE CONNECTER</a>
-                </li>
-            {% endif %}
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-            <li>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </li>
-        </ul>
-        <div>
-            <span class="navbar-toggler-icon" data-cta-target=".js-sidebar"></span>
 
+<div id="wrapper">
+    <div class="overlay"></div>
+
+    <header>
+        <nav id="fixe" class="navbar sticky-top fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        {#<a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
+                        <button type="button" class="hamburger animated fadeInLeft is-closed mt-1"
+                                data-toggle="offcanvas">
+                            <span class="hamb-top"></span>
+                            <span class="hamb-middle"></span>
+                            <span class="hamb-bottom"></span>
+                        </button>
+                    </li>
+                    {% if app.user %}
+                        <div class="text-center">
+                            <a href="{{ path('logout') }}" class="btn btn-default">Se déconnecter</a>
+                        </div>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <div class="text-center">
+                                <a href="http://127.0.0.1:8000/admin" class="btn btn-default">Back-office</a>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        <li>
+                            <!--Modal: Login / Register Form-->
+                            <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog cascading-modal" role="document">
+                                    <!--Content-->
+                                    <div class="modal-content">
+
+                                        <!--Modal cascading tabs-->
+                                        <div class="modal-c-tabs">
+
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs md-tabs tabs-2" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link login" data-toggle="tab" href="#panel7" role="tab">
+                                                    <i class="fas fa-user mr-1" ></i>
+                                                        Connexion</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link signin" data-toggle="tab" href="#panel8" role="tab">
+                                                    <i class="fas fa-user-plus mr-1"></i>
+                                                        Inscription</a>
+                                                </li>
+                                            </ul>
+
+                                            <!-- Tab panels -->
+                                            <div id="login"></div>
+                                            <div id="login2"></div>
+                                        </div>
+                                    </div>
+                                    <!--/.Content-->
+                                </div>
+                            </div>
+                            <!--Modal: Login / Register Form-->
+
+                            <div class="text-center">
+                                <a href="" class="btn btn-default" data-toggle="modal" data-target="#modalLRForm"
+                                   data-backdrop="false" id="loginModal">Se connecter</a>
+                            </div>
+                        </li>
+                    {% endif %}
+
+                    <li>
+                        <form class="search-box bg-dark">
+                            <input class="search-text bg-dark" type="search" placeholder="Search" aria-label="Search">
+                            <a class="search-btn" type="submit">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </form>
+                    </li>
+                </ul>
+                <div>
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ asset('img/logo/logoEterelzBlanc.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
+                             class="logo" id="logo">
+                    </a>
+                    <i class="fas fa-ellipsis-v menu-social hvr-bob mt-1 mr-4" data-cta-target=".js-sidebar"
+                       id="social"></i>
+                </div>
+            </div>
+        </nav>
+        <div class="js-sidebar modal1 sidebar bg-dark">
+            <i class="far fa-times-circle modal-close-btn" id="close"></i>
+            <i class="fas fa-project-diagram network"></i>
+            <i class="fab fa-twitch twitch hvr-bob" id="twitch"></i>
+            <i class="fab fa-discord discord hvr-bob" id="discord"></i>
+            <i class="fab fa-youtube youtube hvr-bob" id="youtube"></i>
+            <i class="fab fa-twitter twitter hvr-bob" id="twitter"></i>
+            <i class="fab fa-facebook-square facebook hvr-bob" id="facebook"></i>
         </div>
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <div class="sidebar-header">
+                    <div class="sidebar-brand">
+                        <a href="#">Brand</a></div>
+                </div>
+                <li><a href="{{ path('home') }}#home">Home</a></li>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li><a href="{{ path('eter_user_index') }}#admin">Utilisateurs</a></li>
+                {% endif %}
+                    <li><a href="{{ path('product_index') }}#prod">Boutique</a></li>
+                {% if app.user %}
+                    <li><a href="{{ path('cart_index') }}#cart">Panier</a></li>
+                    <li><a href="{{ path('eter_user_show', {'id': app.user.id}) }}#user">Profil</a></li>
+                {% endif %}
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li class="dropdown"><a href="#works" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
+                    <ul class="dropdown-menu animated fadeInLeft" role="menu">
+                        <div class="dropdown-header">Dropdown heading</div>
+                        <li><a href="#pictures">Pictures</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="#books">Books</a></li>
+                        <li><a href="#art">Art</a></li>
+                        <li><a href="#awards">Awards</a></li>
+                    </ul>
+                </li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#followme">Follow me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+   
+    {% block body %}{% endblock %}
+
+    </main>
+
+    <footer class="footer">
+
+    {% for message in app.flashes('success') %}
+    <div id="alert_registration" class="alert alert-success" role="alert">
+        {{ message }}
     </div>
-</nav>
-<div class="js-sidebar modal1 sidebar bg-dark">
-    <i class="far fa-times-circle modal-close-btn"></i>
-    <i class="fas fa-project-diagram network"></i>
-    <i class="fab fa-twitch twitch hvr-bob" id="twitch"></i>
-    <i class="fab fa-discord discord hvr-bob" id="discord"></i>
-    <i class="fab fa-youtube youtube hvr-bob" id="youtube"></i>
-    <i class="fab fa-twitter twitter hvr-bob" id="twitter"></i>
-    <i class="fab fa-facebook-square facebook hvr-bob" id="facebook"></i>
+    {% endfor %}
+    {% for message in app.flashes('warning') %}
+    <div id="alert_registration" class="alert alert-warning" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+    <div id="alert_registration" class="alert alert-danger" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    </footer>
+
 </div>
-
-{#        <i class="fas fa-project-diagram network"></i>#}
-{#        <i class="fab fa-twitch twitch" id="twitch"></i>#}
-{#        <i class="fab fa-discord discord" id="discord"></i>#}
-{#        <i class="fab fa-youtube youtube" id="youtube"></i>#}
-{#        <i class="fab fa-twitter twitter" id="twitter"></i>#}
-{#        <i class="fab fa-facebook-square facebook" id="facebook"></i>#}
-
-
-{#sidebar menu utilisateur#}
-{#<div id="offcanvas-nav-primary" uk-offcanvas="mode: reveal; overlay: true">#}
-{#    <div class="uk-offcanvas-bar uk-flex uk-flex-column">#}
-{#        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">#}
-{#            <li class="uk-parent">#}
-{#                <a href="#"><i class="fas fa-gamepad"></i> JEUX </a>#}
-{#                <ul class="uk-nav-sub">#}
-{#                    <li class="uk-active"><a href="#">Jeux 1</a></li>#}
-{#                    <li class=""><a href="#">Jeux 2</a></li>#}
-{#                    <li class=""><a href="#">Jeux 2</a></li>#}
-{#                </ul>#}
-{#            </li>#}
-{#            <li class="uk-nav-divider"></li>#}
-{#            <li class="uk-parent">#}
-{#                <a href="#"><i class="far fa-calendar-alt"></i> EVENEMENTS</a>#}
-{#                <ul class="uk-nav-sub">#}
-{#                    <li><a href="#">SpeedRaid Destiny 2</a></li>#}
-{#                    <li><a href="#">Nettoyage DZ</a></li>#}
-{#                </ul>#}
-{#            </li>#}
-{#            <li class="uk-nav-divider"></li>#}
-{#            <li class="uk-parent">#}
-{#                <a href="#"><i class="fas fa-camera-retro"></i> PHOTOS</a>#}
-{#                <ul class="uk-nav-sub">#}
-{#                    <li class="uk-active"><a href="#">Artwork</a></li>#}
-{#                    <li class=""><a href="#">Capture d'écran</a></li>#}
-{#                    <li class=""><a href="#">Fonds d'écran 4k</a></li>#}
-{#                </ul>#}
-{#            </li>#}
-{#            <li class="uk-nav-divider"></li>#}
-{#            <li class="uk-parent">#}
-{#                <a href="#"><i class="fas fa-film"></i> VIDEOS</a>#}
-{#                <ul class="uk-nav-sub">#}
-{#                    <li class="uk-active"><a href="#">Tutos</a></li>#}
-{#                    <li class=""><a href="#">Bétisiers</a></li>#}
-{#                </ul>#}
-{#            </li>#}
-{#            <li class="uk-nav-divider"></li>#}
-{#            <li class="uk-parent">#}
-{#                <a href="#"><i class="fab fa-discord"></i> DISCORD</a>#}
-{#                <ul class="uk-nav-sub">#}
-{#                    <li class="uk-active"><a href="#">Destiny 2</a></li>#}
-{#                    <li class=""><a href="#">Black Desert Online</a></li>#}
-{#                </ul>#}
-{#            </li>#}
-{#            <li class="uk-nav-divider"></li>#}
-{#            <li class="uk-parent"><a href="" title="Lien vers le formulaire de contact"><i class="far fa-envelope"></i>#}
-{#                    NOUS CONTACTER</a></li>#}
-{#            <li class="uk-nav-divider"></li>#}
-{#            <li class="uk-parent"><a href="" title="A propos d'Eterelz"><i class="far fa-address-card"></i> A PROPOS</a>#}
-{#            </li>#}
-{#        </ul>#}
-{#    </div>#}
-{#</div>#}
-
-{% block body %}{% endblock %}
-
-<footer class="footer">
-
-</footer>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+<!-- /#wrapper -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -144,8 +197,37 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/feb810672a.js" crossorigin="anonymous"></script>
-<script src="{{ asset('js/cta.js') }}"></script>
+<script src="{{ asset('js/add-collection-widget.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('js/cta.js') }}"></script>
+{#<script src="{{ asset('js/cart.js') }}"></script>#}
+
+<!-- Bootstrap tooltips 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>-->
+<!-- Bootstrap core JavaScript 
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
+<script>
+
+
+    // au clic sur le bouton se connecter (déclenchement modal)
+    $('#loginModal').click(function () {
+        // fonction ajax
+        $.ajax({
+            // définition de la méthode d'envoi
+            method: "POST",
+            // url destination / appel du contrôleur
+            url: "{{ path('security_registration') }}",
+        })
+            // s'il y a un retour du contrôleur, on déclenche une fonction qui prend en paramètre data => retour du contrôleur
+            .done(function (data) {
+                // on affiche la réponse du contrôleur dans l'élément ayant l'id login
+                $('#login').html(data);
+            });
+    });
+</script>
 {% block javascripts %}{% endblock %}
 </body>
 </html>

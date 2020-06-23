@@ -1,53 +1,57 @@
 {% extends 'base.html.twig' %}
- {% block title %}Connexion{% endblock %}
- {% block body %}
-     <div class="uk-text-center" uk-grid>
-         <div class="uk-width-1-4@m"></div>
-         {# connection card #}
-         <div class="uk-margin-auto uk-margin-auto-vertical uk-card uk-card-default uk-width-1-2@m">
-             <div class="uk-card-header">
-                 <div class="uk-grid-small uk-flex-middle" uk-grid>
-                     <div class="uk-width-auto uk-align-center">
-                         <img src="{{ asset('img/logo/logoEterelz.png') }}" class="logoSignin uk-align-center"
-                              alt="Logo Eterelz"
-                              title="Logo Eterelz">
-                     </div>
-                 </div>
-             </div>
-             <div class="uk-card-body">
-                 <form action="{{ path('login') }}" method="POST">
-                     <fieldset class="uk-fieldset">
-                         <legend class="uk-legend">Veuillez saisir vos identifiants de connexion</legend>
-                         {% if error %}
-                             <div class="uk-alert-danger" uk-alert>
-                                 <a class="uk-alert-close" uk-close></a>
-                                 <p>{{ error.messageKey | trans(error.messageData, 'security') }}</p>
-                             </div>
-                         {% endif %}
-                         <div class="uk-margin-top uk-child-width-expand@s uk-text-center" uk-grid>
-                             <label for="username" class="uk-width-medium@s">Email</label>
-                             <input type="text" id="username" name="_username" class="uk-input uk-width-large@s" value="{{ last_username }}">
-                         </div>
-                         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-                             <label for="password" class="uk-width-medium@s">Mot de passe</label>
-                             <input type="password" id="password" name="_password" class="uk-input uk-width-large@s">
-                         </div>
-                         <div class="uk-child-width-expand@s" uk-grid>
-                             <label for="remember">
-                             <input type="checkbox" id="remember" class="uk-checkbox" value="Se souvenir de moi"> Se souvenir de moi
-                             </label>
-                         </div>
-                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                     </fieldset>
-                     <div class="" uk-grid>
-                         <input type="submit" class="uk-margin-top uk-button uk-button-secondary uk-align-center" value="Se connecter">
-                     </div>
-                 </form>
-             </div>
-             <div class="uk-card-footer">
-                 <p>Pas encore inscrit(e) ? cliquez <a href="{{ path('security_registration') }}" title="Inscription">ici</a> !!!</p>
-             </div>
-         </div>
-         <div class="uk-width-1-4@m"></div>
-     </div>
- {% endblock %}
+
+    {% block title %}Connexion{% endblock %}
+
+        {% block body %}
+
+            <div class="container">
+            <div class="row mt-5">
+            <div class="col-sm-6 offset-sm-3 mt-5">
+
+                <!--  form login -->
+                <div class="card ">
+                    <p class="card-header info-color white-text text-center py-4 font-weight-bold purple-gradient">
+                        Connexion
+                    </p>
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
+                        <!-- Form -->
+                        <form action="{{ path('login') }}" style="color: #9F1E5D;" method="post">
+                            <!-- Email -->
+                            <div class="md-form">
+                                <input type="email" id="username" class="form-control" name="_username"
+                                       value="{{ last_username }}">
+                                <label for="username">E-mail</label>
+                            </div>
+                            <!-- Password -->
+                            <div class="md-form">
+                                <input type="password" id="password" class="form-control" name="_password">
+                                <label for="password">Mot de passe</label>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <div>
+                                    <!-- Remember me -->
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+                                        <label class="form-check-label" for="materialLoginFormRemember">Remember
+                                            me</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- Forgot password -->
+                                    <a href="">Mot de passe oublié ?</a>
+                                </div>
+                            </div>
+                            <!-- Sign in button -->
+                            <button class="btn btn-outline-info btn-rounded rounded-pill btn-block my-4 waves-effect z-depth-2"
+                                    type="submit">Se connecter
+                            </button>
+                            <!-- Register -->
+                            <p>Pas encore membre ? Rejoignez notre <a href="">communauté</a> !!!</p>
+                        </form>
+                        <!-- Form -->
+                    </div>
+                </div>
+                <!-- Material form login -->
+            </div>
+        {% endblock %}

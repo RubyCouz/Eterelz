@@ -1,0 +1,201 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du profil{% endblock %}
+
+{% block body %}
+
+{{ form_start(form) }}
+
+<div class="container" id="card">
+    <div class="card">
+    <h5 class="card-title2">Modification du profil</h5>
+        <div id ="cardprofil" class="row no-gutters">
+{#------------------------------AVATAR-----------------------------#}
+
+            <div id="editoblig1" class="col-lg-4 md-12 sm-12">
+
+            {% if eter_user.userAvatar %}
+                <div>
+                <img class="card-img" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) | imagine_filter('profil') }}" alt="default_profil">
+                    {{ form_widget(form.user_avatar) }}
+                    {{ form_errors(form.user_avatar) }}
+                </div>
+                {% else %}
+                <div>
+                <img class="card-img" src="{{ asset('img/upload/profil_pic/default-profil.jpg') | imagine_filter('profil') }}" alt="default_profil">
+                    {{ form_widget(form.user_avatar) }}
+                    {{ form_errors(form.user_avatar) }}
+                </div>
+                {% endif %}
+
+            </div>
+
+            <div id="editoblig2" class="col-lg-8 md-12 sm-12">
+{#------------------------------LOGIN------------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Votre Login</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_login) }}
+                            {{ form_errors(form.user_login) }}
+                            </div>
+                        </div>
+
+{#------------------------------EMAIL------------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Votre Email</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_mail) }}
+                            {{ form_errors(form.user_mail) }}
+                            </div>
+                        </div>
+
+{#------------------------------DISCORD----------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Votre ID Discord</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_discord) }}
+                            {{ form_errors(form.user_discord) }}
+                            </div>
+                        </div>
+            
+            </div>
+
+            <div class="col-md-12">
+                <div class="card-body">
+
+{#-----------------------------ADRESSE-----------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Votre Adresse</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_address) }}
+                            {{ form_errors(form.user_address) }}
+                            </div>
+                        </div>
+
+{#---------------------------CODE POSTAL---------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Votre Code Postal</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_zip) }}
+                            {{ form_errors(form.user_zip) }}
+                            </div>
+                        </div>
+
+{#------------------------------VILLE------------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Votre Ville</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_city) }}
+                            {{ form_errors(form.user_city) }}
+                            </div>
+                        </div>
+
+{#-------------------------------SEXE-------------------------------#}
+
+                        {#<div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Sexe</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_sex) }}
+                            {{ form_errors(form.user_sex) }}
+                            </div>
+                        </div>#}
+
+{#---------------------------DESCRIPTION----------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Votre Description</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_description) }}
+                            {{ form_errors(form.user_description) }}
+                            </div>
+                        </div>
+
+{#-------------------------------CLAN-------------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Votre(Vos) Clan(s)</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_clan) }}
+                            {{ form_errors(form.user_clan) }}
+                            </div>
+                        </div>
+
+{#------------------------------JEUX--------------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Votre(Vos) Jeu(x)</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_game) }}
+                            {{ form_errors(form.user_game) }}
+                            </div>
+                        </div>
+
+{#---------------------------EVENEMENTS-----------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Votre(Vos) Evènement(s)</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.eterEvents) }}
+                            {{ form_errors(form.eterEvents) }}
+                            </div>
+                        </div>
+
+{#----------------------------STREAMS-------------------------------#}
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="editinp">Votre(Vos) Stream(s)</label>
+                            </div>
+                            <div class="col-md-12">
+                            {{ form_widget(form.user_stream) }}
+                            {{ form_errors(form.user_stream) }}
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                        <div id="editbutton" class="row">
+                        <button class="btn btn-info">Retour</button>
+                        <button class="btn btn-success">{{ button_label|default('Mettre à jour') }}</button>
+{{ form_end(form) }}
+                        {{ include('eter_user/_delete_form.html.twig') }}
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block javascripts %}
+<script src="{{ asset('js/edit_profil.js') }}"></script>
+{% endblock %}
+
+{% endblock %}

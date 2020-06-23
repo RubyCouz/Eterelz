@@ -7,9 +7,9 @@ background in progress
     background-position: center;
     background-size: cover;
     background-color: transparent;
-    height: 1500px;
+    background-attachment: fixed;
+    /*height: 1500px;*/
 }
-
 /**
 home background
  */
@@ -19,49 +19,105 @@ home background
     background-position: center;
     background-size: cover;
     background-color: transparent;
-    min-height: 150%;
+    background-attachment: fixed;
+    /*min-height: 150%;*/
+}
+nav {
+    height: 65px;
+}
+
+.info-color {
+    background-color: #9F1E5D !important;
+}
+.card-body {
+    background-color: #2E2E2E;
+    /*border-radius: 0 0 calc(1rem - 1px) calc(1rem - 1px) !important;*/
+}
+.card-header:first-child {
+    border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
+}
+/**
+searchBar
+ */
+.search-box {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 60px !important;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search-box:hover > .search-text {
+    /*transform: translateX(30px);*/
+    width: 400px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn {
+    background: white;
+    padding-top: 10px;
+    padding-left: 13px;
+}
+
+.search-btn {
+    color: #53C8E0 !important;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /*background: #2f3640;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    padding-top: 10px;
+}
+
+.search-text {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0;
 }
 
 .backgroundSignin {
-    background-image: url("../img/connection/signinBg.jpg")
+    background-image: url("../img/connection/signinBg.jpg");
 }
 
 /**
 navbar
  */
-.logo {
-    width: 15em;
+
+#fixe {
+    position: fixed;
     height: auto;
 }
 
-.uk-navbar-container:not(.uk-navbar-transparent) {
-    background: #272725;
+.logo {
+    width: 200px;
+    height: auto;
+    margin-top: -8px;
+    margin-right: -15px;
+    position: relative !important;
 }
 
-/*!***/
-/*Social*/
-/* *!*/
-/*.social {*/
-/*    height: 60px;*/
-/*    width: 260px;*/
-/*    border-radius: 0 0 50% 50%;*/
-/*    background: #272725;*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    right: 0;*/
-/*    transition: 0.8s cubic-bezier(.68,-0.55,.27,1.55);*/
-/*}*/
-/*.social:hover {*/
-/*    height: 400px;*/
-/*    width: 400px;*/
-/*    border-radius: 50%;*/
-/*    background: #272725;*/
-/*    position: absolute;*/
-/*    top: -150px;*/
-/*    right: -150px;*/
-/*    transition: 0.8s cubic-bezier(.68,-0.55,.27,1.55);*/
-/*    !*box-shadow: -9px 10px 26px -3px rgba(159,30,93,1);*!*/
-/*}*/
+.menu-social {
+    font-size: 25px;
+    color: #53C8E0 !important;
+}
+
+.nav-link {
+    color: #53C8E0 !important;
+}
+
 .twitch, .twitter, .youtube, .discord, .facebook {
     z-index: 1000;
     position: absolute;
@@ -93,26 +149,25 @@ navbar
     right: 295px;
 }
 
-/**
-sign in card
- */
-/*.logoSignin {*/
-/*    width: 200px;*/
-/*    height: auto;*/
-/*    margin-top: 25px;*/
-/*}*/
 .signinCard {
     width: 400px;
 }
 
-.uk-card-default {
-    box-shadow: 0 5px 15px #9F1E5D;
-    /*padding-left: 0;*/
-    opacity: 0.7;
-}
-
 .footer {
     height: 200px;
+}
+
+/**
+Modal connexion
+ */
+.modal-content {
+    background-color: #2E2E2E;
+}
+.login {
+    border-radius: 25px 0 0 25px !important;
+}
+.signin {
+    border-radius: 0 25px 25px 0 !important;
 }
 
 /**
@@ -132,46 +187,6 @@ icon
 .delUser {
     color: #9F1E5D;
 }
-
-/**
-Mise en forme du badge d'erreur
-*/
-.badge {
-    display: inline-block;
-    padding: 0.25em 0.4em;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-  .badge-danger {
-    color: #fff;
-    background-color: #dc3545;
-  }
-
-  .text-uppercase {
-    text-transform: uppercase !important;
-  }
-
-  .form-error-message{
-      color: red;
-  }
-
-#oblig {
-    font-size:13px;
-    font-weight:bold;
-}
-
-fieldset{
-    border:0;
-    margin-left:-15px;
-}
-
-
 
 /**
 css widget social
@@ -206,9 +221,11 @@ css widget social
     transition: 0.3s ease;
     z-index: 1021;
 }
+
 .modal-close-btn:hover {
     opacity: 1;
 }
+
 .modal--2 { background: #4A90E2; }
 .modal--3 { background: #FFD200; }
 .modal--4 { background: #4CBB47; }
@@ -218,6 +235,7 @@ css widget social
     visibility: visible;
     pointer-events: auto;
 }
+
 .dialog {
     background: #4A90E2;
     min-width: 300px;
@@ -229,6 +247,7 @@ css widget social
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
+
 .sidebar {
     left: auto;
     top: -150px;
@@ -241,16 +260,19 @@ css widget social
     opacity: 1;
     visibility: visible;
 }
+
 .sidebar.show {
     -webkit-transform: translateX(0);
     transform: translateX(0);
 }
+
 .sidebar__block {
     border-radius: 5px;
     background: white;
     opacity: 0.3;
     margin-top: 32px;
 }
+
 .quote-box__bubble {
     position: relative;
     background: white;
@@ -260,6 +282,7 @@ css widget social
     max-width: 480px;
     margin: 0 auto 20px;
 }
+
 .quote-box__bubble:after {
     content: '';
     display: block;
@@ -278,4 +301,533 @@ footer {
 .footer-text {
     opacity: 0.7;
     margin-top: 20px;
+}
+
+/**
+Mise en forme du formulaire registration.html.twig
+*/
+
+#champs {
+    font-size: 13px;
+    font-weight: bold;
+    color: red;
+}
+
+.row {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#registration {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+#input::placeholder {
+    color: white;
+}
+
+#button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}
+
+#inscription {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/**
+Cadre de prévisualisation avatar
+*/
+
+#wrapper {
+    /*text-align: center;*/
+    margin: 70px auto;
+}
+
+#output_image {
+    width: 300px;
+    height: 300px;
+    border: 4px solid #000;
+    border-radius: 50%;
+}
+
+/**
+Bouton se connecter dans la barre de navigation
+*/
+
+.waves-effect {
+    overflow: visible;
+}
+
+.btn-default {
+    background-color: #33B5E5 !important;
+    margin-left: 10px;
+    margin-right: -2px;
+}
+
+/*Peut être enlever pour la side-barre*/
+
+.sticky-top {
+    position: absolute;
+}
+
+/**
+Formulaire d'inscription loginModal.html.twig
+*/
+
+.navbar.navbar-dark form .md-form .form-control {
+    color: #4285F4;
+    font-size: 15px;
+}
+
+.navbar.navbar-dark form .md-form input {
+    border-bottom: 1px solid #CED4DA;
+}
+
+.md-form label.active {
+    color: #4285f4;
+}
+
+.nav-link.waves-effect.waves-light {
+    margin-left: 0px;
+}
+
+#registration {
+    margin-left: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#mdp_perdu {
+    font-size: 14px;
+    margin-top:10px;
+}
+
+.nav-link {
+    background: linear-gradient(40deg, #ff6ec4, #7873f5) !important;
+    color: white !important;
+    border: white !important;
+    border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0 !important;
+}
+
+.modal-c-tabs {
+    margin-left: -15px;
+    margin-right: -16px;
+}
+
+.modal-footer {
+    margin-left: 14px;
+    margin-right: 17px;
+}
+
+.show-password {
+	font-size: 9px;
+	text-transform: uppercase;
+	position: absolute;
+    cursor: pointer;
+    margin-left: 420px;
+}
+
+/**
+Message d'erreurs loginModal.html.twig
+*/
+
+#alert1, #alert2, #alert3, #alert4, #alert5, #alert6, #alert7 {
+    font-size: 13px;
+}
+
+#mail, #mdp, #email, #password, #identifiant, #discord, #conf_password {
+    margin-bottom: 10px;
+}
+
+/**
+Mise en forme index.html.twig
+*/
+
+#cards {
+    display: inline-block;
+    margin-top: 80px;
+    width: 25rem;
+}
+
+#eter {
+    background-color:#53C8E0;
+}
+
+.eters {
+    color: white;
+}
+
+.profil {
+    margin: 0px;
+    color: white;
+}
+
+#show {
+    margin-left: 40px;
+}
+
+a:hover {
+    color: white;
+}
+
+#image_index {
+    margin-left: 5px;
+    width: 350px;
+    height: 350px;
+    border: 4px solid #000;
+}
+
+/**
+Mise en forme show.html.twig
+*/
+
+.card-title {
+    text-align: center;
+    color:white;
+    font-size: 50px;
+}
+
+#rens1, #rens2, #rens3, #rens4, #rens5, #rens6, #rens7, #rens8, #rens9, #rens10, #rens11, #rens12, #rens13 {
+    color:white;
+    font-size: 25px;
+}
+
+#edit_rens1, #edit_rens2, #edit_rens3, #edit_rens4, #edit_rens5, #edit_rens6, #edit_rens7, #edit_rens8, #edit_rens9, #edit_rens10, #edit_rens11, #edit_rens12, #edit_rens13 {
+    color: grey;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+}
+
+#cardprofil {
+    background-color:#2E2E2E;
+}
+
+#image {
+    margin-top: 20px;
+    width: 350px;
+    height: 350px;
+    border: 4px solid #000;
+}
+
+#show1 {
+    text-align: center;
+}
+
+#modifier {
+    margin-left: -15px;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+[contentEditable=false]:empty:not(:focus):before{
+    content:attr(data-text)
+}
+
+/**
+Mise en forme edit.html.twig
+*/
+
+.editinp {
+    margin-top: 20px;
+    color:white;
+    font-size: 20px;
+}
+
+.card-title2 {
+    color:white;
+    font-size: 50px;
+}
+
+#card {
+    margin-top: 90px;
+}
+
+.card {
+    background-color:#2E2E2E;
+}
+
+h5 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.card-img {
+    border: 4px solid #000;
+}
+
+#editoblig1 {
+    margin-top: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#editoblig2 {
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#editbutton {
+    margin-right: -20px;
+    float: right;
+}
+
+/**
+Mise en forme message de succès d'activation de compte base.html.twig
+*/
+
+#alert_registration {
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/**
+Mise en forme forgotten_password.html.twig
+*/
+
+#forgot {
+    margin-top: 30px;
+}
+
+#forgot_pass2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#forgot_pass1 {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+#forgot_img {
+    margin-top: 60px;
+}
+
+#bouton_envoi3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}
+
+/**
+Mise en forme reset_password.html.twig
+*/
+
+#forgot1 {
+    margin-top: 30px;
+}
+
+#forgot_pass4 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+#forgot_pass3 {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+#forgot_img1 {
+    margin-top: 60px;
+}
+
+#bouton_envoi4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+}
+
+#pass {
+    margin-bottom: 10px;
+}
+
+/**
+Mise en forme label des jeux
+*/
+
+.form-check-label {
+    color:white;
+}
+
+/**
+Mise en forme list.html.twig
+*/
+
+#titre1 {
+    margin-top: 90px;
+    text-align: center;
+    color: white;
+}
+
+#list {
+    width: 23rem;
+}
+
+#card_header {
+    border-bottom: 1px solid #2D2D2D;
+}
+
+#card_body {
+    border-bottom: 1px solid white;
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+#product_title {
+    color: white;
+}
+
+#product_price {
+    color: white;
+    font-size:20px;
+}
+
+/**
+Mise en forme modal list.html.twig
+*/
+
+#modal_title {
+    color: #FF33F8;
+}
+
+#modal_body {
+    color: white;
+    text-align: justify;
+}
+
+.close {
+    color: white;
+}
+
+/**
+Mise en forme cart.html.twig
+*/
+
+#panier {
+    margin-top: 90px;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#table1 {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.table {
+    background-color: #CACFD2;
+    border: solid 5px #566573;
+}
+
+#supprimer {
+    text-align: center;
+    border-bottom: solid 2px #566573;
+}
+
+#image_panier1, #produits2, #prix, #quantite, #total {
+    width: 5%;
+    border-bottom: solid 2px #566573;
+    font-weight: bold;
+}
+
+#produits2 {
+    border-bottom: solid 2px #566573;
+}
+
+#supp {
+    width: 5%;
+    border-bottom: solid 2px #566573;
+}
+
+td, th {
+    text-align: center;
+}
+
+.table td, .table th {
+    border-top: 2px solid #566573;
+}
+
+#image_panier {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#panier_vide {
+    margin-top: 40px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+#panier_vide2 {
+    width: 10%;
+    height: 0;
+    padding-bottom: 15%;
+    position: relative;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+}
+
+#panier_vide2, iframe {
+    
+    margin: 0 auto;
+}
+
+.text-right, #text-right {
+    font-weight: bold;
+}
+
+.btn {
+    border-radius: 10px;
+}
+
+#boutique {
+    text-align: center;
+}
+
+.circle {
+    border-radius : 100%;
+}
+
+#plus {
+    margin-left: 10px;
+}
+
+#moins {
+    margin-right : 10px;
+}
+
+#qte {
+    display: block;
+    text-align: center;
+    margin-top: -20px;
 }

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profils utilisateurs{% endblock %}
+
+{% block body %}
+    
+    <div class="row d-flex justify-content-center">
+
+    {% for eter_user in eter_users %}
+
+    <div id="cards" class="card mb-2 ml-2 mr-2">
+
+        <div class="card-header">
+                {% if eter_user.userAvatar %}
+
+                <img id="image_index" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) | imagine_filter('profil') }}" alt="default_profil">
+
+                {% else %}
+
+                <img id="image_index" src="{{ asset('img/upload/profil_pic/default-profil.jpg') | imagine_filter('profil') }}" alt="default_profil">
+
+                {% endif %}
+        </div>
+
+        <div id="eter" class="card-body">
+            <p class="eters">Login : {{ eter_user.userLogin }}</p>
+            <p class="eters">Email : {{ eter_user.userMail }}</p>
+            <p class="eters">ID Discord : {{ eter_user.userDiscord }}</p>
+            <p class="eters">Adresse : {{ eter_user.userAddress }}<p>
+            <p class="eters">Code Postal : {{ eter_user.userZip }}</p>
+            <p class="eters">Ville : {{ eter_user.userCity }}</p>
+            <p class="eters">Sexe : {{ eter_user.userSex }}</p>
+            <p class="eters">Description : {{ eter_user.userDescription }}</p>
+            {#<p class="eters">Votre(Vos) clan(s) : {{ eter_user.user_clan }}</p>
+            <p class="eters">Votre(Vos) jeu(x) : {{ eter_user.user_game }}</p>
+            <p class="eters">Votre(Vos) évènement(s) : {{ eter_user.eterEvents }}</p>
+            <p class="eters">Votre(Vos) stream(s) : {{ eter_user.user_stream }}</p>#}
+            <p class="eters">Rôle : {{ eter_user.userRole }}</p>
+        </div>
+
+        <div class="card-footer">
+        <button id="show" type="button" class="btn btn-info"><a class="profil" href="{{ path('eter_user_show', {'id': eter_user.id}) }}">AFFICHER</a></button>
+        <button id="edit" type="button" class="btn btn-danger"><a class="profil" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">MODIFIER</a></button>
+        </div>
+
+    </div>
+    
+    {% endfor %}
+
+    </div>
+    
+{% endblock %}

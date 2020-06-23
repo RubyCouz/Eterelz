@@ -1,0 +1,13 @@
+<img src="{{ email.image('@images/logo_sansfond_redim.png') }}" alt="Logo">
+
+<h1>Bienvenue {{ username }} !</h1>
+
+<p>
+    Vous vous êtes enregistré avec le login {{ username }} et avec l'adresse email suivante :
+</p>
+<p><code>{{ email.to[0].address }}</code></p>
+
+<p>
+    <a href="{{ absolute_url(path('activation', {'token': token})) }}">Cliquez sur ce lien pour activer votre compte</a>
+    (ce lien est valide 24h, jusqu'au {{ expiration_date|date('d/m/Y G:i') }})
+</p>

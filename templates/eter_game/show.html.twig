@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EterGame{% endblock %}
+
+{% block body %}
+    <h1>EterGame</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ eter_game.id }}</td>
+            </tr>
+            <tr>
+                <th>Game_name</th>
+                <td>{{ eter_game.gameName }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('eter_game_index') }}">back to list</a>
+
+    <a href="{{ path('eter_game_edit', {'id': eter_game.id}) }}">edit</a>
+
+    {{ include('eter_game/_delete_form.html.twig') }}
+{% endblock %}

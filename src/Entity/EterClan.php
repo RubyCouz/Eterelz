@@ -272,7 +272,6 @@ class EterClan
     public function setBanPic(File $clan_ban = null) {
         $this->ban_pic = $clan_ban;
         // ajout d'un champs modif datetime dans la bdd pour forcer la persistance
-//
         if ($clan_ban) {
             // if 'updatedAt' is not defined in your entity, use another property
             $this->clan_update = new \DateTime('now');

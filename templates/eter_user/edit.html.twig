@@ -12,7 +12,7 @@
         <div id ="cardprofil" class="row no-gutters">
 {#------------------------------AVATAR-----------------------------#}
 
-            <div id="editoblig" class="col-lg-4 md-12 sm-12">
+            <div id="editoblig1" class="col-lg-4 md-12 sm-12">
 
             {% if eter_user.userAvatar %}
                 <div>
@@ -30,12 +30,12 @@
 
             </div>
 
-            <div id="editoblig" class="col-lg-8 md-12 sm-12">
+            <div id="editoblig2" class="col-lg-8 md-12 sm-12">
 {#------------------------------LOGIN------------------------------#}
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre Login</label>
+                                <label class="editinp">Votre Login</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_login) }}
@@ -47,7 +47,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre Email</label>
+                                <label class="editinp">Votre Email</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_mail) }}
@@ -59,7 +59,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre ID Discord</label>
+                                <label class="editinp">Votre ID Discord</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_discord) }}
@@ -76,7 +76,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre Adresse</label>
+                                <label class="editinp">Votre Adresse</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_address) }}
@@ -88,7 +88,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre Code Postal</label>
+                                <label class="editinp">Votre Code Postal</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_zip) }}
@@ -100,7 +100,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre Ville</label>
+                                <label class="editinp">Votre Ville</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_city) }}
@@ -112,7 +112,7 @@
 
                         {#<div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Sexe</label>
+                                <label class="editinp">Sexe</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_sex) }}
@@ -124,7 +124,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre Description</label>
+                                <label class="editinp">Votre Description</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_description) }}
@@ -136,7 +136,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) Clan(s)</label>
+                                <label class="editinp">Votre(Vos) Clan(s)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_clan) }}
@@ -148,7 +148,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) Jeu(x)</label>
+                                <label class="editinp">Votre(Vos) Jeu(x)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_game) }}
@@ -160,7 +160,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) Evènement(s)</label>
+                                <label class="editinp">Votre(Vos) Evènement(s)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.eterEvents) }}
@@ -172,7 +172,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <label id="editinp">Votre(Vos) Stream(s)</label>
+                                <label class="editinp">Votre(Vos) Stream(s)</label>
                             </div>
                             <div class="col-md-12">
                             {{ form_widget(form.user_stream) }}
@@ -180,11 +180,13 @@
                             </div>
                         </div>
 
+                        <div class="col-12">
                         <div id="editbutton" class="row">
                         <button class="btn btn-info">Retour</button>
                         <button class="btn btn-success">{{ button_label|default('Mettre à jour') }}</button>
 {{ form_end(form) }}
                         {{ include('eter_user/_delete_form.html.twig') }}
+                        </div>
                         </div>
                 </div>
             </div>

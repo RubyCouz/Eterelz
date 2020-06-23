@@ -4,9 +4,11 @@
 
 {% block body %}
     
+    <div class="row d-flex justify-content-center">
+
     {% for eter_user in eter_users %}
 
-    <div id="cards" class="card mb-2 ml-2 mr-2" style="width: 25rem;">
+    <div id="cards" class="card mb-2 ml-2 mr-2">
 
         <div class="card-header">
                 {% if eter_user.userAvatar %}
@@ -44,5 +46,7 @@
     </div>
     
     {% endfor %}
+
+    </div>
     
 {% endblock %}

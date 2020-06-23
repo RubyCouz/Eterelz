@@ -9,6 +9,8 @@
     <h5 class="card-title">Votre profil</h5>
         <div id ="cardprofil" class="row no-gutters">
             <div id="show1" class="col-md-12">
+
+                {# Condition afin de sélectionner une photo de profil pour un utilisateur n'ayant pas rajouté de photo personnelle #}
                 {% if eter_user.userAvatar %}
                 
                 <img id="image" src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) | imagine_filter('profil') }}" alt="default_profil">

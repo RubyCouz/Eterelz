@@ -143,18 +143,28 @@ class EterUserController extends AbstractController
     {
 
         if ($this->isCsrfTokenValid('delete'.$eterUser->getId(), $request->request->get('_token'))) {
-            /*$entityManager = $this->getDoctrine()->getManager();
+
+            //Instauration de la Doctrine
+            $entityManager = $this->getDoctrine()->getManager();
+
+            //L'entityManager se prépare à supprimer l'utilisateur concerné
             $entityManager->remove($eterUser);
+
+            //L'entityManager effectue les actions demandées
             $entityManager->flush();
+
+            //Déconnexion de l'utilisateur
             $session = new Session();
-            $session->invalidate();*/
-            $eterUser->setUserDesactivate(1);
-            $this->getDoctrine()->getManager()->flush();
+            $session->invalidate();
+
+            /*$eterUser->setUserDesactivate(1);
+            $this->getDoctrine()->getManager()->flush();*/
         }
 
-        // On envoie un message flash
-        $this->addFlash('success', 'Votre compte a été désactivé');
+        // On envoie un message flash(échec)
+        //$this->addFlash('success', 'Votre compte a été désactivé');
 
+        //Redirection vers le menu d'accueil
         return $this->redirectToRoute('home');
     }
 }

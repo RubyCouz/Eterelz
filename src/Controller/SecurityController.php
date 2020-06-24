@@ -64,6 +64,7 @@ class SecurityController extends AbstractController {
                 $user->setStatut($statut);
                 $user->setUserRole('Utilisateur');
 
+                //Inutile pour l'instant, devrait servir plus tard pour la désactivation du compte
                 $desactive = 0;
                 $user->setUserDesactivate($desactive);
 

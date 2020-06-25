@@ -144,9 +144,6 @@ class EterUserController extends AbstractController
         $session = new Session();
         $session->invalidate();
 
-        // On envoie un message flash
-        // $this->addFlash('success', 'Votre compte a été désactivé');
-
         return $this->redirectToRoute('home');
     }
 }

@@ -1,5 +1,35 @@
-<form method="post" action="{{ path('eter_user_delete', {'id': eter_user.id}) }}" onsubmit="return confirm('Etes-vous certain(e) de vouloir supprimer votre profil ?');">
+<form method="post" name="delete" action="{{ path('eter_user_delete', {'id': eter_user.id}) }}" onsubmit="deleteForm()">
     <input type="hidden" name="_method" value="DELETE">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ eter_user.id) }}">
     <button class="btn btn-danger">Supprimer</button>
 </form>
+
+<script>
+    function deleteForm() {
+        event.preventDefault(); // Empêche la soumission du formulaire
+        var form = document.forms["delete"];
+        swal({
+            title: "Etes-vous certain ?",
+            text: "Une fois supprimé, vous ne pourrez plus voir votre profil !",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Votre profil a été supprimé avec succès !", {
+                        button: false,
+                        icon: "success"
+                    });
+                    form.submit();
+                } else {
+                    swal("Votre profil n'a pas été supprimé !", {
+                        button: "Ouf !",
+                        icon: "error"
+                    });
+                }
+            });
+    }
+</script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

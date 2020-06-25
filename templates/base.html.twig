@@ -132,7 +132,7 @@
                     <div class="sidebar-brand">
                         <a href="#">Brand</a></div>
                 </div>
-                <li><a href="{{ path('home') }}#home">Home</a></li>
+                <li><a href="{{ path('home') }}#home">Accueil</a></li>
                 {% if is_granted('ROLE_ADMIN') %}
                     <li><a href="{{ path('eter_user_index') }}#admin">Utilisateurs</a></li>
                 {% endif %}
@@ -210,8 +210,6 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
 <script>
-
-
     // au clic sur le bouton se connecter (déclenchement modal)
     $('#loginModal').click(function () {
         // fonction ajax

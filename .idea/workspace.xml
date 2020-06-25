@@ -27,10 +27,10 @@
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EterUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EterUserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EterUserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EterUserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/eter_user/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eter_user/_delete_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/eter_user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eter_user/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/eter_user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eter_user/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -308,14 +308,8 @@
       <workItem from="1592897771534" duration="18387000" />
       <workItem from="1592981825530" duration="3012000" />
       <workItem from="1592993097389" duration="1235000" />
-      <workItem from="1592994457118" duration="9245000" />
-    </task>
-    <task id="LOCAL-00003" summary="mise en page affichage connection">
-      <created>1583440965855</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1583440965855</updated>
+      <workItem from="1592994457118" duration="9795000" />
+      <workItem from="1593068856415" duration="8928000" />
     </task>
     <task id="LOCAL-00004" summary="ajout utilisateur ok &#10;hashage mdp ok&#10;mise en page tableau utilisateur&#10;reprise bdd">
       <created>1583582982154</created>
@@ -653,7 +647,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592923538636</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Correctifs">
+      <created>1593010765703</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1593010765705</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,7 +691,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="onglet social css" />
     <MESSAGE value="fin mise en place oglet social" />
     <MESSAGE value="fix back office plus envoie de mail" />
     <MESSAGE value="ajout sidebar" />
@@ -715,7 +715,8 @@
     <MESSAGE value="Responsive show ok + edit en cours" />
     <MESSAGE value="Responsive edit ok + cart ok" />
     <MESSAGE value="Modif security.yaml + commentaires show" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modif security.yaml + commentaires show" />
+    <MESSAGE value="Correctifs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correctifs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1592476341698">
@@ -797,11 +798,11 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1592923541787">
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1593010771327">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="-1368" y="299" key="Vcs.Push.Dialog.v2/-1920.50.1920.1030/0.40.1536.824@-1920.50.1920.1030" timestamp="1591958123178" />
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592923541787" />
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593010771327" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1589288235708" />

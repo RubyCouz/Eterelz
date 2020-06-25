@@ -6,6 +6,7 @@ use App\Entity\EterGame;
 use App\Entity\EterUser;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\Email;
@@ -20,10 +21,10 @@ class EterUserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        /*$choices=[
+        $choices=[
             'Masculin' => 'Masculin',
             'Féminin' => 'Féminin'
-        ];*/
+        ];
 
         $builder
             //->add('id')
@@ -53,12 +54,13 @@ class EterUserType extends AbstractType
                 'required' => false,
                 'constraints' => [new Regex(['message' => 'ID Discord non valide !', 'pattern' => '#^\D+\#\d{4}$#'])],
             ])
-            //->add('user_sex', ChoiceType::class, [
-            /*Voir pour rendre le choix du sexe facultatif
+            ->add('user_sex', ChoiceType::class, [
                 'choices' => $choices,
+                'required' => false,
                 'expanded' => true,
                 'multiple' => false
-            ])*/
+
+            ])
             //->add('statut')
             ->add('user_description', TextareaType::class, [
                 'required' => false,

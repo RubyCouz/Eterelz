@@ -184,6 +184,12 @@ a[href*="#home"]::before {
     content: "\f015" !important;
     margin-top: 20px;
 }
+a[href*="#logout"]::before {
+    content: "\f2f5" !important;
+}
+a[href*="#login"]::before {
+    content: "\f2f6" !important;
+}
 a[href*="#admin"]::before {
     content: "\f502" !important;
 }

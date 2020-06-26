@@ -133,7 +133,19 @@
                         <a href="#">Brand</a></div>
                 </div>
                 <li><a href="{{ path('home') }}#home">Home</a></li>
+                {% if app.user %}
+
+                    <li><a href="{{ path('logout') }}#logout">Déconnexion</a></li>
+
+                {% else %}
+
+                    <li><a href="#login" data-toggle="modal" data-target="#modalLRForm"
+                           data-backdrop="false" id="loginModalSide">Connexion</a></li>
+
+                {% endif %}
+
                 <li><a href="{{ path('product_index') }}#prod">Boutique</a></li>
+
                 {% if app.user %}
 
                     <li><a href="{{ path('cart_index') }}#cart">Panier</a></li>
@@ -212,6 +224,21 @@
 <script>
     // au clic sur le bouton se connecter (déclenchement modal)
     $('#loginModal').click(function () {
+        // fonction ajax
+        $.ajax({
+            // définition de la méthode d'envoi
+            method: "POST",
+            // url destination / appel du contrôleur
+            url: "{{ path('security_registration') }}",
+        })
+            // s'il y a un retour du contrôleur, on déclenche une fonction qui prend en paramètre data => retour du contrôleur
+            .done(function (data) {
+                // on affiche la réponse du contrôleur dans l'élément ayant l'id login
+                $('#login').html(data);
+            });
+    });
+    // au clic sur le bouton se connecter (déclenchement modal)
+    $('#loginModalSide').click(function () {
         // fonction ajax
         $.ajax({
             // définition de la méthode d'envoi

@@ -20,7 +20,7 @@ easy_admin:
             list:
                 fields:
                     - {property: 'user_login', label: 'Pseudo'}
-                    - {property: 'user_avatar',type: 'image', label: 'photo de profil', base_path: '/eter/public/img/upload/profil_pic'}
+                    - {property: 'user_avatar',type: 'image', label: 'photo de profil', base_path: '/Eterelz/public/img/upload/profil_pic'}
                     - {property: 'role', label: 'Rôle'}
                     - {property: 'user_clan', label: 'Clan'}
                     - {property: 'user_mail', label: 'Adresse mail'}

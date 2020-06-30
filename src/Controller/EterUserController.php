@@ -83,7 +83,6 @@ class EterUserController extends AbstractController
         //Paramétrage de l'acceptation des requêtes SQL
         $form->handleRequest($request);
 
-
         if ($form->isSubmitted() && $form->isValid()) {
 
             //Récupération des données du fichier uploadé

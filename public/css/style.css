@@ -384,6 +384,20 @@ Bouton se connecter dans la barre de navigation
 Formulaire d'inscription loginModal.html.twig
 */
 
+.fa-exclamation-triangle {
+    margin-right: 10px;
+    color: #8773F0;
+}
+
+.champs_oblig{
+    font-size: 13px;
+    font-style: italic;
+    font-weight: bold;
+    color: #616161;
+    margin-left: 25px;
+    color: #8773F0;
+}
+
 .navbar.navbar-dark form .md-form .form-control {
     color: #4285F4;
     font-size: 15px;
@@ -405,6 +419,7 @@ Formulaire d'inscription loginModal.html.twig
     margin-left: 5px;
     font-size: 14px;
     margin-top: 10px;
+    color: #33B5E5;
 }
 
 #mdp_perdu {

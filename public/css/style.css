@@ -422,6 +422,16 @@ Formulaire d'inscription loginModal.html.twig
     margin-left: 420px;
 }
 
+#oblig{
+    font-size: 14px;
+}
+
+.fa-exclamation-circle{
+    font-size: 16px;
+    margin-left: 5px;
+    color: #E36FCE;
+}
+
 /**
 Message d'erreurs loginModal.html.twig
 */

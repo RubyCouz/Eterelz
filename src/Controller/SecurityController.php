@@ -85,7 +85,7 @@ class SecurityController extends AbstractController {
                     ->context([
                         'expiration_date' => new \DateTime('+1 day'),
                         'username' => $user->getUserLogin(),
-                        'date' => new \DateTime('now'),
+                        //'date' => new \DateTime('now'),
                         'token' => $user->getActivationToken()
                     ]);
 

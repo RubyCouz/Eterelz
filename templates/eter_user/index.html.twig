@@ -3,9 +3,10 @@
 {% block title %}EterUser index{% endblock %}
 
 {% block body %}
-    
-    {% for eter_user in eter_users %}
 
+<div class="row d-flex justify-content-center">
+
+    {% for eter_user in eter_users %}
 
     <div id="cards" class="card mb-2 ml-2 mr-2" style="width: 25rem;">
 
@@ -37,5 +38,7 @@
     </div>
     
     {% endfor %}
-    
+
+</div>
+
 {% endblock %}

@@ -88,8 +88,8 @@ function verif2()
     }
     else
     {
-        var html = '<div class="alert alert-success" role="alert">Votre login est validé</div>';
-        $("#alert1").append(html);
+        //var html = '<div class="alert alert-success" role="alert">Votre login est validé</div>';
+        //$("#alert1").append(html);
     }
 
      // EMAIL
@@ -110,8 +110,8 @@ function verif2()
      }
      else
      {
-         var html = '<div class="alert alert-success" role="alert">Votre email est validé</div>';
-         $("#alert2").append(html);
+         //var html = '<div class="alert alert-success" role="alert">Votre email est validé</div>';
+         //$("#alert2").append(html);
      }
 
       // ID DISCORD
@@ -132,8 +132,8 @@ function verif2()
       }
       else
       {
-          var html = '<div class="alert alert-success" role="alert">Votre ID Discord est validé</div>';
-          $("#alert3").append(html);
+          //var html = '<div class="alert alert-success" role="alert">Votre ID Discord est validé</div>';
+          //$("#alert3").append(html);
       }
 
       // PASSWORD
@@ -154,8 +154,8 @@ function verif2()
      }
      else
      {
-         var html = '<div class="alert alert-success" role="alert">Votre mot de passe est validé</div>';
-         $("#alert4").append(html);
+         //var html = '<div class="alert alert-success" role="alert">Votre mot de passe est validé</div>';
+         //$("#alert4").append(html);
      }
 
      // CONFIRMATION PASSWORD
@@ -176,8 +176,8 @@ function verif2()
      }
      else
      {
-         var html = '<div class="alert alert-success" role="alert">Votre confirmation de mot de passe est validée</div>';
-         $("#alert5").append(html);
+         //var html = '<div class="alert alert-success" role="alert">Votre confirmation de mot de passe est validée</div>';
+         //$("#alert5").append(html);
      }
 
 

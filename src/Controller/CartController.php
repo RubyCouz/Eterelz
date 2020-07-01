@@ -23,7 +23,7 @@ class CartController extends AbstractController
             $panierWithData[] = [
                 'product' => $eterProductRepository->find($id),
                 'quantity' => $quantity,
-                'inProgress' => $inProgress
+                //'inProgress' => $inProgress
             ];
         }
         // On instaure une variable qui commence à 0

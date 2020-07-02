@@ -83,7 +83,7 @@ class EterUserController extends AbstractController
      * @param SluggerInterface $slugger
      * @return Response
      */
-    public function edit(Request $request, EterUser $eterUser, SluggerInterface $slugger): Response
+    public function edit(Request $request, EterUser $eterUser): Response
     {
         $inProgress = false;
 
@@ -105,10 +105,10 @@ class EterUserController extends AbstractController
                 $originalFilename = pathinfo($avatarFile->getClientOriginalName(), PATHINFO_FILENAME);
 
                 //Sécurisation du nom de fichier
-                $safeFilename = $slugger->slug($originalFilename);
+               // $safeFilename = $slugger->slug($originalFilename);
 
                 //Nouveau nom du fichier et ajout de l'extension
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$avatarFile->guessExtension();
+                $newFilename = $originalFilename.'-'.uniqid().'.'.$avatarFile->guessExtension();
 
                 //Indication du nouveau nom de fichier
                 $eterUser->setUserAvatar($newFilename);
@@ -121,6 +121,7 @@ class EterUserController extends AbstractController
                     );
                 }catch (FileException $e) {
                     //Possibilité d'indiquer un message d'erreur si l'upload échoue
+
                 }
             }
 

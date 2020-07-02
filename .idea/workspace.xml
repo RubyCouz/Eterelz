@@ -26,11 +26,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="commentaire ajax">
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/817166-5efd8440041f9.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/817166-5efdae8f4c708.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/profil-educateur-5efc8422dcd4f.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/profil-jaune-test-disc-couleurs-2-.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/telechargement-5efc76e4abf75.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/test-de-motivation-1920x1280-5efc867e276d4.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EterUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EterUserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/eter_user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eter_user/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cart/cart.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/cart.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -311,14 +316,7 @@
       <workItem from="1592994457118" duration="9795000" />
       <workItem from="1593068856415" duration="16329000" />
       <workItem from="1593157503172" duration="9597000" />
-      <workItem from="1593414552656" duration="14152000" />
-    </task>
-    <task id="LOCAL-00008" summary="back-office suite">
-      <created>1584734015819</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1584734015819</updated>
+      <workItem from="1593414552656" duration="26911000" />
     </task>
     <task id="LOCAL-00009" summary="fin mise en place back office et installation uploader vich">
       <created>1584994595495</created>
@@ -656,7 +654,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593514630992</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Dernières modifications test">
+      <created>1593527584917</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1593527584917</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -693,7 +698,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix modal inscription" />
     <MESSAGE value="commentaire ajax" />
     <MESSAGE value="connexion" />
     <MESSAGE value="connexion ok" />
@@ -718,7 +722,8 @@
     <MESSAGE value="Correctifs templates emails" />
     <MESSAGE value="Connexion sidebar + derniers réglages" />
     <MESSAGE value="Input obligatoires sur formulaire inscription" />
-    <option name="LAST_COMMIT_MESSAGE" value="Input obligatoires sur formulaire inscription" />
+    <MESSAGE value="Dernières modifications test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dernières modifications test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1592476341698">
@@ -800,11 +805,11 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2667" y="173" key="VCS.ChangeListViewerDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587044514520" />
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1593514636883">
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2" timestamp="1593527587959">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="-1368" y="299" key="Vcs.Push.Dialog.v2/-1920.50.1920.1030/0.40.1536.824@-1920.50.1920.1030" timestamp="1591958123178" />
-    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593514636883" />
+    <state x="393" y="168" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1593527587959" />
     <state x="552" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@0.30.1920.1050" timestamp="1586251452538" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/0.30.1920.1050/1920.30.1920.1050@1920.30.1920.1050" timestamp="1586254486866" />
     <state x="2472" y="284" key="Vcs.Push.Dialog.v2/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1589288235708" />

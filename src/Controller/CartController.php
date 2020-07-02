@@ -34,7 +34,7 @@ class CartController extends AbstractController
             $panierWithData[] = [
                 'product' => $eterProductRepository->find($id),
                 'quantity' => $quantity,
-                'inProgress' => $inProgress
+                //'inProgress' => $inProgress
             ];
         }
 

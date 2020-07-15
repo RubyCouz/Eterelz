@@ -156,9 +156,11 @@ class SecurityController extends AbstractController {
         ]);
     }
 
-    
+
     /**
      * @Route("/login", name="login")
+     * @param AuthenticationUtils $authenticationUtils
+     * @return Response
      */
     public function login(AuthenticationUtils $authenticationUtils) {
 
@@ -167,7 +169,8 @@ class SecurityController extends AbstractController {
         $inProgress = false;
         if($error){
             $this->addFlash('danger', 'Cet email n\'existe pas ou le mot de passe est erroné !');
-            return $this->render('home/index.html.twig', [
+            return $this->render('security/login.html.twig', [
+                'last_username' => $lastUsername,
                 'error' => $error,
                 'inProgress' => $inProgress
             ]);

@@ -208,6 +208,55 @@ stat
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
+
+/**
+random card
+ */
+
+
+/* angled box styles */
+.randPic {
+    width: auto;
+    height: 30% !important;
+}
+
+.randCard {
+    margin-right: -50px;
+}
+.box{
+
+    width:700px;
+    height:500px;
+    /*background:#ccc;*/
+    overflow:hidden;
+    margin:1em 0;
+}
+.box .inner{
+    -moz-transform:rotate(20deg);
+    -webkit-transform:rotate(20deg);
+    -o-transform:rotate(20deg);
+    width:300px;
+    height:450px;
+    margin-top:-70px;
+
+    margin-right:300px;
+    overflow:hidden;
+    /*background:#aaa;*/
+    float:right;
+    /*border:3px solid #fff;*/
+}
+.box .inner .content{
+    -moz-transform:rotate(-20deg);
+    -webkit-transform:rotate(-20deg);
+    -o-transform:rotate(-20deg);
+    width:500px;
+    height:320px;
+    margin-top:60px;
+    margin-left:-80px;
+    overflow:hidden;
+    /*background:#f1f1f1;*/
+}
+
 /**
 table
  */

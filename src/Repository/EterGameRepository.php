@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\EterGame;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\DBAL\DBALException;
 
 /**
  * @method EterGame|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,6 +20,22 @@ class EterGameRepository extends ServiceEntityRepository
         parent::__construct($registry, EterGame::class);
     }
 
+    public function getRandGame() {
+        try{
+        $conn = $this->getEntityManager()->getConnection();
+        $query = '
+        SELECT SQL_NO_CACHE *
+        FROM `eter_game`
+        ORDER BY RAND( )
+        LIMIT 4
+        ';
+            $stmt = $conn->prepare($query);
+            $stmt ->execute();
+            return $stmt->fetchAll();
+        } catch(DBALException $e) {
+        }
+
+    }
     // /**
     //  * @return EterGame[] Returns an array of EterGame objects
     //  */

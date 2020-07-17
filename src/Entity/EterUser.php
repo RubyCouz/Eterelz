@@ -138,7 +138,7 @@ class EterUser implements UserInterface
     private $user_avatar;
 
     /**
-     * @Vich\UploadableField(mapping="user_avatar", fileNameProperty="clan_ban")
+     * @Vich\UploadableField(mapping="user_avatar", fileNameProperty="user_avatar")
      * @var File
      */
     private $user_pic;

@@ -17,6 +17,8 @@ class EterGameController extends AbstractController
 {
     /**
      * @Route("/", name="eter_game_index", methods={"GET"})
+     * @param EterGameRepository $eterGameRepository
+     * @return Response
      */
     public function index(EterGameRepository $eterGameRepository): Response
     {
@@ -27,6 +29,8 @@ class EterGameController extends AbstractController
 
     /**
      * @Route("/new", name="eter_game_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -50,6 +54,8 @@ class EterGameController extends AbstractController
 
     /**
      * @Route("/{id}", name="eter_game_show", methods={"GET"})
+     * @param EterGame $eterGame
+     * @return Response
      */
     public function show(EterGame $eterGame): Response
     {

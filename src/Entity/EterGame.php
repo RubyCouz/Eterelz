@@ -5,9 +5,13 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use PhpParser\Node\Scalar\String_;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterGameRepository")
+ * @Vich\Uploadable
  */
 class EterGame
 {
@@ -32,6 +36,22 @@ class EterGame
      * @ORM\ManyToMany(targetEntity="App\Entity\EterGender", inversedBy="eterGames")
      */
     private $game_gender;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $game_pic;
+
+    /**
+     * @Vich\UploadableField(mapping="game", fileNameProperty="game_pic")
+     * @var File
+     */
+    private $pic;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
 
     public function __construct()
     {
@@ -110,6 +130,47 @@ class EterGame
         if ($this->game_gender->contains($gameGender)) {
             $this->game_gender->removeElement($gameGender);
         }
+
+        return $this;
+    }
+
+    public function getGamePic(): ?string
+    {
+        return $this->game_pic;
+    }
+
+    public function setGamePic(?string $game_pic): self
+    {
+      $this->game_pic = $game_pic;
+        return $this;
+    }
+
+    public function setPic(File $game_pic = null)
+    {
+        $this->pic = $game_pic;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($game_pic) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getPic()
+    {
+        return $this->pic;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

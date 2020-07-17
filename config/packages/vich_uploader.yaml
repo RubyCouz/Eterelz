@@ -4,12 +4,17 @@ vich_uploader:
     mappings:
         # mapping pour la bannière de clan
         clan_ban:
-            uri_prefix:         '/img/upload/ban'
+            uri_prefix:         '%app.path.clan%'
             upload_destination: '%kernel.project_dir%/public/img/upload/ban'
         # mapping pour contenu image
         content_pic:
             uri_prefix:         '/img/upload/artwork'
             upload_destination: '%kernel.project_dir%/public/img/upload/artwork'
+        # mapping pour illustration de jeux
+        game:
+            uri_prefix:         '%app.path.game%'
+            upload_destination: '%kernel.project_dir%/public/img/upload/game'
+
     #mappings:
     #    products:
     #        uri_prefix: /images/products

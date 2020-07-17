@@ -5,53 +5,56 @@
         {% block body %}
 
             <div class="container">
-            <div class="row mt-5">
-            <div class="col-sm-6 offset-sm-3 mt-5">
+                <div class="row mt-5">
+                    <div class="col-sm-6 offset-sm-3 mt-5">
 
-                <!--  form login -->
-                <div class="card ">
-                    <p class="card-header info-color white-text text-center py-4 font-weight-bold purple-gradient">
-                        Connexion
-                    </p>
-                    <!--Card content-->
-                    <div class="card-body px-lg-5 pt-0">
-                        <!-- Form -->
-                        <form action="{{ path('login') }}" style="color: #9F1E5D;" method="post">
-                            <!-- Email -->
-                            <div class="md-form">
-                                <input type="email" id="username" class="form-control" name="_username"
-                                       value="{{ last_username }}">
-                                <label for="username">E-mail</label>
-                            </div>
-                            <!-- Password -->
-                            <div class="md-form">
-                                <input type="password" id="password" class="form-control" name="_password">
-                                <label for="password">Mot de passe</label>
-                            </div>
-                            <div class="d-flex justify-content-around">
-                                <div>
-                                    <!-- Remember me -->
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
-                                        <label class="form-check-label" for="materialLoginFormRemember">Remember
-                                            me</label>
+                        <!--  form login -->
+                        <div class="card ">
+                            <p class="card-header info-color white-text text-center py-4 font-weight-bold purple-gradient">
+                                Connexion
+                            </p>
+                            <!--Card content-->
+                            <div class="card-body px-lg-5 pt-0">
+                                <!-- Form -->
+                                <form action="{{ path('login') }}" style="color: #9F1E5D;" method="post">
+                                    <!-- Email -->
+                                    <div class="md-form">
+                                        <input type="email" id="username" class="form-control" name="_username"
+                                               value="{{ last_username }}">
+                                        <label for="username">E-mail</label>
                                     </div>
-                                </div>
-                                <div>
-                                    <!-- Forgot password -->
-                                    <a href="">Mot de passe oublié ?</a>
-                                </div>
+                                    <!-- Password -->
+                                    <div class="md-form">
+                                        <input type="password" id="password" class="form-control" name="_password">
+                                        <label for="password">Mot de passe</label>
+                                    </div>
+                                    <div class="d-flex justify-content-around">
+                                        <div>
+                                            <!-- Remember me -->
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input"
+                                                       id="materialLoginFormRemember">
+                                                <label class="form-check-label" for="materialLoginFormRemember">Remember
+                                                    me</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <!-- Forgot password -->
+                                            <a href="">Mot de passe oublié ?</a>
+                                        </div>
+                                    </div>
+                                    <!-- Sign in button -->
+                                    <button class="btn btn-outline-info btn-rounded rounded-pill btn-block my-4 waves-effect z-depth-2"
+                                            type="submit">Se connecter
+                                    </button>
+                                    <!-- Register -->
+                                    <p>Pas encore membre ? Rejoignez notre <a href="">communauté</a> !!!</p>
+                                </form>
+                                <!-- Form -->
                             </div>
-                            <!-- Sign in button -->
-                            <button class="btn btn-outline-info btn-rounded rounded-pill btn-block my-4 waves-effect z-depth-2"
-                                    type="submit">Se connecter
-                            </button>
-                            <!-- Register -->
-                            <p>Pas encore membre ? Rejoignez notre <a href="">communauté</a> !!!</p>
-                        </form>
-                        <!-- Form -->
+                        </div>
+                        <!-- Material form login -->
                     </div>
                 </div>
-                <!-- Material form login -->
             </div>
         {% endblock %}

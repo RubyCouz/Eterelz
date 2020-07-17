@@ -20,13 +20,10 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
-<body class="{{ (inProgress == true) ? 'inProgress' : 'base' }}">
+<body>
 {#navbar#}
-
-
 <div id="wrapper">
     <div class="overlay"></div>
-
     <header>
         <nav id="fixe" class="navbar sticky-top fixed-top navbar-expand-lg navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
@@ -34,7 +31,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
                         {#<a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
@@ -132,7 +128,7 @@
                     <div class="sidebar-brand">
                         <a href="#">Brand</a></div>
                 </div>
-                <li><a href="{{ path('home') }}#home">Home</a></li>
+                <li><a href="{{ path('home') }}#home">Accueil</a></li>
                 {% if is_granted('ROLE_ADMIN') %}
                     <li><a href="{{ path('eter_user_index') }}#admin">Utilisateurs</a></li>
                 {% endif %}
@@ -210,8 +206,6 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
 <script>
-
-
     // au clic sur le bouton se connecter (déclenchement modal)
     $('#loginModal').click(function () {
         // fonction ajax

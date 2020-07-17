@@ -50,11 +50,11 @@ easy_admin:
                     - {property: 'clan_discord', label: 'Discord'}
                     - {property: 'clan_recrut', label: 'Statut recrutement'}
                     - {property: 'clan_slogan', label: 'Devise'}
-                    - {property: 'ban_pic', type: 'file', label: 'Bannière'}
+                    - {property: 'ban_pic', type: 'vich_image', label: 'Bannière'}
 #                    - {property: 'ban_pic', type: 'vich_image', label: 'Bannière de Clan', base_path: '/eter/public/img/upload/ban'}
             list:
                 fields:
-                    - {property: 'clan_ban', type: 'image', label: 'Bannière de Clan', base_path: '/eter/public/img/upload/ban'}
+                    - {property: 'clan_ban', type: 'image', label: 'Bannière de Clan', base_path: '%app.path.clan%'}
                     - {property: 'clan_name', label: 'Nom'}
                     - {property: 'clan_members', label: 'Nombre de membres'}
                     - {property: 'clan_desc', label: 'Description'}
@@ -66,7 +66,7 @@ easy_admin:
                     - {name: 'delete', icon: 'trash', label: false}
             show:
                 fields:
-                    - {property: 'clan_ban', type: 'image', label: 'Bannière de Clan', base_path: '/eter/public/img/upload/ban'}
+                    - {property: 'clan_ban', type: 'image', label: 'Bannière de Clan', base_path: '%app.path.clan%'}
                 actions:
                     - {name: 'edit', icon: 'pencil', label: false}
                     - {name: 'delete', icon: 'trash', label: false}
@@ -75,9 +75,11 @@ easy_admin:
             form:
                 fields:
                     - {property: 'game_name', label: 'Jeux'}
+                    - {property: 'pic', type: 'vich_image', label: 'Illustration du jeux (2mb max)'}
                     - {property: 'game_gender', label: 'Genre(s)'}
             list:
                 fields:
+                    - {property: 'game_pic', type: 'image', label: 'Illustration de jeux', base_path: '%app.path.game%'}
                     - {property: 'game_name', label: 'Jeux'}
                     - {property: 'eterUsers', label: 'Nombre utilisateurs'}
                     - {property: 'game_gender', label: 'Nombre Genres'}

@@ -169,6 +169,93 @@ Modal connexion
 .signin {
     border-radius: 0 25px 25px 0 !important;
 }
+/**
+jumbotron
+ */
+.container-fluid {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.disclaimer {
+    background-image: url("../img/background/disclaimer_bg.jpg");
+}
+
+/**
+stat
+ */
+
+.row.vdivide [class*='col-']:not(:last-child):after {
+    background: #e0e0e0;
+    width: 6px;
+    content: "";
+    display:block;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    height: 250px;
+    transform: rotate(10deg); /* Équivalent à rotateZ(45deg) */
+}
+
+.stat {
+    height: 280px;
+}
+.marge {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/**
+random card
+ */
+
+
+/* angled box styles */
+.randPic {
+    width: auto;
+    height: 30% !important;
+}
+
+.randCard {
+    margin-right: -50px;
+}
+.box{
+
+    width:700px;
+    height:500px;
+    /*background:#ccc;*/
+    overflow:hidden;
+    margin:1em 0;
+}
+.box .inner{
+    -moz-transform:rotate(20deg);
+    -webkit-transform:rotate(20deg);
+    -o-transform:rotate(20deg);
+    width:300px;
+    height:450px;
+    margin-top:-70px;
+
+    margin-right:300px;
+    overflow:hidden;
+    /*background:#aaa;*/
+    float:right;
+    /*border:3px solid #fff;*/
+}
+.box .inner .content{
+    -moz-transform:rotate(-20deg);
+    -webkit-transform:rotate(-20deg);
+    -o-transform:rotate(-20deg);
+    width:500px;
+    height:320px;
+    margin-top:60px;
+    margin-left:-80px;
+    overflow:hidden;
+    /*background:#f1f1f1;*/
+}
 
 /**
 table
@@ -618,7 +705,8 @@ Mise en forme forgotten_password.html.twig
 }
 
 #forgot_img {
-    margin-top: 60px;
+    margin-top: 40px;
+    text-align: center;
 }
 
 #bouton_envoi3 {
@@ -650,7 +738,8 @@ Mise en forme reset_password.html.twig
 }
 
 #forgot_img1 {
-    margin-top: 60px;
+    margin-top: 40px;
+    text-align: center;
 }
 
 #bouton_envoi4 {

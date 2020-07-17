@@ -22,10 +22,10 @@ class EterUserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        /*$choices=[
+        $choices=[
             'Masculin' => 'Masculin',
             'Féminin' => 'Féminin'
-        ];*/
+        ];
 
         $builder
             //->add('id')
@@ -55,12 +55,12 @@ class EterUserType extends AbstractType
                 'required' => false,
                 'constraints' => [new Regex(['message' => 'ID Discord non valide !', 'pattern' => '#^\D+\#\d{4}$#'])],
             ])
-            //->add('user_sex', ChoiceType::class, [
-            /*Voir pour rendre le choix du sexe facultatif
+            ->add('user_sex', ChoiceType::class, [
                 'choices' => $choices,
                 'expanded' => true,
-                'multiple' => false
-            ])*/
+                'multiple' => false,
+                'required' => false
+            ])
             //->add('statut')
             ->add('user_description', TextareaType::class, [
                 'required' => false,

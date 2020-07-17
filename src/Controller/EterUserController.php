@@ -22,6 +22,8 @@ class EterUserController extends AbstractController
 {
     /**
      * @Route("/", name="eter_user_index", methods={"GET"})
+     * @param EterUserRepository $eterUserRepository
+     * @return Response
      */
     public function index(EterUserRepository $eterUserRepository): Response
     {
@@ -34,6 +36,8 @@ class EterUserController extends AbstractController
 
     /**
      * @Route("/new", name="eter_user_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -59,6 +63,8 @@ class EterUserController extends AbstractController
 
     /**
      * @Route("/{id}", name="eter_user_show", methods={"GET"})
+     * @param EterUser $eterUser
+     * @return Response
      */
     public function show(EterUser $eterUser): Response
     {
@@ -72,6 +78,10 @@ class EterUserController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="eter_user_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param EterUser $eterUser
+     * @param SluggerInterface $slugger
+     * @return Response
      */
     public function edit(Request $request, EterUser $eterUser, SluggerInterface $slugger): Response
     {
@@ -129,23 +139,23 @@ class EterUserController extends AbstractController
 
     /**
      * @Route("/{id}", name="eter_user_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param EterUser $eterUser
+     * @return Response
      */
     public function delete(Request $request, EterUser $eterUser): Response
     {
         if ($this->isCsrfTokenValid('delete'.$eterUser->getId(), $request->request->get('_token'))) {
-            // $entityManager = $this->getDoctrine()->getManager();
-            // $entityManager->remove($eterUser);
-            // $entityManager->flush();
-            $eterUser->setUserDesactivate(1);
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($eterUser);
+            $entityManager->flush();
+            // $eterUser->setUserDesactivate(1);
+            // $this->getDoctrine()->getManager()->flush();
         }
 
         // Destruction de la session
-        // $session = new Session();
-        // $session->invalidate();
-
-        // On envoie un message flash
-        $this->addFlash('success', 'Votre compte a été désactivé');
+        $session = new Session();
+        $session->invalidate();
 
         return $this->redirectToRoute('home');
     }

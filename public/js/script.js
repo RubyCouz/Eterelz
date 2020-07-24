@@ -1,85 +1,40 @@
 /**
  sidebar
  */
-$(document).ready(function () {
-    let trigger = $('.hamburger'),
-        overlay = $('.overlay'),
-        isClosed = false;
-
-    trigger.click(function () {
-        hamburger_cross();
-    });
-
-    function hamburger_cross() {
-
-        if (isClosed === true) {
-            overlay.hide();
-            trigger.removeClass('is-open');
-            trigger.addClass('is-closed');
-            isClosed = false;
-        } else {
-            overlay.show();
-            trigger.removeClass('is-closed');
-            trigger.addClass('is-open');
-            isClosed = true;
-        }
-    }
-
-    $('[data-toggle="offcanvas"]').click(function () {
-        $('#wrapper').toggleClass('toggled');
-    });
-
-
+document.addEventListener('DOMContentLoaded', function () {
+    let elems = document.querySelectorAll('.sidenav');
+    let instances = M.Sidenav.init(elems, [
+        draggable = true,
+        preventScrolling = true
+    ]);
 });
-let closeFn;
 
-function closeShowingModal() {
-    let showingModal = document.querySelector('.modal1.show');
-    if (!showingModal) return;
-    showingModal.classList.remove('show');
-    document.body.classList.remove('disable-mouse');
-    document.body.classList.remove('disable-scroll');
-    if (closeFn) {
-        closeFn();
-        closeFn = null;
-    }
-}
+/**
+ * slider
+ */
 
-document.addEventListener('click', function (e) {
-    let target = e.target;
-    if (target.dataset.ctaTarget) {
-        closeFn = cta(target, document.querySelector(target.dataset.ctaTarget), {relativeToWindow: true}, function showModal(modal) {
-            modal.classList.add('show');
-            document.body.classList.add('disable-mouse');
-            if (target.dataset.disableScroll) {
-                document.body.classList.add('disable-scroll');
-            }
-        });
-    } else if (target.classList.contains('modal-close-btn')) {
-        closeShowingModal();
-    }
+
+document.addEventListener('DOMContentLoaded', function() {
+    let elems = document.querySelectorAll('.slider');
+    let instances = M.Slider.init(elems, {
+        indicators: true,
+        height: 500,
+        duration: 500,
+        interval: 50000
+    });
 });
-document.addEventListener('keyup', function (e) {
-    if (e.which === 27) {
-        closeShowingModal();
-    }
-})
 
-const logo = document.querySelector('#logo');
-const social = document.querySelector('#social');
-const close = document.querySelector('#close');
-social.onclick = () => {
-    logo.style.transition = '0.8s';
-    logo.style.position = 'absolute';
-    logo.style.top = '25%'
-    logo.style.right = '15%';
+/**
+ * Floating action button network
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    let elems = document.querySelectorAll('.fixed-action-btn');
+    let instances = M.FloatingActionButton.init(elems, {
+        direction: 'bottom',
+        hoverEnabled: false
+    });
+});
 
-}
-close.onclick = () => {
-    logo.style.transition = '1.2s';
-    logo.style.top = '25%'
-    logo.style.right = '3%';
-}
 
 /* Barre de force du mot de passe
 

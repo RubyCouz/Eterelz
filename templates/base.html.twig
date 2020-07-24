@@ -4,224 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="icon" type="image/jpg" href="{{ asset('img/favicon/favicon') }}">
+    <link rel="icon" type="image/jpg" href="{{ asset('img/favicon/favicon.jpg') }}">
     <link rel="stylesheet" href="{{ asset('css/hover-min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">-->
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
 {#navbar#}
-<div id="wrapper">
-    <div class="overlay"></div>
-    <header>
-        <nav id="fixe" class="navbar sticky-top fixed-top navbar-expand-lg navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
-                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        {#<a class="nav-link" href="#"><i class="fas fa-bars menu-social"></i></a>#}
-                        <button type="button" class="hamburger animated fadeInLeft is-closed mt-1"
-                                data-toggle="offcanvas">
-                            <span class="hamb-top"></span>
-                            <span class="hamb-middle"></span>
-                            <span class="hamb-bottom"></span>
-                        </button>
-                    </li>
-                    {% if app.user %}
-                        <div class="text-center">
-                            <a href="{{ path('logout') }}" class="btn btn-default">Se déconnecter</a>
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-med-and-down">
+                <li>
+                    <form>
+                        <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
                         </div>
-                        {% if is_granted('ROLE_ADMIN') %}
-                            <div class="text-center">
-                                <a href="http://127.0.0.1:8000/admin" class="btn btn-default">Back-office</a>
-                            </div>
-                        {% endif %}
-                    {% else %}
-                        <li>
-                            <!--Modal: Login / Register Form-->
-                            <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog"
-                                    aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog cascading-modal" role="document">
-                                    <!--Content-->
-                                    <div class="modal-content">
-
-                                        <!--Modal cascading tabs-->
-                                        <div class="modal-c-tabs">
-
-                                            <!-- Nav tabs -->
-                                            <ul class="nav nav-tabs md-tabs tabs-2" role="tablist">
-                                                <li class="nav-item">
-                                                    <a class="nav-link login" data-toggle="tab" href="#panel7" role="tab">
-                                                    <i class="fas fa-user mr-1" ></i>
-                                                        Connexion</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link signin" data-toggle="tab" href="#panel8" role="tab">
-                                                    <i class="fas fa-user-plus mr-1"></i>
-                                                        Inscription</a>
-                                                </li>
-                                            </ul>
-
-                                            <!-- Tab panels -->
-                                            <div id="login"></div>
-                                            <div id="login2"></div>
-                                        </div>
-                                    </div>
-                                    <!--/.Content-->
-                                </div>
-                            </div>
-                            <!--Modal: Login / Register Form-->
-
-                            <div class="text-center">
-                                <a href="" class="btn btn-default" data-toggle="modal" data-target="#modalLRForm"
-                                   data-backdrop="false" id="loginModal">Se connecter</a>
-                            </div>
-                        </li>
-                    {% endif %}
-
-                    <li>
-                        <form class="search-box bg-dark">
-                            <input class="search-text bg-dark" type="search" placeholder="Search" aria-label="Search">
-                            <a class="search-btn" type="submit">
-                                <i class="fas fa-search"></i>
-                            </a>
-                        </form>
-                    </li>
-                </ul>
-                <div>
-                    <a class="navbar-brand" href="#">
-                        <img src="{{ asset('img/logo/logoEterelzBlanc.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
-                             class="logo" id="logo">
-                    </a>
-                    <i class="fas fa-ellipsis-v menu-social hvr-bob mt-1 mr-4" data-cta-target=".js-sidebar"
-                       id="social"></i>
-                </div>
-            </div>
-        </nav>
-        <div class="js-sidebar modal1 sidebar bg-dark">
-            <i class="far fa-times-circle modal-close-btn" id="close"></i>
-            <i class="fas fa-project-diagram network"></i>
-            <i class="fab fa-twitch twitch hvr-bob" id="twitch"></i>
-            <i class="fab fa-discord discord hvr-bob" id="discord"></i>
-            <i class="fab fa-youtube youtube hvr-bob" id="youtube"></i>
-            <i class="fab fa-twitter twitter hvr-bob" id="twitter"></i>
-            <i class="fab fa-facebook-square facebook hvr-bob" id="facebook"></i>
-        </div>
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <div class="sidebar-header">
-                    <div class="sidebar-brand">
-                        <a href="#">Brand</a></div>
-                </div>
-                <li><a href="{{ path('home') }}#home">Accueil</a></li>
-                {% if is_granted('ROLE_ADMIN') %}
-                    <li><a href="{{ path('eter_user_index') }}#admin">Utilisateurs</a></li>
-                {% endif %}
-                    <li><a href="{{ path('product_index') }}#prod">Boutique</a></li>
-                {% if app.user %}
-                    <li><a href="{{ path('cart_index') }}#cart">Panier</a></li>
-                    <li><a href="{{ path('eter_user_show', {'id': app.user.id}) }}#user">Profil</a></li>
-                {% endif %}
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li class="dropdown"><a href="#works" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
-                    <ul class="dropdown-menu animated fadeInLeft" role="menu">
-                        <div class="dropdown-header">Dropdown heading</div>
-                        <li><a href="#pictures">Pictures</a></li>
-                        <li><a href="#videos">Videos</a></li>
-                        <li><a href="#books">Books</a></li>
-                        <li><a href="#art">Art</a></li>
-                        <li><a href="#awards">Awards</a></li>
-                    </ul>
+                    </form>
                 </li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#followme">Follow me</a></li>
             </ul>
-        </nav>
-    </header>
+            <a href="#!" class="brand-logo center">
+                <img src="{{ asset('img/logo/logoEterelzBlanc.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
+                     class="logo"></a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <div class="fixed-action-btn">
+                        <a class="btn-floating btn-large pink accent-3 pulse">
+                            <i class="large material-icons">unfold_more</i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="https://www.twitch.tv/eterelz" title="Lien vers la chaine Twitch EterelZ" class="btn-floating purple accent-3 hvr-bob" target="_blank">
+                                    <i class="fab fa-twitch material-icons " id="twitch"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://top.gg/servers/326099902037884940" title="Lien vers le Discord EterelZ" class="btn-floating indigo lighten-3 hvr-bob" target="_blank">
+                                    <i class="fab fa-discord material-icons" id="discord"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCgsUx73NS_lO2WBGqTY9gyQ" title="Lien vers la chaine YouTube EterelZ" class="btn-floating red accent-4 hvr-bob" target="_blank">
+                                    <i class="fab fa-youtube material-icons" id="youtube"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/EterelZ" title="Lien vers la page Twitter EterelZ" class="btn-floating blue hvr-bob" target="_blank">
+                                    <i class="fab fa-twitter material-icons" id="twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/eterelz" title="Lien vers la page Facebook EterelZ"
+                                   class="btn-floating blue darken-4 hvr-bob" target="_blank">
+                                    <i class="fab fa-facebook-square material-icons" id="facebook"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-    <main>
-   
-    {% block body %}{% endblock %}
-
-    </main>
-
-    <footer class="footer">
-
-    {% for message in app.flashes('success') %}
-    <div id="alert_registration" class="alert alert-success" role="alert">
-        {{ message }}
-    </div>
-    {% endfor %}
-    {% for message in app.flashes('warning') %}
-    <div id="alert_registration" class="alert alert-warning" role="alert">
-        {{ message }}
-    </div>
-    {% endfor %}
-    {% for message in app.flashes('danger') %}
-    <div id="alert_registration" class="alert alert-danger" role="alert">
-        {{ message }}
-    </div>
-    {% endfor %}
-
-    </footer>
-
+                </li>
+            </ul>
+        </div>
+    </nav>
 </div>
-<!-- /#wrapper -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+
+
+{#sidebar#}
+
+<ul id="slide-out" class="sidenav">
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="{{ asset('img/upload/profil_pic/1341645301-54103-5ef5ca3230a52.jpeg') }}">
+            </div>
+            <a href="#user"><img class="circle"
+                                 src="{{ asset('img/upload/profil_pic/1341645301-54103-5ef5ca3230a52.jpeg') }}"></a>
+            <a href="#name"><span class="white-text name">John Doe</span></a>
+            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        </div>
+    </li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!">Second Link</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+</ul>
+{% block body %}{% endblock %}
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
+                    content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2020 Copyright EterelZ All rights reserved
+            <a class="grey-text text-lighten-4 right" href="#!">Conditions Générales d'utilisation</a>
+        </div>
+    </div>
+</footer>
+
+
 <script src="https://kit.fontawesome.com/feb810672a.js" crossorigin="anonymous"></script>
-<script src="{{ asset('js/add-collection-widget.js') }}"></script>
-<script src="{{ asset('js/script.js') }}"></script>
-<script src="{{ asset('js/cta.js') }}"></script>
+{#<script src="{{ asset('js/add-collection-widget.js') }}"></script>#}
+{#<script src="{{ asset('js/cta.js') }}"></script>#}
 {#<script src="{{ asset('js/cart.js') }}"></script>#}
 
-<!-- Bootstrap tooltips 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>-->
-<!-- Bootstrap core JavaScript 
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 <script>
-    // au clic sur le bouton se connecter (déclenchement modal)
-    $('#loginModal').click(function () {
-        // fonction ajax
-        $.ajax({
-            // définition de la méthode d'envoi
-            method: "POST",
-            // url destination / appel du contrôleur
-            url: "{{ path('security_registration') }}",
-        })
-            // s'il y a un retour du contrôleur, on déclenche une fonction qui prend en paramètre data => retour du contrôleur
-            .done(function (data) {
-                // on affiche la réponse du contrôleur dans l'élément ayant l'id login
-                $('#login').html(data);
-            });
-    });
+    {#// au clic sur le bouton se connecter (déclenchement modal)#}
+    {#$('#loginModal').click(function () {#}
+    {#    // fonction ajax#}
+    {#    $.ajax({#}
+    {#        // définition de la méthode d'envoi#}
+    {#        method: "POST",#}
+    {#        // url destination / appel du contrôleur#}
+    {#        url: "{{ path('security_registration') }}",#}
+    {#    })#}
+    {#        // s'il y a un retour du contrôleur, on déclenche une fonction qui prend en paramètre data => retour du contrôleur#}
+    {#        .done(function (data) {#}
+    {#            // on affiche la réponse du contrôleur dans l'élément ayant l'id login#}
+    {#            $('#login').html(data);#}
+    {#        });#}
+    {#});#}
 </script>
+<script src="{{ asset('js/script.js') }}"></script>
 {% block javascripts %}{% endblock %}
 </body>
 </html>

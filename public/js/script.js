@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         indicators: true,
         height: 500,
         duration: 500,
-        interval: 50000
+        interval: 5000
     });
 });
 

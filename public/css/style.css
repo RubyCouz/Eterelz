@@ -1,3 +1,10 @@
+/**
+general
+ */
+.ml-70 {
+    margin-left: 70px;
+}
+
 
 /**
 home background
@@ -52,6 +59,10 @@ FLoating action button network
 /**
 slider
  */
+.background-slider {
+    position: relative;
+    background-image: url('../img/background/disclaimer_bg.jpg');
+}
 #logo {
     height: 200px;
     width: 400px;
@@ -69,16 +80,39 @@ slider
     font-weight: bold;
     margin: 0;
 }
-.mask {
-    /*background-color: #e91e63 ;*/
-    opacity: 0.2;
-}
 .slider .indicators .indicator-item.active {
     background-color: #f50057 ;
 }
 
+/**
+card stat
+ */
 
-
+.stat {
+    position: relative;
+    height: 300px;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6 !important;
+}
+.stat-title {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+.vdivider {
+    margin: 10px 50px;
+    height:250px;
+    width:2px;
+    border-right:3px solid gray;
+    transform: rotate(-20deg)
+}
 
 
 
@@ -140,15 +174,7 @@ slider
 /*.signin {*/
 /*    border-radius: 0 25px 25px 0 !important;*/
 /*}*/
-/**
-jumbotron
- */
-.container-fluid {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
-}
+
 
 
 /*!***/

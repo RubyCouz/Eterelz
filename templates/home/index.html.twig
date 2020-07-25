@@ -1,199 +1,139 @@
 {% extends 'base.html.twig' %}
 {% block title %}Accueil{% endblock %}
 {% block body %}
-
-    <div class="slider">
-        <ul class="slides">
-            <li class="">
-                <img src="{{ asset('img/background/disclaimer_bg.jpg') }}" class="responsive-img mask"
-                     alt="Image de présentation"> <!-- random image -->
-                <div class="caption center-align">
-                    <div class="row">
-                        <div class="col l3" id="logo"></div>
-                        <div class="col l6 valign-wrapper">
-                            <p class="project left-align">Project</p>
-                        </div>
-                    </div>
-                    <p class="light grey-text text-lighten-3">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid libero
-                        doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae
-                        cumque et quo impedit.
-                        Yo-ho-ho, yer not breaking me without a greed! Stars are the processors of the conscious sonic
-                        shower. Boil tender noodles in a grinder with triple sec for about an hour to perfect their
-                        bitterness.
-                        Ahoy there's nothing like the rainy halitosis diing on the shark. Noodles porridge has to have
-                        an iced, al dente shrimps component. Cloudy, extraterrestrial klingons nosily handle a
-                        post-apocalyptic, gravimetric tribble.
-                        Seismic, colorful transporters impressively contact a reliable, most unusual klingon. Never
-                        crush a comrade. Seashells travel with booty at the jolly madagascar!
-                    </p>
-                    <a href="#" class="waves-effect waves-light btn"><i class="fas fa-clone left"></i> View project</a>
-                </div>
-            </li>
-            {% for rand in randGame %}
-                <li>
-                    <img src="{{ asset('img/upload/game/' ~ rand.game_pic) }}"> <!-- random image -->
-                    <div class="caption left-align">
-                        <h3>{{ rand.game_name }}</h3>
-                        <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="container-fluid">
-        <!-- Jumbotron -->
-
-
-        <div class="row marge">
-            <div class="col-sm-12">
-                <div class="card card-image" style="background-image: url({{ asset('img/background/wh_40k.jpg') }})">
-                    <div class="text-white text-center rgba-stylish-strong px-4">
-                        <div class="stat">
-                            <!-- Content -->
-                            {#                    <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Photography</h5>#}
-
-                            <div class="row vdivide">
-                                <div class="col-sm-4">
-                                    <h2>STATS</h2>
+        <div class="slider">
+            <ul class="slides">
+                <li class="background-slider">
+                    <img src="{{ asset('img/background/disclaimer_bg.jpg') }}" class="responsive-img"
+                         alt="Image de présentation"> <!-- random image -->
+                    <div class="overlay">
+                        <div class="caption center-align">
+                            <div class="row">
+                                <div class="col l3" id="logo"></div>
+                                <div class="col l6 valign-wrapper">
+                                    <p class="project left-align">Project</p>
                                 </div>
+                            </div>
+                            <p class="light grey-text text-lighten-3">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid
+                                libero
+                                doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae
+                                cumque et quo impedit.
+                                Yo-ho-ho, yer not breaking me without a greed! Stars are the processors of the conscious
+                                sonic
+                                shower. Boil tender noodles in a grinder with triple sec for about an hour to perfect their
+                                bitterness.
+                                Ahoy there's nothing like the rainy halitosis diing on the shark. Noodles porridge has to
+                                have
+                                an iced, al dente shrimps component. Cloudy, extraterrestrial klingons nosily handle a
+                                post-apocalyptic, gravimetric tribble.
+                                Seismic, colorful transporters impressively contact a reliable, most unusual klingon. Never
+                                crush a comrade. Seashells travel with booty at the jolly madagascar!
+                            </p>
+                            <a href="#" class="waves-effect waves-light btn"><i class="fas fa-clone left"></i> View project</a>
+                        </div>
+                    </div>
 
-                                <div class="col-sm-4 v-divider">
-                                    <h3>Jeux 2</h3>
-                                    <p>
-                                        The doubloons hauls with riddle, crush the galley. Try toasting doughnut tart
-                                        covered with
-                                        remoulade. After cutting the lentils, cover pickles, celery and tea with it in a
-                                        pan.
-                                        Sunt guttuses reperire lotus, albus lunaes. Shame is not eternal in zion, the
-                                        heavens of
-                                        resurrection, or earth, but everywhere.
-                                        Everyone just loves the saltyness of steak tart mash upd with anise.
-                                    </p>
-                                    <button class="btn purple-gradient btn-rounded">Read more</button>
-                                </div>
-                                <div class="col-sm-4 v-divider">
-
-                                </div>
+                </li>
+                {% for rand in randGame %}
+                    <li>
+                        <img src="{{ asset('img/upload/game/' ~ rand.game_pic) }}" alt="Illustration de {{ rand.game_name }}" title="Illustration de {{ rand.game_name }}"> <!-- random image -->
+                        <div class="caption left-align">
+                            <h3>{{ rand.game_name }}</h3>
+                            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="stat" style="background-image: url({{ asset('img/background/lol.jpg') }})">
+                    <div class="overlay valign-wrapper">
+                        <div class="row valign-wrapper">
+                            <div class="col s3">
+                                <p class="white-text flow-text stat-title">Stat</p>
+                            </div>
+                                <div class="vdivider"></div>
+                            <div class="col s4">
+                                <p class="white-text">
+                                    Jacks fall with endurance at the dead singapore! Pressure at the planet that is when
+                                    cold suns harvest.
+                                    Freedom doesn’t earthly forget any lama — but the body is what lures. Rinse eleven
+                                    oz of popcorn in eight and a half teaspoons of coffee.
+                                </p>
+                            </div>
+                                <div class="vdivider"></div>
+                            <div class="col s4">
+                                <p class="white-text">
+                                    Jacks fall with endurance at the dead singapore! Pressure at the planet that is when
+                                    cold suns harvest.
+                                    Freedom doesn’t earthly forget any lama — but the body is what lures. Rinse eleven
+                                    oz of popcorn in eight and a half teaspoons of coffee.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row marge">
-            <div class="col-sm-12">
-                <div class="card card-image" style="background-image: url({{ asset('img/background/destiny.jpg') }})">
-                    <div class="text-white text-center rgba-stylish-strong px-4">
-                        <div class="stat">
-                            <!-- Content -->
-                            {#                    <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Photography</h5>#}
-
-                            <div class="row vdivide">
-                                <div class="col-sm-4">
-                                    <h2>STATS</h2>
-                                </div>
-
-                                <div class="col-sm-4 v-divider">
-                                    <h3>Jeux 2</h3>
-                                    <p>
-                                        The doubloons hauls with riddle, crush the galley. Try toasting doughnut tart
-                                        covered with
-                                        remoulade. After cutting the lentils, cover pickles, celery and tea with it in a
-                                        pan.
-                                        Sunt guttuses reperire lotus, albus lunaes. Shame is not eternal in zion, the
-                                        heavens of
-                                        resurrection, or earth, but everywhere.
-                                        Everyone just loves the saltyness of steak tart mash upd with anise.
-                                    </p>
-                                    <button class="btn purple-gradient btn-rounded">Read more</button>
-                                </div>
-                                <div class="col-sm-4 v-divider">
-
-                                </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="stat" style="background-image: url({{ asset('img/background/wh_40k.jpg') }})">
+                    <div class="overlay valign-wrapper">
+                        <div class="row valign-wrapper">
+                            <div class="col s3">
+                                <p class="white-text flow-text stat-title">Stat</p>
+                            </div>
+                            <div class="vdivider"></div>
+                            <div class="col s4">
+                                <p class="white-text">
+                                    Jacks fall with endurance at the dead singapore! Pressure at the planet that is when
+                                    cold suns harvest.
+                                    Freedom doesn’t earthly forget any lama — but the body is what lures. Rinse eleven
+                                    oz of popcorn in eight and a half teaspoons of coffee.
+                                </p>
+                            </div>
+                            <div class="vdivider"></div>
+                            <div class="col s4">
+                                <p class="white-text">
+                                    Jacks fall with endurance at the dead singapore! Pressure at the planet that is when
+                                    cold suns harvest.
+                                    Freedom doesn’t earthly forget any lama — but the body is what lures. Rinse eleven
+                                    oz of popcorn in eight and a half teaspoons of coffee.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row marge">
-            <div class="col-sm-12">
-                <div class="card card-image" style="background-image: url({{ asset('img/background/lol.jpg') }})">
-                    <div class="text-white text-center rgba-stylish-strong px-4">
-                        <div class="stat">
-                            <!-- Content -->
-                            {#                    <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Photography</h5>#}
-
-                            <div class="row vdivide">
-                                <div class="col-sm-4">
-                                    <h2>STATS</h2>
-                                </div>
-
-                                <div class="col-sm-4 v-divider">
-                                    <h3>Jeux 2</h3>
-                                    <p>
-                                        The doubloons hauls with riddle, crush the galley. Try toasting doughnut tart
-                                        covered with
-                                        remoulade. After cutting the lentils, cover pickles, celery and tea with it in a
-                                        pan.
-                                        Sunt guttuses reperire lotus, albus lunaes. Shame is not eternal in zion, the
-                                        heavens of
-                                        resurrection, or earth, but everywhere.
-                                        Everyone just loves the saltyness of steak tart mash upd with anise.
-                                    </p>
-                                    <button class="btn purple-gradient btn-rounded">Read more</button>
-                                </div>
-                                <div class="col-sm-4 v-divider">
-
-                                </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="stat" style="background-image: url({{ asset('img/background/destiny.png') }})">
+                    <div class="overlay valign-wrapper">
+                        <div class="row valign-wrapper">
+                            <div class="col s3">
+                                <p class="white-text flow-text stat-title">Stat</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row marge">
-            <div class="col-sm-12">
-                <div class="card card-image" style="background-image: url({{ asset('img/background/td2.jpg') }})">
-                    <div class="text-white text-center rgba-stylish-strong px-4">
-                        <div class="stat">
-                            <!-- Content -->
-                            {#                    <h5 class="h5 orange-text"><i class="fas fa-camera-retro"></i> Photography</h5>#}
-
-                            <div class="row vdivide">
-                                <div class="col-sm-4">
-                                    <h2>STATS</h2>
-                                </div>
-
-                                <div class="col-sm-4 v-divider">
-                                    <h3>Jeux 2</h3>
-                                    <p>
-                                        The doubloons hauls with riddle, crush the galley. Try toasting doughnut tart
-                                        covered with
-                                        remoulade. After cutting the lentils, cover pickles, celery and tea with it in a
-                                        pan.
-                                        Sunt guttuses reperire lotus, albus lunaes. Shame is not eternal in zion, the
-                                        heavens of
-                                        resurrection, or earth, but everywhere.
-                                        Everyone just loves the saltyness of steak tart mash upd with anise.
-                                    </p>
-                                    <button class="btn purple-gradient btn-rounded">Read more</button>
-                                </div>
+                            <div class="vdivider"></div>
+                            <div class="col s4">
+                                <p class="white-text">
+                                    Jacks fall with endurance at the dead singapore! Pressure at the planet that is when
+                                    cold suns harvest.
+                                    Freedom doesn’t earthly forget any lama — but the body is what lures. Rinse eleven
+                                    oz of popcorn in eight and a half teaspoons of coffee.
+                                </p>
+                            </div>
+                            <div class="vdivider"></div>
+                            <div class="col s4">
+                                <p class="white-text">
+                                    Jacks fall with endurance at the dead singapore! Pressure at the planet that is when
+                                    cold suns harvest.
+                                    Freedom doesn’t earthly forget any lama — but the body is what lures. Rinse eleven
+                                    oz of popcorn in eight and a half teaspoons of coffee.
+                                </p>
                             </div>
                         </div>
                     </div>

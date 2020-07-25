@@ -5,6 +5,40 @@ general
     margin-left: 70px;
 }
 
+.mr-70 {
+    margin-right: 90px !important;
+}
+
+.mt-10 {
+    margin-top: 10px !important;
+}
+
+.btn-rounded {
+    border-radius: 50px;
+}
+input[type="email"] {
+    color: white;
+}
+.input-field input[type="email"]:focus:not(.browser-default) {
+    color: white;
+    border-bottom: 1px solid #f50057;
+    box-shadow: 0 1px 0 0 #f50057;
+}
+
+.input-field input[type="password"]:focus:not(.browser-default) {
+    color: white;
+    border-bottom: 1px solid #f50057;
+    box-shadow: 0 1px 0 0 #f50057;
+}
+
+.input-field input[type="email"]:focus:not([readonly]) + label {
+    color: #f50057;
+
+}
+
+.input-field input[type="password"]:focus:not([readonly]) + label {
+    color: #f50057;
+}
 
 /**
 home background
@@ -12,6 +46,7 @@ home background
 body {
     background-color: #1b1e21;
 }
+
 .base {
     background-image: url("../img/connection/signinBg.jpg");
     background-repeat: no-repeat;
@@ -21,20 +56,22 @@ body {
     background-attachment: fixed;
     /*min-height: 150%;*/
 }
+
 /**
 navbar
  */
-
 nav {
     background-color: #212121;
     height: 75px;
 }
+
 @media only screen and (min-width: 993px) {
     nav a.sidenav-trigger {
         display: block;
         text-decoration: none;
     }
 }
+
 .logo {
     width: 200px;
     height: auto;
@@ -42,18 +79,46 @@ nav {
     margin-right: -15px;
     position: relative !important;
 }
+
 /**
 FLoating action button network
  */
 .fixed-action-btn {
     bottom: 0;
     top: 5px;
+    right: 0;
 }
+
 .btn-floating {
     opacity: 1 !important;
 }
+
 .btn-large {
-   transform: none !important;
+    transform: none !important;
+}
+
+.input-field input[type="search"]:focus:not(.browser-default) {
+    border-radius: 50px;
+    height: 60px;
+    margin-top: 7px;
+}
+
+/**
+sidenav
+ */
+.sidenav {
+    background-color: #212121;
+}
+
+.sidenav .user-view {
+    min-height: 150px !important;
+}
+
+/**
+login modal
+ */
+.login-modal {
+    background-color: #212121;
 }
 
 /**
@@ -63,6 +128,7 @@ slider
     position: relative;
     background-image: url('../img/background/disclaimer_bg.jpg');
 }
+
 #logo {
     height: 200px;
     width: 400px;
@@ -72,6 +138,7 @@ slider
     background-size: 400px 150px;
     padding: 0;
 }
+
 .project {
     height: 200px;
     width: 500px;
@@ -80,18 +147,19 @@ slider
     font-weight: bold;
     margin: 0;
 }
+
 .slider .indicators .indicator-item.active {
-    background-color: #f50057 ;
+    background-color: #f50057;
 }
 
 /**
 card stat
  */
-
 .stat {
     position: relative;
     height: 300px;
 }
+
 .overlay {
     position: absolute;
     top: 0;
@@ -101,21 +169,27 @@ card stat
     background-color: black;
     opacity: 0.6 !important;
 }
+
 .stat-title {
     text-align: center !important;
     margin-left: auto;
     margin-right: auto;
 }
+
 .vdivider {
     margin: 10px 50px;
-    height:250px;
-    width:2px;
-    border-right:3px solid gray;
+    height: 250px;
+    width: 2px;
+    border-right: 3px solid gray;
     transform: rotate(-20deg)
 }
 
-
-
+/**
+stat card mobil
+ */
+.mobil-card {
+    background-color: #212121 !important;
+}
 
 
 /*.info-color {*/
@@ -174,7 +248,6 @@ card stat
 /*.signin {*/
 /*    border-radius: 0 25px 25px 0 !important;*/
 /*}*/
-
 
 
 /*!***/

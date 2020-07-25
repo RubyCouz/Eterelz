@@ -169,17 +169,15 @@ class SecurityController extends AbstractController {
         $inProgress = false;
         if($error){
             $this->addFlash('danger', 'Cet email n\'existe pas ou le mot de passe est erroné !');
-            return $this->render('security/login.html.twig', [
+            return $this->render('error/error404.html.twig', [
                 'last_username' => $lastUsername,
                 'error' => $error,
-                'inProgress' => $inProgress
             ]);
         }
         else{
             return $this->render('security/login.html.twig', [
                 'last_username' => $lastUsername,
                 'error' => $error,
-                'inProgress' => $inProgress
             ]);
         }
     }

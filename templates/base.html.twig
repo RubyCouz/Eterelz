@@ -34,8 +34,55 @@
             </ul>
             <a href="#!" class="brand-logo center">
                 <img src="{{ asset('img/logo/logoEterelzBlanc.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
-                     class="logo"></a>
-            <ul class="right hide-on-med-and-down">
+                     class="logo">
+            </a>
+            <ul class="right">
+                {% if app.user %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="hide-on-small-only">
+                            <a href="http://localhost:8000/admin"
+                               class="waves-effect waves-light btn btn-rounded mt-10 light-blue accent-3">Back-office</a>
+                        </li>
+                    {% endif %}
+                    <li class="hide-on-small-only">
+                        <a href="{{ path('logout') }}" class="waves-effect waves-light btn btn-rounded mr-70 mt-10 light-blue accent-3">Se
+                            déconnecter</a>
+                    </li>
+                {% else %}
+                    <li class="hide-on-small-only">
+                        <button class="modal-trigger waves-effect waves-light btn btn-rounded mt-10 light-blue accent-3"
+                                data-target="loginModal">Connexion
+                        </button>
+                    </li>
+                    <div id="loginModal" class="modal login-modal">
+                        <div class="modal-content">
+                            <h4 class="darken-4">Connexion</h4>
+                            <form action="{{ path('login') }}" method="post" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="email" type="email" class="validate" name="_username">
+                                        <label for="email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input id="password" type="password" class="validate" name="_password">
+                                        <label for="password">Mot de passe</label>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                <div class="row">
+                                    <div class="col s12 right-align">
+                                        <input type="submit" class="btn waves-effect waves-light btn-rounded light-blue accent-3">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <li class="hide-on-small-only">
+                        <a class="waves-effect waves-light btn btn-rounded mr-70 mt-10 light-blue accent-3">Inscription</a>
+                    </li>
+                {% endif %}
                 <li>
                     <div class="fixed-action-btn">
                         <a class="btn-floating btn-large pink accent-3 pulse">
@@ -43,22 +90,27 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="https://www.twitch.tv/eterelz" title="Lien vers la chaine Twitch EterelZ" class="btn-floating purple accent-3 hvr-bob" target="_blank">
+                                <a href="https://www.twitch.tv/eterelz" title="Lien vers la chaine Twitch EterelZ"
+                                   class="btn-floating purple accent-3 hvr-bob" target="_blank">
                                     <i class="fab fa-twitch material-icons " id="twitch"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://top.gg/servers/326099902037884940" title="Lien vers le Discord EterelZ" class="btn-floating indigo lighten-3 hvr-bob" target="_blank">
+                                <a href="https://top.gg/servers/326099902037884940" title="Lien vers le Discord EterelZ"
+                                   class="btn-floating indigo lighten-3 hvr-bob" target="_blank">
                                     <i class="fab fa-discord material-icons" id="discord"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.youtube.com/channel/UCgsUx73NS_lO2WBGqTY9gyQ" title="Lien vers la chaine YouTube EterelZ" class="btn-floating red accent-4 hvr-bob" target="_blank">
+                                <a href="https://www.youtube.com/channel/UCgsUx73NS_lO2WBGqTY9gyQ"
+                                   title="Lien vers la chaine YouTube EterelZ" class="btn-floating red accent-4 hvr-bob"
+                                   target="_blank">
                                     <i class="fab fa-youtube material-icons" id="youtube"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/EterelZ" title="Lien vers la page Twitter EterelZ" class="btn-floating blue hvr-bob" target="_blank">
+                                <a href="https://twitter.com/EterelZ" title="Lien vers la page Twitter EterelZ"
+                                   class="btn-floating blue hvr-bob" target="_blank">
                                     <i class="fab fa-twitter material-icons" id="twitter"></i>
                                 </a>
                             </li>
@@ -70,7 +122,6 @@
                             </li>
                         </ul>
                     </div>
-
                 </li>
             </ul>
         </div>
@@ -84,21 +135,23 @@
     <li>
         <div class="user-view">
             <div class="background">
-                <img src="{{ asset('img/upload/profil_pic/1341645301-54103-5ef5ca3230a52.jpeg') }}">
+                <img src="{{ asset('img/connection/signinBg.jpg') }}">
             </div>
-            <a href="#user"><img class="circle"
-                                 src="{{ asset('img/upload/profil_pic/1341645301-54103-5ef5ca3230a52.jpeg') }}"></a>
-            <a href="#name"><span class="white-text name">John Doe</span></a>
-            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            {% if app.user %}
+                <a href="#user"><img class="circle"
+                                     src="{{ asset('img/upload/profil_pic/1341645301-54103-5ef5ca3230a52.jpeg') }}"></a>
+                <a href="#name"><span class="white-text name">John Doe</span></a>
+                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            {% endif %}
         </div>
     </li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
+    <li><a href="#!" class="white-text"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!" class="white-text">Second Link</a></li>
     <li>
         <div class="divider"></div>
     </li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <li><a class="subheader white-text">Subheader</a></li>
+    <li><a class="waves-effect white-text" href="#!">Third Link With Waves</a></li>
 </ul>
 {% block body %}{% endblock %}
 <footer class="page-footer">

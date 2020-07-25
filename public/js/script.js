@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
 /**
  * slider
  */
-
-
 document.addEventListener('DOMContentLoaded', function() {
     let elems = document.querySelectorAll('.slider');
     let instances = M.Slider.init(elems, {
@@ -35,7 +33,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
+/**
+ * modal login
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    let elems = document.querySelectorAll('.modal');
+    let instances = M.Modal.init(elems, {
+        opacity: 0.5,
+        inDuration: 250,
+        outDuration: 250,
+        onOpenStart: null,
+        onOpenEnd: null,
+        onCloseStart: null,
+        onCloseEnd: null,
+        preventScrolling: true,
+        dismissible: true,
+        startingTop: '4%',
+        endingTop: '10%'
+    });
+});
 /* Barre de force du mot de passe
 
 var pass = document.getElementById("signin_user_password")

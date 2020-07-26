@@ -294,8 +294,4 @@ class EterClan
         return $this;
     }
 
-
-
-
-
 }

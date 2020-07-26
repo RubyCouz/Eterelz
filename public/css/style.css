@@ -191,6 +191,18 @@ stat card mobil
     background-color: #212121 !important;
 }
 
+/**
+profil details
+ */
+.profil-pic {
+    width: 300px;
+    height: auto;
+}
+.profil {
+    margin-top: 50px;
+}
+
+
 
 /*.info-color {*/
 /*    background-color: #9F1E5D !important;*/

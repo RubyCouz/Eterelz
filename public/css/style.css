@@ -16,30 +16,48 @@ general
 .btn-rounded {
     border-radius: 50px;
 }
-input[type="email"] {
+input[type="email"],
+input[type="text"],
+input[type="password"],
+input[type="date"] {
     color: white;
 }
-.input-field input[type="email"]:focus:not(.browser-default) {
+.input-field input[type="email"]:focus:not(.browser-default),
+.input-field input[type="text"]:focus:not(.browser-default),
+textarea.materialize-textarea:focus:not(.browser-default) {
     color: white;
     border-bottom: 1px solid #f50057;
     box-shadow: 0 1px 0 0 #f50057;
 }
 
-.input-field input[type="password"]:focus:not(.browser-default) {
+.input-field input[type="password"]:focus:not(.browser-default),
+.input-field input[type="text"]:focus:not(.browser-default),
+textarea.materialize-textarea:focus:not(.browser-default) {
     color: white;
     border-bottom: 1px solid #f50057;
     box-shadow: 0 1px 0 0 #f50057;
 }
 
-.input-field input[type="email"]:focus:not([readonly]) + label {
-    color: #f50057;
-
-}
-
+.input-field input[type="email"]:focus:not([readonly]) + label,
+.input-field input[type="text"]:focus:not([readonly]) + label,
 .input-field input[type="password"]:focus:not([readonly]) + label {
     color: #f50057;
+
 }
 
+.input-field label:not(.label-icon).active {
+    color: #f50057;
+}
+
+.input-field .helper-text {
+    margin-top: 12px;
+    color: #d50000;
+}
+
+[type="radio"]:checked + span::after, [type="radio"].with-gap:checked + span::after {
+    background-color: #f50057 !important;
+    border-color: #f50057;
+}
 /**
 home background
  */

@@ -20,7 +20,7 @@ class EterProduct
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $product_title;
 
@@ -30,7 +30,7 @@ class EterProduct
     private $product_image;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", nullable=true)
      */
     private $product_price;
 

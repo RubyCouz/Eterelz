@@ -15,8 +15,17 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
-<body>
-{#navbar#}
+<body
+        {% for label, messages in app.flashes(['success', 'danger']) %}
+            {% for message in messages %}
+                onload="M.toast({html: '{{ message }}', classes: 'flash-{{ label }}'});"
+            {% endfor %}
+        {% endfor %}
+        {# {% for message in app.flashes('danger') %} #}
+        {# onload="M.toast({html: '{{ message }}', classes: 'rounded red accent-3'});" #}
+        {# {% endfor %} #}
+>
+{# navbar #}
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper">
@@ -32,7 +41,7 @@
                     </form>
                 </li>
             </ul>
-            <a href="#!" class="brand-logo center">
+            <a href="{{ path('home') }}" class="brand-logo center" title="Accueil">
                 <img src="{{ asset('img/logo/logoEterelzBlanc.png') }}" alt="Logo Eterelz" title="Logo Eterelz"
                      class="logo">
             </a>
@@ -41,17 +50,17 @@
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="hide-on-small-only">
                             <a href="http://localhost:8000/admin"
-                               class="waves-effect waves-light btn btn-rounded mt-10 light-blue accent-3">Back-office</a>
+                               class="waves-effect waves-light btn btn-rounded mt-10 blue darken-1">Back-office</a>
                         </li>
                     {% endif %}
                     <li class="hide-on-small-only">
                         <a href="{{ path('logout') }}"
-                           class="waves-effect waves-light btn btn-rounded mr-70 mt-10 light-blue accent-3">Se
+                           class="waves-effect waves-light btn btn-rounded mr-70 mt-10 blue darken-1">Se
                             déconnecter</a>
                     </li>
                 {% else %}
                     <li class="hide-on-small-only">
-                        <button class="modal-trigger waves-effect waves-light btn btn-rounded mt-10 light-blue accent-3"
+                        <button class="modal-trigger waves-effect waves-light btn btn-rounded mt-10 blue darken-1"
                                 data-target="loginModal">Connexion
                         </button>
                     </li>
@@ -75,19 +84,25 @@
                                 <div class="row">
                                     <div class="col s12 right-align">
                                         <input type="submit"
-                                               class="btn waves-effect waves-light btn-rounded light-blue accent-3">
+                                               class="btn waves-effect waves-light btn-rounded blue darken-1">
                                     </div>
                                 </div>
                             </form>
+                            <div class="row">
+                                <div class="col s12">
+                                    <span>Mot de passe oublié ? Cliquez <a href="{{ path('app_forgotten_password') }}">ici</a></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <li class="hide-on-small-only">
-                        <a href="{{ path('security_registration') }}" class="waves-effect waves-light btn btn-rounded mr-70 mt-10 light-blue accent-3">Inscription</a>
+                        <a href="{{ path('security_registration') }}"
+                           class="waves-effect waves-light btn btn-rounded mr-70 mt-10 blue darken-1">Inscription</a>
                     </li>
                 {% endif %}
                 <li>
                     <div class="fixed-action-btn">
-                        <a class="btn-floating btn-large pink accent-3 pulse">
+                        <a class="btn-floating btn-large purple darken-1 pulse">
                             <i class="large material-icons">unfold_more</i>
                         </a>
                         <ul>
@@ -131,18 +146,32 @@
 </div>
 
 
-{#sidebar#}
+{# sidebar #}
 
 <ul id="slide-out" class="sidenav">
     <li>
         <div class="user-view">
             <div class="background">
-                    <img src="{{ asset('img/connection/signinBg.jpg') | imagine_filter('profil') }}" alt="Fond profil EterelZ" title="Fond profil EterelZ">
+                <img src="{{ asset('img/connection/signinBg.jpg') | imagine_filter('profil') }}"
+                     alt="Fond profil EterelZ" title="Fond profil EterelZ">
             </div>
             {% if app.user %}
-                <a href="#user"><img class="circle"
-                                     src="{{ asset('img/upload/profil_pic/' ~ app.user.userAvatar) }}" alt="Photo de profil de {{ app.user.userLogin }}" title="Photo de profil"></a>
-                <a href="#name"><span class="white-text name">{{ app.user.userLogin }}</span></a>
+                {% if app.user.userAvatar is same as(null) %}
+                    <a href="#user">
+                        <img class="circle"
+                             src="{{ asset('img/upload/profil_pic/default-profil.jpg') }}"
+                             alt="Photo de profil de {{ app.user.userLogin }}" title="Photo de profil par défaut">
+                    </a>
+                {% else %}
+                    <a href="#user">
+                        <img class="circle"
+                             src="{{ asset('img/upload/profil_pic/' ~ app.user.userAvatar) }}"
+                             alt="Photo de profil de {{ app.user.userLogin }}" title="Photo de profil">
+                    </a>
+                {% endif %}
+                <a href="#name">
+                    <span class="white-text name">{{ app.user.userLogin }}</span>
+                </a>
             {% endif %}
         </div>
     </li>
@@ -160,10 +189,20 @@
         </li>
         <li class="hide-on-med-and-up center-align">
             <a href="{{ path('logout') }}"
-               class="waves-effect waves-light btn btn-rounded pink accent-3">
+               class="waves-effect waves-light btn btn-rounded purple darken-1">
                 Se déconnecter</a>
         </li>
+    {% else %}
+        <li class="hide-on-med-and-up center-align">
+            <a href="{{ path('login') }}" title="Connexion"
+               class="waves-effect waves-light btn btn-rounded purple darken-1">Connexion</a>
+        </li>
+        <li class="hide-on-med-and-up center-align">
+            <a href="{{ path('security_registration') }}"
+               class="waves-effect waves-light btn btn-rounded blue darken-1">Inscription</a>
+        </li>
     {% endif %}
+
     <li>
         <div class="divider"></div>
     </li>
@@ -171,7 +210,7 @@
         <span class="flow-text white-text center">Navigation</span>
     </li>
     <li class="center-align"><a href="#!" class="white-text">Les clans</a></li>
-    <li class="center-align"><a href="#!" class="white-text">Les jeux</a></li>
+    <li class="center-align"><a href="{{ path('eter_game_index') }}" class="white-text" title="Lien vers les jeux">Les jeux</a></li>
     <li class="center-align"><a href="#!" class="white-text">Les évènements</a></li>
     <li class="center-align">
     <li class="center-align"><a class="waves-effect white-text" href="#!">Les streamers</a></li>
@@ -203,31 +242,29 @@
         </div>
     </div>
 </footer>
-
-
 <script src="https://kit.fontawesome.com/feb810672a.js" crossorigin="anonymous"></script>
-{#<script src="{{ asset('js/add-collection-widget.js') }}"></script>#}
-{#<script src="{{ asset('js/cta.js') }}"></script>#}
-{#<script src="{{ asset('js/cart.js') }}"></script>#}
+{# <script src="{{ asset('js/add-collection-widget.js') }}"></script> #}
+{# <script src="{{ asset('js/cta.js') }}"></script> #}
+{# <script src="{{ asset('js/cart.js') }}"></script> #}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script>
-    {#// au clic sur le bouton se connecter (déclenchement modal)#}
-    {#$('#loginModal').click(function () {#}
-    {#    // fonction ajax#}
-    {#    $.ajax({#}
-    {#        // définition de la méthode d'envoi#}
-    {#        method: "POST",#}
-    {#        // url destination / appel du contrôleur#}
-    {#        url: "{{ path('security_registration') }}",#}
-    {#    })#}
-    {#        // s'il y a un retour du contrôleur, on déclenche une fonction qui prend en paramètre data => retour du contrôleur#}
-    {#        .done(function (data) {#}
-    {#            // on affiche la réponse du contrôleur dans l'élément ayant l'id login#}
-    {#            $('#login').html(data);#}
-    {#        });#}
-    {#});#}
+    {# // au clic sur le bouton se connecter (déclenchement modal) #}
+    {# $('#loginModal').click(function () { #}
+    {# // fonction ajax #}
+    {# $.ajax({ #}
+    {# // définition de la méthode d'envoi #}
+    {# method: "POST", #}
+    {# // url destination / appel du contrôleur #}
+    {# url: "{{ path('security_registration') }}", #}
+    {# }) #}
+    {# // s'il y a un retour du contrôleur, on déclenche une fonction qui prend en paramètre data => retour du contrôleur #}
+    {# .done(function (data) { #}
+    {# // on affiche la réponse du contrôleur dans l'élément ayant l'id login #}
+    {# $('#login').html(data); #}
+    {# }); #}
+    {# }); #}
 </script>
 <script src="{{ asset('js/script.js') }}"></script>
 {% block javascripts %}{% endblock %}

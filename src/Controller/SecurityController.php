@@ -11,6 +11,7 @@ use App\Form\ResetPassType;
 use App\Repository\EterUserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,6 +27,12 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/inscription", name="security_registration")
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @param UserPasswordEncoderInterface $encoder
+     * @param MailerInterface $mailer
+     * @return RedirectResponse|Response
+     * @throws TransportExceptionInterface
      */
     public function registration(Request $request, EntityManagerInterface $manager, UserPasswordEncoderInterface $encoder, MailerInterface $mailer) {
         // Définition de la variable en signalant que l'on veut créer un nouvel utilisateur
@@ -86,6 +93,11 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/activation/{token}", name="activation")
+     * @param $token
+     * @param Request $request
+     * @param EterUserRepository $entityRepo
+     * @param EntityManagerInterface $manager
+     * @return RedirectResponse
      */
     public function activation($token, Request $request, EterUserRepository $entityRepo, EntityManagerInterface $manager) {
         $inProgress = false;
@@ -98,7 +110,6 @@ class SecurityController extends AbstractController {
             $this->addFlash('danger', 'Cet utilisateur n\'existe pas');
             // On retourne à l'accueil
             return $this->redirectToRoute('home', [
-                'inProgress' => $inProgress,
             ]);
         }
         else if($user)
@@ -120,7 +131,6 @@ class SecurityController extends AbstractController {
                 $this->addFlash('danger', 'Le lien n\'est plus valide, veuillez vous réinscrire');
                 // On retourne à l'accueil
                 return $this->redirectToRoute('home', [
-                    'inProgress' => $inProgress,
                 ]);
             }
         }
@@ -132,7 +142,6 @@ class SecurityController extends AbstractController {
         $this->addFlash('success', 'Votre compte a bien été activé');
         // On retourne à l'accueil
         return $this->redirectToRoute('home',[
-            'inProgress' => $inProgress
         ]);
     }
 
@@ -145,7 +154,6 @@ class SecurityController extends AbstractController {
 
         $error =$authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
-        $inProgress = false;
         if($error){
             $this->addFlash('danger', 'Cet email n\'existe pas ou le mot de passe est erroné !');
             return $this->render('error/error404.html.twig', [
@@ -170,6 +178,13 @@ class SecurityController extends AbstractController {
 
     /**
      * @Route("/forgot_password", name="app_forgotten_password")
+     * @param Request $request
+     * @param EterUserRepository $entityRepo
+     * @param MailerInterface $mailer
+     * @param TokenGeneratorInterface $tokenGenerator
+     * @param EntityManagerInterface $manager
+     * @return RedirectResponse|Response
+     * @throws TransportExceptionInterface
      */
     public function forgottenPass(Request $request, EterUserRepository $entityRepo, MailerInterface $mailer, TokenGeneratorInterface $tokenGenerator, EntityManagerInterface $manager) {
         $inProgress = false;
@@ -200,7 +215,6 @@ class SecurityController extends AbstractController {
             }catch(\Exception $e) {
                 $this->addFlash('warning', 'Une erreur est survenue : '. $e->getMessage());
                 return $this->redirectToRoute('home',[
-                    'inProgress' => $inProgress
                 ]);
             }
             // Envoi mail
@@ -218,18 +232,21 @@ class SecurityController extends AbstractController {
             // On crée le message flash
             $this->addFlash('success', 'Un e-mail de réinitialisation du mot de passe vous a été envoyé');
             return $this->redirectToRoute('home',[
-                'inProgress' => $inProgress
             ]);
         }
         // On envoie vers la page de demande de l'email
         return $this->render('security/forgotten_password.html.twig', [
             'emailForm' => $form->createView(),
-            'inProgress' => $inProgress
             ]);
     }
 
     /**
      * @Route("/reset_password/{token}", name="app_reset_password")
+     * @param $token
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @param EntityManagerInterface $manager
+     * @return RedirectResponse|Response
      */
     public function resetPassword($token, Request $request, UserPasswordEncoderInterface $passwordEncoder, EntityManagerInterface $manager) {
         $inProgress = false;

@@ -7,9 +7,17 @@
     <div class="container-fluid">
         <div class="row profil">
             <div class="col s4 offset-s2">
-                <img id="image"
-                     src="{{ asset('img/upload/profil_pic/' ~ eter_user.userAvatar) | imagine_filter('profil') }}"
-                     alt="default_profil" class="circle profil-pic">
+                    {% if app.user.userAvatar is same as(null) %}
+                        <a href="#user">
+                            <img class="circle profil-pic"
+                                 src="{{ asset('img/upload/profil_pic/default-profil.jpg') }}" alt="Photo de profil de {{ app.user.userLogin }}" title="Photo de profil par défaut">
+                        </a>
+                    {% else %}
+                        <a href="#user">
+                            <img class="circle profil-pic"
+                                 src="{{ asset('img/upload/profil_pic/' ~ app.user.userAvatar) }}" alt="Photo de profil de {{ app.user.userLogin }}" title="Photo de profil">
+                        </a>
+                    {% endif %}
             </div>
             <div class="col s6">
                 <div class="row">
@@ -51,16 +59,16 @@
                     <div class="col s9">
                         <div class="row">
                             {% for clan in app.user.userClan %}
-                            <div class="col s3">
-                                <p class="white-text">{{ (clan.clanName) == null ? 'Pas de clan' : clan.clanName }}</p>
-                            </div>
-                            <div class="col s9">
+                                <div class="col s3">
+                                    <p class="white-text">{{ (clan.clanName) == null ? 'Pas de clan' : clan.clanName }}</p>
+                                </div>
+                                <div class="col s9">
 
-                                <img src="{{ asset('img/upload/ban/' ~ clan.clanBan) | imagine_filter('profil') }}"
-                                     class="circle responsive-img"
-                                     alt="Bannière du clan {{ clan.clanName }}"
-                                     title="Bannière du clan {{ clan.clanName }}">
-                            </div>
+                                    <img src="{{ asset('img/upload/ban/' ~ clan.clanBan) | imagine_filter('profil') }}"
+                                         class="circle responsive-img"
+                                         alt="Bannière du clan {{ clan.clanName }}"
+                                         title="Bannière du clan {{ clan.clanName }}">
+                                </div>
                             {% endfor %}
                         </div>
                     </div>
@@ -82,7 +90,7 @@
         <div class="row profil">
             <div class="col s12 center-align">
                 <h2
-                class="white-text">Mes informations personnelles</h2>
+                        class="white-text">Mes informations personnelles</h2>
             </div>
         </div>
         <div class="row">
@@ -93,7 +101,7 @@
                 <p class="white-text">{{ (app.user.userAddress) == null ? 'Pas d\'adresse communiquée ' : app.user.userAddress }}</p>
             </div>
             <div class="col s3 center-align">
-<p class="white-text">Code postal :</p>
+                <p class="white-text">Code postal :</p>
             </div>
             <div class="col s3 left-align">
                 <p class="white-text">{{ (app.user.userZip) == null ? 'Pas de code postal ' : app.user.userZip }}</p>
@@ -110,86 +118,86 @@
                 <p class="white-text">Mes tags :</p>
             </div>
             <div class="col s3 left-align">
-                <p class="white-text">{{ app.user.userDate }}</p>
+                <p class="white-text">Inscris depuis le : {{ app.user.userDate | date('d/m/Y') }}</p>
             </div>
         </div>
     </div>
-    {#    <div class="card">#}
-    {#    <h5 class="card-title">Votre profil</h5>#}
-    {#        <div id ="cardprofil" class="row no-gutters">#}
-    {#            <div id="show1" class="col-md-12">#}
-    {#                {% if eter_user.userAvatar %}#}
+    {# <div class="card"> #}
+    {# <h5 class="card-title">Votre profil</h5> #}
+    {# <div id ="cardprofil" class="row no-gutters"> #}
+    {# <div id="show1" class="col-md-12"> #}
+    {# {% if eter_user.userAvatar %} #}
 
-    {#                #}
+    {# #}
 
-    {#                {% else %}#}
+    {# {% else %} #}
 
-    {#                <img id="image" src="{{ asset('img/upload/profil_pic/default-profil.jpg') | imagine_filter('profil') }}" alt="default_profil">#}
+    {# <img id="image" src="{{ asset('img/upload/profil_pic/default-profil.jpg') | imagine_filter('profil') }}" alt="default_profil"> #}
 
-    {#                {% endif %}#}
-    {#            </div>#}
-    {#            <div class="col-md-12">#}
-    {#                <div class="card-body">#}
-    {#                        <div id="rens1" class="card-text">Login</div>#}
-    {#                        <div id="edit_rens1">{{ eter_user.userLogin }}</div>#}
-    {#                        <br>#}
+    {# {% endif %} #}
+    {# </div> #}
+    {# <div class="col-md-12"> #}
+    {# <div class="card-body"> #}
+    {# <div id="rens1" class="card-text">Login</div> #}
+    {# <div id="edit_rens1">{{ eter_user.userLogin }}</div> #}
+    {# <br> #}
 
-    {#                        <div id="rens2" class="card-text">Email</div>#}
-    {#                        <div id="edit_rens2">{{ eter_user.userMail }}</div>#}
-    {#                        <br>#}
+    {# <div id="rens2" class="card-text">Email</div> #}
+    {# <div id="edit_rens2">{{ eter_user.userMail }}</div> #}
+    {# <br> #}
 
-    {#                        <div id="rens3" class="card-text">ID Discord</div>#}
-    {#                        <div id="edit_rens3">{{ eter_user.userDiscord }}</div>#}
-    {#                        <br>#}
+    {# <div id="rens3" class="card-text">ID Discord</div> #}
+    {# <div id="edit_rens3">{{ eter_user.userDiscord }}</div> #}
+    {# <br> #}
 
-    {#                        <div id="rens4" class="card-text">Adresse</div>#}
-    {#                        <div contentEditable=false data-text="Pas encore d'adresse..." id="edit_rens4">{{ eter_user.userAddress }}</div>#}
-    {#                        <br>#}
+    {# <div id="rens4" class="card-text">Adresse</div> #}
+    {# <div contentEditable=false data-text="Pas encore d'adresse..." id="edit_rens4">{{ eter_user.userAddress }}</div> #}
+    {# <br> #}
 
-    {#                        <div id="rens5" class="card-text">Code Postal</div>#}
-    {#                        <div contentEditable=false data-text="Pas encore de code postal..." id="edit_rens5">{{ eter_user.userZip }}</div>#}
-    {#                        <br>#}
+    {# <div id="rens5" class="card-text">Code Postal</div> #}
+    {# <div contentEditable=false data-text="Pas encore de code postal..." id="edit_rens5">{{ eter_user.userZip }}</div> #}
+    {# <br> #}
 
-    {#                        <div id="rens6" class="card-text">Ville</div>#}
-    {#                        <div contentEditable=false data-text="Pas encore de ville..." id="edit_rens6">{{ eter_user.userCity }}</div>#}
-    {#                        <br>#}
+    {# <div id="rens6" class="card-text">Ville</div> #}
+    {# <div contentEditable=false data-text="Pas encore de ville..." id="edit_rens6">{{ eter_user.userCity }}</div> #}
+    {# <br> #}
 
-    {#                        <div id="rens7" class="card-text">Sexe</div>#}
-    {#                        <div contentEditable=false data-text="Pas encore renseigné..." id="edit_rens7">{{ eter_user.userSex }}</div>#}
-    {#                        <br>#}
+    {# <div id="rens7" class="card-text">Sexe</div> #}
+    {# <div contentEditable=false data-text="Pas encore renseigné..." id="edit_rens7">{{ eter_user.userSex }}</div> #}
+    {# <br> #}
 
-    {#                        <div id="rens8" class="card-text">Description</div>#}
-    {#                        <div contentEditable=false data-text="Pas encore de description..." id="edit_rens8">{{ eter_user.userDescription }}</div>#}
-    {#                        <br>#}
+    {# <div id="rens8" class="card-text">Description</div> #}
+    {# <div contentEditable=false data-text="Pas encore de description..." id="edit_rens8">{{ eter_user.userDescription }}</div> #}
+    {# <br> #}
 
-    {#                        #}{#<div id="rens9" class="card-text">Votre(Vos) clan(s)</div>#}
-    {#                        <div contentEditable=false data-text="Pas encore de clan..." id="edit_rens9">{{ eter_user.user_clan }}</div>#}
-    {#                        <br>#}
+    {# #}{# <div id="rens9" class="card-text">Votre(Vos) clan(s)</div> #}
+    {# <div contentEditable=false data-text="Pas encore de clan..." id="edit_rens9">{{ eter_user.user_clan }}</div> #}
+    {# <br> #}
 
-    {#                        <div id="rens10" class="card-text">Votre(Vos) jeu(x)</div>#}
-    {#                        <div contentEditable=false data-text="Pas encore de clan..." id="edit_rens10">{{ eter_user.user_game }}</div>#}
-    {#                        <br>#}
+    {# <div id="rens10" class="card-text">Votre(Vos) jeu(x)</div> #}
+    {# <div contentEditable=false data-text="Pas encore de clan..." id="edit_rens10">{{ eter_user.user_game }}</div> #}
+    {# <br> #}
 
-    {#                        <div id="rens11" class="card-text">Votre(Vos) évènement(s)</div>#}
-    {#                        <div contentEditable=false data-text="Pas encore d'évènements..." id="edit_rens11">{{ eter_user.eterEvents }}</div>#}
-    {#                        <br>#}
-    {#                        #}
-    {#                        <div id="rens12" class="card-text">Votre(Vos) stream(s)</div>#}
-    {#                        <div contentEditable=false data-text="Pas encore de stream..." id="edit_rens12">{{ eter_user.user_stream }}</div>#}
-    {#                        <br>#}
+    {# <div id="rens11" class="card-text">Votre(Vos) évènement(s)</div> #}
+    {# <div contentEditable=false data-text="Pas encore d'évènements..." id="edit_rens11">{{ eter_user.eterEvents }}</div> #}
+    {# <br> #}
+    {# #}
+    {# <div id="rens12" class="card-text">Votre(Vos) stream(s)</div> #}
+    {# <div contentEditable=false data-text="Pas encore de stream..." id="edit_rens12">{{ eter_user.user_stream }}</div> #}
+    {# <br> #}
 
-    {#                        <div id="rens13" class="card-text">Rôle</div>#}
-    {#                        <div id="edit_rens13">{{ eter_user.userRole }}</div>#}
-    {#                </div>#}
-    {#            </div>#}
-    {#        </div>#}
-    {#        <div class="row">#}
-    {#            <div class="col-12" id="modifier">#}
-    {#            <a class="btn btn-success float-right" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a>#}
-    {#            <a class="btn btn-info float-right" href="{{ path('home') }}">Retour</a>#}
-    {#            </div>#}
-    {#        </div>#}
-    {#    </div>#}
+    {# <div id="rens13" class="card-text">Rôle</div> #}
+    {# <div id="edit_rens13">{{ eter_user.userRole }}</div> #}
+    {# </div> #}
+    {# </div> #}
+    {# </div> #}
+    {# <div class="row"> #}
+    {# <div class="col-12" id="modifier"> #}
+    {# <a class="btn btn-success float-right" href="{{ path('eter_user_edit', {'id': eter_user.id}) }}">Modifier votre profil</a> #}
+    {# <a class="btn btn-info float-right" href="{{ path('home') }}">Retour</a> #}
+    {# </div> #}
+    {# </div> #}
+    {# </div> #}
 
     </div>
 {% endblock %}

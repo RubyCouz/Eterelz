@@ -11,24 +11,24 @@ easy_admin:
                     - {property: 'user_zip', label: 'Code postal'}
                     - {property: 'user_city', label: 'Ville'}
                     - {property: 'user_discord', label: 'Discord'}
-                    - {property: 'statut', label: 'Etat'}
-                    - {property: 'label', label: 'Etiquette'}
-                    - {property: 'user_role', label: 'Role'}
+                    - {property: 'statut', label: 'État'}
+                    - {property: 'label', label: 'Étiquette'}
+                    - {property: 'user_role', label: 'Rôle'}
                     - {property: 'user_clan', label: 'Clan'}
-                    - {property: 'user_game', label: 'Jeux joués'}
-                    - {property: 'user_pic', type: 'file', label: 'photo de profil'}
+                    - {property: 'user_game', label: 'Jeux'}
+                    - {property: 'user_pic', type: 'vich_image', label: 'Photo de profil'}
             list:
                 fields:
                     - {property: 'user_login', label: 'Pseudo'}
-                    - {property: 'user_avatar',type: 'image', label: 'photo de profil', base_path: '/eter/public/img/upload/profil_pic'}
-                    - {property: 'role', label: 'Rôle'}
+                    - {property: 'user_avatar',type: 'image', label: 'photo de profil', base_path: '%app.path.profil_pic%'}
+                    - {property: 'label', label: 'Étiquette'}
                     - {property: 'user_clan', label: 'Clan'}
                     - {property: 'user_mail', label: 'Adresse mail'}
                     - {property: 'statut', label: 'Etat'}
                 actions:
                     - {name: 'edit', icon: 'pencil', label: false}
                     - {name: 'delete', icon: 'trash', label: false}
-        Role:
+        Label:
             class: App\Entity\EterLabel
             form:
                 fields:
@@ -233,7 +233,7 @@ easy_admin:
               icon: 'user-friends'
               children:
                   - {entity: 'Utilisateur', icon: 'user', label: 'Utilisateurs'}
-                  - {entity: 'Role', icon: 'user-tag', label: 'Rôle'}
+                  - {entity: 'Label', icon: 'user-tag', label: 'Rôle'}
                   - {entity: 'Clan', icon: 'users', label: 'Clan'}
                   - {entity: 'GamePlay', icon: 'chess-knight', label: 'Gameplay'}
                   - {entity: 'Info_Streamer', icon: 'twitch', label: 'Streamer'}

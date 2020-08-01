@@ -24,7 +24,7 @@ class EterLabel
     private $label_name;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\EterUser", mappedBy="role")
+     * @ORM\ManyToMany(targetEntity="App\Entity\EterUser", mappedBy="label")
      */
     private $eterUsers;
 
@@ -38,12 +38,12 @@ class EterLabel
         return $this->id;
     }
 
-    public function getRoleName(): ?string
+    public function getLabelName(): ?string
     {
         return $this->label_name;
     }
 
-    public function setRoleName(string $label_name): self
+    public function setLabelName(string $label_name): self
     {
         $this->label_name = $label_name;
 

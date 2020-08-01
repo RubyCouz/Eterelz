@@ -38,7 +38,7 @@ class EterGame
     private $game_gender;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $game_pic;
 

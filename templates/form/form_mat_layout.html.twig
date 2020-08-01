@@ -336,8 +336,12 @@
 
     <div{% with {attr: row_attr} %}{{ block('attributes') }}{% endwith %}>
         {{- form_label(form) -}}
-        {{- form_errors(form) -}}
         {{- form_widget(form, widget_attr) -}}
+        {%- if errors|length > 0 -%}
+            <div id="{{ id }}_errors">
+                {{- form_errors(form) -}}
+            </div>
+        {%- endif -%}
         {{- form_help(form) -}}
     </div>
 {%- endblock form_row -%}

@@ -18,7 +18,6 @@ class HomeController extends AbstractController {
      */
     public function index(EterGameRepository $repo) {
 
-
         return $this->render('home/index.html.twig',[
             'randGame' => $repo->getRandGame(),
         ]);

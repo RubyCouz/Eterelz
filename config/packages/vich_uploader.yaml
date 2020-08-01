@@ -14,6 +14,10 @@ vich_uploader:
         game:
             uri_prefix:         '%app.path.game%'
             upload_destination: '%kernel.project_dir%/public/img/upload/game'
+        # mapping pour illustration de jeux
+        profil_pic:
+            uri_prefix:         '%app.path.profil_pic%'
+            upload_destination: '%kernel.project_dir%/public/img/upload/profil_pic'
 
     #mappings:
     #    products:

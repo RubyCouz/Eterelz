@@ -8,6 +8,7 @@ parameters:
     upload_directory: '%kernel.project_dir%/public/img/upload/profil_pic' # insertion des directives de téléchargement de la photo de profil
     app.path.game: /img/upload/game
     app.path.clan: /img/upload/ban
+    app.path.profil_pic: img/upload/profil_pic
 services:
     # default configuration for services in *this* file
     _defaults:

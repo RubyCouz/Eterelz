@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -13,9 +14,11 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EterUserRepository")
+ * @Vich\Uploadable
  * @UniqueEntity(
  * fields = {"user_mail"}, 
  * message = "L'email existe déjà")
+ * @ApiResource()
  */
 class EterUser implements UserInterface
 {
@@ -128,7 +131,7 @@ class EterUser implements UserInterface
     private $user_description;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $user_update;
 
@@ -138,7 +141,7 @@ class EterUser implements UserInterface
     private $user_avatar;
 
     /**
-     * @Vich\UploadableField(mapping="user_avatar", fileNameProperty="user_avatar")
+     * @Vich\UploadableField(mapping="profil_pic", fileNameProperty="user_avatar")
      * @var File
      */
     private $user_pic;

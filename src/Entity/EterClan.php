@@ -28,12 +28,12 @@ class EterClan
     private $clan_name;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $clan_members;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $clan_desc;
 
@@ -79,7 +79,7 @@ class EterClan
     private $clan_slogan;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $clan_update;
 

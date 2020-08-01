@@ -51,9 +51,8 @@ class RegistrationType extends AbstractType
             ])
         //-------------PASSWORD-------------//
             ->add('user_password', PasswordType::class, [
-                'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'Mot de passe non valide !', 'pattern' => '#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#'])],
-                'attr' => ['id' => 'password'],
-                'help' => 'Votre mot de passe doit contenir au moins une majuscule, une minuscule et des caractères spéciaux'
+                'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'Mot de passe non valide !', 'pattern' => '#^[\w\!\\\/\?\#\@%ùéèà]{8,}$#'])],
+                'attr' => ['id' => 'password']
             ])
         //---------CONFIRM PASSWORD---------//
             ->add('confirm_user_password', PasswordType::class, [
@@ -61,35 +60,35 @@ class RegistrationType extends AbstractType
                 'attr' => []
             ])
         //-------------ADRESSE-------------//
-            ->add('user_address', TextType::class, [
-                'constraints' => [new Regex(['message' => 'Adresse non valide !', 'pattern' => '#[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)*#'])],
-                'attr' => []
-            ])
+//            ->add('user_address', TextType::class, [
+//                'constraints' => [new Regex(['message' => 'Adresse non valide !', 'pattern' => '#[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)*#'])],
+//                'attr' => []
+//            ])
         //-----------CODE POSTAL-----------//
-            ->add('user_zip', TextType::class, [
-                'constraints' => [new Regex(['message' => 'Code postal non valide !', 'pattern' => '#^[0-9]{5}$#'])],
-                'attr' => []
-            ])
+//            ->add('user_zip', TextType::class, [
+//                'constraints' => [new Regex(['message' => 'Code postal non valide !', 'pattern' => '#^[0-9]{5}$#'])],
+//                'attr' => []
+//            ])
         //--------------VILLE-------------//
-            ->add('user_city', TextType::class, [
-                'constraints' => [new Regex(['message' => 'Ville non valide !', 'pattern' => '#^[A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï]+([\'\s-][A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï])?#'])],
-                'attr' => []
-            ])
+//            ->add('user_city', TextType::class, [
+//                'constraints' => [new Regex(['message' => 'Ville non valide !', 'pattern' => '#^[A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï]+([\'\s-][A-zA-ZéèîïÉÈÎÏ][A-zA-Zéèêàçîï])?#'])],
+//                'attr' => []
+//            ])
         //------------DISCORD------------//
             ->add('user_discord', TextType::class, [
                 'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'ID Discord non valide !', 'pattern' => '#^\D+\#\d{4}$#'])],
                 'attr' => []
             ])
         //-------------SEXE-------------//
-            ->add('user_sex', ChoiceType::class, [
-                'choices' => $choices,
-                'expanded' => true,
-                'multiple' => false
-            ])
+//            ->add('user_sex', ChoiceType::class, [
+//                'choices' => $choices,
+//                'expanded' => true,
+//                'multiple' => false
+//            ])
         //---------DESCRIPTION---------//
-            ->add('user_description', TextareaType::class, [
-                'attr' => []
-            ])
+//            ->add('user_description', TextareaType::class, [
+//                'attr' => []
+//            ])
         ;
     }
 

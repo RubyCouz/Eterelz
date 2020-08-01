@@ -4,17 +4,21 @@ general
 .ml-70 {
     margin-left: 70px;
 }
-
 .mr-70 {
     margin-right: 90px !important;
 }
-
 .mt-10 {
     margin-top: 10px !important;
 }
-
+.mt-50 {
+    margin-top: 50px !important;
+}
 .btn-rounded {
     border-radius: 50px;
+}
+.default-profil-pic {
+    height: 200px !important;
+    width: auto;
 }
 input[type="email"],
 input[type="text"],
@@ -26,27 +30,27 @@ input[type="date"] {
 .input-field input[type="text"]:focus:not(.browser-default),
 textarea.materialize-textarea:focus:not(.browser-default) {
     color: white;
-    border-bottom: 1px solid #f50057;
-    box-shadow: 0 1px 0 0 #f50057;
+    border-bottom: 1px solid #8e24aa ;
+    box-shadow: 0 1px 0 0 #8e24aa ;
 }
 
 .input-field input[type="password"]:focus:not(.browser-default),
 .input-field input[type="text"]:focus:not(.browser-default),
 textarea.materialize-textarea:focus:not(.browser-default) {
     color: white;
-    border-bottom: 1px solid #f50057;
-    box-shadow: 0 1px 0 0 #f50057;
+    border-bottom: 1px solid #8e24aa ;
+    box-shadow: 0 1px 0 0 #8e24aa ;
 }
 
 .input-field input[type="email"]:focus:not([readonly]) + label,
 .input-field input[type="text"]:focus:not([readonly]) + label,
 .input-field input[type="password"]:focus:not([readonly]) + label {
-    color: #f50057;
+    color: #8e24aa ;
 
 }
 
 .input-field label:not(.label-icon).active {
-    color: #f50057;
+    color: #8e24aa ;
 }
 
 .input-field .helper-text {
@@ -55,9 +59,18 @@ textarea.materialize-textarea:focus:not(.browser-default) {
 }
 
 [type="radio"]:checked + span::after, [type="radio"].with-gap:checked + span::after {
-    background-color: #f50057 !important;
-    border-color: #f50057;
+    background-color: #8e24aa  !important;
+    border-color: #8e24aa ;
 }
+[type="checkbox"] + span:not(.lever):before,
+[type="checkbox"]:not(.filled-in) + span:not(.lever):after {
+    border: 2px solid #8e24aa ;
+}
+[type="checkbox"]:checked + span:not(.lever)::before {
+    border-right: 2px solid #8e24aa   !important;
+    border-bottom: 2px solid #8e24aa   !important;
+}
+
 /**
 home background
  */
@@ -75,6 +88,22 @@ body {
     /*min-height: 150%;*/
 }
 
+/**
+news bar
+ */
+.news {
+    position: absolute;
+    text-align: center;
+    top: 33rem;
+    /*bottom: 23rem;*/
+    z-index: 996;
+    background-color: #1b1e21;
+    border-radius: 20px;
+}
+.news-title {
+    color: #1e88e5;
+    margin-bottom: 0;
+}
 /**
 navbar
  */
@@ -167,9 +196,14 @@ slider
 }
 
 .slider .indicators .indicator-item.active {
-    background-color: #f50057;
+    background-color: #8e24aa ;
 }
-
+.slider .indicators {
+    text-align: left;
+    bottom: 50px;
+    left: 10px;
+    z-index: 996;
+}
 /**
 card stat
  */
@@ -201,7 +235,11 @@ card stat
     border-right: 3px solid gray;
     transform: rotate(-20deg)
 }
-
+.hdivider {
+    margin: 10px 50px;
+    width: 100%;
+    border-bottom: 2px solid #1e88e5;
+}
 /**
 stat card mobil
  */

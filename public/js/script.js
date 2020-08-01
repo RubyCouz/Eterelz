@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /**
  * slider
  */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let elems = document.querySelectorAll('.slider');
     let instances = M.Slider.init(elems, {
         indicators: true,
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /**
  * modal login
  */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let elems = document.querySelectorAll('.modal');
     let instances = M.Modal.init(elems, {
         opacity: 0.5,
@@ -52,6 +52,60 @@ document.addEventListener('DOMContentLoaded', function() {
         endingTop: '10%'
     });
 });
+//
+// /**
+//  * Ajax vérif login
+//  */
+// // récupération url en cours
+// let str = location.pathname;
+// let url = str.split('/');
+// // récupération de la div d'erreur
+// const errorLogin = document.getElementById('errorLogin');
+// //sélection du bouton envoyé de la modal et écoute d"un event sur celui-ci
+// const mailInput = document.getElementById('email');
+// const passwordInput = document.getElementById('password');
+//
+// mailInput.addEventListener('blur', checkUser);
+// passwordInput.addEventListener('blur', checkUser);
+//
+// function checkUser() {
+//     let email = document.getElementById('email').value;
+//     let password = document.getElementById('password').value;
+//
+// // fonction pour tester si xhr est accepté par le navigateur
+//     function getXMLHttpRequest() {
+//         let xhr = null;
+//
+//         if (window.XMLHttpRequest || window.ActiveXObject) {
+//             if (window.ActiveXObject) {
+//                 try {
+//                     xhr = new ActiveXObject("Msxml2.XMLHTTP");
+//                 } catch (e) {
+//                     xhr = new ActiveXObject("Microsoft.XMLHTTP");
+//                 }
+//             } else {
+//                 xhr = new XMLHttpRequest();
+//             }
+//         } else {
+//             alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+//         }
+//         return xhr;
+//     }
+//
+//     let finalEmail = url[0] + 'eteruser/login/' + email + '/' + password;
+//
+//     let xhr = getXMLHttpRequest();
+//     xhr.open("GET", finalEmail, true);
+//     xhr.send(null);
+//     xhr.onreadystatechange = function () {
+//         if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+//             errorLogin.innerHTML = xhr.responseText;
+//             // alert(xhr.responseText); // Données textuelles récupérées
+//         }
+//     };
+// }
+//
+
 /* Barre de force du mot de passe
 
 var pass = document.getElementById("signin_user_password")

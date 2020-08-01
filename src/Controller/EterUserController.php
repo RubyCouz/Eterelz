@@ -159,4 +159,39 @@ class EterUserController extends AbstractController
 
         return $this->redirectToRoute('home');
     }
+
+
+//    /**
+//     * @Route("/login/{mail}/{password}", name="user_mail", methods={"POST", "GET"}, defaults={"password": null, "mail"=null})
+//     * @param $mail
+//     * @param $password
+//     * @param EterUserRepository $repo
+//     * @return Response
+//     */
+//    public function getUserByMail($mail, $password, EterUserRepository $repo) :Response
+//    {
+//        $errorMail = '';
+//        $log = $repo->findBy(['user_mail' => $mail]);
+//        foreach ($log as $user) {
+//            dd($user->getId);
+//        }
+//
+//        if(count($log) === 0) {
+//            $errorMail = 'Email invalide';
+//            return $this->render('error/errorEmail.html.twig', [
+//                'errorEmail' => $errorMail,
+//            ]);
+//        } else {
+//            if($password) {
+//                if(!password_verify($password, $log->getUserPassword)) {
+//                    $errorPassword = 'Mot de passe invalide';
+//                    return $this->render('error/errorPassword.html.twig', [
+//                        'errorPassword' => $errorPassword,
+//                    ]);
+//                }
+//            }
+//        }
+//
+//    }
+
 }

@@ -9,11 +9,19 @@
                         <h1>Connexion</h1>
                     </div>
                 </div>
+                {% if error %}
+                <div class="row">
+                    <div class="col s12">
+                        <p class="red-text">{{ error.messageKey | trans(error.messagedata, 'security') }}</p>
+                        <small class="red-text">Tips : Vérifiez votre email. Le mot de passe contient 8 caractères minimum</small>
+                    </div>
+                </div>
+                {% endif %}
                 <div class="row">
                     <form action="{{ path('login') }}" method="post" class="col s12">
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="username" type="email" name="_username" class="validate">
+                                <input id="username" type="email" name="_username" class="validate" value="{{ last_username }}">
                                 <label for="username">Adresse e-mail</label>
                             </div>
                         </div>

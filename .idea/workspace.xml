@@ -20,47 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01efc62a-05f0-4c24-8630-d192886acd99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/api_platform.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/nelmio_cors.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/api_platform.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/game/wallhaven-6kgkwx.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/1337465701_55859.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/upload/profil_pic/1339974901_88320.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/run.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/form/materialize_base_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/eter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/eter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error/errorEmail.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error/errorPassword.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Cédric_Cousin_Ruby.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EterUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EterUserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterClan.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterClan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterEvent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterGame.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterGame.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterLabel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterLabel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterStreamer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterStreamer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EterUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EterUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/error/error404.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/error/error404.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/eter_game/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eter_game/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/eter_user/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/eter_user/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form/form_mat_layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form/form_mat_layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form/materialize_form_layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form/materialize_form_layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/forgotten_password.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/forgotten_password.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/registration.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/registration.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/reset_password.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/reset_password.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,6 +229,19 @@
       <command value="symfony server:start" />
     </option>
   </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
@@ -364,7 +345,7 @@
       <workItem from="1596104839728" duration="9581000" />
       <workItem from="1596127318866" duration="426000" />
       <workItem from="1596177835795" duration="11599000" />
-      <workItem from="1596282252342" duration="1465000" />
+      <workItem from="1596282252342" duration="14399000" />
     </task>
     <task id="LOCAL-00001" summary="début de chantier">
       <created>1583359113034</created>
@@ -688,7 +669,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595949136879</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="ajout API platform">
+      <created>1596284470486</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1596284470486</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -708,7 +696,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fin mise en place back office et installation uploader vich" />
     <MESSAGE value="suite mise en forme back office" />
     <MESSAGE value="fin back office" />
     <MESSAGE value="ajout fichier easy_admin.yaml" />
@@ -733,7 +720,8 @@
     <MESSAGE value="mise en place connexion" />
     <MESSAGE value="formatage page profil" />
     <MESSAGE value="remplacement bootstrap par materialize sur template form" />
-    <option name="LAST_COMMIT_MESSAGE" value="remplacement bootstrap par materialize sur template form" />
+    <MESSAGE value="ajout API platform" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout API platform" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="-920" key="#Plugins" timestamp="1596005515406">
@@ -754,15 +742,15 @@
       <screen x="1920" y="30" width="1920" height="1050" />
     </state>
     <state x="2610" y="310" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.30.1920.1050/0.30.1920.1050@1920.30.1920.1050" timestamp="1587711771592" />
-    <state x="572" y="-1080" key="CommitChangelistDialog2" timestamp="1595949136063">
-      <screen x="0" y="-1080" width="1920" height="1040" />
+    <state x="572" y="40" key="CommitChangelistDialog2" timestamp="1596284469723">
+      <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="-1347" y="50" key="CommitChangelistDialog2/-1920.50.1920.1030/0.40.1536.824@-1920.50.1920.1030" timestamp="1591958120198" />
     <state x="458" y="40" key="CommitChangelistDialog2/0.40.1536.824/0.-1040.1920.1040@0.40.1536.824" timestamp="1592404255395" />
     <state x="572" y="-1080" key="CommitChangelistDialog2/0.40.1536.824/0.-1080.1920.1040@0.-1080.1920.1040" timestamp="1595949136063" />
     <state x="458" y="40" key="CommitChangelistDialog2/0.40.1536.824/0.-1080.1920.1040@0.40.1536.824" timestamp="1594819162253" />
     <state x="477" y="40" key="CommitChangelistDialog2/0.40.1600.860/-1920.30.1536.824@0.40.1600.860" timestamp="1595609639323" />
-    <state x="572" y="40" key="CommitChangelistDialog2/0.40.1920.1040/-1920.30.1536.824@0.40.1920.1040" timestamp="1595751948430" />
+    <state x="572" y="40" key="CommitChangelistDialog2/0.40.1920.1040/-1920.30.1536.824@0.40.1920.1040" timestamp="1596284469723" />
     <state width="1493" height="104" key="GridCell.Tab.0.bottom" timestamp="1596191631994">
       <screen x="0" y="40" width="1536" height="824" />
     </state>

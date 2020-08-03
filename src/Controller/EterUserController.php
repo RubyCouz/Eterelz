@@ -161,37 +161,39 @@ class EterUserController extends AbstractController
     }
 
 
-//    /**
-//     * @Route("/login/{mail}/{password}", name="user_mail", methods={"POST", "GET"}, defaults={"password": null, "mail"=null})
-//     * @param $mail
-//     * @param $password
-//     * @param EterUserRepository $repo
-//     * @return Response
-//     */
-//    public function getUserByMail($mail, $password, EterUserRepository $repo) :Response
-//    {
-//        $errorMail = '';
-//        $log = $repo->findBy(['user_mail' => $mail]);
-//        foreach ($log as $user) {
-//            dd($user->getId);
-//        }
-//
-//        if(count($log) === 0) {
-//            $errorMail = 'Email invalide';
-//            return $this->render('error/errorEmail.html.twig', [
-//                'errorEmail' => $errorMail,
-//            ]);
-//        } else {
-//            if($password) {
-//                if(!password_verify($password, $log->getUserPassword)) {
-//                    $errorPassword = 'Mot de passe invalide';
-//                    return $this->render('error/errorPassword.html.twig', [
-//                        'errorPassword' => $errorPassword,
-//                    ]);
-//                }
-//            }
-//        }
-//
-//    }
+    /**
+     * @Route("/login", name="user_mail", methods={"POST", "GET"})
+     * @return Response
+     */
+    public function checkUserMail() :Response
+    {
+        $errorMail = '';
+        $request = Request::createFromGlobals();
+        $mail = $request->request->get('mail');
+//        dd($mail);
+        if(!preg_match('/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/', $mail)) {
+            $errorMail = 'Veuillez saisir une adresse mail valide';
+        }
+        return $this->render('error/errorEmail.html.twig', [
+            'errorEmail' => $errorMail,
+        ]);
+    }
 
+    /**
+     * @Route("/password", name="user_password", methods={"POST", "GET"})
+     * @return Response
+     */
+    public function checkUserPassword() :Response
+    {
+        $errorPassword = '';
+        $request = Request::createFromGlobals();
+        $password = $request->request->get('password');
+//        dd($mail);
+        if(!preg_match('/^[\w!?#@%ùéèà\/]{8,}$/', $password)) {
+            $errorPassword = 'Veuillez saisir un mot de passe valide';
+        }
+        return $this->render('error/errorPassword.html.twig', [
+            'errorPassword' => $errorPassword,
+        ]);
+    }
 }

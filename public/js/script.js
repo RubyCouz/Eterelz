@@ -52,59 +52,90 @@ document.addEventListener('DOMContentLoaded', function () {
         endingTop: '10%'
     });
 });
-//
-// /**
-//  * Ajax vérif login
-//  */
-// // récupération url en cours
-// let str = location.pathname;
-// let url = str.split('/');
-// // récupération de la div d'erreur
-// const errorLogin = document.getElementById('errorLogin');
-// //sélection du bouton envoyé de la modal et écoute d"un event sur celui-ci
-// const mailInput = document.getElementById('email');
-// const passwordInput = document.getElementById('password');
-//
-// mailInput.addEventListener('blur', checkUser);
+
+/**
+ * Ajax vérif login et mdp
+ */
+// récupération url en cours
+let str = location.pathname;
+let url = str.split('/');
+// récupération de la div d'erreur
+const errorLogin = document.getElementById('errorLogin');
+//sélection du bouton envoyé de la modal et écoute d"un event sur celui-ci
+const mailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const errorEmail = document.getElementById('errorEmail');
+const errorPassword = document.getElementById('errorPassword');
+mailInput.addEventListener('blur', () => {
+    let email = document.getElementById('email').value;
+// fonction pour tester si xhr est accepté par le navigateur
+    function getXMLHttpRequest() {
+        let xhr = null;
+        if (window.XMLHttpRequest || window.ActiveXObject) {
+            if (window.ActiveXObject) {
+                try {
+                    xhr = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            } else {
+                xhr = new XMLHttpRequest();
+            }
+        } else {
+            alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+        }
+        return xhr;
+    }
+    let finalEmail = url[0] + 'eteruser/login';
+    let xhr = getXMLHttpRequest();
+    xhr.open("POST", finalEmail, true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("mail=" + email);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+            errorEmail.innerHTML = xhr.responseText;
+            // alert(xhr.responseText); // Données textuelles récupérées
+        }
+    };
+});
+passwordInput.addEventListener('blur', () => {
+    let password = document.getElementById('password').value;
+// fonction pour tester si xhr est accepté par le navigateur
+    function getXMLHttpRequest() {
+        let xhr = null;
+        if (window.XMLHttpRequest || window.ActiveXObject) {
+            if (window.ActiveXObject) {
+                try {
+                    xhr = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            } else {
+                xhr = new XMLHttpRequest();
+            }
+        } else {
+            alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
+        }
+        return xhr;
+    }
+    let finalPath = url[0] + 'eteruser/password';
+    let xhr = getXMLHttpRequest();
+    xhr.open("POST", finalPath, true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send("password=" + password);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
+            errorPassword.innerHTML = xhr.responseText;
+            // alert(xhr.responseText); // Données textuelles récupérées
+        }
+    };
+})
 // passwordInput.addEventListener('blur', checkUser);
-//
-// function checkUser() {
-//     let email = document.getElementById('email').value;
-//     let password = document.getElementById('password').value;
-//
-// // fonction pour tester si xhr est accepté par le navigateur
-//     function getXMLHttpRequest() {
-//         let xhr = null;
-//
-//         if (window.XMLHttpRequest || window.ActiveXObject) {
-//             if (window.ActiveXObject) {
-//                 try {
-//                     xhr = new ActiveXObject("Msxml2.XMLHTTP");
-//                 } catch (e) {
-//                     xhr = new ActiveXObject("Microsoft.XMLHTTP");
-//                 }
-//             } else {
-//                 xhr = new XMLHttpRequest();
-//             }
-//         } else {
-//             alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
-//         }
-//         return xhr;
-//     }
-//
-//     let finalEmail = url[0] + 'eteruser/login/' + email + '/' + password;
-//
-//     let xhr = getXMLHttpRequest();
-//     xhr.open("GET", finalEmail, true);
-//     xhr.send(null);
-//     xhr.onreadystatechange = function () {
-//         if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-//             errorLogin.innerHTML = xhr.responseText;
-//             // alert(xhr.responseText); // Données textuelles récupérées
-//         }
-//     };
-// }
-//
+
+function checkMail() {
+
+}
+
 
 /* Barre de force du mot de passe
 

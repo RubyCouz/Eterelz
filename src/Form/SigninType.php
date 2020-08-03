@@ -52,7 +52,7 @@ class SigninType extends AbstractType
             ])
             //-------------PASSWORD-------------//
             ->add('user_password', PasswordType::class, [
-                'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'Mot de passe non valide !', 'pattern' => '#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#'])],
+                'constraints' => [new NotBlank(['message' => 'Vous devez remplir ce champ']), new Regex(['message' => 'Mot de passe non valide !', 'pattern' => '#^[\w\!\\\/\?\#\@%ùéèà]{8,}$#'])],
                 'help' => 'Votre mot de passe doit contenir au moins une majuscule, une minuscule et des caractères spéciaux'
             ])
             //---------CONFIRM PASSWORD---------//

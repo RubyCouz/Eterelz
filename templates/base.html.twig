@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    <link rel="icon" type="image/jpg" href="{{ asset('img/favicon/favicon.jpg') }}">
-    <link rel="stylesheet" href="{{ asset('css/hover-min.css') }}">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/jpg" href="{{ asset('img/favicon/favicon.jpg') }}">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+
+    {% endblock %}
 </head>
 <body
         {% for label, messages in app.flashes(['success', 'danger']) %}
@@ -21,9 +25,6 @@
                 onload="M.toast({html: '{{ message }}', classes: 'flash-{{ label }}'});"
             {% endfor %}
         {% endfor %}
-        {# {% for message in app.flashes('danger') %} #}
-        {# onload="M.toast({html: '{{ message }}', classes: 'rounded red accent-3'});" #}
-        {# {% endfor %} #}
 >
 {# navbar #}
 <div class="navbar-fixed">
@@ -49,25 +50,26 @@
                 {% if app.user %}
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="hide-on-small-only">
-                            <a href="http://localhost:8000/admin"
+                            <a href="{{ path('admin') }}"
                                class="waves-effect waves-light btn btn-rounded mt-10 blue darken-1">Back-office</a>
                         </li>
                     {% endif %}
                     <li class="hide-on-small-only">
                         <a href="{{ path('logout') }}"
-                           class="waves-effect waves-light btn btn-rounded mr-70 mt-10 blue darken-1">Se
-                            déconnecter</a>
+                           class="waves-effect waves-light btn btn-rounded mr-70 mt-10 blue darken-1">
+                            Se déconnecter
+                        </a>
                     </li>
                 {% else %}
                     <li class="hide-on-small-only">
-                        <button class="modal-trigger waves-effect waves-light btn btn-rounded mt-10 blue darken-1"
-                                data-target="loginModal">Connexion
+                        <button class="modal-trigger waves-effect waves-light btn btn-rounded mt-10 blue darken-1 pulse"
+                                data-target="loginModal">
+                            Connexion
                         </button>
                     </li>
                     <div id="loginModal" class="modal login-modal">
                         <div class="modal-content">
                             <h4 class="darken-4">Connexion</h4>
-
                             <form action="{{ path('login') }}" method="post" novalidate="novalidate">
                                 <div class="row">
                                     <div class="input-field col s8">
@@ -107,7 +109,7 @@
                 <li>
                     <div class="fixed-action-btn">
                         <a class="btn-floating btn-large purple darken-1 pulse">
-                            <i class="large material-icons">unfold_more</i>
+                            <i class="fas fa-project-diagram"></i>
                         </a>
                         <ul>
                             <li>
@@ -199,7 +201,7 @@
     {% else %}
         <li class="hide-on-med-and-up center-align">
             <a href="{{ path('login') }}" title="Connexion"
-               class="waves-effect waves-light btn btn-rounded purple darken-1">Connexion</a>
+               class="waves-effect waves-light btn btn-rounded purple darken-1 pulse">Connexion</a>
         </li>
         <li class="hide-on-med-and-up center-align">
             <a href="{{ path('security_registration') }}"
@@ -221,32 +223,8 @@
     <li class="center-align"><a class="waves-effect white-text" href="#!">Les streamers</a></li>
 </ul>
 {% block body %}{% endblock %}
-<footer class="page-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer
-                    content.</p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            © 2020 Copyright EterelZ All rights reserved
-            <a class="grey-text text-lighten-4 right" href="#!">Conditions Générales d'utilisation</a>
-        </div>
-    </div>
-</footer>
+
+{# <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script> #}
 <script src="https://kit.fontawesome.com/feb810672a.js" crossorigin="anonymous"></script>
 {# <script src="{{ asset('js/add-collection-widget.js') }}"></script> #}
 {# <script src="{{ asset('js/cta.js') }}"></script> #}
@@ -271,7 +249,13 @@
     {# }); #}
     {# }); #}
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+{% block javascript %}
+
+{{ encore_entry_script_tags('app') }}
+{% endblock %}
+<script src="{{ asset('js/moment.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
-{% block javascripts %}{% endblock %}
 </body>
 </html>

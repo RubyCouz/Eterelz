@@ -23,7 +23,7 @@ class EterGameController extends AbstractController
     public function index(EterGameRepository $eterGameRepository): Response
     {
         return $this->render('eter_game/index.html.twig', [
-            'eter_games' => $eterGameRepository->findAll(),
+            'games' => $eterGameRepository->findAll(),
         ]);
     }
 
@@ -60,12 +60,15 @@ class EterGameController extends AbstractController
     public function show(EterGame $eterGame): Response
     {
         return $this->render('eter_game/show.html.twig', [
-            'eter_game' => $eterGame,
+            'game' => $eterGame,
         ]);
     }
 
     /**
      * @Route("/{id}/edit", name="eter_game_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param EterGame $eterGame
+     * @return Response
      */
     public function edit(Request $request, EterGame $eterGame): Response
     {

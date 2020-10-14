@@ -15,29 +15,3 @@ import '../css/app.css'
 // import $ from 'jquery';
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js')
 // import eds fichiers nécessaires au fonctionnement de l'app vue.js
-import Vue from 'vue';
-import vuetify from './src/plugins/vuetify' // path ti vuetify export
-import App from "./components/App"
-import Vuetify from "vuetify";
-import colors from 'vuetify/lib/util/colors'
-
-
-
-// app vue.js
-new Vue({
-    // utilisation de vuetify
-    vuetify: new Vuetify(),
-    // changement de délimiteur pour affichage des données dans twig
-    // delimiters: ['${', '}'],
-
-    filters: {
-        // formatage de la date
-        formatDate(value) {
-            if (value) {
-                return moment(String(value)).format('DD/MM/YYYY');
-            }
-        }
-    },
-    // affichage du rendu (app.vue) dans l'élément ayant l'id 'app'
-    render: h => h(App)
-}).$mount('#app')

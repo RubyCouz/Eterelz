@@ -25,6 +25,6 @@
         "@vue/babel-preset-jsx": "^1.1.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
-        "vuetify": "^2.3.8"
+        "vuetify": "^2.6.10"
     }
 }
